@@ -45,3 +45,6 @@ data/users.json
 
 # Update script log
 scripts/updateData.log
+
+# Upgates order cache (regenerated on each sync)
+scripts/upgatesCache.json
