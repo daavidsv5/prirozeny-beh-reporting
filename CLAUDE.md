@@ -66,7 +66,7 @@ Objednávky se stahují z Upgates REST API (Basic Auth, `LOGIN:API_KEY` v Base64
 ```
 UPGATES_API_URL=https://prirozeny-beh-cz.admin.s1.upgates.com/api/v2
 UPGATES_LOGIN=53172637
-UPGATES_API_KEY=...
+UPGATES_API_KEY="..."   # uvozovky nutné — klíč obsahuje # který by byl jinak interpretován jako komentář
 ```
 
 ### Marketingové náklady (Google Sheets)
@@ -143,7 +143,7 @@ NextAuth 5 (beta). Uživatelé jsou uloženi v **PostgreSQL** (tabulka `users`, 
 | `/dashboard` | **Klíčové ukazatele (KPI)** — Tržby s/bez DPH, Počet obj., AOV, Marketing. investice, PNO, CPA, Marže, Marže %, Cena za nového zákazníka, Hrubý zisk na obj. + samostatný řádek Hrubý zisk + Hrubý zisk %. Pod KPI boxy: **4 samostatné spojnicové grafy YoY** z `KpiLineCharts`. |
 | `/orders` | Objednávky — tržby vs počet, distribuce hodnot košíku (histogram) |
 | `/marketing` | Marketingové investice — 5 kanálů (FB, Google, Seznam, Zboží, Heureka); CPC trend, denní tabulka, source breakdown |
-| `/products` | Prodejnost produktů — ABC analýza, sortovatelná tabulka, YoY, CSV export, graf vývoje tržeb pro vybraný produkt |
+| `/products` | Prodejnost produktů — ABC analýza, sortovatelná tabulka (vč. Marže Kč + Marže %), YoY, CSV export, graf vývoje tržeb pro vybraný produkt |
 | `/margin` | Maržový report — marže %, hrubý zisk, grafy |
 | `/analytics` | GA4 integrace — sessions, CVR, sources+devices (YoY), vstupní stránky, trychtýř košíku. **Pouze CZ.** |
 | `/meta` | Meta Ads — KPI s YoY, grafy po dnech, tabulka kreativ s filtrem kampaně+sady reklam |
@@ -185,7 +185,7 @@ Výchozí stránka aplikace (redirect z `/`). Zobrazuje 8 grouped bar chartů s 
 | `data/mockGenerator.ts` | CZ-only data; `getDailyMarketingData()` + `getMarketingSourceData()` (5 kanálů) |
 | `data/realDataCZ.ts` | Auto-gen reálná CZ data (CZK) — **needitovat ručně** |
 | `data/lastUpdate.ts` | Auto-gen timestamp poslední aktualizace dat — **needitovat ručně** |
-| `data/productDataCZ.ts` | Prodej produktů (počet kusů, tržby) — auto-gen |
+| `data/productDataCZ.ts` | Prodej produktů (počet kusů, tržby, `purchaseCost`) — auto-gen |
 | `data/marginDataCZ.ts` | Marže (nákupní cena vs tržby bez DPH) — auto-gen |
 | `data/hourlyDataCZ.ts` | Nákupní chování 7×24 grid — auto-gen, all-time |
 | `data/crossSellDataCZ.ts` | Top 100 produktových párů — auto-gen |
@@ -323,7 +323,15 @@ Hourly grid na `/behavior` je **all-time agregace** — nezohledňuje vybrané �
 
 ### GA4
 
-GA4 je napojeno pouze pro **CZ**.
+GA4 je napojeno pouze pro **CZ**. Service account: `ga4-reporting@prirozeny-beh.iam.gserviceaccount.com`, Property ID: `358727482`.
+
+**Env proměnné:**
+```
+GA4_PROPERTY_ID=358727482
+GA4_CLIENT_EMAIL=ga4-reporting@prirozeny-beh.iam.gserviceaccount.com
+GA4_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+```
+`GA4_PRIVATE_KEY` musí mít `\n` jako doslovné znaky (ne reálné newliny) — route.ts volá `.replace(/\\n/g, '\n')` při inicializaci klienta.
 
 **`app/api/analytics/route.ts`** — vrací:
 - `daily`, `dailyPrev` — denní sessions/users/conversions/bounceRate/avgDuration

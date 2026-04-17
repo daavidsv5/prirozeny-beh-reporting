@@ -177,10 +177,11 @@ function aggregateProducts(orders) {
       if (!name || (p.quantity || 0) <= 0) continue;
 
       const key = `${date}||${name}`;
-      if (!byDateProduct[key]) byDateProduct[key] = { date, name, amount: 0, revenue_vat: 0, revenue: 0 };
-      byDateProduct[key].amount      += p.quantity           || 0;
-      byDateProduct[key].revenue_vat += p.price_with_vat    || 0;
-      byDateProduct[key].revenue     += p.price_without_vat || 0;
+      if (!byDateProduct[key]) byDateProduct[key] = { date, name, amount: 0, revenue_vat: 0, revenue: 0, purchaseCost: 0 };
+      byDateProduct[key].amount       += p.quantity           || 0;
+      byDateProduct[key].revenue_vat  += p.price_with_vat    || 0;
+      byDateProduct[key].revenue      += p.price_without_vat || 0;
+      byDateProduct[key].purchaseCost += (p.buy_price || 0) * (p.quantity || 0);
     }
   }
 
@@ -188,8 +189,9 @@ function aggregateProducts(orders) {
     .sort((a, b) => a.date.localeCompare(b.date) || a.name.localeCompare(b.name))
     .map(r => ({
       ...r,
-      revenue_vat: Math.round(r.revenue_vat * 100) / 100,
-      revenue:     Math.round(r.revenue     * 100) / 100,
+      revenue_vat:  Math.round(r.revenue_vat  * 100) / 100,
+      revenue:      Math.round(r.revenue      * 100) / 100,
+      purchaseCost: Math.round(r.purchaseCost * 100) / 100,
     }));
 }
 
@@ -461,6 +463,7 @@ export interface ProductSaleRecord {
   amount: number;
   revenue_vat: number;
   revenue: number;
+  purchaseCost: number;
 }
 
 export const ${varName}: ProductSaleRecord[] = ${JSON.stringify(records, null, 2)};

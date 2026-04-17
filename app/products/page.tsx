@@ -15,7 +15,7 @@ import { productDataSK } from '@/data/productDataSK';
 import { getDisplayCurrency } from '@/data/types';
 import { formatCurrency, formatNumber, formatDate, localIsoDate, formatMonthYear } from '@/lib/formatters';
 
-type SortKey = 'name' | 'amount' | 'revenue' | 'revenue_vat' | 'abc';
+type SortKey = 'name' | 'amount' | 'revenue' | 'revenue_vat' | 'abc' | 'margin' | 'marginPct';
 type SortDir = 'asc' | 'desc';
 type AbcFilter = 'all' | 'A' | 'B' | 'C';
 
@@ -24,11 +24,14 @@ interface ProductRow {
   amount: number;
   revenue: number;
   revenue_vat: number;
+  purchaseCost: number;
+  margin: number;
+  marginPct: number;
   prevAmount: number;
   prevRevenue: number;
   abc: 'A' | 'B' | 'C';
-  revenuePct: number;      // % podíl na celkovém obratu
-  cumulativePct: number;   // kumulativní % (dle řazení revenue desc)
+  revenuePct: number;
+  cumulativePct: number;
 }
 
 function yoyPct(current: number, prev: number): number | null {
@@ -75,23 +78,24 @@ function aggregateByName(
   startStr: string,
   endStr: string,
   skMult: number
-): Record<string, { amount: number; revenue: number; revenue_vat: number }> {
-  const byName: Record<string, { amount: number; revenue: number; revenue_vat: number }> = {};
+): Record<string, { amount: number; revenue: number; revenue_vat: number; purchaseCost: number }> {
+  const byName: Record<string, { amount: number; revenue: number; revenue_vat: number; purchaseCost: number }> = {};
 
   if (countries.includes('cz')) {
     for (const r of productDataCZ) {
       if (r.date < startStr || r.date > endStr) continue;
-      if (!byName[r.name]) byName[r.name] = { amount: 0, revenue: 0, revenue_vat: 0 };
-      byName[r.name].amount      += r.amount;
-      byName[r.name].revenue     += r.revenue;
-      byName[r.name].revenue_vat += r.revenue_vat;
+      if (!byName[r.name]) byName[r.name] = { amount: 0, revenue: 0, revenue_vat: 0, purchaseCost: 0 };
+      byName[r.name].amount       += r.amount;
+      byName[r.name].revenue      += r.revenue;
+      byName[r.name].revenue_vat  += r.revenue_vat;
+      byName[r.name].purchaseCost += r.purchaseCost ?? 0;
     }
   }
 
   if (countries.includes('sk')) {
     for (const r of productDataSK) {
       if (r.date < startStr || r.date > endStr) continue;
-      if (!byName[r.name]) byName[r.name] = { amount: 0, revenue: 0, revenue_vat: 0 };
+      if (!byName[r.name]) byName[r.name] = { amount: 0, revenue: 0, revenue_vat: 0, purchaseCost: 0 };
       byName[r.name].amount      += r.amount;
       byName[r.name].revenue     += r.revenue     * skMult;
       byName[r.name].revenue_vat += r.revenue_vat * skMult;
@@ -435,16 +439,20 @@ export default function ProductsPage() {
     const list: Omit<ProductRow, 'abc' | 'revenuePct' | 'cumulativePct'>[] = [];
 
     for (const name of allNames) {
-      const c = current[name] ?? { amount: 0, revenue: 0, revenue_vat: 0 };
-      const p = prev[name]    ?? { amount: 0, revenue: 0, revenue_vat: 0 };
+      const c = current[name] ?? { amount: 0, revenue: 0, revenue_vat: 0, purchaseCost: 0 };
+      const p = prev[name]    ?? { amount: 0, revenue: 0, revenue_vat: 0, purchaseCost: 0 };
       if (c.amount === 0 && c.revenue === 0) continue;
+      const margin = c.revenue - c.purchaseCost;
       list.push({
         name,
-        amount:      c.amount,
-        revenue:     c.revenue,
-        revenue_vat: c.revenue_vat,
-        prevAmount:  p.amount,
-        prevRevenue: p.revenue,
+        amount:       c.amount,
+        revenue:      c.revenue,
+        revenue_vat:  c.revenue_vat,
+        purchaseCost: c.purchaseCost,
+        margin,
+        marginPct:    c.revenue > 0 ? (margin / c.revenue) * 100 : 0,
+        prevAmount:   p.amount,
+        prevRevenue:  p.revenue,
       });
     }
 
@@ -484,7 +492,8 @@ export default function ProductsPage() {
       const mult = sortDir === 'asc' ? 1 : -1;
       if (sortKey === 'name') return mult * a.name.localeCompare(b.name, 'cs');
       if (sortKey === 'abc')  return mult * a.abc.localeCompare(b.abc);
-      return mult * (a[sortKey] - b[sortKey]);
+      if (sortKey === 'margin' || sortKey === 'marginPct') return mult * (a[sortKey] - b[sortKey]);
+      return mult * (a[sortKey as 'amount' | 'revenue' | 'revenue_vat'] - b[sortKey as 'amount' | 'revenue' | 'revenue_vat']);
     });
 
     const prevTotalAmount = list.reduce((s, r) => s + r.prevAmount, 0);
@@ -518,7 +527,7 @@ export default function ProductsPage() {
   };
 
   const exportCsv = () => {
-    const header = ['ABC', 'Název produktu', 'Počet kusů', 'Počet kusů (loni)', `Bez DPH (${currency})`, `Bez DPH loni (${currency})`, `S DPH (${currency})`, 'Podíl na obratu (%)'];
+    const header = ['ABC', 'Název produktu', 'Počet kusů', 'Počet kusů (loni)', `Bez DPH (${currency})`, `Bez DPH loni (${currency})`, `S DPH (${currency})`, 'Podíl na obratu (%)', `Marže (${currency})`, 'Marže (%)'];
     const csvRows = filteredRows.map(r => [
       r.abc,
       `"${r.name.replace(/"/g, '""')}"`,
@@ -528,6 +537,8 @@ export default function ProductsPage() {
       r.prevRevenue.toFixed(2),
       r.revenue_vat.toFixed(2),
       r.revenuePct.toFixed(2),
+      r.margin.toFixed(2),
+      r.marginPct.toFixed(2),
     ]);
     const content = [header, ...csvRows].map(r => r.join(',')).join('\n');
     const blob = new Blob(['\uFEFF' + content], { type: 'text/csv;charset=utf-8' });
@@ -712,6 +723,16 @@ export default function ProductsPage() {
                     S DPH ({currency}) <SortIcon col="revenue_vat" sortKey={sortKey} sortDir={sortDir} />
                   </span>
                 </th>
+                <th className={`${thClass()} text-right`} onClick={() => handleSort('margin')}>
+                  <span className="inline-flex items-center gap-1 justify-end w-full">
+                    Marže Kč <SortIcon col="margin" sortKey={sortKey} sortDir={sortDir} />
+                  </span>
+                </th>
+                <th className={`${thClass()} text-right w-24`} onClick={() => handleSort('marginPct')}>
+                  <span className="inline-flex items-center gap-1 justify-end w-full">
+                    Marže % <SortIcon col="marginPct" sortKey={sortKey} sortDir={sortDir} />
+                  </span>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -747,6 +768,16 @@ export default function ProductsPage() {
                     </div>
                   </td>
                   <td className="px-4 py-2.5 text-right text-slate-500">{fc(r.revenue_vat)}</td>
+                  <td className="px-4 py-2.5 text-right font-semibold text-emerald-700">{fc(r.margin)}</td>
+                  <td className="px-4 py-2.5 text-right">
+                    <span className={`text-xs font-bold px-2 py-0.5 rounded-lg ${
+                      r.marginPct >= 30 ? 'bg-emerald-50 text-emerald-700' :
+                      r.marginPct >= 15 ? 'bg-amber-50 text-amber-700' :
+                      'bg-rose-50 text-rose-600'
+                    }`}>
+                      {r.marginPct.toFixed(1)}%
+                    </span>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -765,6 +796,15 @@ export default function ProductsPage() {
                   {totalRevenue > 0 ? ((filteredRows.reduce((s, r) => s + r.revenue, 0) / totalRevenue) * 100).toFixed(1) : '0'}%
                 </td>
                 <td className="px-4 py-3 text-right text-slate-500">{fc(filteredRows.reduce((s, r) => s + r.revenue_vat, 0))}</td>
+                <td className="px-4 py-3 text-right text-emerald-700 font-semibold">{fc(filteredRows.reduce((s, r) => s + r.margin, 0))}</td>
+                <td className="px-4 py-3 text-right">
+                  {(() => {
+                    const totRev = filteredRows.reduce((s, r) => s + r.revenue, 0);
+                    const totMargin = filteredRows.reduce((s, r) => s + r.margin, 0);
+                    const pct = totRev > 0 ? (totMargin / totRev) * 100 : 0;
+                    return <span className="text-xs font-bold text-slate-600">{pct.toFixed(1)}%</span>;
+                  })()}
+                </td>
               </tr>
             </tfoot>
           </table>
