@@ -28,5 +28,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Run update script
         run: node scripts/updateData.js
+        env:
+          UPGATES_API_URL: ${{ secrets.UPGATES_API_URL }}
+          UPGATES_LOGIN: ${{ secrets.UPGATES_LOGIN }}
+          UPGATES_API_KEY: ${{ secrets.UPGATES_API_KEY }}
