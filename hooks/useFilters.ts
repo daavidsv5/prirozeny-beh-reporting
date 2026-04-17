@@ -75,7 +75,7 @@ export function getDateRange(filters: FilterState): DateRange {
 const FiltersContext = createContext<FiltersContextValue | null>(null);
 
 const defaultFilters: FilterState = {
-  countries: ['cz', 'sk'],
+  countries: ['cz'],
   timePeriod: 'current_month',
 };
 
