@@ -57,11 +57,28 @@ Objednávky se stahují z Upgates REST API (Basic Auth, `LOGIN:API_KEY` v Base64
 - **Inkrementální sync** — denně; `last_update_time_from` za posledních 30 dní; ~4 stránky, ~5 s
 - `mergeOrders()` přepisuje záznamy dle `order_id` → zachytí storna a změny statusů
 
+**Stavy objednávek Upgates** (všechny known status_id):
+
+| status_id | Název | Počítá se do tržeb? |
+|-----------|-------|---------------------|
+| 1 | Nová objednávka | Ano |
+| 2 | Storno | **Ne** (vyloučeno) |
+| 3 | Zaplaceno | Ano |
+| 4 | Odesláno | Ano |
+| 5 | Vyřízeno | Ano |
+| 6 | Vráceno | Ne (storno) |
+| 19 | Obchod – Vydáno | Ano |
+| 21 | Obchod – objednávka | Ano |
+
+Filtrace: `statistics_yn === true` AND `status_id !== 2`.
+
 **Vyloučení objednávek:**
 - `statistics_yn === false` — testovací / draft objednávky
 - `status_id === 2` — Storno
 
 **Nákupní ceny (marže):** `products[].buy_price × quantity` per objednávka — přímo z Upgates, bez Google Sheets.
+
+**Upozornění — Upgates Statistiky/Zisk zobrazuje vyšší zisk:** Upgates počítá `price_with_vat - buy_price` (tedy zisk včetně DPH), zatímco naše aplikace správně počítá `price_without_vat - buy_price`. Rozdíl pro březen 2026: naše aplikace 129 496 Kč vs. Upgates 248 244 Kč.
 
 **Env proměnné:**
 ```
@@ -276,12 +293,29 @@ Data z `getDailyMarketingData()` a `getMarketingSourceData()` v `data/mockGenera
 
 **Tabulka Zisk / ztráta per dopravce** — zobrazí se pouze pokud je vyplněn ceník.
 
+### Skryté sekce (sidebar)
+
+Následující stránky **existují v kódu**, ale nejsou zobrazeny v navigaci (`components/layout/Sidebar.tsx`):
+
+| Stránka | Route | Důvod skrytí |
+|---------|-------|--------------|
+| Stav skladu | `/stock` | Nenaplněno daty |
+| Meta Ads | `/meta` | Chybí `META_ACCESS_TOKEN` |
+| Google Ads | `/google-ads` | Nenaplněno daty |
+
+Až bude potřeba zpřístupnit, přidat nav item zpět do Sidebaru.
+
 ### ABC analýza produktů (`/products`)
 
 Klasifikace dle kumulativního podílu na tržbách bez DPH:
 - **A** — 0–80 % tržeb (zelené)
 - **B** — 80–95 % tržeb (žluté)
 - **C** — 95–100 % tržeb (červené)
+
+**Marže barevné kódování** (sloupec Marže % v tabulce produktů):
+- zelená — ≥ 30 %
+- amber — ≥ 15 %
+- rose — < 15 %
 
 ### Distribuce hodnot objednávek (`/orders`)
 
