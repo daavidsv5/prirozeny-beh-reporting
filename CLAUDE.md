@@ -6,9 +6,10 @@ Tento soubor slouží jako stručný návod pro Claude Code (claude.ai/code) př
 
 ```bash
 npm install      # Nainstaluje závislosti
-npm run dev      # Spustí dev server (Next.js, hot reload)
+npm run dev -- --webpack  # Spustí dev server — VŽDY s --webpack (Turbopack padá na Windows kvůli junction pointům pro pg)
 npm run build    # Produkční build — často odhalí TS chyby
 npm run start    # Spustí produkční build
+# Pozor: npm run dev spouštět přes cmd.exe nebo PowerShell, ne bash (bash vrací exit code 127)
 
 node scripts/updateData.js         # Ruční refresh dat (Upgates API + Google Sheets costs)
 node scripts/updateData.js --full  # Vynutí full sync všech objednávek od 2023-03-03
@@ -103,6 +104,13 @@ function normalizeSource(raw) {
   - Na Vercelu: spustí Vercel Deploy Hook (`VERCEL_DEPLOY_HOOK_URL` env proměnná)
   - Lokálně: spustí `node updateData.js` přímo
 - `data/lastUpdate.ts` — auto-gen timestamp poslední aktualizace, zobrazen v TopBaru vpravo
+
+**GitHub Actions secrets** (Settings → Secrets and variables → Actions):
+- `UPGATES_API_URL`, `UPGATES_LOGIN`, `UPGATES_API_KEY` — každý jako samostatný secret
+
+**Vercel environment variables** (Settings → Environment Variables):
+- `AUTH_SECRET`, `DATABASE_URL`, `UPGATES_API_URL`, `UPGATES_LOGIN`, `UPGATES_API_KEY`
+- `GA4_PROPERTY_ID`, `GA4_CLIENT_EMAIL`, `GA4_PRIVATE_KEY`
 
 **Windows Task Scheduler** — tasky jako záloha (primárně nahrazeno GitHub Actions):
 - Spustitelný soubor: `cmd.exe`, argument: `/c "C:\Users\daavi\Desktop\VIBECODING\Prirozeny-beh-reporting\shoptet-reporting\scripts\updateData.bat"`
