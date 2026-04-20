@@ -37,3 +37,11 @@ jobs:
           UPGATES_API_URL: ${{ secrets.UPGATES_API_URL }}
           UPGATES_LOGIN: ${{ secrets.UPGATES_LOGIN }}
           UPGATES_API_KEY: ${{ secrets.UPGATES_API_KEY }}
+
+      - name: Commit and push updated data
+        run: |
+          git add data/
+          git diff --staged --quiet && echo "No changes to commit" || (
+            git commit -m "chore: auto-update data $(date -u +%Y-%m-%d)"
+            git push
+          )
