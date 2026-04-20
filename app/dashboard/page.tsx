@@ -100,6 +100,28 @@ export default function DashboardPage() {
     return { orders, revVat, rev, prevOrders, prevRevVat, prevRev, purchaseCost: pc, marginRev: mr, prevPurchaseCost: prevPc, prevMarginRev: prevMr };
   }, [start, end, prevStart, prevEnd]);
 
+  const pOrders = prodejnaTotals.orders;
+  const pRevVat = prodejnaTotals.revVat;
+  const pRev    = prodejnaTotals.rev;
+  const pPrevOrders = prodejnaTotals.prevOrders;
+  const pPrevRevVat = prodejnaTotals.prevRevVat;
+  const pPrevRev    = prodejnaTotals.prevRev;
+  const pAov        = pOrders > 0 ? pRev / pOrders : 0;
+  const pPrevAov    = pPrevOrders > 0 ? pPrevRev / pPrevOrders : 0;
+  const pMargin     = prodejnaTotals.marginRev - prodejnaTotals.purchaseCost;
+  const pMarginPct  = prodejnaTotals.marginRev > 0 ? (pMargin / prodejnaTotals.marginRev) * 100 : 0;
+  const pPrevMargin    = prodejnaTotals.prevMarginRev - prodejnaTotals.prevPurchaseCost;
+  const pPrevMarginPct = prodejnaTotals.prevMarginRev > 0 ? (pPrevMargin / prodejnaTotals.prevMarginRev) * 100 : 0;
+  const pGross         = pMargin;
+  const pGrossPct      = prodejnaTotals.marginRev > 0 ? (pGross / prodejnaTotals.marginRev) * 100 : 0;
+  const pPrevGross     = pPrevMargin;
+  const pPrevGrossPct  = prodejnaTotals.prevMarginRev > 0 ? (pPrevGross / prodejnaTotals.prevMarginRev) * 100 : 0;
+  const pGrossPerOrder     = pOrders > 0 ? pGross / pOrders : 0;
+  const pPrevGrossPerOrder = pPrevOrders > 0 ? pPrevGross / pPrevOrders : 0;
+  function yoyP(curr: number, prev: number) {
+    return hasPrevData && prev !== 0 ? ((curr - prev) / Math.abs(prev)) * 100 : null;
+  }
+
   const { marginData, marginRev, purchaseCost, prevMarginRev, prevPurchaseCost } = marginTotals;
   const margin        = marginRev - purchaseCost;
   const marginPct     = marginRev > 0 ? (margin / marginRev) * 100 : 0;
@@ -186,50 +208,26 @@ export default function DashboardPage() {
       </div>
 
       {/* ── Prodejna ─────────────────────────────────────────────────────────── */}
-      {(() => {
-        const { orders: pOrders, revVat: pRevVat, rev: pRev,
-                prevOrders: pPrevOrders, prevRevVat: pPrevRevVat, prevRev: pPrevRev,
-                purchaseCost: pPc, marginRev: pMr, prevPurchaseCost: pPrevPc, prevMarginRev: pPrevMr } = prodejnaTotals;
-        const pAov       = pOrders > 0 ? pRev / pOrders : 0;
-        const pPrevAov   = pPrevOrders > 0 ? pPrevRev / pPrevOrders : 0;
-        const pMargin    = pMr - pPc;
-        const pMarginPct = pMr > 0 ? (pMargin / pMr) * 100 : 0;
-        const pPrevMargin    = pPrevMr - pPrevPc;
-        const pPrevMarginPct = pPrevMr > 0 ? (pPrevMargin / pPrevMr) * 100 : 0;
-        const pGross     = pMargin;
-        const pGrossPct  = pMr > 0 ? (pGross / pMr) * 100 : 0;
-        const pPrevGross    = pPrevMargin;
-        const pPrevGrossPct = pPrevMr > 0 ? (pPrevGross / pPrevMr) * 100 : 0;
-        const pGrossPerOrder = pOrders > 0 ? pGross / pOrders : 0;
-        const pPrevGrossPerOrder = pPrevOrders > 0 ? pPrevGross / pPrevOrders : 0;
-
-        function yoyP(curr: number, prev: number) {
-          return hasPrevData && prev !== 0 ? ((curr - prev) / Math.abs(prev)) * 100 : null;
-        }
-
-        return (
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 pt-2">
-              <Store size={18} className="text-slate-600" />
-              <h2 className="text-base font-bold text-slate-800">Prodejna</h2>
-              <span className="text-xs text-slate-400 font-medium">(Obchod – Vydáno + Obchod – Objednávka)</span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-              <KpiCard title="Tržby s DPH"      value={fc(pRevVat)}                    yoy={yoyP(pRevVat, pPrevRevVat)}           icon={<Wallet size={16} />}      hasPrevData={hasPrevData} />
-              <KpiCard title="Tržby bez DPH"    value={fc(pRev)}                       yoy={yoyP(pRev, pPrevRev)}                 icon={<Banknote size={16} />}    hasPrevData={hasPrevData} />
-              <KpiCard title="Počet objednávek" value={formatNumber(pOrders)}          yoy={yoyP(pOrders, pPrevOrders)}           icon={<ShoppingCart size={16} />} hasPrevData={hasPrevData} />
-              <KpiCard title="AOV"              value={fc(pAov)}                       yoy={yoyP(pAov, pPrevAov)}                 icon={<BarChart2 size={16} />}    hasPrevData={hasPrevData} />
-              <KpiCard title="Marže"            value={fc(pMargin)}                    yoy={yoyP(pMargin, pPrevMargin)}           icon={<Banknote size={16} />}    hasPrevData={hasPrevData} />
-              <KpiCard title="Marže %"          value={formatPercent(pMarginPct)}      yoy={yoyP(pMarginPct, pPrevMarginPct)}     icon={<Percent size={16} />}     hasPrevData={hasPrevData} />
-              <KpiCard title="Hrubý zisk na obj." value={pOrders > 0 ? fc(pGrossPerOrder) : '–'} yoy={yoyP(pGrossPerOrder, pPrevGrossPerOrder)} icon={<Banknote size={16} />} hasPrevData={hasPrevData} />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              <KpiCard title="Hrubý zisk"   value={fc(pGross)}           yoy={yoyP(pGross, pPrevGross)}       icon={<TrendingUp size={16} />} variant="green" hasPrevData={hasPrevData} />
-              <KpiCard title="Hrubý zisk %" value={formatPercent(pGrossPct)} yoy={yoyP(pGrossPct, pPrevGrossPct)} icon={<BarChart2 size={16} />}  variant="green" hasPrevData={hasPrevData} />
-            </div>
-          </div>
-        );
-      })()}
+      <div className="space-y-3">
+        <div className="flex items-center gap-2 pt-2">
+          <Store size={18} className="text-slate-600" />
+          <h2 className="text-base font-bold text-slate-800">Prodejna</h2>
+          <span className="text-xs text-slate-400 font-medium">(Obchod – Vydáno + Obchod – Objednávka)</span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+          <KpiCard title="Tržby s DPH"        value={fc(pRevVat)}                              yoy={yoyP(pRevVat, pPrevRevVat)}                 icon={<Wallet size={16} />}       hasPrevData={hasPrevData} />
+          <KpiCard title="Tržby bez DPH"      value={fc(pRev)}                                 yoy={yoyP(pRev, pPrevRev)}                       icon={<Banknote size={16} />}     hasPrevData={hasPrevData} />
+          <KpiCard title="Počet objednávek"   value={formatNumber(pOrders)}                    yoy={yoyP(pOrders, pPrevOrders)}                 icon={<ShoppingCart size={16} />} hasPrevData={hasPrevData} />
+          <KpiCard title="AOV"                value={fc(pAov)}                                 yoy={yoyP(pAov, pPrevAov)}                       icon={<BarChart2 size={16} />}    hasPrevData={hasPrevData} />
+          <KpiCard title="Marže"              value={fc(pMargin)}                              yoy={yoyP(pMargin, pPrevMargin)}                 icon={<Banknote size={16} />}     hasPrevData={hasPrevData} />
+          <KpiCard title="Marže %"            value={formatPercent(pMarginPct)}                yoy={yoyP(pMarginPct, pPrevMarginPct)}           icon={<Percent size={16} />}      hasPrevData={hasPrevData} />
+          <KpiCard title="Hrubý zisk na obj." value={pOrders > 0 ? fc(pGrossPerOrder) : '–'}  yoy={yoyP(pGrossPerOrder, pPrevGrossPerOrder)}   icon={<Banknote size={16} />}     hasPrevData={hasPrevData} />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <KpiCard title="Hrubý zisk"   value={fc(pGross)}               yoy={yoyP(pGross, pPrevGross)}         icon={<TrendingUp size={16} />} variant="green" hasPrevData={hasPrevData} />
+          <KpiCard title="Hrubý zisk %" value={formatPercent(pGrossPct)} yoy={yoyP(pGrossPct, pPrevGrossPct)}   icon={<BarChart2 size={16} />}  variant="green" hasPrevData={hasPrevData} />
+        </div>
+      </div>
 
       {/* Country Distribution */}
       {filters.countries.length > 1 && (
