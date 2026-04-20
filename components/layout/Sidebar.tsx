@@ -2,13 +2,14 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart2, LayoutDashboard, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Home } from 'lucide-react';
+import { BarChart2, LayoutDashboard, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Home, Store } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 import { useSidebar } from './ConditionalLayout';
 
 const navItems = [
   { icon: Home,            label: 'Hlavní Dashboard',         href: '/hlavni-dashboard' },
   { icon: LayoutDashboard, label: 'Klíčové ukazatele (KPI)', href: '/dashboard' },
+  { icon: Store,           label: 'Prodejna',                 href: '/prodejna' },
   { icon: ShoppingCart,    label: 'Objednávky',               href: '/orders' },
   { icon: TrendingUp,      label: 'Marketingové investice',   href: '/marketing' },
   { icon: PieChart,        label: 'Maržový report',           href: '/margin' },
