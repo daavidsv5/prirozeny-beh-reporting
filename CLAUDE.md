@@ -87,6 +87,8 @@ UPGATES_LOGIN=53172637
 UPGATES_API_KEY="..."   # uvozovky nutné — klíč obsahuje # který by byl jinak interpretován jako komentář
 ```
 
+`loadEnv()` v `scripts/updateData.js` parsuje `.env.local` ručně a **stripuje okolní uvozovky** z hodnot (`val.slice(1, -1)`). Pokud by se vracelo 401, zkontrolovat že uvozovky jsou v `.env.local` a že `loadEnv()` je správně stripuje.
+
 ### Marketingové náklady (Google Sheets)
 
 Náklady se stahují z publikovaného Google Sheets CSV. Obsahuje 5 kanálů:
@@ -115,7 +117,7 @@ function normalizeSource(raw) {
 ### Aktualizace dat na Vercelu
 
 - **Primárně:** `.github/workflows/update-data.yml` — GitHub Actions spouští `node scripts/updateData.js` každý den v 05:00 UTC (= 06:00 CET / 07:00 CEST), nezávisle na stavu počítače
-- Na konci skriptu se provede `git commit + push` → Vercel automaticky nasadí nová data
+- Na konci **workflow** (ne skriptu) se provede `git add data/ && git commit && git push` → Vercel automaticky nasadí nová data
 - Workflow lze spustit i ručně: GitHub → Actions → Update Data → Run workflow
 - Tlačítko **Aktualizovat data** (viditelné pouze adminům) volá `/api/update`:
   - Na Vercelu: spustí Vercel Deploy Hook (`VERCEL_DEPLOY_HOOK_URL` env proměnná)
@@ -165,7 +167,8 @@ NextAuth 5 (beta). Uživatelé jsou uloženi v **PostgreSQL** (tabulka `users`, 
 | Stránka | Popis |
 |---------|-------|
 | `/hlavni-dashboard` | **Hlavní Dashboard** — měsíční přehled 8 KPI metrik jako grouped bar charty (Tržby bez DPH, Hrubý zisk, Počet obj., Mark. investice, PNO %, AOV, Marže %, CPA). **Selektor jednotlivých roků** v TopBaru (yearB = selectedYear − 1, automaticky). Výchozí přesměrování z `/`. |
-| `/dashboard` | **Klíčové ukazatele (KPI)** — Tržby s/bez DPH, Počet obj., AOV, Marketing. investice, PNO, CPA, Marže, Marže %, Cena za nového zákazníka, Hrubý zisk na obj. + samostatný řádek Hrubý zisk + Hrubý zisk %. Pod KPI boxy: **4 samostatné spojnicové grafy YoY** z `KpiLineCharts`. |
+| `/dashboard` | **Klíčové ukazatele (KPI)** — Tržby s/bez DPH, Počet obj., AOV, Marketing. investice, PNO, CPA, Marže, Marže %, Cena za nového zákazníka, Hrubý zisk na obj. + samostatný řádek Hrubý zisk + Hrubý zisk %. Pod KPI boxy: **4 samostatné spojnicové grafy YoY** z `KpiLineCharts`. Pod grafy: **sekce Prodejna** (KPI boxy filtrované na status 19+21). |
+| `/prodejna` | **Prodejna** — samostatná stránka pouze pro objednávky se status_id 19 (Obchod – Vydáno) a 21 (Obchod – Objednávka). KPI boxy: Tržby s/bez DPH, Počet obj., AOV, Marže, Marže %, Hrubý zisk na obj., Hrubý zisk, Hrubý zisk %. Grafy: Tržby+objednávky, AOV, Hrubý zisk. Denní tabulka se stránkováním. Bez marketingových metrik (PNO, CPA, náklady). Data z `data/prodejnaDataCZ.ts` + `data/prodejnaMarginDataCZ.ts`. |
 | `/orders` | Objednávky — tržby vs počet, distribuce hodnot košíku (histogram) |
 | `/marketing` | Marketingové investice — 5 kanálů (FB, Google, Seznam, Zboží, Heureka); CPC trend, denní tabulka, source breakdown |
 | `/products` | Prodejnost produktů — ABC analýza, sortovatelná tabulka (vč. Marže Kč + Marže %), YoY, CSV export, graf vývoje tržeb pro vybraný produkt |
@@ -217,6 +220,8 @@ Výchozí stránka aplikace (redirect z `/`). Zobrazuje 8 grouped bar chartů s 
 | `data/retentionDataCZ.ts` | Per-customer retence `{ dates, revenues, revsVat }[]` — auto-gen |
 | `data/orderValueDataCZ.ts` | Per-order košík bez DPH `{ date, value }[]` — auto-gen |
 | `data/shippingPaymentDataCZ.ts` | Doprava+platby po dnech — auto-gen |
+| `data/prodejnaDataCZ.ts` | Prodejna objednávky (status 19+21) po dnech: orders, revenue_vat, revenue — auto-gen |
+| `data/prodejnaMarginDataCZ.ts` | Marže prodejna objednávek po dnech — auto-gen (stejná struktura jako `marginDataCZ`) |
 | `lib/db.ts` | PostgreSQL pool singleton (Neon, SSL vždy zapnuté) |
 | `lib/users.ts` | CRUD funkce pro tabulku users |
 | `lib/retentionUtils.ts` | Všechny výpočty pro `/retention` (KPI, YoY, RFM, distribuce, Noví vs. stávající) |

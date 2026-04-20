@@ -285,7 +285,7 @@ export default function ProdejnaPage() {
               <tbody>
                 {pageRows.map((r, i) => (
                   <tr key={r.date} className={`border-b border-slate-50 hover:bg-slate-50 ${i % 2 === 0 ? 'bg-white' : 'bg-slate-50/30'}`}>
-                    <td className="px-4 py-2.5 text-slate-700 font-medium">{formatShortDate(r.date)}</td>
+                    <td className="px-4 py-2.5 text-slate-700 font-medium">{formatShortDate(r.date)} {r.date.substring(0, 4)}</td>
                     <td className="px-4 py-2.5 text-right text-slate-600">{formatNumber(r.orders)}</td>
                     <td className="px-4 py-2.5 text-right text-slate-600">{fc(r.revVat)}</td>
                     <td className="px-4 py-2.5 text-right font-semibold text-slate-800">{fc(r.rev)}</td>
