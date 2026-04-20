@@ -7,7 +7,7 @@ import { shippingPaymentDataSK as _shippingPaymentDataSK } from '@/data/shipping
 import { getDisplayCurrency, SK_LAUNCH_DATE } from '@/data/types';
 
 const shippingPaymentDataSK = _shippingPaymentDataSK.filter(r => r.date >= SK_LAUNCH_DATE);
-import { formatCurrency, formatNumber, formatDate, localIsoDate } from '@/lib/formatters';
+import { formatCurrency, formatNumber, formatDate, localIsoDate, formatPercent } from '@/lib/formatters';
 import { Truck, CreditCard, DollarSign, Banknote, Star, Award, Gift, Save, RotateCcw } from 'lucide-react';
 
 const LS_KEY = 'carrierCosts_v1';
@@ -451,6 +451,7 @@ export default function ShippingPage() {
           />
           <KpiCard title="Prům. doprava"        value={fc(avgShipping)}                               yoy={yoyPct(avgShipping, prevAvgShipping)}            icon={<DollarSign size={16} />} sparklineData={[]}            hasPrevData={hasPrevData} />
           <KpiCard title="Doprava zdarma"       value={formatNumber(freeShippingCount)}               yoy={yoyPct(freeShippingPct, prevFreeShippingPct)}   icon={<Gift size={16} />}       sparklineData={[]}            hasPrevData={hasPrevData} />
+          <KpiCard title="Doprava zdarma %"     value={formatPercent(freeShippingPct, 1)}             yoy={yoyPct(freeShippingPct, prevFreeShippingPct)}   icon={<Gift size={16} />}       sparklineData={[]}            hasPrevData={hasPrevData} />
         </div>
       </div>
 
