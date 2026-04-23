@@ -31,7 +31,8 @@ Upgates REST API (objednávky)  +  Google Sheets CSV (marketingové náklady)
        ↓  scripts/updateData.js  (denně v 06:00 via GitHub Actions)
        ↓  na konci skriptu: git commit + push → Vercel automaticky redeploy
 data/realDataCZ.ts + productDataCZ* + marginDataCZ* + hourlyDataCZ* +
-crossSellDataCZ* + retentionDataCZ* + orderValueDataCZ* + shippingPaymentDataCZ* + lastUpdate.ts
+crossSellDataCZ* + retentionDataCZ* + orderValueDataCZ* + shippingPaymentDataCZ* +
+prodejnaDataCZ* + prodejnaMarginDataCZ* + lastUpdate.ts
        ↓
 data/mockGenerator.ts  →  export const mockData: DailyRecord[]
                        →  getDailyMarketingData() + getMarketingSourceData()
@@ -167,7 +168,7 @@ NextAuth 5 (beta). Uživatelé jsou uloženi v **PostgreSQL** (tabulka `users`, 
 | Stránka | Popis |
 |---------|-------|
 | `/hlavni-dashboard` | **Hlavní Dashboard** — měsíční přehled 8 KPI metrik jako grouped bar charty (Tržby bez DPH, Hrubý zisk, Počet obj., Mark. investice, PNO %, AOV, Marže %, CPA). **Selektor jednotlivých roků** v TopBaru (yearB = selectedYear − 1, automaticky). Výchozí přesměrování z `/`. |
-| `/dashboard` | **Klíčové ukazatele (KPI)** — Tržby s/bez DPH, Počet obj., AOV, Marketing. investice, PNO, CPA, Marže, Marže %, Cena za nového zákazníka, Hrubý zisk na obj. + samostatný řádek Hrubý zisk + Hrubý zisk %. Pod KPI boxy: **4 samostatné spojnicové grafy YoY** z `KpiLineCharts`. Pod grafy: **sekce Prodejna** (KPI boxy filtrované na status 19+21). |
+| `/dashboard` | **Klíčové ukazatele (KPI)** — Tržby s/bez DPH, Počet obj., AOV, Marketing. investice, PNO, CPA, Marže, Marže %, Cena za nového zákazníka, Hrubý zisk na obj. + samostatný řádek Hrubý zisk + Hrubý zisk %. Pod KPI boxy: **4 samostatné spojnicové grafy YoY** z `KpiLineCharts`. |
 | `/prodejna` | **Prodejna** — samostatná stránka pouze pro objednávky se status_id 19 (Obchod – Vydáno) a 21 (Obchod – Objednávka). KPI boxy: Tržby s/bez DPH, Počet obj., AOV, Marže, Marže %, Hrubý zisk na obj., Hrubý zisk, Hrubý zisk %. Grafy: Tržby+objednávky, AOV, Hrubý zisk. Denní tabulka se stránkováním. Bez marketingových metrik (PNO, CPA, náklady). Data z `data/prodejnaDataCZ.ts` + `data/prodejnaMarginDataCZ.ts`. |
 | `/orders` | Objednávky — tržby vs počet, distribuce hodnot košíku (histogram) |
 | `/marketing` | Marketingové investice — 5 kanálů (FB, Google, Seznam, Zboží, Heureka); CPC trend, denní tabulka, source breakdown |
@@ -259,13 +260,25 @@ KPI boxy (11 + 2 ve vlastním řádku): Tržby s/bez DPH, Počet obj., AOV, Mark
 
 **Grafy (4 celkem, 2×2 mřížka):** Tržby+Objednávky, Náklady+PNO, AOV (YoY), CPA (YoY) — komponenty `AovChart` a `CpaChart` z `components/charts/AovCpaChart.tsx`.
 
-**Odstraněno:** Storna, Podíl storen.
+**Odstraněno:** Storna, Podíl storen, sekce Prodejna (přesunuta na `/prodejna`).
 
 Marže a Hrubý zisk se počítají z `marginDataCZ`:
 - `margin = marginRev - purchaseCost`
 - `marginPct = margin / marginRev × 100`
 - `grossProfit = margin - kpi.cost`
 - `grossPct = grossProfit / marginRev × 100`
+
+### `/prodejna` — Prodejna
+
+Samostatná stránka pro objednávky se **status_id 19** (Obchod – Vydáno) a **21** (Obchod – Objednávka). Data z `prodejnaDataCZ.ts` + `prodejnaMarginDataCZ.ts` — generuje `updateData.js` přes funkce `aggregateOrdersProdejna()` a `aggregateMarginProdejna()`.
+
+**KPI boxy (7 + 2 ve vlastním řádku):** Tržby s/bez DPH, Počet obj., AOV, Marže, Marže %, Hrubý zisk na obj. + řádek Hrubý zisk + Hrubý zisk % (variant='green').
+
+**Grafy:** Tržby bez DPH + objednávky (ComposedChart), AOV (LineChart), Hrubý zisk (Bar).
+
+**Tabulka:** Denní přehled (datum s rokem, obj., tržby s/bez DPH, AOV, hrubý zisk, marže %) — stránkování po 20 řádcích, řazeno od nejnovějšího. Zobrazí se pouze dny s ≥1 prodejna objednávkou.
+
+**Bez:** PNO, CPA, marketingové investice.
 
 ### `/marketing` — Marketing
 
@@ -289,10 +302,13 @@ Data z `getDailyMarketingData()` a `getMarketingSourceData()` v `data/mockGenera
 
 ### `/shipping` — Doprava a platby
 
-**KPI boxy** (8 celkem):
+**KPI boxy sekce Doprava:**
 - `Doprava zákazník` — příjmy od zákazníků za dopravu
 - `Doprava e-shop` — náklady e-shopu dle ceníku dopravců
 - `Doprava zisk / ztráta` — rozdíl; `variant='green'` nebo `'red'`
+- `Prům. doprava` — průměrná doprava na objednávku
+- `Doprava zdarma` — počet objednávek s dopravou zdarma (revenue_vat === 0 nebo name obsahuje "zdarma"/"free")
+- `Doprava zdarma %` — podíl objednávek s dopravou zdarma z celkového počtu
 
 **Ceník dopravců** — editovatelná tabulka uložená v `localStorage` (`carrierCosts_v1`).
 
