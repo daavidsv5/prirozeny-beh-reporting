@@ -1,264 +1,458 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { Package, PackageCheck, PackageX, Layers, Search, ChevronUp, ChevronDown } from 'lucide-react';
-import { stockDataCZ } from '@/data/stockDataCZ';
-import { stockDataSK } from '@/data/stockDataSK';
-import { productDataCZ } from '@/data/productDataCZ';
-import { productDataSK } from '@/data/productDataSK';
-import { formatNumber } from '@/lib/formatters';
-import StatCard from '@/components/kpi/StatCard';
+import { useEffect, useState, useMemo } from 'react';
+import { useFilters, getDateRange } from '@/hooks/useFilters';
+import { formatCurrency, formatNumber, formatPercent, formatDate, localIsoDate } from '@/lib/formatters';
+import { C } from '@/lib/chartColors';
+import type { StockResponse, StockProduct, StockDailyRow } from '@/app/api/stock/route';
+import {
+  Package, PackageCheck, PackageX, Layers, Warehouse, TrendingUp, Search,
+  ChevronUp, ChevronDown, ChevronsUpDown, Truck,
+} from 'lucide-react';
+import {
+  ComposedChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
+  Legend, ResponsiveContainer,
+} from 'recharts';
 
-type Tab = 'cz' | 'sk';
-type SortKey = 'name' | 'code' | 'stock' | 'avgDaily' | 'daysLeft';
-type SortDir = 'asc' | 'desc';
+// ── Helpers ───────────────────────────────────────────────────────────────────
 
-const DAYS_WINDOW = 30;
+const MONTHS_CS = ['Led','Úno','Bře','Dub','Kvě','Čvn','Čvc','Srp','Zář','Říj','Lis','Pro'];
 
-const LOW_STOCK_THRESHOLD = 10;
-
-function StockBadge({ stock }: { stock: number }) {
-  if (stock === 0)
-    return <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">Vyprodáno</span>;
-  if (stock <= LOW_STOCK_THRESHOLD)
-    return <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">Málo</span>;
-  return <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">Skladem</span>;
+function fmtAxis(v: number) {
+  if (v >= 1_000_000) return `${(v / 1_000_000).toFixed(1)}M`;
+  if (v >= 1_000)     return `${Math.round(v / 1_000)}k`;
+  return String(Math.round(v));
 }
 
-function stockValueCls(stock: number): string {
-  if (stock === 0) return 'text-rose-600';
-  if (stock <= LOW_STOCK_THRESHOLD) return 'text-amber-600';
-  return 'text-emerald-700';
+function fmtDate(d: string) {
+  const [, m, day] = d.split('-');
+  return `${parseInt(day)}.${parseInt(m)}.`;
+}
+
+function fmtMonth(d: string) {
+  const [y, m] = d.split('-');
+  return `${MONTHS_CS[parseInt(m) - 1]} ${y}`;
+}
+
+function fmtDays(days: number | null): string {
+  if (days === null) return '–';
+  if (days === 0) return 'dnes';
+  return `${days} dní`;
+}
+
+function pctStr(val: number, total: number): string {
+  if (!total) return '0 %';
+  return `${Math.round((val / total) * 100)} %`;
+}
+
+function aggregateMonthly(daily: StockDailyRow[]) {
+  const map = new Map<string, { stock: number; supplier: number }>();
+  for (const r of daily) {
+    const k = r.date.slice(0, 7);
+    if (!map.has(k)) map.set(k, { stock: 0, supplier: 0 });
+    const cur = map.get(k)!;
+    cur.stock    += r.revenueStock;
+    cur.supplier += r.revenueSupplier;
+  }
+  return [...map.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => ({
+    label:           fmtMonth(k + '-01'),
+    revenueStock:    Math.round(v.stock),
+    revenueSupplier: Math.round(v.supplier),
+    total:           Math.round(v.stock + v.supplier),
+  }));
+}
+
+// ── Status badge config ───────────────────────────────────────────────────────
+
+const STATUS_CFG = {
+  skladem:   { label: 'SKLADEM',   cls: 'bg-emerald-100 text-emerald-700' },
+  malo:      { label: 'MÁLO',      cls: 'bg-amber-100 text-amber-700' },
+  dodavatel: { label: 'DODAVATEL', cls: 'bg-blue-100 text-blue-700' },
+  vyprodano: { label: 'VYPRODÁNO', cls: 'bg-rose-100 text-rose-600' },
+} as const;
+
+// ── Simple KPI card ───────────────────────────────────────────────────────────
+
+interface SimpleKpiProps {
+  title: string;
+  value: string;
+  icon: React.ReactNode;
+  color?: 'blue' | 'green' | 'red' | 'teal';
+  subtitle?: string;
+  pct?: string;
+}
+
+const COLOR_MAP = {
+  blue:  { border: 'border-blue-800',    icon: 'bg-blue-50 text-blue-600',       text: 'text-slate-800' },
+  green: { border: 'border-emerald-700', icon: 'bg-emerald-50 text-emerald-700', text: 'text-emerald-700' },
+  red:   { border: 'border-rose-600',    icon: 'bg-rose-50 text-rose-600',       text: 'text-rose-600' },
+  teal:  { border: 'border-teal-600',    icon: 'bg-teal-50 text-teal-600',       text: 'text-teal-700' },
+};
+
+function SimpleKpi({ title, value, icon, color = 'blue', subtitle, pct }: SimpleKpiProps) {
+  const c = COLOR_MAP[color];
+  return (
+    <div className={`bg-white rounded-2xl p-4 border-2 ${c.border} shadow-sm flex flex-col gap-3`}>
+      <div className="flex items-center gap-2">
+        <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${c.icon}`}>{icon}</div>
+        <p className="text-[11px] font-bold text-slate-600 uppercase tracking-wider leading-snug">{title}</p>
+      </div>
+      <p className={`text-2xl md:text-3xl font-bold leading-none ${c.text}`}>{value}</p>
+      <div className="flex items-center justify-between">
+        {subtitle && <p className="text-[11px] text-slate-400">{subtitle}</p>}
+        {pct && <p className="text-xl font-bold text-slate-800">{pct} <span className="text-sm font-normal text-slate-500">z tržeb</span></p>}
+      </div>
+    </div>
+  );
+}
+
+// ── Sort header ───────────────────────────────────────────────────────────────
+
+type SortDir = 'asc' | 'desc';
+type SortCol = 'name' | 'stock' | 'soldQty' | 'avgDailySales' | 'daysUntilEmpty' | 'marginPct' | 'status';
+
+interface SortState { col: SortCol; dir: SortDir }
+
+function SortIcon({ col, sort }: { col: SortCol; sort: SortState }) {
+  if (sort.col !== col) return <ChevronsUpDown size={12} className="text-slate-400 inline ml-1" />;
+  return sort.dir === 'asc'
+    ? <ChevronUp   size={12} className="text-white inline ml-1" />
+    : <ChevronDown size={12} className="text-white inline ml-1" />;
+}
+
+function ThSort({ col, label, sort, onSort, align = 'right' }: {
+  col: SortCol; label: string; sort: SortState; onSort: (c: SortCol) => void; align?: 'left' | 'right' | 'center';
+}) {
+  return (
+    <th
+      className={`px-4 py-3 text-${align} font-medium cursor-pointer select-none hover:bg-slate-700 transition-colors`}
+      onClick={() => onSort(col)}
+    >
+      {label}<SortIcon col={col} sort={sort} />
+    </th>
+  );
+}
+
+// ── Margin badge ──────────────────────────────────────────────────────────────
+
+function MarginBadge({ pct }: { pct: number | null }) {
+  if (pct === null) return <span className="text-slate-300">–</span>;
+  const cls = pct >= 30 ? 'text-emerald-600' : pct >= 15 ? 'text-amber-600' : 'text-rose-500';
+  return <span className={`font-semibold tabular-nums ${cls}`}>{pct.toFixed(1)} %</span>;
+}
+
+// ── Custom Tooltip ────────────────────────────────────────────────────────────
+
+function ChartTooltip({ active, payload, label, total }: any) {
+  if (!active || !payload?.length) return null;
+  const stock    = payload.find((p: any) => p.dataKey === 'revenueStock')?.value    ?? 0;
+  const supplier = payload.find((p: any) => p.dataKey === 'revenueSupplier')?.value ?? 0;
+  const rowTotal = stock + supplier;
+  const fc = (v: number) => formatCurrency(v, 'CZK');
+  const pct = (v: number) => rowTotal > 0 ? ` (${Math.round((v / rowTotal) * 100)} %)` : '';
+  return (
+    <div className="bg-white border border-slate-200 rounded-xl shadow-md p-3 text-xs space-y-1 min-w-[200px]">
+      <p className="font-semibold text-slate-700 mb-1">{label}</p>
+      <div className="flex justify-between gap-4">
+        <span className="text-emerald-600">Skladové</span>
+        <span className="font-medium">{fc(stock)}<span className="text-slate-400">{pct(stock)}</span></span>
+      </div>
+      <div className="flex justify-between gap-4">
+        <span className="text-blue-600">U dodavatele</span>
+        <span className="font-medium">{fc(supplier)}<span className="text-slate-400">{pct(supplier)}</span></span>
+      </div>
+      <div className="border-t border-slate-100 pt-1 flex justify-between gap-4">
+        <span className="text-slate-500">Celkem</span>
+        <span className="font-semibold">{fc(rowTotal)}</span>
+      </div>
+    </div>
+  );
+}
+
+// ── Page ──────────────────────────────────────────────────────────────────────
+
+const PAGE_SIZE = 20;
+
+function sortProducts(products: StockProduct[], sort: SortState): StockProduct[] {
+  return [...products].sort((a, b) => {
+    let cmp = 0;
+    switch (sort.col) {
+      case 'name':          cmp = a.name.localeCompare(b.name, 'cs'); break;
+      case 'stock':         cmp = a.stock - b.stock; break;
+      case 'soldQty':       cmp = a.soldQty - b.soldQty; break;
+      case 'avgDailySales': cmp = a.avgDailySales - b.avgDailySales; break;
+      case 'daysUntilEmpty':cmp = (a.daysUntilEmpty ?? 99999) - (b.daysUntilEmpty ?? 99999); break;
+      case 'marginPct':     cmp = (a.marginPct ?? -999) - (b.marginPct ?? -999); break;
+      case 'status': {
+        const order = { skladem: 0, malo: 1, dodavatel: 2, vyprodano: 3 };
+        cmp = order[a.status] - order[b.status];
+        break;
+      }
+    }
+    return sort.dir === 'asc' ? cmp : -cmp;
+  });
 }
 
 export default function StockPage() {
-  const [tab, setTab]         = useState<Tab>('cz');
-  const [search, setSearch]   = useState('');
-  const [sortKey, setSortKey] = useState<SortKey>('name');
-  const [sortDir, setSortDir] = useState<SortDir>('asc');
+  const { filters } = useFilters();
+  const [data, setData]           = useState<StockResponse | null>(null);
+  const [loading, setLoading]     = useState(true);
+  const [error, setError]         = useState<string | null>(null);
+  const [search, setSearch]       = useState('');
+  const [tablePage, setTablePage] = useState(0);
+  const [sort, setSort]           = useState<SortState>({ col: 'name', dir: 'asc' });
 
-  const data        = tab === 'cz' ? stockDataCZ : stockDataSK;
-  const productData = tab === 'cz' ? productDataCZ : productDataSK;
+  useEffect(() => {
+    setLoading(true);
+    setError(null);
+    const { start, end } = getDateRange(filters);
+    fetch(`/api/stock?from=${localIsoDate(start)}&to=${localIsoDate(end)}`)
+      .then(r => r.json())
+      .then((json: StockResponse & { error?: string }) => {
+        if (json.error) { setError(json.error); setData(null); }
+        else setData(json);
+      })
+      .catch(() => setError('Nepodařilo se načíst data'))
+      .finally(() => setLoading(false));
+    setTablePage(0);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters.timePeriod, filters.customStart, filters.customEnd]);
 
-  // Average daily sales per product (last DAYS_WINDOW days)
-  const avgDailySales = useMemo(() => {
-    const maxDate = productData.reduce((m, r) => r.date > m ? r.date : m, '');
-    if (!maxDate) return {} as Record<string, number>;
-    const cutoff = new Date(maxDate + 'T12:00:00');
-    cutoff.setDate(cutoff.getDate() - DAYS_WINDOW);
-    const cutoffStr = cutoff.toISOString().split('T')[0];
-    const totals: Record<string, number> = {};
-    for (const r of productData) {
-      if (r.date >= cutoffStr && r.date <= maxDate)
-        totals[r.name] = (totals[r.name] || 0) + r.amount;
+  const { start, end } = getDateRange(filters);
+  const dayCount  = Math.round((end.getTime() - start.getTime()) / 86_400_000);
+  const isMonthly = dayCount > 60;
+
+  const chartData = useMemo(() => {
+    if (!data) return [];
+    if (isMonthly) return aggregateMonthly(data.daily);
+    return data.daily.map(r => ({
+      label:           fmtDate(r.date),
+      revenueStock:    r.revenueStock,
+      revenueSupplier: r.revenueSupplier,
+      total:           r.revenueStock + r.revenueSupplier,
+    }));
+  }, [data, isMonthly]);
+
+  const filteredProducts = useMemo(() => {
+    if (!data) return [];
+    const q = search.toLowerCase().trim();
+    const base = q
+      ? data.products.filter(p => p.name.toLowerCase().includes(q) || p.code.toLowerCase().includes(q))
+      : data.products;
+    return sortProducts(base, sort);
+  }, [data, search, sort]);
+
+  const pageProducts = filteredProducts.slice(tablePage * PAGE_SIZE, (tablePage + 1) * PAGE_SIZE);
+  const totalPages   = Math.ceil(filteredProducts.length / PAGE_SIZE);
+
+  const kpi      = data?.kpi;
+  const subtitle = `${formatDate(start)} – ${formatDate(end)}`;
+  const fc       = (v: number) => formatCurrency(v, 'CZK');
+
+  const progressData = useMemo(() => {
+    if (!data) return { dostatecne: 0, nizke: 0, dodavatel: 0, vyprodano: 0, total: 1 };
+    let dostatecne = 0, nizke = 0, dodavatel = 0, vyprodano = 0;
+    for (const p of data.products) {
+      if (p.status === 'skladem')        dostatecne++;
+      else if (p.status === 'malo')      nizke++;
+      else if (p.status === 'dodavatel') dodavatel++;
+      else                               vyprodano++;
     }
-    const avg: Record<string, number> = {};
-    for (const [name, total] of Object.entries(totals)) avg[name] = total / DAYS_WINDOW;
-    return avg;
-  }, [productData]);
+    return { dostatecne, nizke, dodavatel, vyprodano, total: data.products.length || 1 };
+  }, [data]);
 
-  const kpis = useMemo(() => ({
-    total:    data.length,
-    inStock:  data.filter(r => r.stock > 0).length,
-    outStock: data.filter(r => r.stock === 0).length,
-    units:    data.reduce((s, r) => s + r.stock, 0),
-  }), [data]);
+  const pct = (n: number) => `${Math.round((n / progressData.total) * 100)}%`;
 
-  const filtered = useMemo(() => {
-    const q = search.toLowerCase();
-    return data
-      .filter(r => !q || r.name.toLowerCase().includes(q) || r.code.includes(q))
-      .sort((a, b) => {
-        const avgA = avgDailySales[a.name] ?? 0;
-        const avgB = avgDailySales[b.name] ?? 0;
-        const daysA = avgA > 0 ? a.stock / avgA : Infinity;
-        const daysB = avgB > 0 ? b.stock / avgB : Infinity;
-        let cmp = 0;
-        if (sortKey === 'name')     cmp = a.name.localeCompare(b.name, 'cs');
-        if (sortKey === 'code')     cmp = a.code.localeCompare(b.code);
-        if (sortKey === 'stock')    cmp = a.stock - b.stock;
-        if (sortKey === 'avgDaily') cmp = avgA - avgB;
-        if (sortKey === 'daysLeft') cmp = daysA - daysB;
-        return sortDir === 'asc' ? cmp : -cmp;
-      });
-  }, [data, search, sortKey, sortDir, avgDailySales]);
-
-  function toggleSort(key: SortKey) {
-    if (sortKey === key) setSortDir(d => d === 'asc' ? 'desc' : 'asc');
-    else { setSortKey(key); setSortDir('asc'); }
+  function handleSort(col: SortCol) {
+    setSort(prev => ({ col, dir: prev.col === col && prev.dir === 'asc' ? 'desc' : 'asc' }));
+    setTablePage(0);
   }
-
-  function SortIcon({ col }: { col: SortKey }) {
-    if (sortKey !== col) return <ChevronUp size={12} className="opacity-30" />;
-    return sortDir === 'asc'
-      ? <ChevronUp size={12} className="opacity-100" />
-      : <ChevronDown size={12} className="opacity-100" />;
-  }
-
-  const thBase = 'px-4 py-3 text-[11px] font-semibold text-white uppercase tracking-wider cursor-pointer select-none hover:bg-blue-800 transition-colors';
 
   return (
-    <div className="space-y-6">
+    <div className="p-4 md:p-6 space-y-6">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        <div>
-          <h1 className="text-xl font-bold text-slate-900">Stav skladu</h1>
-          <p className="text-sm text-slate-500 mt-0.5">Aktuální stav zásob — data z Google Sheets</p>
-        </div>
-        <div className="flex gap-1 bg-slate-100 p-1 rounded-lg self-start sm:self-auto">
-          {(['cz', 'sk'] as Tab[]).map(t => (
-            <button
-              key={t}
-              onClick={() => setTab(t)}
-              className={`flex items-center gap-1.5 px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                tab === t ? 'bg-white text-slate-800 shadow-sm' : 'text-gray-500 hover:text-slate-600'
-              }`}
-            >
-              <span>{t === 'cz' ? '🇨🇿' : '🇸🇰'}</span> {t.toUpperCase()}
-            </button>
-          ))}
-        </div>
+      <div>
+        <h1 className="text-2xl font-bold text-slate-800">Stav skladu</h1>
+        <p className="text-sm text-slate-500 mt-0.5">Aktuální stav zásob z Upgates</p>
       </div>
 
-      {/* KPI Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-        <StatCard title="Celkem produktů" value={formatNumber(kpis.total)}   icon={<Package size={18} />} />
-        <StatCard title="Skladem"         value={formatNumber(kpis.inStock)} icon={<PackageCheck size={18} />} highlight />
-        <StatCard title="Vyprodáno"       value={formatNumber(kpis.outStock)}icon={<PackageX size={18} />} negative />
-        <StatCard title="Celkem kusů"     value={formatNumber(kpis.units)}   icon={<Layers size={18} />} />
-      </div>
+      {loading && (
+        <div className="flex items-center justify-center py-24 text-slate-400 text-sm">
+          Načítání dat ze skladu…
+        </div>
+      )}
 
-      {/* Stock distribution bar */}
-      <div className="bg-white rounded-xl border border-slate-100 px-5 py-4 space-y-2">
-        <div className="flex items-center justify-between text-xs text-slate-500">
-          <span>Dostupnost skladu</span>
-          <span>
-            <span className="text-emerald-600 font-semibold">{kpis.inStock} skladem</span>
-            {' · '}
-            <span className="text-rose-600 font-semibold">{kpis.outStock} vyprodáno</span>
-            {' · '}
-            {kpis.total > 0 ? ((kpis.inStock / kpis.total) * 100).toFixed(0) : 0} % dostupných
-          </span>
+      {error && (
+        <div className="bg-rose-50 border border-rose-200 text-rose-700 rounded-xl p-4 text-sm">
+          Chyba: {error}
         </div>
-        <div className="flex h-2.5 rounded-full overflow-hidden gap-px">
-          {kpis.total > 0 && (
-            <>
-              <div
-                className="bg-emerald-400 transition-all"
-                style={{ width: `${(data.filter(r => r.stock > LOW_STOCK_THRESHOLD).length / kpis.total) * 100}%` }}
-                title="Dostatečné zásoby"
-              />
-              <div
-                className="bg-amber-400 transition-all"
-                style={{ width: `${(data.filter(r => r.stock > 0 && r.stock <= LOW_STOCK_THRESHOLD).length / kpis.total) * 100}%` }}
-                title="Nízké zásoby (≤ 10 ks)"
-              />
-              <div
-                className="bg-rose-400 transition-all"
-                style={{ width: `${(kpis.outStock / kpis.total) * 100}%` }}
-                title="Vyprodáno"
-              />
-            </>
-          )}
-        </div>
-        <div className="flex gap-4 text-[10px] text-slate-400">
-          <span className="flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-sm bg-emerald-400" />Dostatečné ({'>'} {LOW_STOCK_THRESHOLD} ks)</span>
-          <span className="flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-sm bg-amber-400" />Nízké (1–{LOW_STOCK_THRESHOLD} ks)</span>
-          <span className="flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-sm bg-rose-400" />Vyprodáno</span>
-        </div>
-      </div>
+      )}
 
-      {/* Table */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <div className="px-5 py-4 border-b border-gray-100 flex items-center gap-3">
-          <h2 className="text-base font-semibold text-gray-800 flex-1">Přehled produktů</h2>
-          <div className="relative">
-            <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input
-              type="text"
-              placeholder="Hledat..."
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              className="pl-8 pr-3 py-1.5 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
+      {!loading && !error && data && (
+        <>
+          {/* KPI row 1 — stock status */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <SimpleKpi title="Celkem produktů" value={formatNumber(kpi!.totalProducts)} icon={<Package size={18} />} color="blue" subtitle="aktivních položek" />
+            <SimpleKpi title="Skladem" value={formatNumber(kpi!.inStock)} icon={<PackageCheck size={18} />} color="green" subtitle="dostupných produktů" />
+            <SimpleKpi title="Skladem u dodavatele" value={formatNumber(kpi!.supplierCount)} icon={<Truck size={18} />} color="blue" subtitle="dostupnost 2–3 dny" />
+            <SimpleKpi title="Vyprodáno" value={formatNumber(kpi!.outOfStock)} icon={<PackageX size={18} />} color="red" subtitle="není skladem" />
+            <SimpleKpi title="Celkem kusů" value={formatNumber(kpi!.totalUnits)} icon={<Layers size={18} />} color="blue" subtitle="ve skladu celkem" />
+          </div>
+
+          {/* Progress bar */}
+          <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 space-y-3">
+            <div className="flex items-center justify-between text-xs text-slate-500">
+              <span>Dostupnost skladu</span>
+              <span>
+                <span className="text-emerald-600 font-medium">{progressData.dostatecne + progressData.nizke} skladem</span>
+                {progressData.dodavatel > 0 && <span className="text-blue-600 font-medium"> · {progressData.dodavatel} u dodavatele</span>}
+                <span className="text-rose-500 font-medium"> · {progressData.vyprodano} vyprodáno</span>
+                {' · '}<span className="font-medium">{Math.round(((progressData.dostatecne + progressData.nizke + progressData.dodavatel) / progressData.total) * 100)} % dostupných</span>
+              </span>
+            </div>
+            <div className="flex h-3 rounded-full overflow-hidden gap-px">
+              {progressData.dostatecne > 0 && <div className="bg-emerald-500" style={{ width: pct(progressData.dostatecne) }} />}
+              {progressData.nizke > 0      && <div className="bg-amber-400"   style={{ width: pct(progressData.nizke) }} />}
+              {progressData.dodavatel > 0  && <div className="bg-blue-400"    style={{ width: pct(progressData.dodavatel) }} />}
+              {progressData.vyprodano > 0  && <div className="bg-rose-400"    style={{ width: pct(progressData.vyprodano) }} />}
+            </div>
+            <div className="flex flex-wrap gap-4 text-xs text-slate-500">
+              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-emerald-500 inline-block" />Dostatečné (&gt;10 ks)</span>
+              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-amber-400 inline-block" />Nízké (1–10 ks)</span>
+              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-blue-400 inline-block" />U dodavatele</span>
+              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-rose-400 inline-block" />Vyprodáno</span>
+            </div>
+          </div>
+
+          {/* KPI row 2 — sales in period */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <SimpleKpi
+              title="Prodeje — skladové položky"
+              value={fc(kpi!.revenueStock)}
+              icon={<Warehouse size={18} />}
+              color="teal"
+              pct={pctStr(kpi!.revenueStock, kpi!.revenueTotal)}
+            />
+            <SimpleKpi
+              title="Prodeje — položky u dodavatele"
+              value={fc(kpi!.revenueSupplier)}
+              icon={<TrendingUp size={18} />}
+              color="blue"
+              pct={pctStr(kpi!.revenueSupplier, kpi!.revenueTotal)}
             />
           </div>
-        </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-blue-900">
-                <th className={`${thBase} text-left w-24`} onClick={() => toggleSort('code')}>
-                  <span className="flex items-center gap-1">Kód <SortIcon col="code" /></span>
-                </th>
-                <th className={`${thBase} text-left sticky left-0 bg-blue-900 z-10`} onClick={() => toggleSort('name')}>
-                  <span className="flex items-center gap-1">Název <SortIcon col="name" /></span>
-                </th>
-                <th className={`${thBase} text-right w-28`} onClick={() => toggleSort('stock')}>
-                  <span className="flex items-center justify-end gap-1">Sklad (ks) <SortIcon col="stock" /></span>
-                </th>
-                <th className={`${thBase} text-right w-32`} onClick={() => toggleSort('avgDaily')}>
-                  <span className="flex items-center justify-end gap-1">Prům. obrátka/den <SortIcon col="avgDaily" /></span>
-                </th>
-                <th className={`${thBase} text-right w-32`} onClick={() => toggleSort('daysLeft')}>
-                  <span className="flex items-center justify-end gap-1">Dojde za <SortIcon col="daysLeft" /></span>
-                </th>
-                <th className="px-4 py-3 text-[11px] font-semibold text-white uppercase tracking-wider text-center w-28">
-                  Stav
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map((r, idx) => (
-                <tr
-                  key={r.code}
-                  className={`border-b border-gray-50 hover:bg-blue-50/30 transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/30'}`}
-                >
-                  <td className="px-4 py-2.5 text-slate-400 font-mono text-xs whitespace-nowrap">{r.code}</td>
-                  <td className="px-4 py-2.5 text-slate-800 sticky left-0 bg-white z-10 shadow-[1px_0_0_0_#f1f5f9]">{r.name}</td>
-                  <td className={`px-4 py-2.5 text-right font-bold tabular-nums ${stockValueCls(r.stock)}`}>
-                    {formatNumber(r.stock)}
-                  </td>
-                  {(() => {
-                    const avg = avgDailySales[r.name] ?? 0;
-                    const days = avg > 0 ? Math.round(r.stock / avg) : null;
-                    const daysCls = days === null ? 'text-slate-300' : days <= 7 ? 'text-rose-600 font-bold' : days <= 30 ? 'text-amber-600 font-semibold' : 'text-emerald-600';
+          {/* Chart */}
+          {chartData.length > 0 && (
+            <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
+              <h2 className="text-sm font-semibold text-slate-700 mb-4">
+                Prodeje v průběhu času — skladové vs. u dodavatele (tržby bez DPH)
+              </h2>
+              <ResponsiveContainer width="100%" height={280}>
+                <ComposedChart data={chartData} margin={{ top: 4, right: 16, left: 0, bottom: 4 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+                  <XAxis dataKey="label" tick={{ fontSize: 11 }} tickLine={false} axisLine={false} interval={isMonthly ? 0 : 'preserveStartEnd'} />
+                  <YAxis tickFormatter={fmtAxis} tick={{ fontSize: 11 }} tickLine={false} axisLine={false} width={52} />
+                  <Tooltip content={<ChartTooltip />} />
+                  <Legend wrapperStyle={{ fontSize: 12, paddingTop: 8 }} />
+                  <Bar dataKey="revenueStock"    name="Skladové položky"     fill={C.margin}  radius={[3, 3, 0, 0]} barSize={isMonthly ? 28 : 8} />
+                  <Bar dataKey="revenueSupplier" name="Položky u dodavatele" fill={C.primary} radius={[3, 3, 0, 0]} barSize={isMonthly ? 28 : 8} />
+                </ComposedChart>
+              </ResponsiveContainer>
+            </div>
+          )}
+
+          {/* Product table */}
+          <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100">
+              <h2 className="text-sm font-semibold text-slate-700">Přehled produktů</h2>
+              <div className="relative">
+                <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                <input
+                  type="text"
+                  placeholder="Hledat..."
+                  value={search}
+                  onChange={e => { setSearch(e.target.value); setTablePage(0); }}
+                  className="pl-8 pr-3 py-1.5 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
+                />
+              </div>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-slate-800 text-white text-[11px] uppercase tracking-wider">
+                    <th className="px-4 py-3 text-left font-medium text-slate-300 w-20">Kód</th>
+                    <ThSort col="name"          label="Název"            sort={sort} onSort={handleSort} align="left" />
+                    <ThSort col="stock"         label="Sklad (ks)"       sort={sort} onSort={handleSort} />
+                    <ThSort col="soldQty"       label="Prodáno (ks)"     sort={sort} onSort={handleSort} />
+                    <ThSort col="avgDailySales" label="Obrátka/den"      sort={sort} onSort={handleSort} />
+                    <ThSort col="daysUntilEmpty" label="Dojde za"        sort={sort} onSort={handleSort} />
+                    <ThSort col="marginPct"     label="Marže %"          sort={sort} onSort={handleSort} />
+                    <ThSort col="status"        label="Stav"             sort={sort} onSort={handleSort} align="center" />
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-50">
+                  {pageProducts.map(p => {
+                    const cfg = STATUS_CFG[p.status];
+                    const stockColor =
+                      p.stock > 10 ? 'text-emerald-600 font-semibold' :
+                      p.stock > 0  ? 'text-amber-600 font-semibold' :
+                                     'text-rose-500 font-semibold';
+                    const daysColor =
+                      p.daysUntilEmpty === null ? 'text-slate-400' :
+                      p.daysUntilEmpty === 0    ? 'text-rose-500 font-semibold' :
+                      p.daysUntilEmpty <= 14    ? 'text-amber-600 font-semibold' :
+                                                  'text-slate-600';
                     return (
-                      <>
-                        <td className="px-4 py-2.5 text-right tabular-nums text-slate-500 text-xs">
-                          {avg > 0 ? `${avg < 0.1 ? '< 0.1' : avg.toFixed(1)} ks` : <span className="text-slate-300">--</span>}
+                      <tr key={p.code} className="hover:bg-slate-50 transition-colors">
+                        <td className="px-4 py-2.5 text-slate-400 text-xs font-mono">{p.code}</td>
+                        <td className="px-4 py-2.5 text-slate-700">{p.name}</td>
+                        <td className={`px-4 py-2.5 text-right tabular-nums ${stockColor}`}>{p.stock}</td>
+                        <td className="px-4 py-2.5 text-right text-slate-600 tabular-nums">
+                          {p.soldQty > 0 ? formatNumber(p.soldQty) : '–'}
                         </td>
-                        <td className={`px-4 py-2.5 text-right tabular-nums text-sm ${daysCls}`}>
-                          {days === null ? <span className="text-slate-300 text-xs">--</span> : days === 0 ? <span className="text-rose-600 font-bold">dnes</span> : `${days} dní`}
+                        <td className="px-4 py-2.5 text-right text-slate-500 tabular-nums">
+                          {p.avgDailySales > 0 ? `${p.avgDailySales} ks` : '–'}
                         </td>
-                      </>
+                        <td className={`px-4 py-2.5 text-right tabular-nums ${daysColor}`}>
+                          {fmtDays(p.daysUntilEmpty)}
+                        </td>
+                        <td className="px-4 py-2.5 text-right">
+                          <MarginBadge pct={p.marginPct} />
+                        </td>
+                        <td className="px-4 py-2.5 text-center">
+                          <span className={`inline-block text-[11px] font-bold px-2 py-0.5 rounded-full ${cfg.cls}`}>
+                            {cfg.label}
+                          </span>
+                        </td>
+                      </tr>
                     );
-                  })()}
-                  <td className="px-4 py-2.5 text-center">
-                    <StockBadge stock={r.stock} />
-                  </td>
-                </tr>
-              ))}
-              {filtered.length === 0 && (
-                <tr>
-                  <td colSpan={4} className="px-4 py-8 text-center text-slate-400 text-sm">Žádné produkty nenalezeny</td>
-                </tr>
-              )}
-            </tbody>
-            <tfoot>
-              <tr className="bg-blue-50/60 border-t-2 border-blue-100 font-semibold">
-                <td className="px-4 py-3 text-blue-600 text-xs" colSpan={2}>
-                  {filtered.length} z {kpis.total} produktů
-                </td>
-                <td className="px-4 py-3 text-right text-slate-800 tabular-nums">
-                  {formatNumber(filtered.reduce((s, r) => s + r.stock, 0))} ks
-                </td>
-                <td /><td /><td />
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-      </div>
+                  })}
+                  {pageProducts.length === 0 && (
+                    <tr>
+                      <td colSpan={8} className="px-4 py-8 text-center text-slate-400 text-sm">
+                        Žádné produkty nenalezeny
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+
+            {totalPages > 1 && (
+              <div className="flex items-center justify-between px-5 py-3 border-t border-slate-100 text-sm text-slate-500">
+                <span>{filteredProducts.length} produktů</span>
+                <div className="flex items-center gap-2">
+                  <button onClick={() => setTablePage(p => Math.max(0, p - 1))} disabled={tablePage === 0} className="px-3 py-1 rounded-lg border border-slate-200 disabled:opacity-40 hover:bg-slate-50">‹</button>
+                  <span>{tablePage + 1} / {totalPages}</span>
+                  <button onClick={() => setTablePage(p => Math.min(totalPages - 1, p + 1))} disabled={tablePage === totalPages - 1} className="px-3 py-1 rounded-lg border border-slate-200 disabled:opacity-40 hover:bg-slate-50">›</button>
+                </div>
+              </div>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 }

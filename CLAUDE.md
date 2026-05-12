@@ -77,9 +77,9 @@ Filtrace: `statistics_yn === true` AND `status_id !== 2`.
 - `statistics_yn === false` — testovací / draft objednávky
 - `status_id === 2` — Storno
 
-**Nákupní ceny (marže):** `products[].buy_price × quantity` per objednávka — přímo z Upgates, bez Google Sheets.
+**Nákupní ceny (marže):** `products[].buy_price` z Upgates je **s DPH**. Funkce `buyPriceWithoutVat(p)` v `updateData.js` přepočítá na cenu bez DPH pomocí DPH sazby odvozené z prodejních cen (`price_with_vat / price_without_vat - 1`). Výsledek × `quantity` tvoří `purchaseCost`. Pokud `price_without_vat <= 0` (dárek, doprava zdarma), vrací 0.
 
-**Upozornění — Upgates Statistiky/Zisk zobrazuje vyšší zisk:** Upgates počítá `price_with_vat - buy_price` (tedy zisk včetně DPH), zatímco naše aplikace správně počítá `price_without_vat - buy_price`. Rozdíl pro březen 2026: naše aplikace 129 496 Kč vs. Upgates 248 244 Kč.
+**Upozornění — Upgates Statistiky/Zisk zobrazuje vyšší zisk:** Upgates počítá `price_with_vat - buy_price` (mix s DPH a bez DPH), zatímco naše aplikace správně počítá `price_without_vat - buyPriceWithoutVat` (obě hodnoty bez DPH).
 
 **Env proměnné:**
 ```
@@ -180,6 +180,7 @@ NextAuth 5 (beta). Uživatelé jsou uloženi v **PostgreSQL** (tabulka `users`, 
 | `/crosssell` | Cross-sell potenciál — top 100 produktových párů |
 | `/retention` | Retenční analýza — RFM segmentace, LTV, AOV, repeat purchase rate, měsíční graf Noví vs. stávající zákazníci (100% stacked bar) |
 | `/shipping` | Doprava a platby — KPI vč. zisku/ztráty dopravy, ceník dopravců, P&L tabulka per dopravce |
+| `/stock` | Stav skladu — KPI boxy (produkty, skladem, u dodavatele, vyprodáno, celkem kusů), prodeje dle dostupnosti, timeseriesový graf, sortovatelná tabulka produktů s marží a obrátkou |
 | `/login` | Přihlášení (NextAuth) |
 | `/admin/users` | Správa uživatelů (admin only) |
 
@@ -202,7 +203,9 @@ Výchozí stránka aplikace (redirect z `/`). Zobrazuje 8 grouped bar chartů s 
 
 **Stav** — spravován v `hooks/useHlavniDashboard.tsx` (`HlavniDashboardProvider` je v `ConditionalLayout`). Stránka stav pouze čte přes `useHlavniDashboard()`.
 
-**Grafy (2×4 grid):** Tržby bez DPH (modrá), Hrubý zisk (zelená), Počet objednávek (modrá), Marketingové investice (červená), PNO % (cyan), AOV (indigo), Marže % (zelená), CPA (fialová). Světlejší barva = starší rok, tmavší = novější rok.
+**Grafy (2×4 grid + Konverzní poměr):** Tržby bez DPH (modrá), Hrubý zisk (zelená), Počet objednávek (modrá), Marketingové investice (červená), PNO % (cyan), AOV (indigo), Marže % (zelená), CPA (fialová). Světlejší barva = starší rok, tmavší = novější rok.
+
+**Konverzní poměr (GA4)** — 9. graf, fetchován z `/api/analytics/monthly-cvr?yearA=&yearB=` při změně roků (`useEffect`). Zobrazí se až po načtení dat. Podtitulek "Zdroj: GA4 · pouze CZ". Teal barvy: tmavší (#0e7490) = novější rok, světlejší (#a5f3fc) = starší rok.
 
 **Hrubý zisk** = `marginRev - purchaseCost - cost`.
 
@@ -231,6 +234,8 @@ Výchozí stránka aplikace (redirect z `/`). Zobrazuje 8 grouped bar chartů s 
 | `scripts/upgatesClient.js` | Upgates API klient — full/incremental sync, cache, rate limit handling |
 | `scripts/migrate.js` | Vytvoří DB tabulky |
 | `scripts/seedAdmin.js` | Vytvoří admin účet |
+| `app/api/analytics/monthly-cvr/route.ts` | GA4 měsíční CVR pro Hlavní dashboard — `?yearA=&yearB=` → `{ cvrA[], cvrB[] }` |
+| `app/api/stock/route.ts` | Upgates produkty — klasifikace dostupnosti, prodeje, marže, obrátka; 1h in-process cache |
 | `app/api/meta/route.ts` | Meta Marketing API — KPI + denní breakdown + kreativy; filtruje kampaně "myfish" |
 | `app/meta/page.tsx` | Meta Ads stránka — KPI s YoY, grafy po dnech, tabulka kreativ |
 | `components/kpi/StatCard.tsx` | KPI karta (border-2 border-blue-800); prop `negative` = rose varianta; `yoy`, `hasPrevData`, `invertYoy` |
@@ -320,7 +325,6 @@ Následující stránky **existují v kódu**, ale nejsou zobrazeny v navigaci (
 
 | Stránka | Route | Důvod skrytí |
 |---------|-------|--------------|
-| Stav skladu | `/stock` | Nenaplněno daty |
 | Meta Ads | `/meta` | Chybí `META_ACCESS_TOKEN` |
 | Google Ads | `/google-ads` | Nenaplněno daty |
 
@@ -337,6 +341,13 @@ Klasifikace dle kumulativního podílu na tržbách bez DPH:
 - zelená — ≥ 30 %
 - amber — ≥ 15 %
 - rose — < 15 %
+
+### `/orders` — Objednávky
+
+**Grafy (pořadí):**
+1. Tržby a objednávky (ComposedChart — Bar tržby + Line objednávky)
+2. Storna a podíl storen (ComposedChart — Bar počet storen + Line % podíl); denně ≤60 dní, měsíčně >60 dní
+3. Distribuce hodnot objednávek (histogram)
 
 ### Distribuce hodnot objednávek (`/orders`)
 
@@ -364,9 +375,9 @@ Výpočet v `lib/retentionUtils.ts` → `computeRfmSegments()`. Referenční dat
 ### Filtr období (TopBar)
 
 Dostupné možnosti `TimePeriod`:
-- `current_year`, `current_month`, `last_month`, `last_14_days`, `last_year`, `custom`
+- `current_year`, `current_month`, `last_month`, `last_14_days`, `last_7_days`, `yesterday`, `last_year`, `all_time`, `custom`
 
-Logika datových rozsahů v `hooks/useFilters.ts` → `getDateRange()`.
+`all_time` začíná od `2023-03-03` (první CZ objednávka). Logika datových rozsahů v `hooks/useFilters.ts` → `getDateRange()`.
 
 ### Selektor Trh (TopBar)
 
@@ -404,6 +415,8 @@ GA4_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
 - `landingPages` — vstupní stránky (top 20)
 - `funnel` — checkout trychtýř: begin_checkout → add_shipping_info → add_payment_info → purchase
 - `funnelTrend` — denní průchodnost košíkem
+
+**`app/api/analytics/monthly-cvr/route.ts`** — měsíční konverzní poměr pro Hlavní dashboard. Přijímá `?yearA=&yearB=`, fetchuje sessions + conversions z GA4 pro oba roky paralelně (dimenze `yearMonth`), vrací `{ cvrA: number[12], cvrB: number[12] }`.
 
 ### Branding
 

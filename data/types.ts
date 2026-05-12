@@ -30,7 +30,7 @@ export interface KpiData {
   cancelRate: number; // % stornovaných z celku (cancelled / (orders + cancelled) * 100)
 }
 
-export type TimePeriod = 'current_year' | 'current_month' | 'last_month' | 'last_14_days' | 'last_year' | 'custom';
+export type TimePeriod = 'current_year' | 'current_month' | 'last_month' | 'last_14_days' | 'last_7_days' | 'yesterday' | 'last_year' | 'all_time' | 'custom';
 
 export interface FilterState {
   countries: Country[];

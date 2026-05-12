@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   Legend, ResponsiveContainer,
@@ -74,6 +74,7 @@ function fmtAxisCount(v: number): string {
 
 interface ChartCardProps {
   title: string;
+  subtitle?: string;
   data: { month: string; a: number; b: number }[];
   colorA: string;   // newer year — darker
   colorB: string;   // older year — lighter
@@ -83,7 +84,7 @@ interface ChartCardProps {
   tooltipFormatter: (v: number) => string;
 }
 
-function ChartCard({ title, data, colorA, colorB, yearA, yearB, axisFormatter, tooltipFormatter }: ChartCardProps) {
+function ChartCard({ title, subtitle, data, colorA, colorB, yearA, yearB, axisFormatter, tooltipFormatter }: ChartCardProps) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (!active || !payload?.length) return null;
@@ -101,7 +102,10 @@ function ChartCard({ title, data, colorA, colorB, yearA, yearB, axisFormatter, t
 
   return (
     <div className="bg-white rounded-xl border border-slate-100 shadow-sm p-4">
-      <h3 className="text-sm font-semibold text-slate-700 mb-3">{title}</h3>
+      <div className="mb-3">
+        <h3 className="text-sm font-semibold text-slate-700">{title}</h3>
+        {subtitle && <p className="text-xs text-slate-400 mt-0.5">{subtitle}</p>}
+      </div>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart data={data} margin={{ top: 4, right: 8, left: 0, bottom: 0 }} barGap={2} barCategoryGap="25%">
           <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
@@ -124,6 +128,18 @@ export default function HlavniDashboardPage() {
 
   const monthsA = useMemo(() => aggregateMonthly(yearA), [yearA]);
   const monthsB = useMemo(() => aggregateMonthly(yearB), [yearB]);
+
+  const [cvrData, setCvrData] = useState<{ month: string; a: number; b: number }[] | null>(null);
+  useEffect(() => {
+    setCvrData(null);
+    fetch(`/api/analytics/monthly-cvr?yearA=${yearA}&yearB=${yearB}`)
+      .then(r => r.json())
+      .then(d => {
+        if (!Array.isArray(d.cvrA)) return;
+        setCvrData(MONTHS_CS.map((month, i) => ({ month, a: d.cvrA[i] ?? 0, b: d.cvrB[i] ?? 0 })));
+      })
+      .catch(() => {});
+  }, [yearA, yearB]);
 
   const chartData = useMemo(() => MONTHS_CS.map((month, i) => {
     const a = monthsA[i];
@@ -208,6 +224,15 @@ export default function HlavniDashboardPage() {
           yearA={yearA} yearB={yearB}
           axisFormatter={fmtAxisCZK} tooltipFormatter={fmtCZK}
         />
+        {cvrData && (
+          <ChartCard title="Konverzní poměr"
+            subtitle="Zdroj: GA4 · pouze CZ"
+            data={cvrData}
+            colorA="#0e7490" colorB="#a5f3fc"
+            yearA={yearA} yearB={yearB}
+            axisFormatter={fmtAxisPct} tooltipFormatter={pctFmt}
+          />
+        )}
       </div>
     </div>
   );

@@ -27,6 +27,12 @@ import {
   Cell,
 } from 'recharts';
 
+const MONTHS_CS = ['Led','Úno','Bře','Dub','Kvě','Čvn','Čvc','Srp','Zář','Říj','Lis','Pro'];
+function fmtMonthShort(d: string) {
+  const [y, m] = d.split('-');
+  return `${MONTHS_CS[parseInt(m) - 1]} ${y}`;
+}
+
 function formatYAxis(v: number, cur: 'CZK' | 'EUR' = 'CZK') {
   const s = cur === 'EUR' ? '€' : 'Kč';
   if (v >= 1_000_000) return `${(v / 1_000_000).toFixed(1)}M ${s}`;
@@ -86,6 +92,45 @@ export default function OrdersPage() {
     : null;
 
   const fc = (v: number) => formatCurrency(v, currency);
+
+  // ── Cancellation chart data ──────────────────────────────────────────────
+  const { cancelChartData, isMonthly } = useMemo(() => {
+    const dayCount = Math.round((end.getTime() - start.getTime()) / 86_400_000);
+    const monthly  = dayCount > 60;
+
+    if (!monthly) {
+      // daily
+      const byDate = new Map<string, { cancelled: number; total: number }>();
+      for (const r of currentData) {
+        const cur = byDate.get(r.date) ?? { cancelled: 0, total: 0 };
+        cur.cancelled += r.orders_cancelled;
+        cur.total     += r.orders + r.orders_cancelled;
+        byDate.set(r.date, cur);
+      }
+      const rows = [...byDate.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([date, v]) => ({
+        label:     formatShortDate(date),
+        storna:    v.cancelled,
+        podilPct:  v.total > 0 ? Math.round((v.cancelled / v.total) * 1000) / 10 : 0,
+      }));
+      return { cancelChartData: rows, isMonthly: false };
+    }
+
+    // monthly aggregation
+    const byMonth = new Map<string, { cancelled: number; total: number }>();
+    for (const r of currentData) {
+      const k   = r.date.slice(0, 7);
+      const cur = byMonth.get(k) ?? { cancelled: 0, total: 0 };
+      cur.cancelled += r.orders_cancelled;
+      cur.total     += r.orders + r.orders_cancelled;
+      byMonth.set(k, cur);
+    }
+    const rows = [...byMonth.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => ({
+      label:    fmtMonthShort(k + '-01'),
+      storna:   v.cancelled,
+      podilPct: v.total > 0 ? Math.round((v.cancelled / v.total) * 1000) / 10 : 0,
+    }));
+    return { cancelChartData: rows, isMonthly: true };
+  }, [currentData, start, end]);
 
   // ── Order value distribution ─────────────────────────────────────────────
   const { histogram, hasOrderValueData } = useMemo(() => {
