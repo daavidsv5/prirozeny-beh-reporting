@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart2, LayoutDashboard, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Home, Store, Warehouse } from 'lucide-react';
+import { BarChart2, LayoutDashboard, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Home, Store, Warehouse, Award } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 import { useSidebar } from './ConditionalLayout';
 
@@ -15,6 +15,7 @@ const navItems = [
   { icon: PieChart,        label: 'Maržový report',           href: '/margin' },
   { icon: Truck,           label: 'Doprava a platba',         href: '/shipping' },
   { icon: Package,         label: 'Prodejnost produktů',      href: '/products' },
+  { icon: Award,           label: 'Analýza značek',           href: '/brands' },
   { icon: Warehouse,       label: 'Stav skladu',              href: '/stock' },
   { icon: Brain,           label: 'Nákupní chování',          href: '/behavior' },
   { icon: GitMerge,        label: 'Cross-sell potenciál',     href: '/crosssell' },

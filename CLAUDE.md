@@ -180,7 +180,8 @@ NextAuth 5 (beta). Uživatelé jsou uloženi v **PostgreSQL** (tabulka `users`, 
 | `/crosssell` | Cross-sell potenciál — top 100 produktových párů |
 | `/retention` | Retenční analýza — RFM segmentace, LTV, AOV, repeat purchase rate, měsíční graf Noví vs. stávající zákazníci (100% stacked bar) |
 | `/shipping` | Doprava a platby — KPI vč. zisku/ztráty dopravy, ceník dopravců, P&L tabulka per dopravce |
-| `/stock` | Stav skladu — KPI boxy (produkty, skladem, u dodavatele, vyprodáno, celkem kusů), prodeje dle dostupnosti, timeseriesový graf, sortovatelná tabulka produktů s marží a obrátkou |
+| `/stock` | Stav skladu — KPI boxy (produkty, skladem, u dodavatele, vyprodáno, celkem kusů), prodeje dle dostupnosti, timeseriesový graf, sortovatelná tabulka produktů (kód, název, sklad ks, hodnota zboží, obrátka/den, dojde za, stav) + tabulka dle značky (sklad ks, hodnota, obrátka/den) |
+| `/brands` | Analýza značek — tržby s/bez DPH, marže, počet ks dle výrobce; trendový line chart s YoY (plná = akt., čárkovaná = min.) a autocomplete výběrem značek; sortovatelná tabulka s YoY badges (hodnota nad, badge pod); data z Upgates API přes `lib/upgatesProducts.ts` + `productDataCZ` |
 | `/login` | Přihlášení (NextAuth) |
 | `/admin/users` | Správa uživatelů (admin only) |
 
@@ -235,7 +236,9 @@ Výchozí stránka aplikace (redirect z `/`). Zobrazuje 8 grouped bar chartů s 
 | `scripts/migrate.js` | Vytvoří DB tabulky |
 | `scripts/seedAdmin.js` | Vytvoří admin účet |
 | `app/api/analytics/monthly-cvr/route.ts` | GA4 měsíční CVR pro Hlavní dashboard — `?yearA=&yearB=` → `{ cvrA[], cvrB[] }` |
-| `app/api/stock/route.ts` | Upgates produkty — klasifikace dostupnosti, prodeje, marže, obrátka; 1h in-process cache |
+| `lib/upgatesProducts.ts` | Sdílená 1h in-process cache + `getProducts()` + `czName()` — importováno z `/api/stock` i `/api/brands` |
+| `app/api/stock/route.ts` | Upgates produkty — klasifikace dostupnosti, prodeje, obrátka; používá sdílenou cache z `lib/upgatesProducts.ts` |
+| `app/api/brands/route.ts` | Agregace `productDataCZ` dle výrobce (Upgates name→manufacturer); vrací `brands[]` + `daily[]` + `dailyPrev[]` pro chart; params: `from/to/prevFrom/prevTo` |
 | `app/api/meta/route.ts` | Meta Marketing API — KPI + denní breakdown + kreativy; filtruje kampaně "myfish" |
 | `app/meta/page.tsx` | Meta Ads stránka — KPI s YoY, grafy po dnech, tabulka kreativ |
 | `components/kpi/StatCard.tsx` | KPI karta (border-2 border-blue-800); prop `negative` = rose varianta; `yoy`, `hasPrevData`, `invertYoy` |

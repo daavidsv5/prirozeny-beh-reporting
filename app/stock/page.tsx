@@ -4,7 +4,7 @@ import { useEffect, useState, useMemo } from 'react';
 import { useFilters, getDateRange } from '@/hooks/useFilters';
 import { formatCurrency, formatNumber, formatPercent, formatDate, localIsoDate } from '@/lib/formatters';
 import { C } from '@/lib/chartColors';
-import type { StockResponse, StockProduct, StockDailyRow } from '@/app/api/stock/route';
+import type { StockResponse, StockProduct, StockDailyRow, StockBrandRow } from '@/app/api/stock/route';
 import {
   Package, PackageCheck, PackageX, Layers, Warehouse, TrendingUp, Search,
   ChevronUp, ChevronDown, ChevronsUpDown, Truck,
@@ -109,11 +109,20 @@ function SimpleKpi({ title, value, icon, color = 'blue', subtitle, pct }: Simple
 // ── Sort header ───────────────────────────────────────────────────────────────
 
 type SortDir = 'asc' | 'desc';
-type SortCol = 'name' | 'stock' | 'soldQty' | 'avgDailySales' | 'daysUntilEmpty' | 'marginPct' | 'status';
+type SortCol = 'name' | 'stock' | 'stockValue' | 'avgDailySales' | 'daysUntilEmpty' | 'status';
+type BrandSortCol = 'brand' | 'stockQty' | 'stockValue' | 'avgDailySales';
 
 interface SortState { col: SortCol; dir: SortDir }
+interface BrandSortState { col: BrandSortCol; dir: SortDir }
 
 function SortIcon({ col, sort }: { col: SortCol; sort: SortState }) {
+  if (sort.col !== col) return <ChevronsUpDown size={12} className="text-slate-400 inline ml-1" />;
+  return sort.dir === 'asc'
+    ? <ChevronUp   size={12} className="text-white inline ml-1" />
+    : <ChevronDown size={12} className="text-white inline ml-1" />;
+}
+
+function BrandSortIcon({ col, sort }: { col: BrandSortCol; sort: BrandSortState }) {
   if (sort.col !== col) return <ChevronsUpDown size={12} className="text-slate-400 inline ml-1" />;
   return sort.dir === 'asc'
     ? <ChevronUp   size={12} className="text-white inline ml-1" />
@@ -129,6 +138,19 @@ function ThSort({ col, label, sort, onSort, align = 'right' }: {
       onClick={() => onSort(col)}
     >
       {label}<SortIcon col={col} sort={sort} />
+    </th>
+  );
+}
+
+function ThBrandSort({ col, label, sort, onSort, align = 'right' }: {
+  col: BrandSortCol; label: string; sort: BrandSortState; onSort: (c: BrandSortCol) => void; align?: 'left' | 'right' | 'center';
+}) {
+  return (
+    <th
+      className={`px-4 py-3 text-${align} font-medium cursor-pointer select-none hover:bg-slate-700 transition-colors`}
+      onClick={() => onSort(col)}
+    >
+      {label}<BrandSortIcon col={col} sort={sort} />
     </th>
   );
 }
@@ -179,10 +201,9 @@ function sortProducts(products: StockProduct[], sort: SortState): StockProduct[]
     switch (sort.col) {
       case 'name':          cmp = a.name.localeCompare(b.name, 'cs'); break;
       case 'stock':         cmp = a.stock - b.stock; break;
-      case 'soldQty':       cmp = a.soldQty - b.soldQty; break;
+      case 'stockValue':    cmp = a.stockValue - b.stockValue; break;
       case 'avgDailySales': cmp = a.avgDailySales - b.avgDailySales; break;
       case 'daysUntilEmpty':cmp = (a.daysUntilEmpty ?? 99999) - (b.daysUntilEmpty ?? 99999); break;
-      case 'marginPct':     cmp = (a.marginPct ?? -999) - (b.marginPct ?? -999); break;
       case 'status': {
         const order = { skladem: 0, malo: 1, dodavatel: 2, vyprodano: 3 };
         cmp = order[a.status] - order[b.status];
@@ -201,6 +222,7 @@ export default function StockPage() {
   const [search, setSearch]       = useState('');
   const [tablePage, setTablePage] = useState(0);
   const [sort, setSort]           = useState<SortState>({ col: 'name', dir: 'asc' });
+  const [brandSort, setBrandSort] = useState<BrandSortState>({ col: 'stockQty', dir: 'desc' });
 
   useEffect(() => {
     setLoading(true);
@@ -233,6 +255,8 @@ export default function StockPage() {
     }));
   }, [data, isMonthly]);
 
+
+
   const filteredProducts = useMemo(() => {
     if (!data) return [];
     const q = search.toLowerCase().trim();
@@ -251,14 +275,8 @@ export default function StockPage() {
 
   const progressData = useMemo(() => {
     if (!data) return { dostatecne: 0, nizke: 0, dodavatel: 0, vyprodano: 0, total: 1 };
-    let dostatecne = 0, nizke = 0, dodavatel = 0, vyprodano = 0;
-    for (const p of data.products) {
-      if (p.status === 'skladem')        dostatecne++;
-      else if (p.status === 'malo')      nizke++;
-      else if (p.status === 'dodavatel') dodavatel++;
-      else                               vyprodano++;
-    }
-    return { dostatecne, nizke, dodavatel, vyprodano, total: data.products.length || 1 };
+    const { countSkladem: dostatecne, countMalo: nizke, countDodavatel: dodavatel, countVyprodano: vyprodano, totalProducts: total } = data.kpi;
+    return { dostatecne, nizke, dodavatel, vyprodano, total: total || 1 };
   }, [data]);
 
   const pct = (n: number) => `${Math.round((n / progressData.total) * 100)}%`;
@@ -267,6 +285,24 @@ export default function StockPage() {
     setSort(prev => ({ col, dir: prev.col === col && prev.dir === 'asc' ? 'desc' : 'asc' }));
     setTablePage(0);
   }
+
+  function handleBrandSort(col: BrandSortCol) {
+    setBrandSort(prev => ({ col, dir: prev.col === col && prev.dir === 'asc' ? 'desc' : 'asc' }));
+  }
+
+  const sortedBrands = useMemo((): StockBrandRow[] => {
+    if (!data?.brands) return [];
+    return [...data.brands].sort((a, b) => {
+      let cmp = 0;
+      switch (brandSort.col) {
+        case 'brand':        cmp = a.brand.localeCompare(b.brand, 'cs'); break;
+        case 'stockQty':     cmp = a.stockQty - b.stockQty; break;
+        case 'stockValue':   cmp = a.stockValue - b.stockValue; break;
+        case 'avgDailySales':cmp = a.avgDailySales - b.avgDailySales; break;
+      }
+      return brandSort.dir === 'asc' ? cmp : -cmp;
+    });
+  }, [data?.brands, brandSort]);
 
   return (
     <div className="p-4 md:p-6 space-y-6">
@@ -291,9 +327,10 @@ export default function StockPage() {
       {!loading && !error && data && (
         <>
           {/* KPI row 1 — stock status */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            <SimpleKpi title="Celkem produktů" value={formatNumber(kpi!.totalProducts)} icon={<Package size={18} />} color="blue" subtitle="aktivních položek" />
-            <SimpleKpi title="Skladem" value={formatNumber(kpi!.inStock)} icon={<PackageCheck size={18} />} color="green" subtitle="dostupných produktů" />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <SimpleKpi title="Hodnota zboží" value={fc(kpi!.totalStockValue)} icon={<Warehouse size={18} />} color="green" subtitle="nákupní cena bez DPH" />
+            <SimpleKpi title="Celkem variant" value={formatNumber(kpi!.totalProducts)} icon={<Package size={18} />} color="blue" subtitle="aktivních položek" />
+            <SimpleKpi title="Skladem" value={formatNumber(kpi!.inStock)} icon={<PackageCheck size={18} />} color="green" subtitle="dostupných variant" />
             <SimpleKpi title="Skladem u dodavatele" value={formatNumber(kpi!.supplierCount)} icon={<Truck size={18} />} color="blue" subtitle="dostupnost 2–3 dny" />
             <SimpleKpi title="Vyprodáno" value={formatNumber(kpi!.outOfStock)} icon={<PackageX size={18} />} color="red" subtitle="není skladem" />
             <SimpleKpi title="Celkem kusů" value={formatNumber(kpi!.totalUnits)} icon={<Layers size={18} />} color="blue" subtitle="ve skladu celkem" />
@@ -381,14 +418,13 @@ export default function StockPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-slate-800 text-white text-[11px] uppercase tracking-wider">
+                  <tr className="bg-blue-900 text-white text-[11px] uppercase tracking-wider">
                     <th className="px-4 py-3 text-left font-medium text-slate-300 w-20">Kód</th>
                     <ThSort col="name"          label="Název"            sort={sort} onSort={handleSort} align="left" />
-                    <ThSort col="stock"         label="Sklad (ks)"       sort={sort} onSort={handleSort} />
-                    <ThSort col="soldQty"       label="Prodáno (ks)"     sort={sort} onSort={handleSort} />
+                    <ThSort col="stock"          label="Sklad (ks)"       sort={sort} onSort={handleSort} />
+                    <ThSort col="stockValue"    label="Hodnota zboží"    sort={sort} onSort={handleSort} />
                     <ThSort col="avgDailySales" label="Obrátka/den"      sort={sort} onSort={handleSort} />
                     <ThSort col="daysUntilEmpty" label="Dojde za"        sort={sort} onSort={handleSort} />
-                    <ThSort col="marginPct"     label="Marže %"          sort={sort} onSort={handleSort} />
                     <ThSort col="status"        label="Stav"             sort={sort} onSort={handleSort} align="center" />
                   </tr>
                 </thead>
@@ -410,16 +446,13 @@ export default function StockPage() {
                         <td className="px-4 py-2.5 text-slate-700">{p.name}</td>
                         <td className={`px-4 py-2.5 text-right tabular-nums ${stockColor}`}>{p.stock}</td>
                         <td className="px-4 py-2.5 text-right text-slate-600 tabular-nums">
-                          {p.soldQty > 0 ? formatNumber(p.soldQty) : '–'}
+                          {p.stockValue > 0 ? fc(p.stockValue) : '–'}
                         </td>
                         <td className="px-4 py-2.5 text-right text-slate-500 tabular-nums">
                           {p.avgDailySales > 0 ? `${p.avgDailySales} ks` : '–'}
                         </td>
                         <td className={`px-4 py-2.5 text-right tabular-nums ${daysColor}`}>
                           {fmtDays(p.daysUntilEmpty)}
-                        </td>
-                        <td className="px-4 py-2.5 text-right">
-                          <MarginBadge pct={p.marginPct} />
                         </td>
                         <td className="px-4 py-2.5 text-center">
                           <span className={`inline-block text-[11px] font-bold px-2 py-0.5 rounded-full ${cfg.cls}`}>
@@ -431,7 +464,7 @@ export default function StockPage() {
                   })}
                   {pageProducts.length === 0 && (
                     <tr>
-                      <td colSpan={8} className="px-4 py-8 text-center text-slate-400 text-sm">
+                      <td colSpan={7} className="px-4 py-8 text-center text-slate-400 text-sm">
                         Žádné produkty nenalezeny
                       </td>
                     </tr>
@@ -451,6 +484,39 @@ export default function StockPage() {
               </div>
             )}
           </div>
+
+          {/* Brand table */}
+          {sortedBrands.length > 0 && (
+            <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+              <div className="px-5 py-4 border-b border-slate-100">
+                <h2 className="text-sm font-semibold text-slate-700">Produkty podle výrobce</h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-blue-900 text-white text-[11px] uppercase tracking-wider">
+                      <ThBrandSort col="brand"         label="Výrobce"         sort={brandSort} onSort={handleBrandSort} align="left" />
+                      <ThBrandSort col="stockQty"      label="Sklad (ks)"      sort={brandSort} onSort={handleBrandSort} />
+                      <ThBrandSort col="stockValue"    label="Hodnota zboží"   sort={brandSort} onSort={handleBrandSort} />
+                      <ThBrandSort col="avgDailySales" label="Obrátka/den"     sort={brandSort} onSort={handleBrandSort} />
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-50">
+                    {sortedBrands.map(b => (
+                      <tr key={b.brand} className="hover:bg-slate-50 transition-colors">
+                        <td className="px-4 py-2.5 text-slate-700 font-medium">{b.brand}</td>
+                        <td className="px-4 py-2.5 text-right tabular-nums font-semibold text-slate-700">{formatNumber(b.stockQty)}</td>
+                        <td className="px-4 py-2.5 text-right tabular-nums text-slate-600">{b.stockValue > 0 ? fc(b.stockValue) : '–'}</td>
+                        <td className="px-4 py-2.5 text-right tabular-nums text-slate-500">
+                          {b.avgDailySales > 0 ? `${b.avgDailySales} ks` : '–'}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
         </>
       )}
     </div>
