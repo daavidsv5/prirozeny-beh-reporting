@@ -322,16 +322,29 @@ Data z `getDailyMarketingData()` a `getMarketingSourceData()` v `data/mockGenera
 
 **Tabulka Zisk / ztráta per dopravce** — zobrazí se pouze pokud je vyplněn ceník.
 
+### Struktura sidebaru (`components/layout/Sidebar.tsx`)
+
+Navigace je rozdělena do sekcí pomocí pole `NAV_SECTIONS`. Každá sekce má `label` (nadpis) a `items[]`.
+
+| Sekce | Položky (label → route) |
+|-------|------------------------|
+| Strategický přehled | Hlavní Dashboard `/hlavni-dashboard`, Hlavní KPI `/dashboard`, Marketingový Mix & PNO `/marketing` |
+| Prodej a profitabilita | Výkon prodeje `/orders`, Prodejna `/prodejna`, Analýza marží `/margin`, Doprava a platba `/shipping` |
+| Produktová analytika | Produktový žebříček `/products`, Analýza značek `/brands`, Stav skladu `/stock`, Cross-sell potenciál `/crosssell` |
+| Zákazníci a retence | Nákupní chování `/behavior`, Retenční analýza `/retention` |
+| Akvizice a kanály | Webová návštěvnost (GA4) `/analytics` |
+| Admin (podmíněně) | Správa uživatelů `/admin/users` (jen pro role=admin) |
+
 ### Skryté sekce (sidebar)
 
-Následující stránky **existují v kódu**, ale nejsou zobrazeny v navigaci (`components/layout/Sidebar.tsx`):
+Následující stránky **existují v kódu**, ale nejsou zobrazeny v navigaci:
 
 | Stránka | Route | Důvod skrytí |
 |---------|-------|--------------|
 | Meta Ads | `/meta` | Chybí `META_ACCESS_TOKEN` |
 | Google Ads | `/google-ads` | Nenaplněno daty |
 
-Až bude potřeba zpřístupnit, přidat nav item zpět do Sidebaru.
+Až bude potřeba zpřístupnit, přidat položku do příslušné sekce v `NAV_SECTIONS`.
 
 ### ABC analýza produktů (`/products`)
 
