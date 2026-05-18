@@ -92,13 +92,11 @@ const COLOR_MAP = {
 function SimpleKpi({ title, value, icon, color = 'blue', subtitle, pct }: SimpleKpiProps) {
   const c = COLOR_MAP[color];
   return (
-    <div className={`bg-white rounded-2xl p-4 border-2 ${c.border} shadow-sm flex flex-col gap-3`}>
-      <div className="flex items-center gap-2">
-        <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${c.icon}`}>{icon}</div>
-        <p className="text-[11px] font-bold text-slate-600 uppercase tracking-wider leading-snug">{title}</p>
-      </div>
-      <p className={`text-2xl md:text-3xl font-bold leading-none ${c.text}`}>{value}</p>
-      <div className="flex items-center justify-between">
+    <div className={`bg-white rounded-2xl p-4 border-2 ${c.border} shadow-sm flex flex-col gap-2`}>
+      <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${c.icon}`}>{icon}</div>
+      <p className="text-[11px] font-bold text-slate-600 uppercase tracking-wider leading-snug">{title}</p>
+      <p className={`text-2xl font-bold leading-none ${c.text}`}>{value}</p>
+      <div className="flex items-center justify-between mt-auto">
         {subtitle && <p className="text-[11px] text-slate-400">{subtitle}</p>}
         {pct && <p className="text-xl font-bold text-slate-800">{pct} <span className="text-sm font-normal text-slate-500">z tržeb</span></p>}
       </div>

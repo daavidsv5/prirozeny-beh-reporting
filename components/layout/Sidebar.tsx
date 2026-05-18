@@ -6,21 +6,46 @@ import { BarChart2, LayoutDashboard, ShoppingCart, TrendingUp, Package, Brain, P
 import { useSession, signOut } from 'next-auth/react';
 import { useSidebar } from './ConditionalLayout';
 
-const navItems = [
-  { icon: Home,            label: 'Hlavní Dashboard',         href: '/hlavni-dashboard' },
-  { icon: LayoutDashboard, label: 'Klíčové ukazatele (KPI)', href: '/dashboard' },
-  { icon: Store,           label: 'Prodejna',                 href: '/prodejna' },
-  { icon: ShoppingCart,    label: 'Objednávky',               href: '/orders' },
-  { icon: TrendingUp,      label: 'Marketingové investice',   href: '/marketing' },
-  { icon: PieChart,        label: 'Maržový report',           href: '/margin' },
-  { icon: Truck,           label: 'Doprava a platba',         href: '/shipping' },
-  { icon: Package,         label: 'Prodejnost produktů',      href: '/products' },
-  { icon: Award,           label: 'Analýza značek',           href: '/brands' },
-  { icon: Warehouse,       label: 'Stav skladu',              href: '/stock' },
-  { icon: Brain,           label: 'Nákupní chování',          href: '/behavior' },
-  { icon: GitMerge,        label: 'Cross-sell potenciál',     href: '/crosssell' },
-  { icon: Users,           label: 'Retenční analýza',         href: '/retention' },
-  { icon: Activity,        label: 'Návštěvnost (GA4)',        href: '/analytics' },
+const NAV_SECTIONS = [
+  {
+    label: 'Strategický přehled',
+    items: [
+      { icon: Home,            label: 'Hlavní Dashboard',        href: '/hlavni-dashboard' },
+      { icon: LayoutDashboard, label: 'Hlavní KPI',              href: '/dashboard' },
+      { icon: TrendingUp,      label: 'Marketingový Mix & PNO',  href: '/marketing' },
+    ],
+  },
+  {
+    label: 'Prodej a profitabilita',
+    items: [
+      { icon: ShoppingCart,    label: 'Výkon prodeje',           href: '/orders' },
+      { icon: Store,           label: 'Prodejna',                href: '/prodejna' },
+      { icon: PieChart,        label: 'Analýza marží',           href: '/margin' },
+      { icon: Truck,           label: 'Doprava a platba',        href: '/shipping' },
+    ],
+  },
+  {
+    label: 'Produktová analytika',
+    items: [
+      { icon: Package,         label: 'Produktový žebříček',     href: '/products' },
+      { icon: Award,           label: 'Analýza značek',          href: '/brands' },
+      { icon: Warehouse,       label: 'Stav skladu',             href: '/stock' },
+      { icon: GitMerge,        label: 'Cross-sell potenciál',    href: '/crosssell' },
+    ],
+  },
+  {
+    label: 'Zákazníci a retence',
+    items: [
+      { icon: Brain,           label: 'Nákupní chování',         href: '/behavior' },
+      { icon: Users,           label: 'Retenční analýza',        href: '/retention' },
+    ],
+  },
+  {
+    label: 'Akvizice a kanály',
+    items: [
+      { icon: Activity,        label: 'Webová návštěvnost (GA4)', href: '/analytics' },
+    ],
+  },
 ];
 
 export default function Sidebar() {
@@ -53,44 +78,53 @@ export default function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
-        {navItems.map(({ icon: Icon, label, href }) => {
-          const isActive = pathname === href || pathname.startsWith(href + '/');
-          return (
-            <Link
-              key={href}
-              href={href}
-              onClick={close}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
-                isActive
-                  ? 'bg-blue-600 text-white font-medium'
-                  : 'text-blue-100 hover:bg-white/10 hover:text-white'
-              }`}
-            >
-              <Icon size={17} className={isActive ? 'text-white' : 'text-blue-300'} />
-              <span>{label}</span>
-            </Link>
-          );
-        })}
+      <nav className="flex-1 px-3 py-3 overflow-y-auto space-y-3">
+        {NAV_SECTIONS.map(({ label: sectionLabel, items }) => (
+          <div key={sectionLabel}>
+            <p className="px-3 pb-1 text-[10px] font-semibold text-blue-400 uppercase tracking-widest">
+              {sectionLabel}
+            </p>
+            <div className="space-y-0.5">
+              {items.map(({ icon: Icon, label, href }) => {
+                const isActive = pathname === href || pathname.startsWith(href + '/');
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={close}
+                    className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
+                      isActive
+                        ? 'bg-blue-600 text-white font-medium'
+                        : 'text-blue-100 hover:bg-white/10 hover:text-white'
+                    }`}
+                  >
+                    <Icon size={16} className={isActive ? 'text-white' : 'text-blue-300'} />
+                    <span>{label}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ))}
 
         {isAdmin && (
-          <>
-            <div className="pt-3 pb-1 px-3">
-              <p className="text-blue-400 text-xs uppercase tracking-wider font-medium">Admin</p>
+          <div>
+            <p className="px-3 pb-1 text-[10px] font-semibold text-blue-400 uppercase tracking-widest">Admin</p>
+            <div className="space-y-0.5">
+              <Link
+                href="/admin/users"
+                onClick={close}
+                className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
+                  pathname.startsWith('/admin/users')
+                    ? 'bg-blue-600 text-white font-medium'
+                    : 'text-blue-100 hover:bg-white/10 hover:text-white'
+                }`}
+              >
+                <ShieldCheck size={16} className={pathname.startsWith('/admin/users') ? 'text-white' : 'text-blue-300'} />
+                <span>Správa uživatelů</span>
+              </Link>
             </div>
-            <Link
-              href="/admin/users"
-              onClick={close}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
-                pathname.startsWith('/admin/users')
-                  ? 'bg-blue-600 text-white font-medium'
-                  : 'text-blue-100 hover:bg-white/10 hover:text-white'
-              }`}
-            >
-              <ShieldCheck size={17} className={pathname.startsWith('/admin/users') ? 'text-white' : 'text-blue-300'} />
-              <span>Správa uživatelů</span>
-            </Link>
-          </>
+          </div>
         )}
       </nav>
 
