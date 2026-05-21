@@ -116,10 +116,29 @@ export async function GET(req: NextRequest) {
   const rawProducts = await getUpgatesProducts();
 
   // name → type map (all products incl. inactive, for historical matching)
+  // For products with variants, classify by majority of individual variant types
+  // rather than the product-level variants_availability_type aggregate.
   const nameTypeMap = new Map<string, AvailType>();
   for (const p of rawProducts) {
     const name = czName(p);
-    if (name) nameTypeMap.set(name.toLowerCase().trim(), classifyType(p.availability_type, p.variants_availability_type));
+    if (!name) continue;
+    let type: AvailType;
+    if (p.variants_exists_yn && Array.isArray(p.variants) && p.variants.length > 0) {
+      const activeVariants = (p.variants as any[]).filter((v: any) => v.active_yn !== false);
+      let stockCnt = 0, supplierCnt = 0, unavailCnt = 0;
+      for (const v of activeVariants) {
+        const vt = classifyType(v.availability_type, null);
+        if (vt === 'stock') stockCnt++;
+        else if (vt === 'supplier') supplierCnt++;
+        else unavailCnt++;
+      }
+      if (supplierCnt > stockCnt && supplierCnt >= unavailCnt) type = 'supplier';
+      else if (stockCnt === 0 && unavailCnt > 0) type = 'unavailable';
+      else type = 'stock';
+    } else {
+      type = classifyType(p.availability_type, p.variants_availability_type);
+    }
+    nameTypeMap.set(name.toLowerCase().trim(), type);
   }
 
   // avg daily sales (qty) per product — last 90 days
