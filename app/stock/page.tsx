@@ -325,8 +325,9 @@ export default function StockPage() {
       {!loading && !error && data && (
         <>
           {/* KPI row 1 — stock status */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            <SimpleKpi title="Hodnota zboží" value={fc(kpi!.totalStockValue)} icon={<Warehouse size={18} />} color="green" subtitle="nákupní cena bez DPH" />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
+            <SimpleKpi title="Hodnota zboží s DPH" value={fc(kpi!.totalStockValueVat)} icon={<Warehouse size={18} />} color="green" subtitle="nákupní cena s DPH" />
+            <SimpleKpi title="Hodnota zboží bez DPH" value={fc(kpi!.totalStockValue)} icon={<Warehouse size={18} />} color="green" subtitle="nákupní cena bez DPH" />
             <SimpleKpi title="Celkem variant" value={formatNumber(kpi!.totalProducts)} icon={<Package size={18} />} color="blue" subtitle="aktivních položek" />
             <SimpleKpi title="Skladem" value={formatNumber(kpi!.inStock)} icon={<PackageCheck size={18} />} color="green" subtitle="dostupných variant" />
             <SimpleKpi title="Skladem u dodavatele" value={formatNumber(kpi!.supplierCount)} icon={<Truck size={18} />} color="blue" subtitle="dostupnost 2–3 dny" />

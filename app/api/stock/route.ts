@@ -53,6 +53,7 @@ export interface StockKpi {
   supplierCount: number;
   totalUnits: number;
   totalStockValue: number;
+  totalStockValueVat: number;
   countSkladem: number;
   countMalo: number;
   countDodavatel: number;
@@ -166,9 +167,13 @@ export async function GET(req: NextRequest) {
 
   // purchase price no-VAT map for stock valuation
   const ppMap = new Map<string, number>();
+  const ppVatMap = new Map<string, number>(); // purchase price WITH VAT
   for (const p of rawProducts) {
     const name = czName(p);
-    if (name) ppMap.set(name, purchasePriceNoVat(p));
+    if (!name) continue;
+    ppMap.set(name, purchasePriceNoVat(p));
+    const czPrices = ((p.prices as any[]) ?? []).find((x: any) => x.currency === 'CZK');
+    ppVatMap.set(name, czPrices?.price_purchase ?? 0);
   }
 
   const products: StockProduct[] = active.map((p: any) => {
@@ -221,7 +226,7 @@ export async function GET(req: NextRequest) {
 
   // Variant-aware KPI counts
   let kpiTotal = 0, kpiInStock = 0, kpiSupplier = 0, kpiOutOfStock = 0;
-  let kpiUnits = 0, kpiStockValue = 0;
+  let kpiUnits = 0, kpiStockValue = 0, kpiStockValueVat = 0;
   let kpiSkladem = 0, kpiMalo = 0, kpiDodavatel = 0, kpiVyprodano = 0;
 
   for (const p of active) {
@@ -232,8 +237,9 @@ export async function GET(req: NextRequest) {
         const vType   = classifyType(v.availability_type, null);
         const czPv    = ((v.prices as any[]) ?? []).find((x: any) => x.currency === 'CZK');
         const vPP     = czPv?.price_purchase ? czPv.price_purchase / (1 + (czPv.vat ?? 21) / 100) : 0;
+        const vPPVat  = czPv?.price_purchase ?? 0;
         const vStatus = getStatus(vStock, vType);
-        kpiTotal++; kpiUnits += vStock; kpiStockValue += vStock * vPP;
+        kpiTotal++; kpiUnits += vStock; kpiStockValue += vStock * vPP; kpiStockValueVat += vStock * vPPVat;
         if      (vStatus === 'skladem')   { kpiInStock++;  kpiSkladem++;   }
         else if (vStatus === 'malo')      { kpiInStock++;  kpiMalo++;      }
         else if (vStatus === 'dodavatel') { kpiSupplier++; kpiDodavatel++; }
@@ -243,8 +249,9 @@ export async function GET(req: NextRequest) {
       const pStock  = effectiveStock(p);
       const pType   = classifyType(p.availability_type, p.variants_availability_type);
       const pPP     = ppMap.get(czName(p)) ?? 0;
+      const pPPVat  = ppVatMap.get(czName(p)) ?? 0;
       const pStatus = getStatus(pStock, pType);
-      kpiTotal++; kpiUnits += pStock; kpiStockValue += pStock * pPP;
+      kpiTotal++; kpiUnits += pStock; kpiStockValue += pStock * pPP; kpiStockValueVat += pStock * pPPVat;
       if      (pStatus === 'skladem')   { kpiInStock++;  kpiSkladem++;   }
       else if (pStatus === 'malo')      { kpiInStock++;  kpiMalo++;      }
       else if (pStatus === 'dodavatel') { kpiSupplier++; kpiDodavatel++; }
@@ -324,6 +331,7 @@ export async function GET(req: NextRequest) {
       totalProducts: kpiTotal, inStock: kpiInStock, outOfStock: kpiOutOfStock,
       supplierCount: kpiSupplier, totalUnits: kpiUnits,
       totalStockValue: Math.round(kpiStockValue),
+      totalStockValueVat: Math.round(kpiStockValueVat),
       countSkladem: kpiSkladem, countMalo: kpiMalo,
       countDodavatel: kpiDodavatel, countVyprodano: kpiVyprodano,
       revenueStock, revenueSupplier,
