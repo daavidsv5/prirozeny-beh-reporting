@@ -231,6 +231,9 @@ export async function GET(req: NextRequest) {
 
   for (const p of active) {
     if (p.variants_exists_yn && Array.isArray(p.variants) && p.variants.length) {
+      // kpiUnits uses p.variants_stock (product-level aggregate incl. inactive variants)
+      // to match Upgates admin total. Counts and values use active variants only.
+      kpiUnits += (p.variants_stock as number) ?? 0;
       const activeVariants = (p.variants as any[]).filter((v: any) => v.active_yn !== false);
       for (const v of activeVariants) {
         const vStock  = (v.stock as number) ?? 0;
@@ -239,7 +242,7 @@ export async function GET(req: NextRequest) {
         const vPP     = czPv?.price_purchase ? czPv.price_purchase / (1 + (czPv.vat ?? 21) / 100) : 0;
         const vPPVat  = czPv?.price_purchase ?? 0;
         const vStatus = getStatus(vStock, vType);
-        kpiTotal++; kpiUnits += vStock; kpiStockValue += vStock * vPP; kpiStockValueVat += vStock * vPPVat;
+        kpiTotal++; kpiStockValue += vStock * vPP; kpiStockValueVat += vStock * vPPVat;
         if      (vStatus === 'skladem')   { kpiInStock++;  kpiSkladem++;   }
         else if (vStatus === 'malo')      { kpiInStock++;  kpiMalo++;      }
         else if (vStatus === 'dodavatel') { kpiSupplier++; kpiDodavatel++; }
