@@ -1980,8 +1980,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2024-09-17",
-    "purchaseCost": 4204.95,
-    "revenue": 8134.7
+    "purchaseCost": 3657.02,
+    "revenue": 6895.86
   },
   {
     "date": "2024-09-18",
@@ -2850,8 +2850,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-04-12",
-    "purchaseCost": 7381.82,
-    "revenue": 12625.63
+    "purchaseCost": 5952.9,
+    "revenue": 10154.56
   },
   {
     "date": "2025-04-13",
@@ -4650,8 +4650,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-04-10",
-    "purchaseCost": 6893.51,
-    "revenue": 10620.66
+    "purchaseCost": 5935.26,
+    "revenue": 9058.68
   },
   {
     "date": "2026-04-11",
@@ -4665,8 +4665,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-04-13",
-    "purchaseCost": 12983.13,
-    "revenue": 22298.35
+    "purchaseCost": 11673.6,
+    "revenue": 19992.56
   },
   {
     "date": "2026-04-14",
@@ -4701,7 +4701,7 @@ export const marginDataCZ: MarginDailyRecord[] = [
   {
     "date": "2026-04-20",
     "purchaseCost": 9803.44,
-    "revenue": 18956.12
+    "revenue": 18645.46
   },
   {
     "date": "2026-04-21",
@@ -4725,8 +4725,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-04-25",
-    "purchaseCost": 8884.03,
-    "revenue": 12980.16
+    "purchaseCost": 7217.36,
+    "revenue": 10458.67
   },
   {
     "date": "2026-04-26",
@@ -4740,18 +4740,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-04-28",
-    "purchaseCost": 9368.05,
-    "revenue": 15507.43
+    "purchaseCost": 6034.89,
+    "revenue": 9816.53
   },
   {
     "date": "2026-04-29",
-    "purchaseCost": 8682.95,
-    "revenue": 13443.79
+    "purchaseCost": 6659.14,
+    "revenue": 10186.77
   },
   {
     "date": "2026-04-30",
-    "purchaseCost": 15243.49,
-    "revenue": 24714.07
+    "purchaseCost": 7939.84,
+    "revenue": 12696.71
   },
   {
     "date": "2026-05-01",
@@ -4760,133 +4760,178 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-05-02",
-    "purchaseCost": 7193.2,
-    "revenue": 11609.92
+    "purchaseCost": 1333.33,
+    "revenue": 2401.65
   },
   {
     "date": "2026-05-03",
-    "purchaseCost": 12047.51,
-    "revenue": 20354.54
+    "purchaseCost": 6928.46,
+    "revenue": 11776.85
   },
   {
     "date": "2026-05-04",
-    "purchaseCost": 15687.11,
-    "revenue": 24842.99
+    "purchaseCost": 11389.96,
+    "revenue": 17858.68
   },
   {
     "date": "2026-05-05",
-    "purchaseCost": 19122.54,
-    "revenue": 32358.68
+    "purchaseCost": 8533.34,
+    "revenue": 13491.74
   },
   {
     "date": "2026-05-06",
-    "purchaseCost": 12799.39,
-    "revenue": 23392.57
+    "purchaseCost": 6397.99,
+    "revenue": 11699.18
   },
   {
     "date": "2026-05-07",
-    "purchaseCost": 14743.58,
-    "revenue": 23176.03
+    "purchaseCost": 12397.81,
+    "revenue": 19308.26
   },
   {
     "date": "2026-05-08",
-    "purchaseCost": 10058.04,
-    "revenue": 15205.79
+    "purchaseCost": 3719.83,
+    "revenue": 5909.09
   },
   {
     "date": "2026-05-09",
-    "purchaseCost": 4964.29,
-    "revenue": 7852.9
+    "purchaseCost": 4089.29,
+    "revenue": 6373.56
   },
   {
     "date": "2026-05-10",
-    "purchaseCost": 7613.87,
-    "revenue": 11708.27
+    "purchaseCost": 4637.68,
+    "revenue": 7543.8
   },
   {
     "date": "2026-05-11",
-    "purchaseCost": 6411.84,
-    "revenue": 11428.92
+    "purchaseCost": 11286.44,
+    "revenue": 18097.52
+  },
+  {
+    "date": "2026-05-12",
+    "purchaseCost": 17083.02,
+    "revenue": 27947.95
+  },
+  {
+    "date": "2026-05-13",
+    "purchaseCost": 10850.96,
+    "revenue": 14209.93
   },
   {
     "date": "2026-05-14",
-    "purchaseCost": 5124.29,
-    "revenue": 5845.46
+    "purchaseCost": 29724.76,
+    "revenue": 40744.63
+  },
+  {
+    "date": "2026-05-15",
+    "purchaseCost": 29851.21,
+    "revenue": 41796.71
   },
   {
     "date": "2026-05-16",
-    "purchaseCost": 958.25,
-    "revenue": 1561.98
+    "purchaseCost": 26278.95,
+    "revenue": 36119.87
+  },
+  {
+    "date": "2026-05-17",
+    "purchaseCost": 49353.93,
+    "revenue": 63386.79
   },
   {
     "date": "2026-05-18",
-    "purchaseCost": 952.38,
-    "revenue": 1300.83
+    "purchaseCost": 46146.52,
+    "revenue": 61969.47
   },
   {
     "date": "2026-05-19",
-    "purchaseCost": 2833.42,
-    "revenue": 4056.2
+    "purchaseCost": 52787.39,
+    "revenue": 71947.13
+  },
+  {
+    "date": "2026-05-20",
+    "purchaseCost": 16350.82,
+    "revenue": 24869.48
   },
   {
     "date": "2026-05-21",
-    "purchaseCost": 2559.52,
-    "revenue": 3893.39
+    "purchaseCost": 10974.74,
+    "revenue": 18510.75
   },
   {
     "date": "2026-05-22",
-    "purchaseCost": 1234.68,
-    "revenue": 2825.62
+    "purchaseCost": 13299.21,
+    "revenue": 21170.25
+  },
+  {
+    "date": "2026-05-23",
+    "purchaseCost": 6892.29,
+    "revenue": 11147.11
+  },
+  {
+    "date": "2026-05-24",
+    "purchaseCost": 8297.2,
+    "revenue": 12773.54
   },
   {
     "date": "2026-05-25",
-    "purchaseCost": 892.75,
-    "revenue": 1479.34
+    "purchaseCost": 9156.24,
+    "revenue": 15266.12
+  },
+  {
+    "date": "2026-05-26",
+    "purchaseCost": 29645.47,
+    "revenue": 41841.33
   },
   {
     "date": "2026-05-27",
-    "purchaseCost": 2976.19,
-    "revenue": 3831.4
+    "purchaseCost": 27849.56,
+    "revenue": 37542.5
   },
   {
     "date": "2026-05-28",
-    "purchaseCost": 5199.15,
-    "revenue": 8178.52
+    "purchaseCost": 12615.76,
+    "revenue": 19052.9
   },
   {
     "date": "2026-05-29",
-    "purchaseCost": 1785.51,
-    "revenue": 2958.68
+    "purchaseCost": 10002.16,
+    "revenue": 15031.5
+  },
+  {
+    "date": "2026-05-30",
+    "purchaseCost": 2810.61,
+    "revenue": 4619.84
   },
   {
     "date": "2026-05-31",
-    "purchaseCost": 3630.85,
-    "revenue": 6061.99
+    "purchaseCost": 12492.74,
+    "revenue": 18583.48
   },
   {
     "date": "2026-06-01",
-    "purchaseCost": 1109.85,
-    "revenue": 1849.59
+    "purchaseCost": 7533.11,
+    "revenue": 12653.72
   },
   {
     "date": "2026-06-02",
-    "purchaseCost": 5198.73,
-    "revenue": 8014.06
+    "purchaseCost": 9410.53,
+    "revenue": 15120.03
   },
   {
     "date": "2026-06-03",
-    "purchaseCost": 3584.95,
-    "revenue": 5781.82
+    "purchaseCost": 8835.1,
+    "revenue": 13337.2
   },
   {
     "date": "2026-06-04",
-    "purchaseCost": 1716,
-    "revenue": 3103.31
+    "purchaseCost": 6682.81,
+    "revenue": 10021.15
   },
   {
     "date": "2026-06-05",
-    "purchaseCost": 1309.53,
-    "revenue": 2000.83
+    "purchaseCost": 6179.25,
+    "revenue": 10458.7
   },
   {
     "date": "2026-06-06",
