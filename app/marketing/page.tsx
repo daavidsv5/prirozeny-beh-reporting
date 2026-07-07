@@ -95,6 +95,7 @@ export default function MarketingPage() {
   const sz = sourceData.find(s => s.source === 'Seznam Ads')   ?? { cost: 0, clicks: 0 };
   const zb = sourceData.find(s => s.source === 'Zboží.cz')     ?? { cost: 0, clicks: 0 };
   const hk = sourceData.find(s => s.source === 'Heureka.cz')   ?? { cost: 0, clicks: 0 };
+  const tg = sourceData.find(s => s.source === 'Tanganica')    ?? { cost: 0, clicks: 0 };
   const fbCpc = fb.clicks > 0 ? fb.cost / fb.clicks : 0;
   const gCpc  = gg.clicks > 0 ? gg.cost / gg.clicks : 0;
   const szCpc = sz.clicks > 0 ? sz.cost / sz.clicks : 0;
@@ -113,6 +114,7 @@ export default function MarketingPage() {
   const szPrev = prevSourceData.find(s => s.source === 'Seznam Ads')   ?? { cost: 0, clicks: 0 };
   const zbPrev = prevSourceData.find(s => s.source === 'Zboží.cz')     ?? { cost: 0, clicks: 0 };
   const hkPrev = prevSourceData.find(s => s.source === 'Heureka.cz')   ?? { cost: 0, clicks: 0 };
+  const tgPrev = prevSourceData.find(s => s.source === 'Tanganica')    ?? { cost: 0, clicks: 0 };
   const fbCpcPrev = fbPrev.clicks > 0 ? fbPrev.cost / fbPrev.clicks : 0;
   const gCpcPrev  = ggPrev.clicks > 0 ? ggPrev.cost / ggPrev.clicks : 0;
   const szCpcPrev = szPrev.clicks > 0 ? szPrev.cost / szPrev.clicks : 0;
@@ -217,8 +219,8 @@ export default function MarketingPage() {
           </div>
         </div>
 
-        {/* Zboží + Heureka — 2 menší karty (jen náklady) */}
-        <div className="grid grid-cols-2 gap-4">
+        {/* Zboží + Heureka + Tanganica — menší karty (jen náklady) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {/* Zboží.cz */}
           <div className="bg-white rounded-2xl border-2 border-blue-800 p-3 sm:p-4 space-y-3">
             <div className="flex items-center justify-between">
@@ -256,6 +258,27 @@ export default function MarketingPage() {
                 <p className="text-[10px] text-slate-400 uppercase tracking-wider">PNO</p>
                 <p className="text-lg font-bold text-slate-900">
                   {kpi.revenue > 0 ? ((hk.cost / kpi.revenue) * 100).toFixed(1) : '0.0'} %
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Tanganica */}
+          <div className="bg-white rounded-2xl border-2 border-blue-800 p-3 sm:p-4 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-pink-700">Tanganica</span>
+              <div className="w-8 h-8 bg-pink-50 rounded-lg flex items-center justify-center text-pink-600"><ShoppingBag size={15} /></div>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <div>
+                <p className="text-[10px] text-slate-400 uppercase tracking-wider">Náklady</p>
+                <p className="text-lg font-bold text-slate-900">{fc(tg.cost)}</p>
+                <YoyBadge pct={yoyPct(tg.cost, tgPrev.cost)} invert />
+              </div>
+              <div>
+                <p className="text-[10px] text-slate-400 uppercase tracking-wider">PNO</p>
+                <p className="text-lg font-bold text-slate-900">
+                  {kpi.revenue > 0 ? ((tg.cost / kpi.revenue) * 100).toFixed(1) : '0.0'} %
                 </p>
               </div>
             </div>
@@ -309,6 +332,7 @@ export default function MarketingPage() {
                   <th className="px-3 py-3 text-right text-xs font-semibold text-white uppercase tracking-wide">Seznam</th>
                   <th className="px-3 py-3 text-right text-xs font-semibold text-white uppercase tracking-wide">Zboží</th>
                   <th className="px-3 py-3 text-right text-xs font-semibold text-white uppercase tracking-wide">Heureka</th>
+                  <th className="px-3 py-3 text-right text-xs font-semibold text-white uppercase tracking-wide">Tanganica</th>
                 </tr>
               </thead>
               <tbody>
@@ -321,6 +345,7 @@ export default function MarketingPage() {
                     <td className="px-3 py-2.5 text-right text-orange-700">{fc(r.cost_seznam)}</td>
                     <td className="px-3 py-2.5 text-right text-teal-700">{fc(r.cost_zbozi)}</td>
                     <td className="px-3 py-2.5 text-right text-purple-700">{fc(r.cost_heureka)}</td>
+                    <td className="px-3 py-2.5 text-right text-pink-700">{fc(r.cost_tanganica)}</td>
                   </tr>
                 ))}
               </tbody>

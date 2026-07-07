@@ -18,6 +18,7 @@ export interface DailyMarketingRow {
   cost_seznam: number;
   cost_zbozi: number;
   cost_heureka: number;
+  cost_tanganica: number;
   clicks_facebook: number;
   clicks_google: number;
   clicks_seznam: number;
@@ -37,7 +38,7 @@ export function getDailyMarketingData(
     if (!byDate[date]) {
       byDate[date] = {
         date, cost: 0,
-        cost_facebook: 0, cost_google: 0, cost_seznam: 0, cost_zbozi: 0, cost_heureka: 0,
+        cost_facebook: 0, cost_google: 0, cost_seznam: 0, cost_zbozi: 0, cost_heureka: 0, cost_tanganica: 0,
         clicks_facebook: 0, clicks_google: 0, clicks_seznam: 0,
         orders: 0, revenue: 0,
       };
@@ -52,6 +53,7 @@ export function getDailyMarketingData(
     byDate[r.date].cost_seznam     += (r as any).cost_seznam  || 0;
     byDate[r.date].cost_zbozi      += (r as any).cost_zbozi   || 0;
     byDate[r.date].cost_heureka    += (r as any).cost_heureka || 0;
+    byDate[r.date].cost_tanganica  += (r as any).cost_tanganica || 0;
     byDate[r.date].clicks_facebook += r.clicks_facebook;
     byDate[r.date].clicks_google   += r.clicks_google;
     byDate[r.date].clicks_seznam   += (r as any).clicks_seznam || 0;
@@ -89,13 +91,14 @@ export function getMarketingSourceData(
   const szCost      = sum('cost_seznam');
   const zbCost      = sum('cost_zbozi');
   const hkCost      = sum('cost_heureka');
+  const tgCost      = sum('cost_tanganica');
   const fbClicks    = sum('clicks_facebook');
   const gClicks     = sum('clicks_google');
   const szClicks    = sum('clicks_seznam');
   const totalRevenue = sum('revenue');
   const totalOrders  = sum('orders');
 
-  const totalCost = fbCost + gCost + szCost + zbCost + hkCost;
+  const totalCost = fbCost + gCost + szCost + zbCost + hkCost + tgCost;
   const mkShare   = (c: number) => totalCost > 0 ? c / totalCost : 0;
   const safeDiv   = (a: number, b: number) => b > 0 ? a / b : 0;
 
@@ -113,5 +116,6 @@ export function getMarketingSourceData(
     makeSource('Seznam Ads',   szCost, szClicks),
     makeSource('Zboží.cz',     zbCost, 0),
     makeSource('Heureka.cz',   hkCost, 0),
+    makeSource('Tanganica',    tgCost, 0),
   ].filter(s => s.cost > 0 || s.clicks > 0);
 }

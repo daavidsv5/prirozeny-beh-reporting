@@ -44,6 +44,7 @@ const SHEETS = {
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const LOG_FILE = path.join(__dirname, 'updateData.log');
+const TANGANICA_COSTS_FILE = path.join(DATA_DIR, 'tanganicaCosts.json');
 
 // ── Logging ───────────────────────────────────────────────────────────────────
 function log(msg) {
@@ -121,6 +122,34 @@ function aggregateCost(csv) {
     if (!byDaySource[date][source]) byDaySource[date][source] = { cost: 0, clicks: 0 };
     byDaySource[date][source].cost   += cost;
     byDaySource[date][source].clicks += clicks;
+  }
+  return { byDay, byDaySource };
+}
+
+// Tanganica (affiliate síť) — statický export nákladů, uložený lokálně v
+// data/tanganicaCosts.json ({ "YYYY-MM-DD": expense }). Není napojen na živý feed —
+// při novém exportu od uživatele je nutné soubor ručně přepsat/rozšířit.
+function loadTanganicaCosts() {
+  if (!fs.existsSync(TANGANICA_COSTS_FILE)) return { byDay: {}, byDaySource: {} };
+  const raw = JSON.parse(fs.readFileSync(TANGANICA_COSTS_FILE, 'utf8'));
+  const byDay = {};
+  const byDaySource = {};
+  for (const [date, cost] of Object.entries(raw)) {
+    byDay[date] = (byDay[date] || 0) + cost;
+    byDaySource[date] = { tanganica: { cost, clicks: 0 } };
+  }
+  return { byDay, byDaySource };
+}
+
+// Sloučí dva { byDay, byDaySource } výstupy (Google Sheets + Tanganica) do jednoho.
+function mergeCostResults(a, b) {
+  const byDay = { ...a.byDay };
+  for (const [date, cost] of Object.entries(b.byDay)) {
+    byDay[date] = (byDay[date] || 0) + cost;
+  }
+  const byDaySource = {};
+  for (const date of new Set([...Object.keys(a.byDaySource), ...Object.keys(b.byDaySource)])) {
+    byDaySource[date] = { ...(a.byDaySource[date] || {}), ...(b.byDaySource[date] || {}) };
   }
   return { byDay, byDaySource };
 }
@@ -475,6 +504,7 @@ function mergeDailyRecords(ordersByDay, costByDay, costByDaySource) {
       cost_seznam:       Math.round((sources.seznam?.cost     || 0) * 100) / 100,
       cost_zbozi:        Math.round((sources.zbozi?.cost      || 0) * 100) / 100,
       cost_heureka:      Math.round((sources.heureka?.cost    || 0) * 100) / 100,
+      cost_tanganica:    Math.round((sources.tanganica?.cost  || 0) * 100) / 100,
       clicks_facebook:   Math.round(sources.facebook?.clicks  || 0),
       clicks_google:     Math.round(sources.google?.clicks    || 0),
       clicks_seznam:     Math.round(sources.seznam?.clicks    || 0),
@@ -502,6 +532,7 @@ export interface ${interfaceName} {
   cost_seznam: number;
   cost_zbozi: number;
   cost_heureka: number;
+  cost_tanganica: number;
   clicks_facebook: number;
   clicks_google: number;
   clicks_seznam: number;
@@ -667,7 +698,10 @@ async function main() {
     log('Google Sheets: stahování nákladů CZ...');
     const csvCostCZ = await fetchUrl(SHEETS.cost_cz);
     log('Google Sheets: download OK');
-    const { byDay: costByDayCZ, byDaySource: costSrcCZ } = aggregateCost(csvCostCZ);
+    const sheetsCostCZ = aggregateCost(csvCostCZ);
+    const tanganicaCostCZ = loadTanganicaCosts();
+    log(`Tanganica: ${Object.keys(tanganicaCostCZ.byDay).length} dní z lokálního exportu`);
+    const { byDay: costByDayCZ, byDaySource: costSrcCZ } = mergeCostResults(sheetsCostCZ, tanganicaCostCZ);
 
     // ── 3) Agregace a zápis ──────────────────────────────────────────────────
     const ordersByDayCZ = aggregateOrders(orders);
