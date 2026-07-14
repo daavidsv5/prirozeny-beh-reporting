@@ -166,11 +166,20 @@ async function syncOrders({ apiUrl, login, apiKey, log, full = false }) {
     cache.lastIncrementalSync = today;
     log(`Full sync dokončen — ${cache.orders.length} objednávek v cache`);
   } else {
-    // Inkrementální: stáhneme objednávky aktualizované za posledních 30 dní.
-    // last_update_time_from zachytí jak nové objednávky, tak změněné statusy (storna).
+    // Inkrementální: stáhneme objednávky aktualizované za posledních 30 dní,
+    // ale nikdy méně nazpátek než od posledního úspěšného syncu (−3 dny rezerva).
+    // Bez téhle pojistky by výpadek syncu delší než 30 dní natrvalo vytvořil
+    // díru v datech — last_update_time_from by je už nikdy nezachytilo.
     const d = new Date();
     d.setDate(d.getDate() - 30);
-    const fromDate = d.toISOString().split('T')[0];
+    let fromDate = d.toISOString().split('T')[0];
+
+    if (cache.lastIncrementalSync) {
+      const dLast = new Date(cache.lastIncrementalSync);
+      dLast.setDate(dLast.getDate() - 3);
+      const lastSyncFrom = dLast.toISOString().split('T')[0];
+      if (lastSyncFrom < fromDate) fromDate = lastSyncFrom;
+    }
 
     log(`Inkrementální sync od ${fromDate} (last_update_time_from)...`);
     const incoming = await fetchAllPages(

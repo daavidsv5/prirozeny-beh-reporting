@@ -538,6 +538,42 @@ function mergeDailyRecords(ordersByDay, costByDay, costByDaySource) {
   });
 }
 
+// ── Kontrola regrese ──────────────────────────────────────────────────────────
+
+// Porovná nově vypočtené tržby za "uzavřené" období (starší než 35 dní, kde už
+// by se objednávky neměly výrazně dodatečně přidávat) s tím, co je aktuálně na
+// disku. Pokud nová data ukazují výrazně nižší tržby, jde skoro jistě o díru
+// vzniklou neúplným syncem (např. lokální cache s mezerou) — jen zaloguje
+// hlasité varování, běh nepřeruší.
+function checkForRevenueRegression(filePath, newRecords, log) {
+  if (!fs.existsSync(filePath)) return;
+  const content = fs.readFileSync(filePath, 'utf8');
+  const marker = 'RealDailyRecord[] = ';
+  const idx = content.indexOf(marker);
+  if (idx < 0) return;
+  let oldRecords;
+  try {
+    oldRecords = JSON.parse(content.slice(idx + marker.length, content.lastIndexOf(']') + 1));
+  } catch {
+    return;
+  }
+
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 35);
+  const cutoffStr = cutoff.toISOString().split('T')[0];
+
+  const sumRevenue = (records) => records
+    .filter(r => r.date < cutoffStr)
+    .reduce((s, r) => s + r.revenue, 0);
+
+  const oldRevenue = sumRevenue(oldRecords);
+  const newRevenue = sumRevenue(newRecords);
+
+  if (oldRevenue > 0 && newRevenue < oldRevenue * 0.9) {
+    log(`VAROVÁNÍ: tržby za uzavřené období (do ${cutoffStr}) klesly z ${oldRevenue.toFixed(0)} Kč na ${newRevenue.toFixed(0)} Kč (${(100 - newRevenue / oldRevenue * 100).toFixed(1)} % pokles). Nejspíš neúplný sync objednávek — zkontroluj cache před commitem.`);
+  }
+}
+
 // ── Zápis .ts souborů ─────────────────────────────────────────────────────────
 
 function writeTsFile(filePath, varName, interfaceName, records) {
@@ -738,6 +774,7 @@ async function main() {
       { orders: 0, revenue: 0, cost: 0 }
     );
     log(`CZ: ${recordsCZ.length} dní | ${totalCZ.orders} objednávek | ${totalCZ.revenue.toFixed(0)} Kč | PNO ${totalCZ.revenue > 0 ? (totalCZ.cost / totalCZ.revenue * 100).toFixed(2) : 0}%`);
+    checkForRevenueRegression(path.join(DATA_DIR, 'realDataCZ.ts'), recordsCZ, log);
     writeTsFile(path.join(DATA_DIR, 'realDataCZ.ts'), 'realDataCZ', 'RealDailyRecord', recordsCZ);
     log('Written realDataCZ.ts');
 

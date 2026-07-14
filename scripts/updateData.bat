@@ -1,5 +1,5 @@
 @echo off
-cd /d "C:\Users\daavi\Desktop\VIBECODING\Shoptet reporting\shoptet-reporting"
+cd /d "C:\Users\daavi\Desktop\VIBECODING\Prirozeny-beh-reporting\shoptet-reporting"
 echo [%date% %time%] Starting data update... >> scripts\updateData.log
 node scripts\updateData.js
 if %errorlevel% neq 0 (
