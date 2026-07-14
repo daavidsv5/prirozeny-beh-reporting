@@ -9897,13 +9897,6 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
   {
     "date": "2024-09-17",
     "type": "payment",
-    "name": "Bankovní převod",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2024-09-17",
-    "type": "payment",
     "name": "GoPay",
     "count": 4,
     "revenue_vat": 0
@@ -9913,13 +9906,6 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2024-09-17",
-    "type": "shipping",
-    "name": "PPL ParcelShop",
-    "count": 1,
     "revenue_vat": 0
   },
   {
@@ -14420,7 +14406,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2025-04-12",
     "type": "payment",
     "name": "Bankovní převod",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 0
   },
   {
@@ -14455,7 +14441,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2025-04-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 0
   },
   {
@@ -29616,13 +29602,6 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
   {
     "date": "2026-04-10",
     "type": "payment",
-    "name": "GoPay",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-04-10",
-    "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
     "revenue_vat": 0
@@ -29638,8 +29617,8 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-04-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
-    "count": 2,
-    "revenue_vat": 140
+    "count": 1,
+    "revenue_vat": 70
   },
   {
     "date": "2026-04-11",
@@ -29731,13 +29710,6 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
     "revenue_vat": 59
-  },
-  {
-    "date": "2026-04-13",
-    "type": "shipping",
-    "name": "Osobně na pobočce Barefoot concept store Třebíč",
-    "count": 1,
-    "revenue_vat": 0
   },
   {
     "date": "2026-04-13",
@@ -30198,7 +30170,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-04-23",
     "type": "payment",
     "name": "Hotově na pokladně",
-    "count": 1,
+    "count": 2,
     "revenue_vat": 0
   },
   {
@@ -30303,7 +30275,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-04-25",
     "type": "payment",
     "name": "GoPay",
-    "count": 6,
+    "count": 5,
     "revenue_vat": 0
   },
   {
@@ -30317,7 +30289,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-04-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
-    "count": 3,
+    "count": 2,
     "revenue_vat": 0
   },
   {
@@ -30408,29 +30380,29 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-04-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
-    "count": 4,
+    "count": 3,
     "revenue_vat": 0
   },
   {
     "date": "2026-04-28",
     "type": "payment",
     "name": "GoPay",
-    "count": 6,
+    "count": 4,
     "revenue_vat": 0
   },
   {
     "date": "2026-04-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 5,
-    "revenue_vat": 295
+    "count": 3,
+    "revenue_vat": 177
   },
   {
     "date": "2026-04-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
-    "count": 4,
-    "revenue_vat": 177
+    "count": 3,
+    "revenue_vat": 118
   },
   {
     "date": "2026-04-28",
@@ -30443,7 +30415,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-04-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 0
   },
   {
@@ -30478,7 +30450,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-04-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 0
   },
   {
@@ -30499,14 +30471,14 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-04-30",
     "type": "payment",
     "name": "Dobírka",
-    "count": 2,
-    "revenue_vat": 100
+    "count": 1,
+    "revenue_vat": 50
   },
   {
     "date": "2026-04-30",
     "type": "payment",
     "name": "GoPay",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 0
   },
   {
@@ -30520,7 +30492,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-04-30",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
-    "count": 1,
+    "count": 2,
     "revenue_vat": 0
   },
   {
@@ -30534,8 +30506,8 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-04-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 2,
-    "revenue_vat": 118
+    "count": 1,
+    "revenue_vat": 59
   },
   {
     "date": "2026-04-30",
@@ -30543,13 +30515,6 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
     "revenue_vat": 0
-  },
-  {
-    "date": "2026-04-30",
-    "type": "shipping",
-    "name": "Zásilkovna Z-Box",
-    "count": 1,
-    "revenue_vat": 80
   },
   {
     "date": "2026-05-01",
@@ -30610,13 +30575,6 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
   {
     "date": "2026-05-02",
     "type": "payment",
-    "name": "Bankovní převod - rychlá platba QR kódem",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-05-02",
-    "type": "payment",
     "name": "Dobírka",
     "count": 1,
     "revenue_vat": 50
@@ -30625,14 +30583,14 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-02",
     "type": "payment",
     "name": "GoPay",
-    "count": 3,
+    "count": 1,
     "revenue_vat": 0
   },
   {
     "date": "2026-05-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
-    "count": 3,
+    "count": 1,
     "revenue_vat": 59
   },
   {
@@ -30643,39 +30601,25 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "revenue_vat": 80
   },
   {
-    "date": "2026-05-02",
-    "type": "shipping",
-    "name": "Zásilkovna Z-Box",
-    "count": 1,
-    "revenue_vat": 80
-  },
-  {
     "date": "2026-05-03",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
-    "count": 3,
+    "count": 2,
     "revenue_vat": 0
   },
   {
     "date": "2026-05-03",
     "type": "payment",
     "name": "Dobírka",
-    "count": 2,
-    "revenue_vat": 100
-  },
-  {
-    "date": "2026-05-03",
-    "type": "payment",
-    "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 50
   },
   {
     "date": "2026-05-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 2,
-    "revenue_vat": 118
+    "count": 1,
+    "revenue_vat": 59
   },
   {
     "date": "2026-05-03",
@@ -30687,16 +30631,9 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
   {
     "date": "2026-05-03",
     "type": "shipping",
-    "name": "Zásilkovna Výdejní místo",
+    "name": "Zásilkovna Z-Box",
     "count": 1,
     "revenue_vat": 80
-  },
-  {
-    "date": "2026-05-03",
-    "type": "shipping",
-    "name": "Zásilkovna Z-Box",
-    "count": 2,
-    "revenue_vat": 160
   },
   {
     "date": "2026-05-04",
@@ -30716,7 +30653,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-04",
     "type": "payment",
     "name": "GoPay",
-    "count": 7,
+    "count": 5,
     "revenue_vat": 0
   },
   {
@@ -30730,15 +30667,8 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 3,
-    "revenue_vat": 177
-  },
-  {
-    "date": "2026-05-04",
-    "type": "shipping",
-    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 2,
+    "revenue_vat": 118
   },
   {
     "date": "2026-05-04",
@@ -30771,13 +30701,6 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
   {
     "date": "2026-05-05",
     "type": "payment",
-    "name": "Bankovní převod - rychlá platba QR kódem",
-    "count": 3,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-05-05",
-    "type": "payment",
     "name": "GoPay",
     "count": 3,
     "revenue_vat": 0
@@ -30793,14 +30716,14 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 2,
-    "revenue_vat": 118
+    "count": 1,
+    "revenue_vat": 59
   },
   {
     "date": "2026-05-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 0
   },
   {
@@ -30811,24 +30734,10 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "revenue_vat": 85
   },
   {
-    "date": "2026-05-05",
-    "type": "shipping",
-    "name": "Zásilkovna Výdejní místo",
-    "count": 1,
-    "revenue_vat": 80
-  },
-  {
-    "date": "2026-05-06",
-    "type": "payment",
-    "name": "Bankovní převod - rychlá platba QR kódem",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
     "date": "2026-05-06",
     "type": "payment",
     "name": "GoPay",
-    "count": 4,
+    "count": 2,
     "revenue_vat": 0
   },
   {
@@ -30842,8 +30751,8 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 4,
-    "revenue_vat": 236
+    "count": 1,
+    "revenue_vat": 59
   },
   {
     "date": "2026-05-06",
@@ -30870,7 +30779,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-07",
     "type": "payment",
     "name": "GoPay",
-    "count": 8,
+    "count": 7,
     "revenue_vat": 0
   },
   {
@@ -30884,8 +30793,8 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 5,
-    "revenue_vat": 295
+    "count": 4,
+    "revenue_vat": 236
   },
   {
     "date": "2026-05-07",
@@ -30911,51 +30820,30 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
   {
     "date": "2026-05-08",
     "type": "payment",
-    "name": "Bankovní převod - rychlá platba QR kódem",
-    "count": 2,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-05-08",
-    "type": "payment",
     "name": "Dobírka",
-    "count": 2,
-    "revenue_vat": 100
+    "count": 1,
+    "revenue_vat": 50
   },
   {
     "date": "2026-05-08",
     "type": "payment",
     "name": "GoPay",
-    "count": 5,
+    "count": 3,
     "revenue_vat": 0
   },
   {
     "date": "2026-05-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 6,
-    "revenue_vat": 354
-  },
-  {
-    "date": "2026-05-08",
-    "type": "shipping",
-    "name": "Zásilkovna Výdejní místo",
-    "count": 1,
-    "revenue_vat": 80
+    "count": 3,
+    "revenue_vat": 177
   },
   {
     "date": "2026-05-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
-    "count": 2,
-    "revenue_vat": 160
-  },
-  {
-    "date": "2026-05-09",
-    "type": "payment",
-    "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 80
   },
   {
     "date": "2026-05-09",
@@ -30993,25 +30881,11 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "revenue_vat": 0
   },
   {
-    "date": "2026-05-09",
-    "type": "shipping",
-    "name": "PPL doručení na Vaši adresu",
-    "count": 1,
-    "revenue_vat": 85
-  },
-  {
     "date": "2026-05-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
     "revenue_vat": 0
-  },
-  {
-    "date": "2026-05-10",
-    "type": "payment",
-    "name": "Dobírka",
-    "count": 2,
-    "revenue_vat": 100
   },
   {
     "date": "2026-05-10",
@@ -31024,15 +30898,8 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 3,
-    "revenue_vat": 177
-  },
-  {
-    "date": "2026-05-10",
-    "type": "shipping",
-    "name": "Zásilkovna Výdejní místo",
-    "count": 1,
-    "revenue_vat": 80
+    "count": 2,
+    "revenue_vat": 118
   },
   {
     "date": "2026-05-10",
@@ -31040,6 +30907,13 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "name": "Zásilkovna Z-Box",
     "count": 1,
     "revenue_vat": 80
+  },
+  {
+    "date": "2026-05-11",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 3,
+    "revenue_vat": 0
   },
   {
     "date": "2026-05-11",
@@ -31052,15 +30926,22 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-11",
     "type": "payment",
     "name": "GoPay",
-    "count": 4,
+    "count": 5,
     "revenue_vat": 0
   },
   {
     "date": "2026-05-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 3,
-    "revenue_vat": 177
+    "count": 6,
+    "revenue_vat": 354
+  },
+  {
+    "date": "2026-05-11",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 1,
+    "revenue_vat": 59
   },
   {
     "date": "2026-05-11",
@@ -31070,70 +30951,532 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "revenue_vat": 160
   },
   {
+    "date": "2026-05-12",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-12",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 1,
+    "revenue_vat": 50
+  },
+  {
+    "date": "2026-05-12",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 6,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-12",
+    "type": "payment",
+    "name": "Hotově na pokladně",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-12",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-12",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 4,
+    "revenue_vat": 236
+  },
+  {
+    "date": "2026-05-12",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 3,
+    "revenue_vat": 118
+  },
+  {
+    "date": "2026-05-12",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 2,
+    "revenue_vat": 160
+  },
+  {
+    "date": "2026-05-13",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 6,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-13",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-13",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 3,
+    "revenue_vat": 177
+  },
+  {
+    "date": "2026-05-13",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 3,
+    "revenue_vat": 59
+  },
+  {
+    "date": "2026-05-14",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 3,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-14",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 3,
+    "revenue_vat": 150
+  },
+  {
     "date": "2026-05-14",
     "type": "payment",
     "name": "GoPay",
-    "count": 1,
+    "count": 10,
     "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-14",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-14",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 5,
+    "revenue_vat": 295
   },
   {
     "date": "2026-05-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 5,
+    "revenue_vat": 118
   },
   {
-    "date": "2026-05-16",
-    "type": "payment",
-    "name": "GoPay",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-05-16",
+    "date": "2026-05-14",
     "type": "shipping",
-    "name": "GLS výdejní místa a boxy",
+    "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 70
   },
   {
-    "date": "2026-05-18",
+    "date": "2026-05-14",
+    "type": "shipping",
+    "name": "Zásilkovna domů",
+    "count": 1,
+    "revenue_vat": 95
+  },
+  {
+    "date": "2026-05-14",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 4,
+    "revenue_vat": 320
+  },
+  {
+    "date": "2026-05-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
-    "count": 1,
+    "count": 5,
     "revenue_vat": 0
   },
   {
-    "date": "2026-05-18",
-    "type": "shipping",
-    "name": "GLS výdejní místa a boxy",
-    "count": 1,
-    "revenue_vat": 59
+    "date": "2026-05-15",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 2,
+    "revenue_vat": 100
   },
   {
-    "date": "2026-05-19",
+    "date": "2026-05-15",
     "type": "payment",
     "name": "GoPay",
-    "count": 1,
+    "count": 11,
     "revenue_vat": 0
   },
   {
-    "date": "2026-05-19",
+    "date": "2026-05-15",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
     "revenue_vat": 0
   },
   {
+    "date": "2026-05-15",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 6,
+    "revenue_vat": 375
+  },
+  {
+    "date": "2026-05-15",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 6,
+    "revenue_vat": 118
+  },
+  {
+    "date": "2026-05-15",
+    "type": "shipping",
+    "name": "Zásilkovna Výdejní místo",
+    "count": 2,
+    "revenue_vat": 160
+  },
+  {
+    "date": "2026-05-15",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 4,
+    "revenue_vat": 320
+  },
+  {
+    "date": "2026-05-16",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 7,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-16",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 1,
+    "revenue_vat": 50
+  },
+  {
+    "date": "2026-05-16",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 8,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-16",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 6,
+    "revenue_vat": 354
+  },
+  {
+    "date": "2026-05-16",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 6,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-16",
+    "type": "shipping",
+    "name": "PPL ParcelShop",
+    "count": 3,
+    "revenue_vat": 210
+  },
+  {
+    "date": "2026-05-16",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 1,
+    "revenue_vat": 80
+  },
+  {
+    "date": "2026-05-17",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 10,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-17",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 2,
+    "revenue_vat": 100
+  },
+  {
+    "date": "2026-05-17",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 16,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-17",
+    "type": "shipping",
+    "name": "GLS domů",
+    "count": 2,
+    "revenue_vat": 160
+  },
+  {
+    "date": "2026-05-17",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 12,
+    "revenue_vat": 708
+  },
+  {
+    "date": "2026-05-17",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 9,
+    "revenue_vat": 118
+  },
+  {
+    "date": "2026-05-17",
+    "type": "shipping",
+    "name": "PPL ParcelShop",
+    "count": 2,
+    "revenue_vat": 140
+  },
+  {
+    "date": "2026-05-17",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 3,
+    "revenue_vat": 240
+  },
+  {
+    "date": "2026-05-18",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 9,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-18",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 3,
+    "revenue_vat": 150
+  },
+  {
+    "date": "2026-05-18",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 18,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-18",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-18",
+    "type": "shipping",
+    "name": "GLS domů",
+    "count": 2,
+    "revenue_vat": 160
+  },
+  {
+    "date": "2026-05-18",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 13,
+    "revenue_vat": 767
+  },
+  {
+    "date": "2026-05-18",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 7,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-18",
+    "type": "shipping",
+    "name": "Osobně na pobočce Barefoot concept store Třebíč",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-18",
+    "type": "shipping",
+    "name": "PPL doručení na Vaši adresu",
+    "count": 1,
+    "revenue_vat": 85
+  },
+  {
+    "date": "2026-05-18",
+    "type": "shipping",
+    "name": "PPL ParcelShop",
+    "count": 1,
+    "revenue_vat": 70
+  },
+  {
+    "date": "2026-05-18",
+    "type": "shipping",
+    "name": "Zásilkovna Výdejní místo",
+    "count": 2,
+    "revenue_vat": 160
+  },
+  {
+    "date": "2026-05-18",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 4,
+    "revenue_vat": 320
+  },
+  {
+    "date": "2026-05-19",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 11,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-19",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 4,
+    "revenue_vat": 200
+  },
+  {
+    "date": "2026-05-19",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 21,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-19",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 4,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-19",
+    "type": "shipping",
+    "name": "GLS domů",
+    "count": 1,
+    "revenue_vat": 80
+  },
+  {
+    "date": "2026-05-19",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 19,
+    "revenue_vat": 1121
+  },
+  {
     "date": "2026-05-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 8,
+    "revenue_vat": 177
+  },
+  {
+    "date": "2026-05-19",
+    "type": "shipping",
+    "name": "Zásilkovna domů",
+    "count": 1,
+    "revenue_vat": 95
+  },
+  {
+    "date": "2026-05-19",
+    "type": "shipping",
+    "name": "Zásilkovna Výdejní místo",
+    "count": 2,
+    "revenue_vat": 160
+  },
+  {
+    "date": "2026-05-19",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 6,
+    "revenue_vat": 480
+  },
+  {
+    "date": "2026-05-20",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-20",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 3,
+    "revenue_vat": 150
+  },
+  {
+    "date": "2026-05-20",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-20",
+    "type": "payment",
+    "name": "Hotově na pokladně",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-20",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 4,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-20",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
     "count": 1,
     "revenue_vat": 59
   },
   {
-    "date": "2026-05-19",
+    "date": "2026-05-20",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-20",
+    "type": "shipping",
+    "name": "PPL doručení na Vaši adresu",
+    "count": 2,
+    "revenue_vat": 170
+  },
+  {
+    "date": "2026-05-20",
+    "type": "shipping",
+    "name": "PPL ParcelShop",
+    "count": 1,
+    "revenue_vat": 70
+  },
+  {
+    "date": "2026-05-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
@@ -31143,13 +31486,20 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-21",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
-    "count": 1,
+    "count": 6,
     "revenue_vat": 0
   },
   {
     "date": "2026-05-21",
     "type": "payment",
     "name": "GoPay",
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-21",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
     "revenue_vat": 0
   },
@@ -31157,13 +31507,48 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 1,
-    "revenue_vat": 59
+    "count": 4,
+    "revenue_vat": 236
   },
   {
     "date": "2026-05-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-21",
+    "type": "shipping",
+    "name": "Individuální doprava",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-21",
+    "type": "shipping",
+    "name": "PPL ParcelShop",
+    "count": 1,
+    "revenue_vat": 70
+  },
+  {
+    "date": "2026-05-22",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 5,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-22",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 1,
+    "revenue_vat": 50
+  },
+  {
+    "date": "2026-05-22",
+    "type": "payment",
+    "name": "GoPay",
     "count": 1,
     "revenue_vat": 0
   },
@@ -31171,42 +31556,280 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-05-22",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 3,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-22",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 2,
+    "revenue_vat": 118
+  },
+  {
+    "date": "2026-05-22",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-22",
+    "type": "shipping",
+    "name": "PPL ParcelShop",
+    "count": 2,
+    "revenue_vat": 140
+  },
+  {
+    "date": "2026-05-22",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 1,
+    "revenue_vat": 80
+  },
+  {
+    "date": "2026-05-23",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 6,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-23",
+    "type": "shipping",
+    "name": "GLS domů",
+    "count": 1,
+    "revenue_vat": 80
+  },
+  {
+    "date": "2026-05-23",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 2,
+    "revenue_vat": 118
+  },
+  {
+    "date": "2026-05-23",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
     "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-23",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 2,
+    "revenue_vat": 160
+  },
+  {
+    "date": "2026-05-24",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-24",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 4,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-24",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 3,
+    "revenue_vat": 177
+  },
+  {
+    "date": "2026-05-24",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-24",
+    "type": "shipping",
+    "name": "PPL ParcelShop",
+    "count": 1,
+    "revenue_vat": 70
   },
   {
     "date": "2026-05-25",
     "type": "payment",
     "name": "Dobírka",
-    "count": 1,
-    "revenue_vat": 50
+    "count": 2,
+    "revenue_vat": 100
   },
   {
     "date": "2026-05-25",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 7,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-25",
+    "type": "shipping",
+    "name": "GLS domů",
+    "count": 2,
+    "revenue_vat": 160
+  },
+  {
+    "date": "2026-05-25",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 1,
+    "revenue_vat": 59
+  },
+  {
+    "date": "2026-05-25",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 1,
+    "revenue_vat": 59
+  },
+  {
+    "date": "2026-05-25",
+    "type": "shipping",
+    "name": "PPL doručení na Vaši adresu",
+    "count": 1,
+    "revenue_vat": 85
+  },
+  {
+    "date": "2026-05-25",
+    "type": "shipping",
+    "name": "PPL ParcelShop",
+    "count": 1,
+    "revenue_vat": 70
+  },
+  {
+    "date": "2026-05-25",
+    "type": "shipping",
+    "name": "Zásilkovna Výdejní místo",
+    "count": 2,
+    "revenue_vat": 160
+  },
+  {
+    "date": "2026-05-25",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 1,
+    "revenue_vat": 80
+  },
+  {
+    "date": "2026-05-26",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 4,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-26",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 17,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-26",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 5,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-26",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 13,
+    "revenue_vat": 767
+  },
+  {
+    "date": "2026-05-26",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 1,
+    "revenue_vat": 59
+  },
+  {
+    "date": "2026-05-26",
+    "type": "shipping",
+    "name": "Osobně na pobočce Barefoot concept store Třebíč",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-26",
+    "type": "shipping",
+    "name": "PPL ParcelShop",
+    "count": 1,
+    "revenue_vat": 70
+  },
+  {
+    "date": "2026-05-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
     "revenue_vat": 80
   },
   {
+    "date": "2026-05-26",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 5,
+    "revenue_vat": 400
+  },
+  {
+    "date": "2026-05-27",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 3,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-27",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 3,
+    "revenue_vat": 150
+  },
+  {
     "date": "2026-05-27",
     "type": "payment",
     "name": "GoPay",
-    "count": 1,
+    "count": 6,
     "revenue_vat": 0
   },
   {
     "date": "2026-05-27",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
-    "count": 1,
+    "count": 6,
     "revenue_vat": 0
   },
   {
     "date": "2026-05-27",
     "type": "shipping",
-    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "name": "GLS domů",
     "count": 1,
+    "revenue_vat": 80
+  },
+  {
+    "date": "2026-05-27",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 4,
+    "revenue_vat": 236
+  },
+  {
+    "date": "2026-05-27",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 2,
     "revenue_vat": 0
   },
   {
@@ -31217,30 +31840,72 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "revenue_vat": 0
   },
   {
+    "date": "2026-05-27",
+    "type": "shipping",
+    "name": "Osobně na pobočce Barefoot concept store Třebíč",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-27",
+    "type": "shipping",
+    "name": "PPL doručení na Vaši adresu",
+    "count": 1,
+    "revenue_vat": 85
+  },
+  {
+    "date": "2026-05-27",
+    "type": "shipping",
+    "name": "PPL ParcelShop",
+    "count": 1,
+    "revenue_vat": 70
+  },
+  {
+    "date": "2026-05-27",
+    "type": "shipping",
+    "name": "Zásilkovna Výdejní místo",
+    "count": 1,
+    "revenue_vat": 80
+  },
+  {
+    "date": "2026-05-27",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 2,
+    "revenue_vat": 160
+  },
+  {
     "date": "2026-05-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
-    "count": 3,
+    "count": 5,
     "revenue_vat": 0
   },
   {
     "date": "2026-05-28",
     "type": "payment",
     "name": "Dobírka",
-    "count": 1,
-    "revenue_vat": 50
+    "count": 2,
+    "revenue_vat": 100
   },
   {
     "date": "2026-05-28",
     "type": "payment",
     "name": "GoPay",
-    "count": 2,
+    "count": 7,
     "revenue_vat": 0
   },
   {
     "date": "2026-05-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
+    "count": 5,
+    "revenue_vat": 295
+  },
+  {
+    "date": "2026-05-28",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
     "revenue_vat": 177
   },
@@ -31261,15 +31926,64 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
   {
     "date": "2026-05-28",
     "type": "shipping",
-    "name": "Zásilkovna Z-Box",
+    "name": "Zásilkovna domů",
+    "count": 1,
+    "revenue_vat": 95
+  },
+  {
+    "date": "2026-05-28",
+    "type": "shipping",
+    "name": "Zásilkovna Výdejní místo",
     "count": 1,
     "revenue_vat": 80
+  },
+  {
+    "date": "2026-05-28",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 2,
+    "revenue_vat": 160
   },
   {
     "date": "2026-05-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-29",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 3,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-29",
+    "type": "payment",
+    "name": "Hotově na pokladně",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-29",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 3,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-29",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 1,
+    "revenue_vat": 59
+  },
+  {
+    "date": "2026-05-29",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 2,
     "revenue_vat": 0
   },
   {
@@ -31280,28 +31994,28 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "revenue_vat": 80
   },
   {
-    "date": "2026-05-31",
+    "date": "2026-05-30",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
     "revenue_vat": 0
   },
   {
-    "date": "2026-05-31",
-    "type": "payment",
-    "name": "Dobírka",
-    "count": 1,
-    "revenue_vat": 50
-  },
-  {
-    "date": "2026-05-31",
+    "date": "2026-05-30",
     "type": "payment",
     "name": "GoPay",
-    "count": 1,
+    "count": 2,
     "revenue_vat": 0
   },
   {
-    "date": "2026-05-31",
+    "date": "2026-05-30",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 2,
+    "revenue_vat": 118
+  },
+  {
+    "date": "2026-05-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
@@ -31309,6 +32023,48 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
   },
   {
     "date": "2026-05-31",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 4,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-31",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 1,
+    "revenue_vat": 50
+  },
+  {
+    "date": "2026-05-31",
+    "type": "payment",
+    "name": "GoPay",
+    "count": 5,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-31",
+    "type": "shipping",
+    "name": "GLS domů",
+    "count": 1,
+    "revenue_vat": 80
+  },
+  {
+    "date": "2026-05-31",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 3,
+    "revenue_vat": 177
+  },
+  {
+    "date": "2026-05-31",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-31",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
@@ -31322,11 +32078,53 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "revenue_vat": 80
   },
   {
+    "date": "2026-05-31",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 2,
+    "revenue_vat": 160
+  },
+  {
+    "date": "2026-06-01",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-06-01",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 1,
+    "revenue_vat": 50
+  },
+  {
     "date": "2026-06-01",
     "type": "payment",
     "name": "GoPay",
+    "count": 4,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-06-01",
+    "type": "payment",
+    "name": "Hotově na pokladně",
     "count": 1,
     "revenue_vat": 0
+  },
+  {
+    "date": "2026-06-01",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-06-01",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 3,
+    "revenue_vat": 177
   },
   {
     "date": "2026-06-01",
@@ -31334,6 +32132,27 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
     "revenue_vat": 85
+  },
+  {
+    "date": "2026-06-01",
+    "type": "shipping",
+    "name": "PPL ParcelShop",
+    "count": 1,
+    "revenue_vat": 70
+  },
+  {
+    "date": "2026-06-01",
+    "type": "shipping",
+    "name": "Zásilkovna Z-Box",
+    "count": 1,
+    "revenue_vat": 80
+  },
+  {
+    "date": "2026-06-02",
+    "type": "payment",
+    "name": "Bankovní převod - rychlá platba QR kódem",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-06-02",
@@ -31346,15 +32165,29 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-06-02",
     "type": "payment",
     "name": "GoPay",
-    "count": 2,
+    "count": 3,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-06-02",
+    "type": "payment",
+    "name": "Hotově na pokladně",
+    "count": 1,
     "revenue_vat": 0
   },
   {
     "date": "2026-06-02",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
-    "count": 1,
+    "count": 2,
     "revenue_vat": 0
+  },
+  {
+    "date": "2026-06-02",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 2,
+    "revenue_vat": 118
   },
   {
     "date": "2026-06-02",
@@ -31381,7 +32214,14 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-06-03",
     "type": "payment",
     "name": "GoPay",
-    "count": 2,
+    "count": 4,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-06-03",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 1,
     "revenue_vat": 0
   },
   {
@@ -31395,7 +32235,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-06-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
-    "count": 2,
+    "count": 4,
     "revenue_vat": 0
   },
   {
@@ -31409,6 +32249,20 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-06-04",
     "type": "payment",
     "name": "GoPay",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-06-04",
+    "type": "payment",
+    "name": "Hotově na pokladně",
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-06-04",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
     "revenue_vat": 0
   },
@@ -31437,7 +32291,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-06-05",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
-    "count": 1,
+    "count": 7,
     "revenue_vat": 0
   },
   {

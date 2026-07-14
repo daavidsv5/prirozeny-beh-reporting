@@ -6003,13 +6003,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2024-04-07"
+      "2024-04-07",
+      "2026-05-17"
     ],
     "revenues": [
-      1982.64
+      1982.64,
+      5768.59
     ],
     "revsVat": [
-      2399
+      2399,
+      6980
     ]
   },
   {
@@ -6630,13 +6633,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2024-04-19"
+      "2024-04-19",
+      "2026-05-18"
     ],
     "revenues": [
-      2719.01
+      2719.01,
+      2710.75
     ],
     "revsVat": [
-      3290
+      3290,
+      3280
     ]
   },
   {
@@ -9755,13 +9761,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2024-07-11"
+      "2024-07-11",
+      "2026-05-21"
     ],
     "revenues": [
-      1652.07
+      1652.07,
+      457.86
     ],
     "revsVat": [
-      1999
+      1999,
+      554
     ]
   },
   {
@@ -10979,13 +10988,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2024-08-12"
+      "2024-08-12",
+      "2026-05-12"
     ],
     "revenues": [
-      2256.2
+      2256.2,
+      4495.87
     ],
     "revsVat": [
-      2730
+      2730,
+      5440
     ]
   },
   {
@@ -12475,17 +12487,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-17"
     ],
     "revenues": [
-      1238.84
-    ],
-    "revsVat": [
-      1499
-    ]
-  },
-  {
-    "dates": [
-      "2024-09-17"
-    ],
-    "revenues": [
       1569.42
     ],
     "revsVat": [
@@ -12516,13 +12517,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2024-09-18"
+      "2024-09-18",
+      "2026-05-15"
     ],
     "revenues": [
-      2223.14
+      2223.14,
+      2106.61
     ],
     "revsVat": [
-      2690
+      2690,
+      2549
     ]
   },
   {
@@ -12758,13 +12762,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2024-09-26"
+      "2024-09-26",
+      "2026-05-14"
     ],
     "revenues": [
-      1404.13
+      1404.13,
+      2057.85
     ],
     "revsVat": [
-      1699
+      1699,
+      2490
     ]
   },
   {
@@ -12824,13 +12831,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2024-09-29"
+      "2024-09-29",
+      "2026-05-17"
     ],
     "revenues": [
-      2256.2
+      2256.2,
+      2225.62
     ],
     "revsVat": [
-      2730
+      2730,
+      2693
     ]
   },
   {
@@ -13599,15 +13609,18 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   {
     "dates": [
       "2024-11-07",
-      "2025-05-07"
+      "2025-05-07",
+      "2026-05-27"
     ],
     "revenues": [
       2395.87,
-      4611.57
+      4611.57,
+      2725.62
     ],
     "revsVat": [
       2899,
-      5580
+      5580,
+      3298
     ]
   },
   {
@@ -14993,13 +15006,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-01-13"
+      "2025-01-13",
+      "2026-05-18"
     ],
     "revenues": [
-      2388.43
+      2388.43,
+      1479.34
     ],
     "revsVat": [
-      2890
+      2890,
+      1790
     ]
   },
   {
@@ -16715,17 +16731,20 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     "dates": [
       "2025-03-26",
       "2026-03-12",
-      "2026-05-02"
+      "2026-05-02",
+      "2026-05-13"
     ],
     "revenues": [
       1528.93,
       2521.49,
-      1170.25
+      1170.25,
+      1484.3
     ],
     "revsVat": [
       1850,
       3051,
-      1416
+      1416,
+      1796
     ]
   },
   {
@@ -17510,13 +17529,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-04-11"
+      "2025-04-11",
+      "2026-05-14"
     ],
     "revenues": [
-      2719.01
+      2719.01,
+      1389.26
     ],
     "revsVat": [
-      3290
+      3290,
+      1681
     ]
   },
   {
@@ -17561,17 +17583,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       2199
-    ]
-  },
-  {
-    "dates": [
-      "2025-04-12"
-    ],
-    "revenues": [
-      2471.07
-    ],
-    "revsVat": [
-      2990
     ]
   },
   {
@@ -19172,15 +19183,18 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   {
     "dates": [
       "2025-05-06",
-      "2026-02-07"
+      "2026-02-07",
+      "2026-05-17"
     ],
     "revenues": [
       2966.94,
-      2057.85
+      2057.85,
+      1729.75
     ],
     "revsVat": [
       3590,
-      2490
+      2490,
+      2093
     ]
   },
   {
@@ -19692,13 +19706,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-05-16"
+      "2025-05-16",
+      "2026-05-18"
     ],
     "revenues": [
-      2801.65
+      2801.65,
+      2058.68
     ],
     "revsVat": [
-      3390
+      3390,
+      2491
     ]
   },
   {
@@ -21320,13 +21337,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-06-13"
+      "2025-06-13",
+      "2026-05-17"
     ],
     "revenues": [
-      1734.71
+      1734.71,
+      1300.83
     ],
     "revsVat": [
-      2099
+      2099,
+      1574
     ]
   },
   {
@@ -23754,15 +23774,18 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   {
     "dates": [
       "2025-07-10",
-      "2026-04-22"
+      "2026-04-22",
+      "2026-05-31"
     ],
     "revenues": [
       1975.21,
-      1479.34
+      1479.34,
+      3867.77
     ],
     "revsVat": [
       2390,
-      1790
+      1790,
+      4680
     ]
   },
   {
@@ -24131,13 +24154,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-07-15"
+      "2025-07-15",
+      "2026-05-19"
     ],
     "revenues": [
-      1734.71
+      1734.71,
+      1667.77
     ],
     "revsVat": [
-      2099
+      2099,
+      2018
     ]
   },
   {
@@ -25227,13 +25253,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-07-27"
+      "2025-07-27",
+      "2026-05-14"
     ],
     "revenues": [
-      1479.34
+      1479.34,
+      1362.81
     ],
     "revsVat": [
-      1790
+      1790,
+      1649
     ]
   },
   {
@@ -25282,13 +25311,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-07-28"
+      "2025-07-28",
+      "2026-05-18"
     ],
     "revenues": [
-      900.83
+      900.83,
+      1362.81
     ],
     "revsVat": [
-      1090
+      1090,
+      1649
     ]
   },
   {
@@ -26348,16 +26380,13 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-08-12",
-      "2026-05-09"
+      "2025-08-12"
     ],
     "revenues": [
-      3470.25,
-      1479.34
+      3470.25
     ],
     "revsVat": [
-      4199,
-      1790
+      4199
     ]
   },
   {
@@ -27578,13 +27607,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-09-10"
+      "2025-09-10",
+      "2026-05-19"
     ],
     "revenues": [
-      1396.69
+      1396.69,
+      1362.81
     ],
     "revsVat": [
-      1690
+      1690,
+      1649
     ]
   },
   {
@@ -27831,13 +27863,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-09-13"
+      "2025-09-13",
+      "2026-05-19"
     ],
     "revenues": [
-      2850.41
+      2850.41,
+      1300.83
     ],
     "revsVat": [
-      3449
+      3449,
+      1574
     ]
   },
   {
@@ -28315,13 +28350,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-09-18"
+      "2025-09-18",
+      "2026-05-17"
     ],
     "revenues": [
-      1396.69
+      1396.69,
+      1481.82
     ],
     "revsVat": [
-      1690
+      1690,
+      1793
     ]
   },
   {
@@ -29009,13 +29047,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-09-29"
+      "2025-09-29",
+      "2026-05-17"
     ],
     "revenues": [
-      4114.05
+      4114.05,
+      1300.83
     ],
     "revsVat": [
-      4978
+      4978,
+      1574
     ]
   },
   {
@@ -29100,13 +29141,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-09-30"
+      "2025-09-30",
+      "2026-05-20"
     ],
     "revenues": [
-      2966.94
+      2966.94,
+      4213.22
     ],
     "revsVat": [
-      3590
+      3590,
+      5098
     ]
   },
   {
@@ -29797,13 +29841,19 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-10-09"
+      "2025-10-09",
+      "2026-05-18",
+      "2026-05-27"
     ],
     "revenues": [
-      2966.94
+      2966.94,
+      2884.3,
+      3836.36
     ],
     "revsVat": [
-      3590
+      3590,
+      3490,
+      4642
     ]
   },
   {
@@ -29877,13 +29927,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-10-09"
+      "2025-10-09",
+      "2026-05-18"
     ],
     "revenues": [
-      2851.24
+      2851.24,
+      2958.68
     ],
     "revsVat": [
-      3450
+      3450,
+      3580
     ]
   },
   {
@@ -30725,13 +30778,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-10-22"
+      "2025-10-22",
+      "2026-05-22"
     ],
     "revenues": [
-      6461.98
+      6461.98,
+      1817.36
     ],
     "revsVat": [
-      7819
+      7819,
+      2199
     ]
   },
   {
@@ -31463,13 +31519,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-11-06"
+      "2025-11-06",
+      "2026-05-19"
     ],
     "revenues": [
-      1858.68
+      1858.68,
+      1543.8
     ],
     "revsVat": [
-      2249
+      2249,
+      1868
     ]
   },
   {
@@ -32062,24 +32121,21 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-22",
       "2026-01-24",
       "2026-02-16",
-      "2026-03-19",
-      "2026-05-03"
+      "2026-03-19"
     ],
     "revenues": [
       1975.21,
       2966.94,
       2057.85,
       2966.94,
-      2305.79,
-      2884.3
+      2305.79
     ],
     "revsVat": [
       2390,
       3590,
       2490,
       3590,
-      2790,
-      3490
+      2790
     ]
   },
   {
@@ -32429,14 +32485,17 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   {
     "dates": [
       "2025-11-19",
-      "2026-05-03"
+      "2026-05-03",
+      "2026-05-14"
     ],
     "revenues": [
       2149.59,
+      2801.65,
       2801.65
     ],
     "revsVat": [
       2601,
+      3390,
       3390
     ]
   },
@@ -32497,13 +32556,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-11-21"
+      "2025-11-21",
+      "2026-05-22"
     ],
     "revenues": [
-      2305.79
+      2305.79,
+      2376.03
     ],
     "revsVat": [
-      2790
+      2790,
+      2875
     ]
   },
   {
@@ -32827,16 +32889,13 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2025-11-26",
-      "2026-04-29"
+      "2025-11-26"
     ],
     "revenues": [
-      3280.16,
-      3257.02
+      3280.16
     ],
     "revsVat": [
-      3969,
-      3941
+      3969
     ]
   },
   {
@@ -33837,15 +33896,18 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   {
     "dates": [
       "2025-12-17",
-      "2026-03-15"
+      "2026-03-15",
+      "2026-05-19"
     ],
     "revenues": [
       2966.94,
-      2223.97
+      2223.97,
+      1895.87
     ],
     "revsVat": [
       3590,
-      2691
+      2691,
+      2294
     ]
   },
   {
@@ -34233,13 +34295,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-01-04"
+      "2026-01-04",
+      "2026-05-14"
     ],
     "revenues": [
-      2759.51
+      2759.51,
+      1362.81
     ],
     "revsVat": [
-      3339
+      3339,
+      1649
     ]
   },
   {
@@ -34806,13 +34871,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-01-19"
+      "2026-01-19",
+      "2026-06-02"
     ],
     "revenues": [
-      2884.3
+      2884.3,
+      2898.52
     ],
     "revsVat": [
-      3490
+      3490,
+      3591
     ]
   },
   {
@@ -34861,13 +34929,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-01-21"
+      "2026-01-21",
+      "2026-05-18"
     ],
     "revenues": [
-      2599.17
+      2599.17,
+      1895.87
     ],
     "revsVat": [
-      3145
+      3145,
+      2294
     ]
   },
   {
@@ -35234,13 +35305,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-01-31"
+      "2026-01-31",
+      "2026-05-27"
     ],
     "revenues": [
-      2075.21
+      2075.21,
+      3831.4
     ],
     "revsVat": [
-      2511
+      2511,
+      4636
     ]
   },
   {
@@ -35522,15 +35596,18 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   {
     "dates": [
       "2026-02-08",
-      "2026-03-18"
+      "2026-03-18",
+      "2026-05-17"
     ],
     "revenues": [
       3462.81,
-      2471.07
+      2471.07,
+      1500.83
     ],
     "revsVat": [
       4190,
-      2990
+      2990,
+      1816
     ]
   },
   {
@@ -36953,13 +37030,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-03-07"
+      "2026-03-07",
+      "2026-05-26"
     ],
     "revenues": [
-      2811.58
+      2811.58,
+      1362.81
     ],
     "revsVat": [
-      3402
+      3402,
+      1649
     ]
   },
   {
@@ -37567,13 +37647,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-03-16"
+      "2026-03-16",
+      "2026-05-17"
     ],
     "revenues": [
-      1479.34
+      1479.34,
+      1686.78
     ],
     "revsVat": [
-      1790
+      1790,
+      2041
     ]
   },
   {
@@ -38014,13 +38097,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-03-21"
+      "2026-03-21",
+      "2026-05-26"
     ],
     "revenues": [
-      1479.34
+      1479.34,
+      1362.81
     ],
     "revsVat": [
-      1790
+      1790,
+      1649
     ]
   },
   {
@@ -38124,13 +38210,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-03-22"
+      "2026-03-22",
+      "2026-05-23"
     ],
     "revenues": [
-      2190.91
+      2190.91,
+      3420.66
     ],
     "revsVat": [
-      2651
+      2651,
+      4139
     ]
   },
   {
@@ -38460,13 +38549,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-03-25"
+      "2026-03-25",
+      "2026-05-26"
     ],
     "revenues": [
-      2884.3
+      2884.3,
+      1800
     ],
     "revsVat": [
-      3490
+      3490,
+      2178
     ]
   },
   {
@@ -38755,13 +38847,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-03-28"
+      "2026-03-28",
+      "2026-05-31"
     ],
     "revenues": [
-      1561.98
+      1561.98,
+      1479.34
     ],
     "revsVat": [
-      1890
+      1890,
+      1790
     ]
   },
   {
@@ -38821,13 +38916,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-03-29"
+      "2026-03-29",
+      "2026-05-19"
     ],
     "revenues": [
-      1247.11
+      1247.11,
+      628.1
     ],
     "revsVat": [
-      1509
+      1509,
+      760
     ]
   },
   {
@@ -39099,13 +39197,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-04-02"
+      "2026-04-02",
+      "2026-05-14"
     ],
     "revenues": [
-      3867.77
+      3867.77,
+      1479.34
     ],
     "revsVat": [
-      4680
+      4680,
+      1790
     ]
   },
   {
@@ -39460,13 +39561,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-04-09"
+      "2026-04-09",
+      "2026-05-26"
     ],
     "revenues": [
-      1561.98
+      1561.98,
+      1858.68
     ],
     "revsVat": [
-      1890
+      1890,
+      2249
     ]
   },
   {
@@ -39522,17 +39626,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       3591
-    ]
-  },
-  {
-    "dates": [
-      "2026-04-10"
-    ],
-    "revenues": [
-      1561.98
-    ],
-    "revsVat": [
-      1890
     ]
   },
   {
@@ -40203,13 +40296,16 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-04-20"
+      "2026-04-20",
+      "2026-05-14"
     ],
     "revenues": [
-      2000.83
+      2000.83,
+      2075.21
     ],
     "revsVat": [
-      2421
+      2421,
+      2511
     ]
   },
   {
@@ -40217,7 +40313,7 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-04-20"
     ],
     "revenues": [
-      1790
+      1479.34
     ],
     "revsVat": [
       1790
@@ -40227,17 +40323,20 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     "dates": [
       "2026-04-20",
       "2026-04-30",
-      "2026-04-30"
+      "2026-04-30",
+      "2026-05-13"
     ],
     "revenues": [
       1561.16,
       3636.37,
-      3122.32
+      1366.12,
+      1366.12
     ],
     "revsVat": [
       1889,
       4400,
-      3778
+      1653,
+      1653
     ]
   },
   {
@@ -40482,17 +40581,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-04-25"
     ],
     "revenues": [
-      2521.49
-    ],
-    "revsVat": [
-      3051
-    ]
-  },
-  {
-    "dates": [
-      "2026-04-25"
-    ],
-    "revenues": [
       652.89
     ],
     "revsVat": [
@@ -40658,10 +40746,10 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-04-28"
     ],
     "revenues": [
-      2709.92
+      1313.23
     ],
     "revsVat": [
-      3279
+      1589
     ]
   },
   {
@@ -40691,43 +40779,10 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-04-28"
     ],
     "revenues": [
-      1561.98
-    ],
-    "revsVat": [
-      1890
-    ]
-  },
-  {
-    "dates": [
-      "2026-04-28"
-    ],
-    "revenues": [
-      1561.98
-    ],
-    "revsVat": [
-      1890
-    ]
-  },
-  {
-    "dates": [
-      "2026-04-28"
-    ],
-    "revenues": [
       652.89
     ],
     "revsVat": [
       790
-    ]
-  },
-  {
-    "dates": [
-      "2026-04-28"
-    ],
-    "revenues": [
-      1170.25
-    ],
-    "revsVat": [
-      1416
     ]
   },
   {
@@ -40790,21 +40845,10 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-04-30"
     ],
     "revenues": [
-      6145.46
+      2057.85
     ],
     "revsVat": [
-      7436
-    ]
-  },
-  {
-    "dates": [
-      "2026-04-30"
-    ],
-    "revenues": [
-      1644.63
-    ],
-    "revsVat": [
-      1990
+      2490
     ]
   },
   {
@@ -40823,10 +40867,10 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-04-30"
     ],
     "revenues": [
-      3081.82
+      114.88
     ],
     "revsVat": [
-      3729
+      139
     ]
   },
   {
@@ -40844,17 +40888,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       2511,
       1979,
       1796
-    ]
-  },
-  {
-    "dates": [
-      "2026-04-30"
-    ],
-    "revenues": [
-      1561.98
-    ],
-    "revsVat": [
-      1890
     ]
   },
   {
@@ -40928,39 +40961,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-05-02"
     ],
     "revenues": [
-      3420.66
-    ],
-    "revsVat": [
-      4139
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-02"
-    ],
-    "revenues": [
-      2819.01
-    ],
-    "revsVat": [
-      3411
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-02"
-    ],
-    "revenues": [
-      2968.6
-    ],
-    "revsVat": [
-      3592
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-02"
-    ],
-    "revenues": [
       1231.4
     ],
     "revsVat": [
@@ -40983,32 +40983,10 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-05-03"
     ],
     "revenues": [
-      2884.3
-    ],
-    "revsVat": [
-      3490
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-03"
-    ],
-    "revenues": [
       1479.34
     ],
     "revsVat": [
       1790
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-03"
-    ],
-    "revenues": [
-      2809.09
-    ],
-    "revsVat": [
-      3399
     ]
   },
   {
@@ -41020,17 +40998,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       2900
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-04"
-    ],
-    "revenues": [
-      6174.39
-    ],
-    "revsVat": [
-      7471
     ]
   },
   {
@@ -41093,17 +41060,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-05-04"
     ],
     "revenues": [
-      809.92
-    ],
-    "revsVat": [
-      980
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-04"
-    ],
-    "revenues": [
       1561.98
     ],
     "revsVat": [
@@ -41126,21 +41082,10 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-05-05"
     ],
     "revenues": [
-      7495.04
+      4776.03
     ],
     "revsVat": [
-      9069
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-05"
-    ],
-    "revenues": [
-      1561.98
-    ],
-    "revsVat": [
-      1890
+      5779
     ]
   },
   {
@@ -41167,42 +41112,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-05-05",
-      "2026-05-07"
-    ],
-    "revenues": [
-      5355.37,
-      2471.07
-    ],
-    "revsVat": [
-      6480,
-      2990
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-05"
-    ],
-    "revenues": [
-      9230.58
-    ],
-    "revsVat": [
-      11169
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-06"
-    ],
-    "revenues": [
-      1404.13
-    ],
-    "revsVat": [
-      1699
-    ]
-  },
-  {
-    "dates": [
       "2026-05-06"
     ],
     "revenues": [
@@ -41210,17 +41119,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       5089
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-06"
-    ],
-    "revenues": [
-      1644.63
-    ],
-    "revsVat": [
-      1990
     ]
   },
   {
@@ -41236,17 +41134,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-05-06"
-    ],
-    "revenues": [
-      8644.63
-    ],
-    "revsVat": [
-      10460
-    ]
-  },
-  {
-    "dates": [
       "2026-05-07"
     ],
     "revenues": [
@@ -41254,17 +41141,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       1890
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-07"
-    ],
-    "revenues": [
-      3867.77
-    ],
-    "revsVat": [
-      4680
     ]
   },
   {
@@ -41357,24 +41233,13 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-05-08"
+      "2026-05-07"
     ],
     "revenues": [
-      809.92
+      2471.07
     ],
     "revsVat": [
-      980
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-08"
-    ],
-    "revenues": [
-      2305.79
-    ],
-    "revsVat": [
-      2790
+      2990
     ]
   },
   {
@@ -41386,17 +41251,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       980
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-08"
-    ],
-    "revenues": [
-      1479.34
-    ],
-    "revsVat": [
-      1790
     ]
   },
   {
@@ -41408,28 +41262,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       1890
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-08"
-    ],
-    "revenues": [
-      2966.94
-    ],
-    "revsVat": [
-      3590
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-08"
-    ],
-    "revenues": [
-      1734.71
-    ],
-    "revsVat": [
-      2099
     ]
   },
   {
@@ -41463,28 +41295,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       1790
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-10"
-    ],
-    "revenues": [
-      2305.79
-    ],
-    "revsVat": [
-      2790
-    ]
-  },
-  {
-    "dates": [
-      "2026-05-10"
-    ],
-    "revenues": [
-      1858.68
-    ],
-    "revsVat": [
-      2249
     ]
   },
   {
@@ -41536,10 +41346,10 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-05-11"
     ],
     "revenues": [
-      3619.83
+      1396.69
     ],
     "revsVat": [
-      4380
+      1690
     ]
   },
   {
@@ -41547,10 +41357,35 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-05-11"
     ],
     "revenues": [
-      1396.69
+      1561.98
     ],
     "revsVat": [
-      1690
+      1890
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-11"
+    ],
+    "revenues": [
+      2801.65
+    ],
+    "revsVat": [
+      3390
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-11",
+      "2026-06-23"
+    ],
+    "revenues": [
+      809.92,
+      1718.18
+    ],
+    "revsVat": [
+      980,
+      2079
     ]
   },
   {
@@ -41566,6 +41401,262 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
+      "2026-05-11"
+    ],
+    "revenues": [
+      2809.09
+    ],
+    "revsVat": [
+      3399
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-11"
+    ],
+    "revenues": [
+      2305.79
+    ],
+    "revsVat": [
+      2790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-12",
+      "2026-05-18"
+    ],
+    "revenues": [
+      3123.96,
+      1556.2
+    ],
+    "revsVat": [
+      3780,
+      1883
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-12"
+    ],
+    "revenues": [
+      2884.3
+    ],
+    "revsVat": [
+      3490
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-12"
+    ],
+    "revenues": [
+      1561.16
+    ],
+    "revsVat": [
+      1889
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-12"
+    ],
+    "revenues": [
+      3645.46
+    ],
+    "revsVat": [
+      4411
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-12"
+    ],
+    "revenues": [
+      1954.55
+    ],
+    "revsVat": [
+      2365
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-12"
+    ],
+    "revenues": [
+      1396.69
+    ],
+    "revsVat": [
+      1690
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-12"
+    ],
+    "revenues": [
+      1631.4
+    ],
+    "revsVat": [
+      1974
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-12"
+    ],
+    "revenues": [
+      3790.09
+    ],
+    "revsVat": [
+      4586
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-12"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-12"
+    ],
+    "revenues": [
+      1405.79
+    ],
+    "revsVat": [
+      1701
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-12"
+    ],
+    "revenues": [
+      579.34
+    ],
+    "revsVat": [
+      701
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-13"
+    ],
+    "revenues": [
+      2058.68
+    ],
+    "revsVat": [
+      2491
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-13"
+    ],
+    "revenues": [
+      1561.98
+    ],
+    "revsVat": [
+      1890
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-13"
+    ],
+    "revenues": [
+      2305.79
+    ],
+    "revsVat": [
+      2790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-13"
+    ],
+    "revenues": [
+      1729.75
+    ],
+    "revsVat": [
+      2093
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-13"
+    ],
+    "revenues": [
+      2058.68
+    ],
+    "revsVat": [
+      2491
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-14"
+    ],
+    "revenues": [
+      1405.79
+    ],
+    "revsVat": [
+      1701
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-14"
+    ],
+    "revenues": [
+      4110.75
+    ],
+    "revsVat": [
+      4974
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-14"
+    ],
+    "revenues": [
+      1941.32
+    ],
+    "revsVat": [
+      2349
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-14"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-14"
+    ],
+    "revenues": [
+      2473.55
+    ],
+    "revsVat": [
+      2993
+    ]
+  },
+  {
+    "dates": [
       "2026-05-14"
     ],
     "revenues": [
@@ -41573,6 +41664,317 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       7073
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-14"
+    ],
+    "revenues": [
+      2287.6
+    ],
+    "revsVat": [
+      2768
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-14"
+    ],
+    "revenues": [
+      1729.75
+    ],
+    "revsVat": [
+      2093
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-14"
+    ],
+    "revenues": [
+      2287.6
+    ],
+    "revsVat": [
+      2768
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-14"
+    ],
+    "revenues": [
+      2473.55
+    ],
+    "revsVat": [
+      2993
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      4775.21
+    ],
+    "revsVat": [
+      5778
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      5571.08
+    ],
+    "revsVat": [
+      6741
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      2809.09
+    ],
+    "revsVat": [
+      3399
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      1843.81
+    ],
+    "revsVat": [
+      2231
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      652.89
+    ],
+    "revsVat": [
+      790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      98.35
+    ],
+    "revsVat": [
+      119
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15",
+      "2026-05-15"
+    ],
+    "revenues": [
+      2452.9,
+      1226.45
+    ],
+    "revsVat": [
+      2968,
+      1484
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      3061.98
+    ],
+    "revsVat": [
+      3705
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      1171.07
+    ],
+    "revsVat": [
+      1417
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      1171.07
+    ],
+    "revsVat": [
+      1417
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      1729.75
+    ],
+    "revsVat": [
+      2093
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      2966.94
+    ],
+    "revsVat": [
+      3590
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      2101.65
+    ],
+    "revsVat": [
+      2543
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      2884.3
+    ],
+    "revsVat": [
+      3490
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-15"
+    ],
+    "revenues": [
+      2571.9
+    ],
+    "revsVat": [
+      3112
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      1819.02
+    ],
+    "revsVat": [
+      2201
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      1657.86
+    ],
+    "revsVat": [
+      2006
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      2106.61
+    ],
+    "revsVat": [
+      2549
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      2601.66
+    ],
+    "revsVat": [
+      3148
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      5625.62
+    ],
+    "revsVat": [
+      6807
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      2228.93
+    ],
+    "revsVat": [
+      2697
     ]
   },
   {
@@ -41588,6 +41990,397 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      1226.45
+    ],
+    "revsVat": [
+      1484
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      1396.69
+    ],
+    "revsVat": [
+      1690
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      2727.27
+    ],
+    "revsVat": [
+      3300
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      3297.52
+    ],
+    "revsVat": [
+      3990
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      2778.52
+    ],
+    "revsVat": [
+      3362
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      1923.97
+    ],
+    "revsVat": [
+      2328
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16",
+      "2026-05-26"
+    ],
+    "revenues": [
+      2106.61,
+      2039.67
+    ],
+    "revsVat": [
+      2549,
+      2468
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-16"
+    ],
+    "revenues": [
+      1698.35
+    ],
+    "revsVat": [
+      2055
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1758.67
+    ],
+    "revsVat": [
+      2128
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1226.45
+    ],
+    "revsVat": [
+      1484
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      5677.69
+    ],
+    "revsVat": [
+      6870
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1483.47
+    ],
+    "revsVat": [
+      1795
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      2663.64
+    ],
+    "revsVat": [
+      3223
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1895.87
+    ],
+    "revsVat": [
+      2294
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      2759.5
+    ],
+    "revsVat": [
+      3339
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1835.54
+    ],
+    "revsVat": [
+      2221
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      2225.62
+    ],
+    "revsVat": [
+      2693
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1729.75
+    ],
+    "revsVat": [
+      2093
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1895.87
+    ],
+    "revsVat": [
+      2294
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1561.98
+    ],
+    "revsVat": [
+      1890
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1131.4
+    ],
+    "revsVat": [
+      1369
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1729.75
+    ],
+    "revsVat": [
+      2093
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17",
+      "2026-07-05"
+    ],
+    "revenues": [
+      3402.48,
+      1066.12
+    ],
+    "revsVat": [
+      4117,
+      1290
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      2058.68
+    ],
+    "revsVat": [
+      2491
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1729.75
+    ],
+    "revsVat": [
+      2093
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-17"
+    ],
+    "revenues": [
+      6783.48
+    ],
+    "revsVat": [
+      8208
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      2884.3
+    ],
+    "revsVat": [
+      3490
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1543.8
+    ],
+    "revsVat": [
+      1868
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      3030.58
+    ],
+    "revsVat": [
+      3667
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1729.75
+    ],
+    "revsVat": [
+      2093
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1644.63
+    ],
+    "revsVat": [
+      1990
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      2511.57
+    ],
+    "revsVat": [
+      3039
+    ]
+  },
+  {
+    "dates": [
       "2026-05-18"
     ],
     "revenues": [
@@ -41595,6 +42388,174 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1890.91
+    ],
+    "revsVat": [
+      2288
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      3452.07
+    ],
+    "revsVat": [
+      4177
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18",
+      "2026-05-22"
+    ],
+    "revenues": [
+      2039.67,
+      2825.62
+    ],
+    "revsVat": [
+      2468,
+      3419
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      3452.07
+    ],
+    "revsVat": [
+      4177
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      2106.61
+    ],
+    "revsVat": [
+      2549
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      2305.79
+    ],
+    "revsVat": [
+      2790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1844.63
+    ],
+    "revsVat": [
+      2232
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1895.87
+    ],
+    "revsVat": [
+      2294
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-18"
+    ],
+    "revenues": [
+      1835.54
+    ],
+    "revsVat": [
+      2221
     ]
   },
   {
@@ -41613,10 +42574,506 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-05-19"
     ],
     "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1561.98
+    ],
+    "revsVat": [
+      1890
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1481.82
+    ],
+    "revsVat": [
+      1793
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      2106.61
+    ],
+    "revsVat": [
+      2549
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
       2101.65
     ],
     "revsVat": [
       2543
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      2223.97
+    ],
+    "revsVat": [
+      2691
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1556.2
+    ],
+    "revsVat": [
+      1883
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      2101.65
+    ],
+    "revsVat": [
+      2543
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1672.73
+    ],
+    "revsVat": [
+      2024
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      2101.65
+    ],
+    "revsVat": [
+      2543
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19",
+      "2026-05-19"
+    ],
+    "revenues": [
+      1300.83,
+      3151.24
+    ],
+    "revsVat": [
+      1574,
+      3813
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      2287.6
+    ],
+    "revsVat": [
+      2768
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      413.22
+    ],
+    "revsVat": [
+      500
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      7605.78
+    ],
+    "revsVat": [
+      9203
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1851.24
+    ],
+    "revsVat": [
+      2240
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      4331.41
+    ],
+    "revsVat": [
+      5241
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-19"
+    ],
+    "revenues": [
+      1561.98
+    ],
+    "revsVat": [
+      1890
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-20"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-20"
+    ],
+    "revenues": [
+      1729.75
+    ],
+    "revsVat": [
+      2093
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-20"
+    ],
+    "revenues": [
+      2057.85
+    ],
+    "revsVat": [
+      2490
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-20"
+    ],
+    "revenues": [
+      1404.13
+    ],
+    "revsVat": [
+      1699
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-20"
+    ],
+    "revenues": [
+      1817.36
+    ],
+    "revsVat": [
+      2199
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-20"
+    ],
+    "revenues": [
+      2892.56
+    ],
+    "revsVat": [
+      3500
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-20"
+    ],
+    "revenues": [
+      2898.52
+    ],
+    "revsVat": [
+      3591
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-20",
+      "2026-05-20"
+    ],
+    "revenues": [
+      1635.54,
+      2075.21
+    ],
+    "revsVat": [
+      1979,
+      2511
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-20",
+      "2026-06-12"
+    ],
+    "revenues": [
+      2844.51,
+      1562.81
+    ],
+    "revsVat": [
+      3592,
+      1891
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-21"
+    ],
+    "revenues": [
+      1561.98
+    ],
+    "revsVat": [
+      1890
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-21",
+      "2026-05-21"
+    ],
+    "revenues": [
+      2223.14,
+      2521.49
+    ],
+    "revsVat": [
+      2690,
+      3051
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-21"
+    ],
+    "revenues": [
+      4894.22
+    ],
+    "revsVat": [
+      5922
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-21"
+    ],
+    "revenues": [
+      1561.98
+    ],
+    "revsVat": [
+      1890
     ]
   },
   {
@@ -41635,6 +43092,17 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-05-21"
     ],
     "revenues": [
+      1396.69
+    ],
+    "revsVat": [
+      1690
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-21"
+    ],
+    "revenues": [
       1892.56
     ],
     "revsVat": [
@@ -41646,10 +43114,178 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-05-22"
     ],
     "revenues": [
-      2825.62
+      1561.98
     ],
     "revsVat": [
-      3419
+      1890
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-22"
+    ],
+    "revenues": [
+      2190.08
+    ],
+    "revsVat": [
+      2650
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-22"
+    ],
+    "revenues": [
+      2966.94
+    ],
+    "revsVat": [
+      3590
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-22",
+      "2026-06-03"
+    ],
+    "revenues": [
+      2223.14,
+      2000.83
+    ],
+    "revsVat": [
+      2690,
+      2421
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-22"
+    ],
+    "revenues": [
+      2190.91
+    ],
+    "revsVat": [
+      2651
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-22"
+    ],
+    "revenues": [
+      1795.05
+    ],
+    "revsVat": [
+      2172
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-23"
+    ],
+    "revenues": [
+      2057.85
+    ],
+    "revsVat": [
+      2490
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-23"
+    ],
+    "revenues": [
+      1817.36
+    ],
+    "revsVat": [
+      2199
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-23"
+    ],
+    "revenues": [
+      809.92
+    ],
+    "revsVat": [
+      980
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-23"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-23"
+    ],
+    "revenues": [
+      1561.98
+    ],
+    "revsVat": [
+      1890
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-24"
+    ],
+    "revenues": [
+      2190.91
+    ],
+    "revsVat": [
+      2651
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-24"
+    ],
+    "revenues": [
+      1396.69
+    ],
+    "revsVat": [
+      1690
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-24"
+    ],
+    "revenues": [
+      2670.25
+    ],
+    "revsVat": [
+      3231
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-24"
+    ],
+    "revenues": [
+      590.07
+    ],
+    "revsVat": [
+      714
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-24"
+    ],
+    "revenues": [
+      2305.79
+    ],
+    "revsVat": [
+      2790
     ]
   },
   {
@@ -41661,6 +43297,402 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-25"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-25"
+    ],
+    "revenues": [
+      2305.79
+    ],
+    "revsVat": [
+      2790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-25"
+    ],
+    "revenues": [
+      1396.69
+    ],
+    "revsVat": [
+      1690
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-25"
+    ],
+    "revenues": [
+      2677.69
+    ],
+    "revsVat": [
+      3240
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-25"
+    ],
+    "revenues": [
+      1404.13
+    ],
+    "revsVat": [
+      1699
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-25"
+    ],
+    "revenues": [
+      1484.3
+    ],
+    "revsVat": [
+      1796
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-25"
+    ],
+    "revenues": [
+      1676.03
+    ],
+    "revsVat": [
+      2028
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-25"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      2287.6
+    ],
+    "revsVat": [
+      2768
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1818.18
+    ],
+    "revsVat": [
+      2200
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1331.4
+    ],
+    "revsVat": [
+      1611
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      2801.65
+    ],
+    "revsVat": [
+      3390
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1451.24
+    ],
+    "revsVat": [
+      1756
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      2966.94
+    ],
+    "revsVat": [
+      3590
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1874.38
+    ],
+    "revsVat": [
+      2268
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-26"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
+      2039.67
+    ],
+    "revsVat": [
+      2468
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
+      2367.77
+    ],
+    "revsVat": [
+      2865
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
+      3798.7
+    ],
+    "revsVat": [
+      4953
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
+      809.92
+    ],
+    "revsVat": [
+      980
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
+      1667.77
+    ],
+    "revsVat": [
+      2018
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
+      2725.62
+    ],
+    "revsVat": [
+      3298
     ]
   },
   {
@@ -41679,10 +43711,131 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-05-27"
     ],
     "revenues": [
+      2436.36
+    ],
+    "revsVat": [
+      2948
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
       2101.65
     ],
     "revsVat": [
       2543
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
+      809.92
+    ],
+    "revsVat": [
+      980
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-27"
+    ],
+    "revenues": [
+      1396.69
+    ],
+    "revsVat": [
+      1690
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-28"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-28"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-28"
+    ],
+    "revenues": [
+      1396.69
+    ],
+    "revsVat": [
+      1690
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-28"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-28"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-28"
+    ],
+    "revenues": [
+      1300.83
+    ],
+    "revsVat": [
+      1574
     ]
   },
   {
@@ -41705,6 +43858,17 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       169
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-28"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
     ]
   },
   {
@@ -41753,6 +43917,61 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
+      "2026-05-28"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-29"
+    ],
+    "revenues": [
+      1362.81
+    ],
+    "revsVat": [
+      1649
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-29"
+    ],
+    "revenues": [
+      1661.16
+    ],
+    "revsVat": [
+      2010
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-29"
+    ],
+    "revenues": [
+      1940.5
+    ],
+    "revsVat": [
+      2348
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-29"
+    ],
+    "revenues": [
+      1654.55
+    ],
+    "revsVat": [
+      2002
+    ]
+  },
+  {
+    "dates": [
       "2026-05-29"
     ],
     "revenues": [
@@ -41760,6 +43979,94 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       3580
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-29"
+    ],
+    "revenues": [
+      1454.63
+    ],
+    "revsVat": [
+      1800
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-29"
+    ],
+    "revenues": [
+      2528.1
+    ],
+    "revsVat": [
+      3059
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-30"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-30"
+    ],
+    "revenues": [
+      1661.16
+    ],
+    "revsVat": [
+      2010
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-30"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-31"
+    ],
+    "revenues": [
+      809.92
+    ],
+    "revsVat": [
+      980
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-31"
+    ],
+    "revenues": [
+      1396.69
+    ],
+    "revsVat": [
+      1690
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-31"
+    ],
+    "revenues": [
+      2595.87
+    ],
+    "revsVat": [
+      3141
     ]
   },
   {
@@ -41800,6 +44107,72 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
+      "2026-05-31"
+    ],
+    "revenues": [
+      809.92
+    ],
+    "revsVat": [
+      980
+    ]
+  },
+  {
+    "dates": [
+      "2026-05-31"
+    ],
+    "revenues": [
+      1561.98
+    ],
+    "revsVat": [
+      1890
+    ]
+  },
+  {
+    "dates": [
+      "2026-06-01"
+    ],
+    "revenues": [
+      1066.12
+    ],
+    "revsVat": [
+      1290
+    ]
+  },
+  {
+    "dates": [
+      "2026-06-01"
+    ],
+    "revenues": [
+      2471.07
+    ],
+    "revsVat": [
+      2990
+    ]
+  },
+  {
+    "dates": [
+      "2026-06-01"
+    ],
+    "revenues": [
+      1479.34
+    ],
+    "revsVat": [
+      1790
+    ]
+  },
+  {
+    "dates": [
+      "2026-06-01"
+    ],
+    "revenues": [
+      196.7
+    ],
+    "revsVat": [
+      238
+    ]
+  },
+  {
+    "dates": [
       "2026-06-01"
     ],
     "revenues": [
@@ -41807,6 +44180,17 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       2238
+    ]
+  },
+  {
+    "dates": [
+      "2026-06-01"
+    ],
+    "revenues": [
+      1396.69
+    ],
+    "revsVat": [
+      1690
     ]
   },
   {
@@ -41825,6 +44209,17 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-06-02"
     ],
     "revenues": [
+      2075.21
+    ],
+    "revsVat": [
+      2511
+    ]
+  },
+  {
+    "dates": [
+      "2026-06-02"
+    ],
+    "revenues": [
       1484.3
     ],
     "revsVat": [
@@ -41836,10 +44231,32 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-06-02"
     ],
     "revenues": [
+      1066.12
+    ],
+    "revsVat": [
+      1290
+    ]
+  },
+  {
+    "dates": [
+      "2026-06-02"
+    ],
+    "revenues": [
       2362.81
     ],
     "revsVat": [
       2859
+    ]
+  },
+  {
+    "dates": [
+      "2026-06-02"
+    ],
+    "revenues": [
+      1066.12
+    ],
+    "revsVat": [
+      1290
     ]
   },
   {
@@ -41869,6 +44286,17 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-06-03"
     ],
     "revenues": [
+      2964.47
+    ],
+    "revsVat": [
+      3587
+    ]
+  },
+  {
+    "dates": [
+      "2026-06-03"
+    ],
+    "revenues": [
       1723.97
     ],
     "revsVat": [
@@ -41880,10 +44308,10 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-06-03"
     ],
     "revenues": [
-      2000.83
+      2297.52
     ],
     "revsVat": [
-      2421
+      2780
     ]
   },
   {
@@ -41924,13 +44352,41 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
+      "2026-06-05",
       "2026-06-05"
     ],
     "revenues": [
+      2652.9,
       2000.83
     ],
     "revsVat": [
+      3210,
       2421
+    ]
+  },
+  {
+    "dates": [
+      "2026-06-05",
+      "2026-06-05"
+    ],
+    "revenues": [
+      3709.92,
+      140.5
+    ],
+    "revsVat": [
+      4489,
+      170
+    ]
+  },
+  {
+    "dates": [
+      "2026-06-05"
+    ],
+    "revenues": [
+      1562.81
+    ],
+    "revsVat": [
+      1891
     ]
   },
   {
@@ -42206,17 +44662,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       1701
-    ]
-  },
-  {
-    "dates": [
-      "2026-06-12"
-    ],
-    "revenues": [
-      1562.81
-    ],
-    "revsVat": [
-      1891
     ]
   },
   {
@@ -42622,17 +45067,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       1690
-    ]
-  },
-  {
-    "dates": [
-      "2026-06-23"
-    ],
-    "revenues": [
-      1718.18
-    ],
-    "revsVat": [
-      2079
     ]
   },
   {
@@ -43296,17 +45730,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       10860
-    ]
-  },
-  {
-    "dates": [
-      "2026-07-05"
-    ],
-    "revenues": [
-      1066.12
-    ],
-    "revsVat": [
-      1290
     ]
   },
   {
