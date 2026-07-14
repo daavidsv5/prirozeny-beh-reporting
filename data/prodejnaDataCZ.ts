@@ -952,6 +952,12 @@ export const prodejnaDataCZ: ProdejnaRecord[] = [
     "revenue": 5025.62
   },
   {
+    "date": "2026-04-13",
+    "orders": 1,
+    "revenue_vat": 2790,
+    "revenue": 2305.79
+  },
+  {
     "date": "2026-04-14",
     "orders": 3,
     "revenue_vat": 9324,
@@ -985,7 +991,7 @@ export const prodejnaDataCZ: ProdejnaRecord[] = [
     "date": "2026-04-20",
     "orders": 3,
     "revenue_vat": 6100,
-    "revenue": 5041.33
+    "revenue": 5351.99
   },
   {
     "date": "2026-04-22",
@@ -1013,9 +1019,9 @@ export const prodejnaDataCZ: ProdejnaRecord[] = [
   },
   {
     "date": "2026-04-30",
-    "orders": 3,
-    "revenue_vat": 8564,
-    "revenue": 7077.7
+    "orders": 2,
+    "revenue_vat": 6911,
+    "revenue": 5711.58
   },
   {
     "date": "2026-05-05",
@@ -1036,112 +1042,34 @@ export const prodejnaDataCZ: ProdejnaRecord[] = [
     "revenue": 4589.26
   },
   {
-    "date": "2026-05-09",
-    "orders": 1,
-    "revenue_vat": 1790,
-    "revenue": 1479.34
-  },
-  {
-    "date": "2026-05-12",
-    "orders": 3,
-    "revenue_vat": 8665,
-    "revenue": 7161.17
-  },
-  {
-    "date": "2026-05-13",
-    "orders": 2,
-    "revenue_vat": 3643,
-    "revenue": 3010.75
-  },
-  {
-    "date": "2026-05-14",
-    "orders": 2,
-    "revenue_vat": 5291,
-    "revenue": 4372.73
-  },
-  {
-    "date": "2026-05-15",
-    "orders": 1,
-    "revenue_vat": 2231,
-    "revenue": 1843.81
-  },
-  {
-    "date": "2026-05-18",
-    "orders": 1,
-    "revenue_vat": 2468,
-    "revenue": 2039.67
-  },
-  {
     "date": "2026-05-19",
-    "orders": 4,
-    "revenue_vat": 7516,
-    "revenue": 6211.58
-  },
-  {
-    "date": "2026-05-20",
-    "orders": 5,
-    "revenue_vat": 15173,
-    "revenue": 12346.34
-  },
-  {
-    "date": "2026-05-21",
     "orders": 1,
-    "revenue_vat": 5922,
-    "revenue": 4894.22
+    "revenue_vat": 2543,
+    "revenue": 2101.65
   },
   {
     "date": "2026-05-22",
-    "orders": 3,
-    "revenue_vat": 7984,
-    "revenue": 6424.79
-  },
-  {
-    "date": "2026-05-26",
-    "orders": 5,
-    "revenue_vat": 9394,
-    "revenue": 7763.63
+    "orders": 1,
+    "revenue_vat": 3419,
+    "revenue": 2825.62
   },
   {
     "date": "2026-05-27",
-    "orders": 6,
-    "revenue_vat": 16976,
-    "revenue": 13735.06
-  },
-  {
-    "date": "2026-05-29",
-    "orders": 4,
-    "revenue_vat": 9197,
-    "revenue": 7394.3
-  },
-  {
-    "date": "2026-06-01",
-    "orders": 2,
-    "revenue_vat": 5075,
-    "revenue": 4194.21
+    "orders": 1,
+    "revenue_vat": 2543,
+    "revenue": 2101.65
   },
   {
     "date": "2026-06-02",
-    "orders": 3,
-    "revenue_vat": 7898,
-    "revenue": 6458.03
-  },
-  {
-    "date": "2026-06-03",
     "orders": 1,
-    "revenue_vat": 2880,
-    "revenue": 2293.39
-  },
-  {
-    "date": "2026-06-04",
-    "orders": 3,
-    "revenue_vat": 8560,
-    "revenue": 6917.84
+    "revenue_vat": 1796,
+    "revenue": 1484.3
   },
   {
     "date": "2026-06-05",
-    "orders": 7,
-    "revenue_vat": 12655,
-    "revenue": 10458.7
+    "orders": 1,
+    "revenue_vat": 2421,
+    "revenue": 2000.83
   },
   {
     "date": "2026-06-09",
