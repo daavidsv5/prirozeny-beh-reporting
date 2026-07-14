@@ -102,6 +102,10 @@ Náklady se stahují z publikovaného Google Sheets CSV. Obsahuje 5 kanálů:
 | Zboží.cz | `cost_zbozi` |
 | Heureka.cz | `cost_heureka` |
 
+**Tanganica (affiliate síť)** — samostatný zdroj, pole `cost_tanganica`. Dva díly:
+- **Archiv** `data/tanganicaCosts.json` (`{ "YYYY-MM-DD": expense }`) — historická data do `2026-05-09`, needitovat ručně (statický export z minulosti).
+- **Živý denní feed** od `2026-05-10` — publikovaný Google Sheets CSV export (`SHEETS.tanganica_cz` v `updateData.js`), sloupce: Datum, Vygenerovaný obrat, Reklamní výdaje, PNO, Uživatelé, Objednávky, Konverzní poměr. Používá se pouze sloupec **Reklamní výdaje** (index 2). Stahuje se a slučuje s archivem v `loadTanganicaCosts()` (async) při každém běhu `updateData.js` — žádná ruční údržba není potřeba.
+
 Normalizace zdrojů v `updateData.js`:
 ```js
 function normalizeSource(raw) {

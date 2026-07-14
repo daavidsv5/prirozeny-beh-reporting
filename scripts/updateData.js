@@ -40,6 +40,7 @@ const UPGATES_API_KEY = process.env.UPGATES_API_KEY;
 // ── Google Sheets (pouze cost CZ) ────────────────────────────────────────────
 const SHEETS = {
   cost_cz: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTK-KMsKcq2yH1cQ7AHWSoFmIrZdMVclI1BM60P3ulSWRlzVbdgNUw-61g9WuG8h98cLwMPaQY7dB0q/pub?output=csv',
+  tanganica_cz: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVaJyAQAr0dm5GcDcsOzvBnXVIxsSMlTDYqbVOxaMMYFWq1kxXIgd8NbCnVT3ZME7H3GApFo3vFsY0/pub?output=csv',
 };
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
@@ -126,10 +127,12 @@ function aggregateCost(csv) {
   return { byDay, byDaySource };
 }
 
-// Tanganica (affiliate síť) — statický export nákladů, uložený lokálně v
-// data/tanganicaCosts.json ({ "YYYY-MM-DD": expense }). Není napojen na živý feed —
-// při novém exportu od uživatele je nutné soubor ručně přepsat/rozšířit.
-function loadTanganicaCosts() {
+// Tanganica (affiliate síť) — historická data do 2026-05-09 jsou v lokálním
+// archivu data/tanganicaCosts.json ({ "YYYY-MM-DD": expense }, needitovat ručně).
+// Od 2026-05-10 se náklady stahují denně živě z publikovaného Google Sheets CSV
+// exportu (sloupce: Datum, Vygenerovaný obrat, Reklamní výdaje, PNO, Uživatelé,
+// Objednávky, Konverzní poměr).
+function loadTanganicaArchive() {
   if (!fs.existsSync(TANGANICA_COSTS_FILE)) return { byDay: {}, byDaySource: {} };
   const raw = JSON.parse(fs.readFileSync(TANGANICA_COSTS_FILE, 'utf8'));
   const byDay = {};
@@ -139,6 +142,29 @@ function loadTanganicaCosts() {
     byDaySource[date] = { tanganica: { cost, clicks: 0 } };
   }
   return { byDay, byDaySource };
+}
+
+function aggregateTanganicaCsv(csv) {
+  const rows = parseCSV(csv);
+  const byDay = {};
+  const byDaySource = {};
+  for (const cols of rows) {
+    if (cols.length < 3) continue;
+    const date = cols[0].trim();
+    const cost = parseNum(cols[2]);
+    if (!date) continue;
+    byDay[date] = (byDay[date] || 0) + cost;
+    byDaySource[date] = { tanganica: { cost, clicks: 0 } };
+  }
+  return { byDay, byDaySource };
+}
+
+async function loadTanganicaCosts() {
+  const archive = loadTanganicaArchive();
+  const csv = await fetchUrl(SHEETS.tanganica_cz);
+  const live = aggregateTanganicaCsv(csv);
+  // Živá data mají přednost při případném překryvu dat s archivem.
+  return mergeCostResults(archive, live);
 }
 
 // Sloučí dva { byDay, byDaySource } výstupy (Google Sheets + Tanganica) do jednoho.
@@ -699,8 +725,9 @@ async function main() {
     const csvCostCZ = await fetchUrl(SHEETS.cost_cz);
     log('Google Sheets: download OK');
     const sheetsCostCZ = aggregateCost(csvCostCZ);
-    const tanganicaCostCZ = loadTanganicaCosts();
-    log(`Tanganica: ${Object.keys(tanganicaCostCZ.byDay).length} dní z lokálního exportu`);
+    log('Tanganica: stahování nákladů CZ...');
+    const tanganicaCostCZ = await loadTanganicaCosts();
+    log(`Tanganica: ${Object.keys(tanganicaCostCZ.byDay).length} dní (archiv + živý export)`);
     const { byDay: costByDayCZ, byDaySource: costSrcCZ } = mergeCostResults(sheetsCostCZ, tanganicaCostCZ);
 
     // ── 3) Agregace a zápis ──────────────────────────────────────────────────
