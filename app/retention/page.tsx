@@ -15,6 +15,8 @@ import {
   computeYearRevenueMetrics,
   computeMonthlyChartData,
   computeMonthlyNewVsReturning,
+  computeMonthlyNewVsReturningRevenue,
+  computeCurrentMonthYoyCutoff,
   computePurchaseDistribution,
   computeDaysBetweenHistogram,
   computeRfmSegments,
@@ -72,6 +74,8 @@ export default function RetentionPage() {
   const kpis              = useMemo(() => computeRetentionKpis(data), [data]);
   const yearCustomer      = useMemo(() => computeYearCustomerMetrics(data), [data]);
   const monthlyNewVsRet   = useMemo(() => computeMonthlyNewVsReturning(data), [data]);
+  const monthlyNewVsRetRevenue = useMemo(() => computeMonthlyNewVsReturningRevenue(data), [data]);
+  const yoyCutoff = useMemo(() => computeCurrentMonthYoyCutoff(data), [data]);
   const yearRetention= useMemo(() => computeYearRetentionMetrics(data), [data]);
   const yearRevenue  = useMemo(() => computeYearRevenueMetrics(data), [data]);
   const monthly      = useMemo(() => computeMonthlyChartData(data), [data]);
@@ -132,23 +136,177 @@ export default function RetentionPage() {
 
       {/* Noví vs. stávající zákazníci — měsíční grouped bar */}
       <ChartCard title="Noví vs. stávající zákazníci — vývoj po měsících">
-        <ResponsiveContainer width="100%" height={260}>
-          <BarChart data={monthlyNewVsRet} margin={{ top: 4, right: 16, left: 4, bottom: 4 }} stackOffset="expand">
-            <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
-            <XAxis dataKey="date" tickFormatter={formatMonthYear} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
-            <YAxis tickFormatter={v => `${Math.round((v as number) * 100)} %`} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={44} />
-            <Tooltip
-              formatter={(v: any, name: any, props: any) => {
-                const raw = props?.payload?.[name === 'Noví zákazníci' ? 'noví' : 'stávající'] ?? 0;
-                return [formatNumber(raw), name];
-              }}
-              labelFormatter={(l: any) => formatMonthYear(l as string)}
-            />
-            <Legend wrapperStyle={{ fontSize: 11, color: '#64748b' }} iconType="square" iconSize={9} />
-            <Bar dataKey="noví"      name="Noví zákazníci"      stackId="a" fill={C.newCustomers} />
-            <Bar dataKey="stávající" name="Stávající zákazníci" stackId="a" fill={C.primary} radius={[3, 3, 0, 0]} />
-          </BarChart>
-        </ResponsiveContainer>
+        {(() => {
+          const byDate = Object.fromEntries(monthlyNewVsRet.map(d => [d.date, d]));
+          return (
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={monthlyNewVsRet} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+                <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
+                <XAxis dataKey="date" tickFormatter={formatMonthYear} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
+                <YAxis tickFormatter={v => formatNumber(v as number)} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={44} />
+                <Tooltip
+                  content={({ active, payload, label }: any) => {
+                    if (!active || !payload?.length) return null;
+                    const d = payload[0]?.payload ?? {};
+                    const novi = d['noví'] ?? 0;
+                    const stavajici = d['stávající'] ?? 0;
+                    const total = novi + stavajici;
+                    const isCurrentMonth = yoyCutoff !== null && (label as string).startsWith(yoyCutoff.monthKey);
+                    // Aktuální (nedokončený) měsíc: srovnání s loňským rokem jen do stejného dne, ne za celý loňský měsíc
+                    const prevDate = (label as string).replace(/^(\d{4})/, y => String(Number(y) - 1));
+                    const prevFull = byDate[prevDate];
+                    const prevLabel = isCurrentMonth
+                      ? `vs. loňský rok (do ${yoyCutoff!.cutoffDay}. dne)`
+                      : `vs. loňský rok (${formatMonthYear(prevDate)})`;
+                    const prevNovi = isCurrentMonth ? yoyCutoff!.prevNoví : (prevFull?.['noví'] ?? null);
+                    const prevStavajici = isCurrentMonth ? yoyCutoff!.prevStávající : (prevFull?.['stávající'] ?? null);
+                    const yoy = (cur: number, p: number) => p > 0 ? ((cur - p) / p * 100) : null;
+                    const entries = [
+                      { name: 'Noví zákazníci',      key: 'noví',      color: C.newCustomers, val: novi,      prevVal: prevNovi },
+                      { name: 'Stávající zákazníci', key: 'stávající', color: C.primary,      val: stavajici, prevVal: prevStavajici },
+                    ];
+                    return (
+                      <div className="bg-white border border-slate-200 rounded-lg p-2.5 text-xs shadow-sm min-w-[220px]">
+                        <p className="font-semibold text-slate-600 mb-1.5">{formatMonthYear(label as string)}</p>
+                        {entries.map(({ name, key, color, val, prevVal }) => {
+                          const pct = total > 0 ? (val / total) * 100 : 0;
+                          const diff = prevVal !== null ? yoy(val, prevVal) : null;
+                          return (
+                            <div key={key} className="mb-1">
+                              <div className="flex items-center justify-between gap-4">
+                                <span style={{ color }} className="font-medium">{name}</span>
+                                <span className="text-slate-700 font-semibold tabular-nums">
+                                  {formatNumber(val)}
+                                  <span className="text-slate-400 font-normal ml-1">({pct.toFixed(1)} %)</span>
+                                </span>
+                              </div>
+                              {diff !== null && (
+                                <div className="flex items-center justify-between gap-4 mt-0.5">
+                                  <span className="text-slate-400 pl-0.5">{prevLabel}</span>
+                                  <span className={`font-semibold tabular-nums ${diff >= 0 ? 'text-emerald-600' : 'text-rose-500'}`}>
+                                    {diff >= 0 ? '+' : ''}{diff.toFixed(1)} %
+                                    <span className="text-slate-400 font-normal ml-1">({formatNumber(prevVal!)})</span>
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                        {total > 0 && (
+                          <div className="flex items-center justify-between gap-4 border-t border-slate-100 pt-1 mt-1">
+                            <span className="text-slate-400">Celkem</span>
+                            <span className="text-slate-600 font-semibold tabular-nums">
+                              {formatNumber(total)}
+                              {prevNovi !== null && prevStavajici !== null && (() => {
+                                const prevTotal = prevNovi + prevStavajici;
+                                const diff = yoy(total, prevTotal);
+                                return diff !== null ? (
+                                  <span className={`ml-2 font-semibold ${diff >= 0 ? 'text-emerald-600' : 'text-rose-500'}`}>
+                                    {diff >= 0 ? '+' : ''}{diff.toFixed(1)} %
+                                  </span>
+                                ) : null;
+                              })()}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }}
+                />
+                <Legend wrapperStyle={{ fontSize: 11, color: '#64748b' }} iconType="square" iconSize={9} />
+                <Bar dataKey="noví"      name="Noví zákazníci"      fill={C.newCustomers} radius={[3, 3, 0, 0]} />
+                <Bar dataKey="stávající" name="Stávající zákazníci" fill={C.primary}      radius={[3, 3, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          );
+        })()}
+      </ChartCard>
+
+      {/* Noví vs. stávající zákazníci — tržby bez DPH po měsících */}
+      <ChartCard title="Noví vs. stávající zákazníci — tržby bez DPH po měsících">
+        {(() => {
+          const byDate = Object.fromEntries(monthlyNewVsRetRevenue.map(d => [d.date, d]));
+          return (
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={monthlyNewVsRetRevenue} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+                <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
+                <XAxis dataKey="date" tickFormatter={formatMonthYear} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
+                <YAxis tickFormatter={v => fmtYAxis(v as number, currency)} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={56} />
+                <Tooltip
+                  content={({ active, payload, label }: any) => {
+                    if (!active || !payload?.length) return null;
+                    const d = payload[0]?.payload ?? {};
+                    const novi = d['noví'] ?? 0;
+                    const stavajici = d['stávající'] ?? 0;
+                    const total = novi + stavajici;
+                    const isCurrentMonth = yoyCutoff !== null && (label as string).startsWith(yoyCutoff.monthKey);
+                    const prevDate = (label as string).replace(/^(\d{4})/, y => String(Number(y) - 1));
+                    const prevFull = byDate[prevDate];
+                    const prevLabel = isCurrentMonth
+                      ? `vs. loňský rok (do ${yoyCutoff!.cutoffDay}. dne)`
+                      : `vs. loňský rok (${formatMonthYear(prevDate)})`;
+                    const prevNovi = isCurrentMonth ? yoyCutoff!.prevNovíRevenue : (prevFull?.['noví'] ?? null);
+                    const prevStavajici = isCurrentMonth ? yoyCutoff!.prevStávajícíRevenue : (prevFull?.['stávající'] ?? null);
+                    const yoy = (cur: number, p: number) => p > 0 ? ((cur - p) / p * 100) : null;
+                    const entries = [
+                      { name: 'Noví zákazníci',      key: 'noví',      color: C.newCustomers, val: novi,      prevVal: prevNovi },
+                      { name: 'Stávající zákazníci', key: 'stávající', color: C.primary,      val: stavajici, prevVal: prevStavajici },
+                    ];
+                    return (
+                      <div className="bg-white border border-slate-200 rounded-lg p-2.5 text-xs shadow-sm min-w-[220px]">
+                        <p className="font-semibold text-slate-600 mb-1.5">{formatMonthYear(label as string)}</p>
+                        {entries.map(({ name, key, color, val, prevVal }) => {
+                          const pct = total > 0 ? (val / total) * 100 : 0;
+                          const diff = prevVal !== null ? yoy(val, prevVal) : null;
+                          return (
+                            <div key={key} className="mb-1">
+                              <div className="flex items-center justify-between gap-4">
+                                <span style={{ color }} className="font-medium">{name}</span>
+                                <span className="text-slate-700 font-semibold tabular-nums">
+                                  {fc(val)}
+                                  <span className="text-slate-400 font-normal ml-1">({pct.toFixed(1)} %)</span>
+                                </span>
+                              </div>
+                              {diff !== null && (
+                                <div className="flex items-center justify-between gap-4 mt-0.5">
+                                  <span className="text-slate-400 pl-0.5">{prevLabel}</span>
+                                  <span className={`font-semibold tabular-nums ${diff >= 0 ? 'text-emerald-600' : 'text-rose-500'}`}>
+                                    {diff >= 0 ? '+' : ''}{diff.toFixed(1)} %
+                                    <span className="text-slate-400 font-normal ml-1">({fc(prevVal!)})</span>
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                        {total > 0 && (
+                          <div className="flex items-center justify-between gap-4 border-t border-slate-100 pt-1 mt-1">
+                            <span className="text-slate-400">Celkem</span>
+                            <span className="text-slate-600 font-semibold tabular-nums">
+                              {fc(total)}
+                              {prevNovi !== null && prevStavajici !== null && (() => {
+                                const prevTotal = prevNovi + prevStavajici;
+                                const diff = yoy(total, prevTotal);
+                                return diff !== null ? (
+                                  <span className={`ml-2 font-semibold ${diff >= 0 ? 'text-emerald-600' : 'text-rose-500'}`}>
+                                    {diff >= 0 ? '+' : ''}{diff.toFixed(1)} %
+                                  </span>
+                                ) : null;
+                              })()}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }}
+                />
+                <Legend wrapperStyle={{ fontSize: 11, color: '#64748b' }} iconType="square" iconSize={9} />
+                <Bar dataKey="noví"      name="Noví zákazníci"      fill={C.newCustomers} radius={[3, 3, 0, 0]} />
+                <Bar dataKey="stávající" name="Stávající zákazníci" fill={C.primary}      radius={[3, 3, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          );
+        })()}
       </ChartCard>
 
       {/* RFM Segmentace */}

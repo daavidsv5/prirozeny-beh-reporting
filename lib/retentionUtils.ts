@@ -292,6 +292,92 @@ export function computeMonthlyNewVsReturning(data: CustomerRetentionRecord[]): M
     .map(month => ({ date: month + '-01', ...byMonth[month] }));
 }
 
+export interface MonthlyNewVsReturningRevenuePoint {
+  date: string;       // 'YYYY-MM-01'
+  noví: number;
+  stávající: number;
+}
+
+/** Měsíční tržby bez DPH nových vs. stávajících zákazníků pro grouped bar chart */
+export function computeMonthlyNewVsReturningRevenue(data: CustomerRetentionRecord[]): MonthlyNewVsReturningRevenuePoint[] {
+  const byMonth: Record<string, { noví: number; stávající: number }> = {};
+
+  for (const c of data) {
+    const firstDate = c.dates[0];
+    if (!firstDate) continue;
+    const firstMonth = firstDate.substring(0, 7);
+
+    for (let i = 0; i < c.dates.length; i++) {
+      const month = c.dates[i].substring(0, 7);
+      if (!byMonth[month]) byMonth[month] = { noví: 0, stávající: 0 };
+      if (month === firstMonth) {
+        byMonth[month].noví += c.revenues[i];
+      } else {
+        byMonth[month].stávající += c.revenues[i];
+      }
+    }
+  }
+
+  return Object.keys(byMonth)
+    .sort()
+    .map(month => ({ date: month + '-01', ...byMonth[month] }));
+}
+
+/** 'YYYY-MM' aktuálního (probíhajícího) měsíce a poslední den, do kterého jsou data kompletní (včera) */
+function getCurrentMonthCutoff(): { monthKey: string; cutoffDay: number } {
+  const now = new Date();
+  const monthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+  const yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
+  // Pokud je dnes 1. v měsíci, včerejšek spadá do minulého měsíce → aktuální měsíc ještě nemá žádná data
+  const cutoffDay = yesterday.getMonth() === now.getMonth() ? yesterday.getDate() : 0;
+  return { monthKey, cutoffDay };
+}
+
+export interface CurrentMonthYoyCutoff {
+  monthKey: string;              // 'YYYY-MM' probíhajícího měsíce
+  cutoffDay: number;             // den v měsíci, do kterého jsou letošní data kompletní
+  prevNoví: number;
+  prevStávající: number;
+  prevNovíRevenue: number;
+  prevStávajícíRevenue: number;
+}
+
+/**
+ * Meziroční srovnání pro AKTUÁLNÍ (nedokončený) měsíc — hodnoty loňského roku
+ * počítané jen do stejného dne v měsíci jako letos (ne za celý loňský měsíc),
+ * aby srovnání nebylo zkreslené neúplnými daty aktuálního měsíce.
+ */
+export function computeCurrentMonthYoyCutoff(data: CustomerRetentionRecord[]): CurrentMonthYoyCutoff | null {
+  const { monthKey, cutoffDay } = getCurrentMonthCutoff();
+  if (cutoffDay === 0) return null;
+
+  const [yearStr, monthStr] = monthKey.split('-');
+  const prevMonthKey = `${parseInt(yearStr) - 1}-${monthStr}`;
+  const cutoffStr = String(cutoffDay).padStart(2, '0');
+
+  let prevNoví = 0, prevStávající = 0, prevNovíRevenue = 0, prevStávajícíRevenue = 0;
+  for (const c of data) {
+    const firstDate = c.dates[0];
+    if (!firstDate) continue;
+    const firstMonth = firstDate.substring(0, 7);
+
+    for (let i = 0; i < c.dates.length; i++) {
+      const d = c.dates[i];
+      if (!d.startsWith(prevMonthKey)) continue;
+      if (d.substring(8, 10) > cutoffStr) continue;
+      if (firstMonth === prevMonthKey) {
+        prevNoví++;
+        prevNovíRevenue += c.revenues[i];
+      } else {
+        prevStávající++;
+        prevStávajícíRevenue += c.revenues[i];
+      }
+    }
+  }
+
+  return { monthKey, cutoffDay, prevNoví, prevStávající, prevNovíRevenue, prevStávajícíRevenue };
+}
+
 /** Distribuce zákazníků a obratu podle počtu nákupů (1, 2, 3, 4+) */
 export function computePurchaseDistribution(data: CustomerRetentionRecord[]): PurchaseDistPoint[] {
   const counts = [0, 0, 0, 0];
