@@ -10,7 +10,7 @@ export interface ProductSaleRecord {
   purchaseCost: number;
 }
 
-export const productDataCZ: ProductSaleRecord[] = [
+export const productDataCZEshop: ProductSaleRecord[] = [
   {
     "date": "2023-03-03",
     "name": "Bombus Raw ENERGY Kokos a kakao 50 g",
@@ -13405,14 +13405,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-03",
-    "name": "Xero Prio dětské barefoot",
-    "amount": 1,
-    "revenue_vat": 1849,
-    "revenue": 1528.1,
-    "purchaseCost": 833.06
-  },
-  {
-    "date": "2025-04-03",
     "name": "XERO Scrambler Low Woman - dámské trailové a trekové barefoot boty",
     "amount": 1,
     "revenue_vat": 2190,
@@ -13509,14 +13501,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-07",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2499,
-    "revenue": 2065.29,
-    "purchaseCost": 1416
-  },
-  {
-    "date": "2025-04-07",
     "name": "Xero Prio NEO M - pánská multisportovní barefoot obuv",
     "amount": 1,
     "revenue_vat": 1890,
@@ -13578,14 +13562,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 0,
     "revenue": 0,
     "purchaseCost": 0
-  },
-  {
-    "date": "2025-04-09",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2699,
-    "revenue": 2230.58,
-    "purchaseCost": 1416
   },
   {
     "date": "2025-04-09",
@@ -13661,27 +13637,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-10",
-    "name": "XERO Scrambler Low MAN - pánské trailové a trekové barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2199,
-    "revenue": 1817.36,
-    "purchaseCost": 1528.93
-  },
-  {
-    "date": "2025-04-10",
     "name": "XERO Scrambler Trail Mid Men - lehká barefoot turistická bota pro pány",
     "amount": 1,
     "revenue_vat": 2890,
     "revenue": 2388.43,
     "purchaseCost": 1666.94
-  },
-  {
-    "date": "2025-04-10",
-    "name": "XERO Scrambler Trail Mid WP Men - pánská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 4249,
-    "revenue": 3511.57,
-    "purchaseCost": 2024
   },
   {
     "date": "2025-04-10",
@@ -13698,14 +13658,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2199,
     "revenue": 1817.36,
     "purchaseCost": 1071.08
-  },
-  {
-    "date": "2025-04-11",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2349,
-    "revenue": 1941.32,
-    "purchaseCost": 1416
   },
   {
     "date": "2025-04-11",
@@ -13909,14 +13861,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-15",
-    "name": "Xero Mesa Trail WP - pánské trailové voděodolné barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3749,
-    "revenue": 3098.35,
-    "purchaseCost": 1000
-  },
-  {
-    "date": "2025-04-15",
     "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
     "amount": 1,
     "revenue_vat": 1690,
@@ -13973,14 +13917,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-16",
-    "name": "WOMAN Xero Mesa Trail II - dámské trailové barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3749,
-    "revenue": 3098.35,
-    "purchaseCost": 1666.94
-  },
-  {
-    "date": "2025-04-16",
     "name": "XERO Glenn – Stylové pánské boty pro přirozený komfort, ZDRAVOTNÍ OBUV",
     "amount": 1,
     "revenue_vat": 3390,
@@ -14029,14 +13965,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-17",
-    "name": "KS CoolMax - chladivé běžecké ponožky",
-    "amount": 1,
-    "revenue_vat": 149,
-    "revenue": 123.14,
-    "purchaseCost": 42.6
-  },
-  {
-    "date": "2025-04-17",
     "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
     "amount": 1,
     "revenue_vat": 2099,
@@ -14046,10 +13974,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-04-17",
     "name": "Xero HFS - dámské běžecké barefoot boty",
-    "amount": 2,
-    "revenue_vat": 4798,
-    "revenue": 3965.29,
-    "purchaseCost": 1857.03
+    "amount": 1,
+    "revenue_vat": 2349,
+    "revenue": 1941.32,
+    "purchaseCost": 928.92
   },
   {
     "date": "2025-04-17",
@@ -14114,14 +14042,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2199,
     "revenue": 1817.36,
     "purchaseCost": 1071.08
-  },
-  {
-    "date": "2025-04-17",
-    "name": "XERO Zelen - dámská barefoot sportovní obuv",
-    "amount": 1,
-    "revenue_vat": 2499,
-    "revenue": 2065.29,
-    "purchaseCost": 1071.07
   },
   {
     "date": "2025-04-18",
@@ -14381,14 +14301,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-24",
-    "name": "Skinners KIDS 2.0 LIMITED EDITION",
-    "amount": 1,
-    "revenue_vat": 1249,
-    "revenue": 1032.23,
-    "purchaseCost": 689.26
-  },
-  {
-    "date": "2025-04-24",
     "name": "SmellWell polštářky SENSITIVE",
     "amount": 1,
     "revenue_vat": 289,
@@ -14445,14 +14357,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-25",
-    "name": "KS Hike MERINO - turistické ponožky celoroční",
-    "amount": 1,
-    "revenue_vat": 249,
-    "revenue": 205.79,
-    "purchaseCost": 109
-  },
-  {
-    "date": "2025-04-25",
     "name": "KS Lite Short - nízké běžecké ponožky",
     "amount": 3,
     "revenue_vat": 357,
@@ -14466,22 +14370,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 679,
     "revenue": 561.16,
     "purchaseCost": 415.61
-  },
-  {
-    "date": "2025-04-25",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2099,
-    "revenue": 1734.71,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2025-04-25",
-    "name": "Skinners 2.0 Compression",
-    "amount": 1,
-    "revenue_vat": 1280,
-    "revenue": 1057.85,
-    "purchaseCost": 719.83
   },
   {
     "date": "2025-04-25",
@@ -14525,14 +14413,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-25",
-    "name": "XERO Scrambler Trail Low WP Men - pánská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3590,
-    "revenue": 2966.94,
-    "purchaseCost": 1785.95
-  },
-  {
-    "date": "2025-04-25",
     "name": "XERO Scrambler Trail Low WP Women - dámská trailová voděodolná turistická barefoot obuv",
     "amount": 1,
     "revenue_vat": 3590,
@@ -14570,14 +14450,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 679,
     "revenue": 561.16,
     "purchaseCost": 395.87
-  },
-  {
-    "date": "2025-04-26",
-    "name": "COMPRESSPORT Běžecké ponožky  PRS V4.0 RUN LOW",
-    "amount": 1,
-    "revenue_vat": 460,
-    "revenue": 380.17,
-    "purchaseCost": 260
   },
   {
     "date": "2025-04-26",
@@ -14676,28 +14548,12 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 1428.93
   },
   {
-    "date": "2025-04-27",
-    "name": "XERO Scrambler Low Woman - dámské trailové a trekové barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2190,
-    "revenue": 1809.92,
-    "purchaseCost": 1142.98
-  },
-  {
     "date": "2025-04-28",
     "name": "MAN Xero Mesa Trail II - pánské trailové barefoot boty",
     "amount": 1,
     "revenue_vat": 3399,
     "revenue": 2809.09,
     "purchaseCost": 1666.94
-  },
-  {
-    "date": "2025-04-28",
-    "name": "Merrell Vapor Glove 6 - pánská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 1318.18
   },
   {
     "date": "2025-04-28",
@@ -14789,14 +14645,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-30",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2699,
-    "revenue": 2230.58,
-    "purchaseCost": 1416
-  },
-  {
-    "date": "2025-04-30",
     "name": "Ovonex Magnesium",
     "amount": 1,
     "revenue_vat": 389,
@@ -14806,10 +14654,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-04-30",
     "name": "XERO HFS II - dámské běžecké barefoot boty",
-    "amount": 2,
-    "revenue_vat": 5489,
-    "revenue": 4536.37,
-    "purchaseCost": 2476.86
+    "amount": 1,
+    "revenue_vat": 1990,
+    "revenue": 1644.63,
+    "purchaseCost": 928.93
   },
   {
     "date": "2025-04-30",
@@ -14838,10 +14686,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-04-30",
     "name": "Xero Z-Trail EV pánské turistické barefoot sandály",
-    "amount": 3,
-    "revenue_vat": 6747,
-    "revenue": 5576.03,
-    "purchaseCost": 2928.92
+    "amount": 2,
+    "revenue_vat": 4398,
+    "revenue": 3634.71,
+    "purchaseCost": 2142.15
   },
   {
     "date": "2025-04-30",
@@ -14874,14 +14722,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1790,
     "revenue": 1479.34,
     "purchaseCost": 714.05
-  },
-  {
-    "date": "2025-05-02",
-    "name": "XERO Scrambler Low EV MEN- pánské trailové barefoot boty s Michelin Fiberlite",
-    "amount": 1,
-    "revenue_vat": 3999,
-    "revenue": 3304.96,
-    "purchaseCost": 1904.96
   },
   {
     "date": "2025-05-02",
@@ -15045,14 +14885,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-05-06",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2099,
-    "revenue": 1734.71,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2025-05-06",
     "name": "Xero Aqua Cloud - pánské barefoot sandály do vody i na souš",
     "amount": 1,
     "revenue_vat": 1450,
@@ -15098,14 +14930,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2399,
     "revenue": 1982.64,
     "purchaseCost": 1071.07
-  },
-  {
-    "date": "2025-05-07",
-    "name": "Merrell Trail Glove 7 pánské barefoot",
-    "amount": 1,
-    "revenue_vat": 2699,
-    "revenue": 2230.58,
-    "purchaseCost": 1416
   },
   {
     "date": "2025-05-07",
@@ -15181,22 +15005,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-05-09",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2699,
-    "revenue": 2230.58,
-    "purchaseCost": 1416
-  },
-  {
-    "date": "2025-05-09",
-    "name": "Merrell Vapor Glove 6 - pánská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2499,
-    "revenue": 2065.29,
-    "purchaseCost": 1318.18
-  },
-  {
-    "date": "2025-05-09",
     "name": "SmellWell polštářky SENSITIVE",
     "amount": 1,
     "revenue_vat": 289,
@@ -15218,14 +15026,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3490,
     "revenue": 2884.3,
     "purchaseCost": 1785.95
-  },
-  {
-    "date": "2025-05-09",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2949,
-    "revenue": 2437.19,
-    "purchaseCost": 1328.1
   },
   {
     "date": "2025-05-09",
@@ -15322,14 +15122,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2349,
     "revenue": 1941.32,
     "purchaseCost": 1416
-  },
-  {
-    "date": "2025-05-12",
-    "name": "Xero HFS - pánské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 809.92
   },
   {
     "date": "2025-05-12",
@@ -15493,22 +15285,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-05-15",
-    "name": "MAN Xero Mesa Trail II - pánské trailové barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3749,
-    "revenue": 3098.35,
-    "purchaseCost": 1547.94
-  },
-  {
-    "date": "2025-05-15",
-    "name": "Merrell WRAPT - dámské turistické barefoot boty, barva POPLAR",
-    "amount": 1,
-    "revenue_vat": 2849,
-    "revenue": 2354.55,
-    "purchaseCost": 1327.51
-  },
-  {
-    "date": "2025-05-15",
     "name": "SmellWell polštářky ACTIVE",
     "amount": 1,
     "revenue_vat": 289,
@@ -15546,14 +15322,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1690,
     "revenue": 1396.69,
     "purchaseCost": 785.95
-  },
-  {
-    "date": "2025-05-15",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 2249,
-    "revenue": 1858.68,
-    "purchaseCost": 1052.89
   },
   {
     "date": "2025-05-15",
@@ -15733,14 +15501,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-05-19",
-    "name": "Trail Glove 7 Dámská Multiblack 39 (6)",
-    "amount": 1,
-    "revenue_vat": 2699,
-    "revenue": 2230.58,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-05-19",
     "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
     "amount": 1,
     "revenue_vat": 2690,
@@ -15822,26 +15582,18 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-05-21",
     "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 2,
-    "revenue_vat": 378,
-    "revenue": 312.4,
-    "purchaseCost": 204
-  },
-  {
-    "date": "2025-05-21",
-    "name": "WOMAN Xero Mesa Trail II - dámské trailové barefoot boty",
-    "amount": 2,
-    "revenue_vat": 7498,
-    "revenue": 6196.7,
-    "purchaseCost": 2000
+    "amount": 1,
+    "revenue_vat": 189,
+    "revenue": 156.2,
+    "purchaseCost": 102
   },
   {
     "date": "2025-05-21",
     "name": "XERO HFS II - pánské běžecké barefoot boty",
-    "amount": 2,
-    "revenue_vat": 5349,
-    "revenue": 4420.67,
-    "purchaseCost": 2476.86
+    "amount": 1,
+    "revenue_vat": 1850,
+    "revenue": 1528.93,
+    "purchaseCost": 928.93
   },
   {
     "date": "2025-05-21",
@@ -15914,14 +15666,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1059,
     "revenue": 875.21,
     "purchaseCost": 833.06
-  },
-  {
-    "date": "2025-05-23",
-    "name": "Xero HFS - dámské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 928.6
   },
   {
     "date": "2025-05-23",
@@ -16125,14 +15869,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-05-27",
-    "name": "Merrell WRAPT - dámské turistické barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2849,
-    "revenue": 2354.55,
-    "purchaseCost": 1327.51
-  },
-  {
-    "date": "2025-05-27",
     "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
     "amount": 1,
     "revenue_vat": 2790,
@@ -16165,14 +15901,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-05-28",
-    "name": "Skinners KIDS 2.0",
-    "amount": 2,
-    "revenue_vat": 1800,
-    "revenue": 1487.6,
-    "purchaseCost": 1179.25
-  },
-  {
-    "date": "2025-05-28",
     "name": "Sportovní ponožky KS QGO - běh, chůze, cyklistika",
     "amount": 5,
     "revenue_vat": 645,
@@ -16182,10 +15910,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-05-28",
     "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 2,
-    "revenue_vat": 2780,
-    "revenue": 2297.52,
-    "purchaseCost": 1571.4
+    "amount": 1,
+    "revenue_vat": 1390,
+    "revenue": 1148.76,
+    "purchaseCost": 785.7
   },
   {
     "date": "2025-05-28",
@@ -16198,10 +15926,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-05-28",
     "name": "Xero Prio dětské barefoot",
-    "amount": 3,
-    "revenue_vat": 3339,
-    "revenue": 2759.51,
-    "purchaseCost": 1833.31
+    "amount": 2,
+    "revenue_vat": 2449,
+    "revenue": 2023.97,
+    "purchaseCost": 1333.31
   },
   {
     "date": "2025-05-28",
@@ -16381,22 +16109,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-02",
-    "name": "KS 600/Speed",
-    "amount": 2,
-    "revenue_vat": 278,
-    "revenue": 229.75,
-    "purchaseCost": 112
-  },
-  {
-    "date": "2025-06-02",
-    "name": "KS CoolMax - chladivé běžecké ponožky",
-    "amount": 2,
-    "revenue_vat": 238,
-    "revenue": 196.69,
-    "purchaseCost": 85.2
-  },
-  {
-    "date": "2025-06-02",
     "name": "Merrell Vapor Glove 6 - pánská sportovní barefoot obuv",
     "amount": 2,
     "revenue_vat": 4548,
@@ -16442,14 +16154,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 357,
     "revenue": 295.04,
     "purchaseCost": 127.81
-  },
-  {
-    "date": "2025-06-03",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2949,
-    "revenue": 2437.19,
-    "purchaseCost": 1309.5
   },
   {
     "date": "2025-06-03",
@@ -16517,14 +16221,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-04",
-    "name": "XERO Prio Suede pánské barefoot",
-    "amount": 1,
-    "revenue_vat": 2949,
-    "revenue": 2437.19,
-    "purchaseCost": 1428.59
-  },
-  {
-    "date": "2025-06-04",
     "name": "Xero Shoes Z-Trek barefoot sandály – dámské",
     "amount": 2,
     "revenue_vat": 2180,
@@ -16548,14 +16244,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 1099.18
   },
   {
-    "date": "2025-06-04",
-    "name": "Xero Z-Trail EV pánské turistické barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 2349,
-    "revenue": 1941.32,
-    "purchaseCost": 642.89
-  },
-  {
     "date": "2025-06-05",
     "name": "Čističe na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
@@ -16573,22 +16261,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-05",
-    "name": "KS 600/Speed",
-    "amount": 1,
-    "revenue_vat": 139,
-    "revenue": 114.88,
-    "purchaseCost": 56
-  },
-  {
-    "date": "2025-06-05",
-    "name": "KS CoolMax - chladivé běžecké ponožky",
-    "amount": 2,
-    "revenue_vat": 238,
-    "revenue": 196.69,
-    "purchaseCost": 85.2
-  },
-  {
-    "date": "2025-06-05",
     "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
     "amount": 1,
     "revenue_vat": 289,
@@ -16602,14 +16274,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1690,
     "revenue": 1396.69,
     "purchaseCost": 785.7
-  },
-  {
-    "date": "2025-06-05",
-    "name": "Xero HFS - dámské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 928.6
   },
   {
     "date": "2025-06-05",
@@ -16677,14 +16341,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-06",
-    "name": "Xero Shoes Z-Trek barefoot sandály – dámské",
-    "amount": 1,
-    "revenue_vat": 1090,
-    "revenue": 900.83,
-    "purchaseCost": 500
-  },
-  {
-    "date": "2025-06-06",
     "name": "Xero Shoes Z-Trek barefoot sandály – pánské",
     "amount": 1,
     "revenue_vat": 1690,
@@ -16722,14 +16378,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1690,
     "revenue": 1396.69,
     "purchaseCost": 833.25
-  },
-  {
-    "date": "2025-06-09",
-    "name": "Merrell WRAPT - dámské turistické barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2849,
-    "revenue": 2354.55,
-    "purchaseCost": 1327.51
   },
   {
     "date": "2025-06-09",
@@ -16797,22 +16445,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-10",
-    "name": "MAN Xero Mesa Trail II - pánské trailové barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3749,
-    "revenue": 3098.35,
-    "purchaseCost": 1000
-  },
-  {
-    "date": "2025-06-10",
-    "name": "Merrel Wrapt Poplar vel 6 / 39",
-    "amount": 1,
-    "revenue_vat": 2849,
-    "revenue": 2354.55,
-    "purchaseCost": 1327.51
-  },
-  {
-    "date": "2025-06-10",
     "name": "Sportovní ponožky KS QGO - běh, chůze, cyklistika",
     "amount": 1,
     "revenue_vat": 129,
@@ -16822,10 +16454,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-06-10",
     "name": "VÝPRODEJ Xero HFS - dámské běžecké barefoot boty",
-    "amount": 2,
-    "revenue_vat": 4798,
-    "revenue": 3965.29,
-    "purchaseCost": 1857.19
+    "amount": 1,
+    "revenue_vat": 2349,
+    "revenue": 1941.32,
+    "purchaseCost": 928.59
   },
   {
     "date": "2025-06-10",
@@ -17013,14 +16645,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-13",
-    "name": "Merrell Trail Glove 7 pánské barefoot",
-    "amount": 1,
-    "revenue_vat": 2699,
-    "revenue": 2230.58,
-    "purchaseCost": 1416
-  },
-  {
-    "date": "2025-06-13",
     "name": "VÝPRODEJ Xero Prio dětské barefoot",
     "amount": 1,
     "revenue_vat": 1699,
@@ -17054,10 +16678,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-06-13",
     "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 2,
-    "revenue_vat": 4348,
-    "revenue": 3593.39,
-    "purchaseCost": 1904.79
+    "amount": 1,
+    "revenue_vat": 2099,
+    "revenue": 1734.71,
+    "purchaseCost": 952.4
   },
   {
     "date": "2025-06-13",
@@ -17277,14 +16901,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-17",
-    "name": "Skinners 2.0 Comfort",
-    "amount": 1,
-    "revenue_vat": 1249,
-    "revenue": 1032.23,
-    "purchaseCost": 719.83
-  },
-  {
-    "date": "2025-06-17",
     "name": "VÝPRODEJ Xero Shoes Z-Trek barefoot sandály – dámské",
     "amount": 4,
     "revenue_vat": 4360,
@@ -17373,14 +16989,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-18",
-    "name": "XERO Scrambler Low EV MEN- pánské trailové barefoot boty s Michelin Fiberlite",
-    "amount": 1,
-    "revenue_vat": 3690,
-    "revenue": 3049.59,
-    "purchaseCost": 1904.8
-  },
-  {
-    "date": "2025-06-18",
     "name": "Xero Shoes Z-Trek barefoot sandály – pánské",
     "amount": 1,
     "revenue_vat": 1690,
@@ -17394,14 +17002,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2390,
     "revenue": 1975.21,
     "purchaseCost": 1214.3
-  },
-  {
-    "date": "2025-06-18",
-    "name": "Xero Z-Trail EV dámské turistické barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 2349,
-    "revenue": 1941.32,
-    "purchaseCost": 1071.4
   },
   {
     "date": "2025-06-18",
@@ -17678,10 +17278,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-06-24",
     "name": "Skinners 2.0 Comfort",
-    "amount": 2,
-    "revenue_vat": 2160,
-    "revenue": 1785.12,
-    "purchaseCost": 1439.67
+    "amount": 1,
+    "revenue_vat": 1080,
+    "revenue": 892.56,
+    "purchaseCost": 719.83
   },
   {
     "date": "2025-06-24",
@@ -17877,14 +17477,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-30",
-    "name": "Dárek k nákupu, triko W velikost S",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-06-30",
     "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
     "amount": 2,
     "revenue_vat": 578,
@@ -17980,14 +17572,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 2428.6
   },
   {
-    "date": "2025-06-30",
-    "name": "Xero Z-Trail EV dámské turistické barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 2349,
-    "revenue": 1941.32,
-    "purchaseCost": 1071.4
-  },
-  {
     "date": "2025-07-01",
     "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
@@ -17997,35 +17581,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-01",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2025-07-01",
-    "name": "Tričko vel M W za nákup zdarma",
-    "amount": 2,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-01",
     "name": "VÝPRODEJ Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
     "amount": 1,
     "revenue_vat": 1790,
     "revenue": 1479.34,
     "purchaseCost": 714.3
-  },
-  {
-    "date": "2025-07-01",
-    "name": "VÝPRODEJ Xero Shoes Kona W – dámské barefoot slip-on boty v plážovém stylu",
-    "amount": 1,
-    "revenue_vat": 1390,
-    "revenue": 1148.76,
-    "purchaseCost": 571.5
   },
   {
     "date": "2025-07-01",
@@ -18060,36 +17620,12 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 833.25
   },
   {
-    "date": "2025-07-01",
-    "name": "Xero Z-Trail EV dámské turistické barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 2349,
-    "revenue": 1941.32,
-    "purchaseCost": 1071.4
-  },
-  {
     "date": "2025-07-02",
     "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
     "amount": 1,
     "revenue_vat": 289,
     "revenue": 238.84,
     "purchaseCost": 110
-  },
-  {
-    "date": "2025-07-02",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 2,
-    "revenue_vat": 4898,
-    "revenue": 4047.94,
-    "purchaseCost": 2478
-  },
-  {
-    "date": "2025-07-02",
-    "name": "Tričko vel M W za nákup zdarma",
-    "amount": 2,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
   },
   {
     "date": "2025-07-02",
@@ -18149,35 +17685,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-03",
-    "name": "Merrell Vapor Glove 6 - pánská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 1318.18
-  },
-  {
-    "date": "2025-07-03",
-    "name": "Merrell Vapor Glove 6 - pánská sportovní barefoot obuv vel 44",
-    "amount": 1,
-    "revenue_vat": 2099,
-    "revenue": 1734.71,
-    "purchaseCost": 1318.18
-  },
-  {
-    "date": "2025-07-03",
     "name": "VÝPRODEJ Xero Shoes Z-Trek barefoot sandály – dámské",
     "amount": 10,
     "revenue_vat": 10900,
     "revenue": 9008.3,
     "purchaseCost": 5000.02
-  },
-  {
-    "date": "2025-07-03",
-    "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2849,
-    "revenue": 2354.55,
-    "purchaseCost": 1309.51
   },
   {
     "date": "2025-07-03",
@@ -18196,36 +17708,12 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 833.25
   },
   {
-    "date": "2025-07-03",
-    "name": "Xero Z-Trail EV dámské turistické barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 2349,
-    "revenue": 1941.32,
-    "purchaseCost": 1071.4
-  },
-  {
-    "date": "2025-07-04",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 1239
-  },
-  {
     "date": "2025-07-04",
     "name": "SmellWell polštářky ACTIVE",
     "amount": 2,
     "revenue_vat": 578,
     "revenue": 477.68,
     "purchaseCost": 344
-  },
-  {
-    "date": "2025-07-04",
-    "name": "Tričko S",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
   },
   {
     "date": "2025-07-04",
@@ -18349,14 +17837,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-08",
-    "name": "Skinners 2.0 Comfort",
-    "amount": 1,
-    "revenue_vat": 1080,
-    "revenue": 892.56,
-    "purchaseCost": 719.83
-  },
-  {
-    "date": "2025-07-08",
     "name": "VÝPRODEJ Xero HFS - pánské běžecké barefoot boty",
     "amount": 1,
     "revenue_vat": 2349,
@@ -18421,27 +17901,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-09",
-    "name": "TRIČKO XL",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-09",
     "name": "VÝPRODEJ Xero HFS - dámské běžecké barefoot boty",
     "amount": 1,
     "revenue_vat": 2349,
     "revenue": 1941.32,
     "purchaseCost": 928.59
-  },
-  {
-    "date": "2025-07-09",
-    "name": "VÝPRODEJ XERO Scrambler Low Woman - dámské trailové a trekové barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2190,
-    "revenue": 1809.92,
-    "purchaseCost": 1142.75
   },
   {
     "date": "2025-07-09",
@@ -18474,14 +17938,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1690,
     "revenue": 1396.69,
     "purchaseCost": 785.7
-  },
-  {
-    "date": "2025-07-09",
-    "name": "XERO Scrambler Trail Mid WP Men - pánská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3990,
-    "revenue": 3297.52,
-    "purchaseCost": 1666.69
   },
   {
     "date": "2025-07-10",
@@ -18533,59 +17989,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-11",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2699,
-    "revenue": 2230.58,
-    "purchaseCost": 1416
-  },
-  {
-    "date": "2025-07-11",
     "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
     "amount": 1,
     "revenue_vat": 2099,
     "revenue": 1734.71,
     "purchaseCost": 1239
-  },
-  {
-    "date": "2025-07-11",
-    "name": "Rozdělané KS CoolMax - chladivé běžecké ponožky",
-    "amount": 1,
-    "revenue_vat": 59,
-    "revenue": 48.76,
-    "purchaseCost": 42.6
-  },
-  {
-    "date": "2025-07-11",
-    "name": "Tričko L Dámské",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-11",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-11",
-    "name": "Tričko vel dámské XL",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-11",
-    "name": "VÝPRODEJ XERO Alpine dámská zimní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2890,
-    "revenue": 2388.43,
-    "purchaseCost": 1285.7
   },
   {
     "date": "2025-07-11",
@@ -18618,22 +18026,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3290,
     "revenue": 2719.01,
     "purchaseCost": 1547.6
-  },
-  {
-    "date": "2025-07-11",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2949,
-    "revenue": 2437.19,
-    "purchaseCost": 1328
-  },
-  {
-    "date": "2025-07-11",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 2,
-    "revenue_vat": 4139,
-    "revenue": 3420.66,
-    "purchaseCost": 1904.79
   },
   {
     "date": "2025-07-12",
@@ -18717,14 +18109,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-14",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-14",
     "name": "VÝPRODEJ WOMAN Xero Mesa Trail II - dámské trailové barefoot boty",
     "amount": 1,
     "revenue_vat": 2150,
@@ -18757,14 +18141,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-14",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 2249,
-    "revenue": 1858.68,
-    "purchaseCost": 952.4
-  },
-  {
-    "date": "2025-07-14",
     "name": "Xero Shoes Z-Trek barefoot sandály – dámské",
     "amount": 1,
     "revenue_vat": 1690,
@@ -18794,30 +18170,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1080,
     "revenue": 892.56,
     "purchaseCost": 719.83
-  },
-  {
-    "date": "2025-07-15",
-    "name": "Skinners KIDS 2.0",
-    "amount": 1,
-    "revenue_vat": 1080,
-    "revenue": 892.56,
-    "purchaseCost": 689.25
-  },
-  {
-    "date": "2025-07-15",
-    "name": "Tričko pánské vel L",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-15",
-    "name": "Tričko vel L Pán",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
   },
   {
     "date": "2025-07-15",
@@ -18861,14 +18213,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-15",
-    "name": "Xero Dillon Leather – dámské kožené barefoot tenisky pro každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 3390,
-    "revenue": 2801.65,
-    "purchaseCost": 1666.69
-  },
-  {
-    "date": "2025-07-15",
     "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
     "amount": 1,
     "revenue_vat": 1690,
@@ -18908,36 +18252,12 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 1428.59
   },
   {
-    "date": "2025-07-15",
-    "name": "Xero Z-Trail EV pánské turistické barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 2349,
-    "revenue": 1941.32,
-    "purchaseCost": 1071.4
-  },
-  {
     "date": "2025-07-16",
     "name": "KS 600/Speed",
-    "amount": 2,
-    "revenue_vat": 278,
-    "revenue": 229.76,
-    "purchaseCost": 112
-  },
-  {
-    "date": "2025-07-16",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
     "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2025-07-16",
-    "name": "Merrell Vapor Glove 6 - pánská sportovní barefoot obuv 46,5, 12",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 1318.18
+    "revenue_vat": 139,
+    "revenue": 114.88,
+    "purchaseCost": 56
   },
   {
     "date": "2025-07-16",
@@ -18946,30 +18266,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1080,
     "revenue": 892.56,
     "purchaseCost": 719.83
-  },
-  {
-    "date": "2025-07-16",
-    "name": "Sportovní ponožky KS QGO - běh, chůze, cyklistika",
-    "amount": 2,
-    "revenue_vat": 258,
-    "revenue": 213.22,
-    "purchaseCost": 108
-  },
-  {
-    "date": "2025-07-16",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 3,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-16",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
   },
   {
     "date": "2025-07-16",
@@ -18997,22 +18293,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-16",
-    "name": "WOMAN Xero Mesa Trail II - dámské trailové barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3399,
-    "revenue": 2809.09,
-    "purchaseCost": 1000
-  },
-  {
-    "date": "2025-07-16",
-    "name": "Xero Aqua Cloud - dámské barefoot sandály do vody i na souš",
-    "amount": 1,
-    "revenue_vat": 1499,
-    "revenue": 1238.84,
-    "purchaseCost": 714.3
-  },
-  {
-    "date": "2025-07-16",
     "name": "XERO H-Trail - dámské turistické sandály",
     "amount": 1,
     "revenue_vat": 2199,
@@ -19030,10 +18310,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-07-16",
     "name": "Xero Shoes Z-Trek barefoot sandály – dámské",
-    "amount": 2,
-    "revenue_vat": 3380,
-    "revenue": 2793.38,
-    "purchaseCost": 1666.49
+    "amount": 1,
+    "revenue_vat": 1690,
+    "revenue": 1396.69,
+    "purchaseCost": 833.25
   },
   {
     "date": "2025-07-16",
@@ -19125,35 +18405,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-18",
-    "name": "Skinners 2.0 Comfort",
-    "amount": 1,
-    "revenue_vat": 1080,
-    "revenue": 892.56,
-    "purchaseCost": 719.83
-  },
-  {
-    "date": "2025-07-18",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-18",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 3,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-18",
     "name": "VÝPRODEJ Xero Shoes Z-Trek barefoot sandály – dámské",
-    "amount": 2,
-    "revenue_vat": 2180,
-    "revenue": 1801.66,
-    "purchaseCost": 1000
+    "amount": 1,
+    "revenue_vat": 1090,
+    "revenue": 900.83,
+    "purchaseCost": 500
   },
   {
     "date": "2025-07-18",
@@ -19181,27 +18437,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-18",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2490,
-    "revenue": 2057.85,
-    "purchaseCost": 1309.5
-  },
-  {
-    "date": "2025-07-18",
     "name": "Xero Shoes Dillon Canvas – dámské barefoot tenisky",
     "amount": 1,
     "revenue_vat": 2249,
     "revenue": 1858.68,
     "purchaseCost": 1071.51
-  },
-  {
-    "date": "2025-07-18",
-    "name": "Xero Z-Trail EV dámské turistické barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 2199,
-    "revenue": 1817.36,
-    "purchaseCost": 1071.41
   },
   {
     "date": "2025-07-19",
@@ -19317,14 +18557,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-21",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 189,
-    "revenue": 156.2,
-    "purchaseCost": 102
-  },
-  {
-    "date": "2025-07-21",
     "name": "KS CoolMax - chladivé běžecké ponožky",
     "amount": 3,
     "revenue_vat": 357,
@@ -19334,10 +18566,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-07-21",
     "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
-    "amount": 2,
-    "revenue_vat": 588,
-    "revenue": 485.95,
-    "purchaseCost": 220
+    "amount": 1,
+    "revenue_vat": 289,
+    "revenue": 238.84,
+    "purchaseCost": 110
   },
   {
     "date": "2025-07-21",
@@ -19366,10 +18598,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-07-21",
     "name": "VÝPRODEJ Xero Shoes Z-Trek barefoot sandály – dámské",
-    "amount": 3,
-    "revenue_vat": 3270,
-    "revenue": 2702.49,
-    "purchaseCost": 1500.01
+    "amount": 2,
+    "revenue_vat": 2180,
+    "revenue": 1801.66,
+    "purchaseCost": 1000
   },
   {
     "date": "2025-07-21",
@@ -19378,14 +18610,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1450,
     "revenue": 1198.35,
     "purchaseCost": 714.3
-  },
-  {
-    "date": "2025-07-21",
-    "name": "XERO Ridgeway dámské voděodolné boty",
-    "amount": 1,
-    "revenue_vat": 4299,
-    "revenue": 3552.89,
-    "purchaseCost": 2142.89
   },
   {
     "date": "2025-07-21",
@@ -19437,30 +18661,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-22",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-22",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-22",
-    "name": "VÝPRODEJ XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 1799,
-    "revenue": 1486.78,
-    "purchaseCost": 785.95
-  },
-  {
-    "date": "2025-07-22",
     "name": "VÝPRODEJ Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
     "amount": 2,
     "revenue_vat": 3580,
@@ -19484,14 +18684,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 535.54
   },
   {
-    "date": "2025-07-22",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2649,
-    "revenue": 2189.26,
-    "purchaseCost": 1309.51
-  },
-  {
     "date": "2025-07-23",
     "name": "KS Lite Short - nízké běžecké ponožky",
     "amount": 1,
@@ -19501,35 +18693,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-23",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2669,
-    "revenue": 2205.79,
-    "purchaseCost": 1416
-  },
-  {
-    "date": "2025-07-23",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2025-07-23",
     "name": "Sportovní ponožky KS QGO - běh, chůze, cyklistika",
     "amount": 1,
     "revenue_vat": 129,
     "revenue": 106.61,
     "purchaseCost": 54
-  },
-  {
-    "date": "2025-07-23",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 2,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
   },
   {
     "date": "2025-07-23",
@@ -19557,14 +18725,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-23",
-    "name": "XERO HFS II - dámské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3290,
-    "revenue": 2719.01,
-    "purchaseCost": 1547.6
-  },
-  {
-    "date": "2025-07-23",
     "name": "Xero Prio pánské barefoot boty – běh, trénink, každodenní nošení",
     "amount": 1,
     "revenue_vat": 2390,
@@ -19578,14 +18738,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1690,
     "revenue": 1396.69,
     "purchaseCost": 833.25
-  },
-  {
-    "date": "2025-07-24",
-    "name": "Merrell Trail Glove 7 dámské barefoot  Basilic 41",
-    "amount": 1,
-    "revenue_vat": 2349,
-    "revenue": 1941.32,
-    "purchaseCost": 1416
   },
   {
     "date": "2025-07-24",
@@ -19613,14 +18765,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-24",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-07-24",
     "name": "VÝPRODEJ WOMAN Xero Mesa Trail II - dámské trailové barefoot boty",
     "amount": 1,
     "revenue_vat": 2150,
@@ -19637,14 +18781,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-24",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 2099,
-    "revenue": 1734.71,
-    "purchaseCost": 952.4
-  },
-  {
-    "date": "2025-07-24",
     "name": "Xero Z-Trail EV dámské turistické barefoot sandály",
     "amount": 1,
     "revenue_vat": 2199,
@@ -19658,22 +18794,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 119,
     "revenue": 98.35,
     "purchaseCost": 42
-  },
-  {
-    "date": "2025-07-25",
-    "name": "Skinners KIDS 2.0",
-    "amount": 1,
-    "revenue_vat": 1080,
-    "revenue": 892.56,
-    "purchaseCost": 689.25
-  },
-  {
-    "date": "2025-07-25",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 2,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
   },
   {
     "date": "2025-07-25",
@@ -19702,10 +18822,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-07-25",
     "name": "VÝPRODEJ Xero Shoes Z-Trek barefoot sandály – dámské",
-    "amount": 3,
-    "revenue_vat": 3270,
-    "revenue": 2702.49,
-    "purchaseCost": 1500.01
+    "amount": 2,
+    "revenue_vat": 2180,
+    "revenue": 1801.66,
+    "purchaseCost": 1000
   },
   {
     "date": "2025-07-25",
@@ -19906,22 +19026,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 189,
     "revenue": 156.2,
     "purchaseCost": 91
-  },
-  {
-    "date": "2025-07-29",
-    "name": "Skinners 2.0 Comfort",
-    "amount": 1,
-    "revenue_vat": 1080,
-    "revenue": 892.56,
-    "purchaseCost": 719.83
-  },
-  {
-    "date": "2025-07-29",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
   },
   {
     "date": "2025-07-29",
@@ -20301,22 +19405,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-05",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 2,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-05",
-    "name": "VÝPRODEJ XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 1690,
-    "revenue": 1396.69,
-    "purchaseCost": 785.95
-  },
-  {
-    "date": "2025-08-05",
     "name": "VÝPRODEJ Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
     "amount": 1,
     "revenue_vat": 1790,
@@ -20341,22 +19429,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-05",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 2099,
-    "revenue": 1734.71,
-    "purchaseCost": 952.4
-  },
-  {
-    "date": "2025-08-05",
-    "name": "Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 2390,
-    "revenue": 1975.21,
-    "purchaseCost": 1190.5
-  },
-  {
-    "date": "2025-08-05",
     "name": "XERO Ridgeway Mesh LOW - dámské turistické boty",
     "amount": 1,
     "revenue_vat": 3390,
@@ -20365,27 +19437,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-06",
-    "name": "Skinners 2.0 Comfort",
-    "amount": 1,
-    "revenue_vat": 1080,
-    "revenue": 892.56,
-    "purchaseCost": 719.83
-  },
-  {
-    "date": "2025-08-06",
     "name": "Sportovní ponožky KS QGO - běh, chůze, cyklistika",
     "amount": 1,
     "revenue_vat": 129,
     "revenue": 106.61,
     "purchaseCost": 54
-  },
-  {
-    "date": "2025-08-06",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
   },
   {
     "date": "2025-08-06",
@@ -20421,14 +19477,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-07",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-07",
     "name": "VÝPRODEJ XERO Scrambler Low MAN - pánské trailové a trekové barefoot boty",
     "amount": 1,
     "revenue_vat": 2190,
@@ -20444,14 +19492,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 1500.01
   },
   {
-    "date": "2025-08-07",
-    "name": "XERO Scrambler Trail Low WP Women - dámská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3490,
-    "revenue": 2884.3,
-    "purchaseCost": 1785.7
-  },
-  {
     "date": "2025-08-08",
     "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
     "amount": 1,
@@ -20461,27 +19501,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-08",
-    "name": "KS Lite Short - nízké běžecké ponožky",
-    "amount": 2,
-    "revenue_vat": 298,
-    "revenue": 246.28,
-    "purchaseCost": 84
-  },
-  {
-    "date": "2025-08-08",
     "name": "MAN Xero Mesa Trail II - pánské trailové barefoot boty",
     "amount": 1,
     "revenue_vat": 3399,
     "revenue": 2809.09,
     "purchaseCost": 1000
-  },
-  {
-    "date": "2025-08-08",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
   },
   {
     "date": "2025-08-08",
@@ -20514,14 +19538,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 4360,
     "revenue": 3603.32,
     "purchaseCost": 2000.01
-  },
-  {
-    "date": "2025-08-08",
-    "name": "Xero Aqua Cloud - dámské barefoot sandály do vody i na souš",
-    "amount": 1,
-    "revenue_vat": 1499,
-    "revenue": 1238.84,
-    "purchaseCost": 428.59
   },
   {
     "date": "2025-08-08",
@@ -20605,43 +19621,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-11",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-11",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-11",
-    "name": "VÝPRODEJ  XERO Zelen - dámská barefoot sportovní obuv",
-    "amount": 1,
-    "revenue_vat": 2290,
-    "revenue": 1892.56,
-    "purchaseCost": 1071.4
-  },
-  {
-    "date": "2025-08-11",
     "name": "VÝPRODEJ Xero Mesa Trail WP - dámské trailové voděodolné barefoot boty",
     "amount": 1,
     "revenue_vat": 2150,
     "revenue": 1776.86,
     "purchaseCost": 1071.41
-  },
-  {
-    "date": "2025-08-11",
-    "name": "VÝPRODEJ Xero Prio dětské barefoot",
-    "amount": 1,
-    "revenue_vat": 1059,
-    "revenue": 875.21,
-    "purchaseCost": 500
   },
   {
     "date": "2025-08-11",
@@ -20682,14 +19666,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2199,
     "revenue": 1817.36,
     "purchaseCost": 1071.41
-  },
-  {
-    "date": "2025-08-11",
-    "name": "XERO HFS II - pánské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3290,
-    "revenue": 2719.01,
-    "purchaseCost": 1547.6
   },
   {
     "date": "2025-08-11",
@@ -20765,14 +19741,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-12",
-    "name": "Xero Shoes Dillon Little Kids – dětské barefoot tenisky",
-    "amount": 1,
-    "revenue_vat": 1490,
-    "revenue": 1231.4,
-    "purchaseCost": 714.21
-  },
-  {
-    "date": "2025-08-12",
     "name": "Xero Wynn – pánské retro barefoot tenisky pro maximální volnost pohybu",
     "amount": 1,
     "revenue_vat": 2990,
@@ -20794,22 +19762,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1080,
     "revenue": 892.56,
     "purchaseCost": 719.83
-  },
-  {
-    "date": "2025-08-13",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-13",
-    "name": "VÝPRODEJ XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 2,
-    "revenue_vat": 3380,
-    "revenue": 2793.38,
-    "purchaseCost": 1571.65
   },
   {
     "date": "2025-08-13",
@@ -20837,14 +19789,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-13",
-    "name": "Xero Mesa Trail WP - pánské trailové voděodolné barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3490,
-    "revenue": 2884.3,
-    "purchaseCost": 1785.7
-  },
-  {
-    "date": "2025-08-13",
     "name": "XERO Ridgeway dámské voděodolné boty",
     "amount": 1,
     "revenue_vat": 4199,
@@ -20869,35 +19813,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-14",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2690,
-    "revenue": 2223.14,
-    "purchaseCost": 1416
-  },
-  {
-    "date": "2025-08-14",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 2,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-14",
     "name": "VÝPRODEJ Xero Zelen pánské sportovní boty",
     "amount": 1,
     "revenue_vat": 2290,
     "revenue": 1892.56,
     "purchaseCost": 1071.9
-  },
-  {
-    "date": "2025-08-14",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1309.51
   },
   {
     "date": "2025-08-14",
@@ -20908,28 +19828,12 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 1666.69
   },
   {
-    "date": "2025-08-14",
-    "name": "Xero Wynn – pánské retro barefoot tenisky pro maximální volnost pohybu",
-    "amount": 1,
-    "revenue_vat": 2990,
-    "revenue": 2471.07,
-    "purchaseCost": 1428.59
-  },
-  {
-    "date": "2025-08-15",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
     "date": "2025-08-15",
     "name": "VÝPRODEJ Xero Shoes Z-Trek barefoot sandály – dámské",
-    "amount": 3,
-    "revenue_vat": 3270,
-    "revenue": 2702.49,
-    "purchaseCost": 1500.01
+    "amount": 2,
+    "revenue_vat": 2180,
+    "revenue": 1801.66,
+    "purchaseCost": 1000
   },
   {
     "date": "2025-08-15",
@@ -21005,30 +19909,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-18",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2025-08-18",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-18",
-    "name": "VÝPRODEJ Xero HFS - pánské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2349,
-    "revenue": 1941.32,
-    "purchaseCost": 1016.53
-  },
-  {
-    "date": "2025-08-18",
     "name": "VÝPRODEJ Xero Shoes Z-Trek barefoot sandály – dámské",
     "amount": 3,
     "revenue_vat": 3270,
@@ -21061,14 +19941,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-19",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2025-08-19",
     "name": "VÝPRODEJ Xero Shoes Dillon Slip-On Kids – dětské barefoot slip-on tenisky",
     "amount": 1,
     "revenue_vat": 960,
@@ -21085,43 +19957,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-19",
-    "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2849,
-    "revenue": 2354.55,
-    "purchaseCost": 1309.51
-  },
-  {
-    "date": "2025-08-19",
     "name": "XERO Scrambler Low EV WOMEN - dámské trailové barefoot boty s Michelin Fiberlite",
     "amount": 1,
     "revenue_vat": 3690,
     "revenue": 3049.59,
     "purchaseCost": 1904.8
-  },
-  {
-    "date": "2025-08-19",
-    "name": "XERO Scrambler Trail Low WP Women - dámská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3590,
-    "revenue": 2966.94,
-    "purchaseCost": 1785.7
-  },
-  {
-    "date": "2025-08-20",
-    "name": "COMPRESSPORT běžecké podkolenky FULL SOCKS RUN",
-    "amount": 1,
-    "revenue_vat": 990,
-    "revenue": 818.18,
-    "purchaseCost": 570
-  },
-  {
-    "date": "2025-08-20",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2699,
-    "revenue": 2230.58,
-    "purchaseCost": 1416
   },
   {
     "date": "2025-08-20",
@@ -21130,22 +19970,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1080,
     "revenue": 892.56,
     "purchaseCost": 719.83
-  },
-  {
-    "date": "2025-08-20",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-20",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
   },
   {
     "date": "2025-08-20",
@@ -21170,22 +19994,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1790,
     "revenue": 1479.34,
     "purchaseCost": 714.3
-  },
-  {
-    "date": "2025-08-20",
-    "name": "VÝPRODEJ XERO Scrambler Low MAN - pánské trailové a trekové barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2190,
-    "revenue": 1809.92,
-    "purchaseCost": 1142.89
-  },
-  {
-    "date": "2025-08-20",
-    "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2690,
-    "revenue": 2223.14,
-    "purchaseCost": 1309.5
   },
   {
     "date": "2025-08-20",
@@ -21261,14 +20069,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-21",
-    "name": "Xero Shoes Prio Little Kids – lehké barefoot tenisky pro aktivní děti",
-    "amount": 1,
-    "revenue_vat": 1369,
-    "revenue": 1131.4,
-    "purchaseCost": 654.71
-  },
-  {
-    "date": "2025-08-21",
     "name": "Xero Shoes Z-Trail Big Kids – dětské barefoot sandály",
     "amount": 1,
     "revenue_vat": 1690,
@@ -21285,35 +20085,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-22",
-    "name": "Merrell Trail Glove 7 pánské barefoot",
-    "amount": 1,
-    "revenue_vat": 2690,
-    "revenue": 2223.14,
-    "purchaseCost": 1416
-  },
-  {
-    "date": "2025-08-22",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 2,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-22",
     "name": "VÝPRODEJ Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
     "amount": 1,
     "revenue_vat": 1790,
     "revenue": 1479.34,
     "purchaseCost": 714.3
-  },
-  {
-    "date": "2025-08-22",
-    "name": "VÝPRODEJ Xero Prio NEO M - pánská multisportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1890,
-    "revenue": 1561.98,
-    "purchaseCost": 750.41
   },
   {
     "date": "2025-08-22",
@@ -21397,43 +20173,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-25",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2449,
-    "revenue": 2023.97,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2025-08-25",
-    "name": "Sportovní ponožky KS QGO - běh, chůze, cyklistika",
-    "amount": 1,
-    "revenue_vat": 149,
-    "revenue": 123.14,
-    "purchaseCost": 54
-  },
-  {
-    "date": "2025-08-25",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-25",
     "name": "VÝPRODEJ Xero Shoes Z-Trek barefoot sandály – dámské",
     "amount": 2,
     "revenue_vat": 2180,
     "revenue": 1801.66,
     "purchaseCost": 1000
-  },
-  {
-    "date": "2025-08-25",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1309.51
   },
   {
     "date": "2025-08-25",
@@ -21445,27 +20189,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-26",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-26",
     "name": "VÝPRODEJ Xero Prio Big Kids - dětské barefoot",
     "amount": 1,
     "revenue_vat": 1059,
     "revenue": 875.21,
     "purchaseCost": 500
-  },
-  {
-    "date": "2025-08-26",
-    "name": "VÝPRODEJ XERO Scrambler Trail Low WP Women - dámská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3190,
-    "revenue": 2636.36,
-    "purchaseCost": 1785.7
   },
   {
     "date": "2025-08-26",
@@ -21478,10 +20206,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-08-26",
     "name": "VÝPRODEJ Xero Shoes Z-Trek barefoot sandály – dámské",
-    "amount": 3,
-    "revenue_vat": 3270,
-    "revenue": 2702.49,
-    "purchaseCost": 1500.01
+    "amount": 2,
+    "revenue_vat": 2180,
+    "revenue": 1801.66,
+    "purchaseCost": 1000
   },
   {
     "date": "2025-08-27",
@@ -21533,14 +20261,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-28",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-28",
     "name": "Turistické ponožky KS Merib MERINO - chladné počasí",
     "amount": 1,
     "revenue_vat": 379,
@@ -21549,27 +20269,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-28",
-    "name": "VÝPRODEJ Xero HFS - dámské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2349,
-    "revenue": 1941.32,
-    "purchaseCost": 928.59
-  },
-  {
-    "date": "2025-08-28",
     "name": "VÝPRODEJ Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
     "amount": 2,
     "revenue_vat": 3580,
     "revenue": 2958.68,
     "purchaseCost": 1428.6
-  },
-  {
-    "date": "2025-08-28",
-    "name": "VÝPRODEJ XERO Prio Suede pánské barefoot",
-    "amount": 1,
-    "revenue_vat": 2399,
-    "revenue": 1982.64,
-    "purchaseCost": 1428.59
   },
   {
     "date": "2025-08-28",
@@ -21597,35 +20301,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-29",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2025-08-29",
-    "name": "VÝPRODEJ Xero HFS - dámské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2349,
-    "revenue": 1941.32,
-    "purchaseCost": 928.59
-  },
-  {
-    "date": "2025-08-29",
     "name": "VÝPRODEJ XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
     "amount": 1,
     "revenue_vat": 1890,
     "revenue": 1561.98,
     "purchaseCost": 916.75
-  },
-  {
-    "date": "2025-08-29",
-    "name": "VÝPRODEJ Xero Prio Big Kids - dětské barefoot",
-    "amount": 1,
-    "revenue_vat": 1059,
-    "revenue": 875.21,
-    "purchaseCost": 500
   },
   {
     "date": "2025-08-29",
@@ -21741,14 +20421,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-09-01",
-    "name": "VÝPRODEJ Xero Shoes Dillon Slip-On Kids – dětské barefoot slip-on tenisky",
-    "amount": 1,
-    "revenue_vat": 960,
-    "revenue": 793.39,
-    "purchaseCost": 428.5
-  },
-  {
-    "date": "2025-09-01",
     "name": "Xero Prio Big Kids - dětské barefoot",
     "amount": 1,
     "revenue_vat": 1699,
@@ -21813,14 +20485,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-09-03",
-    "name": "VÝPRODEJ XERO Scrambler Trail Mid Men - lehká barefoot turistická bota pro pány",
-    "amount": 1,
-    "revenue_vat": 3249,
-    "revenue": 2685.12,
-    "purchaseCost": 1666.69
-  },
-  {
-    "date": "2025-09-03",
     "name": "VÝPRODEJ Xero Shoes Denver Leather pánské",
     "amount": 1,
     "revenue_vat": 2890,
@@ -21861,14 +20525,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-09-04",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2390,
-    "revenue": 1975.21,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2025-09-04",
     "name": "VÝPRODEJ XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
     "amount": 1,
     "revenue_vat": 1890,
@@ -21901,14 +20557,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-09-05",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2390,
-    "revenue": 1975.21,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2025-09-05",
     "name": "VÝPRODEJ Xero Breckenridge dámské kožené boty",
     "amount": 1,
     "revenue_vat": 2690,
@@ -21938,14 +20586,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3390,
     "revenue": 2801.65,
     "purchaseCost": 1785.7
-  },
-  {
-    "date": "2025-09-05",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 1890,
-    "revenue": 1561.98,
-    "purchaseCost": 952.39
   },
   {
     "date": "2025-09-06",
@@ -21994,14 +20634,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 289,
     "revenue": 238.84,
     "purchaseCost": 110
-  },
-  {
-    "date": "2025-09-08",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2690,
-    "revenue": 2223.14,
-    "purchaseCost": 1416
   },
   {
     "date": "2025-09-08",
@@ -22101,14 +20733,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-09-10",
-    "name": "Skinners KIDS 2.0",
-    "amount": 1,
-    "revenue_vat": 1185,
-    "revenue": 979.34,
-    "purchaseCost": 689.26
-  },
-  {
-    "date": "2025-09-10",
     "name": "VÝPRODEJ Xero Gracie – lehké dámské barefoot holínky",
     "amount": 1,
     "revenue_vat": 1890,
@@ -22130,30 +20754,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1690,
     "revenue": 1396.69,
     "purchaseCost": 785.95
-  },
-  {
-    "date": "2025-09-10",
-    "name": "VÝPRODEJ XERO Scrambler Trail Mid WP Women - dámská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3449,
-    "revenue": 2850.41,
-    "purchaseCost": 1250
-  },
-  {
-    "date": "2025-09-10",
-    "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2690,
-    "revenue": 2223.14,
-    "purchaseCost": 1309.5
-  },
-  {
-    "date": "2025-09-10",
-    "name": "Xero Prio NEO W - dámská mulitsportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1428.93
   },
   {
     "date": "2025-09-10",
@@ -22218,14 +20818,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1690,
     "revenue": 1396.69,
     "purchaseCost": 785.95
-  },
-  {
-    "date": "2025-09-11",
-    "name": "VÝPRODEJ Xero Prio Big Kids - dětské barefoot",
-    "amount": 1,
-    "revenue_vat": 1059,
-    "revenue": 875.21,
-    "purchaseCost": 500
   },
   {
     "date": "2025-09-11",
@@ -22314,14 +20906,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3231,
     "revenue": 2670.25,
     "purchaseCost": 1785.72
-  },
-  {
-    "date": "2025-09-12",
-    "name": "Xero Shoes Prio Little Kids – lehké barefoot tenisky pro aktivní děti",
-    "amount": 1,
-    "revenue_vat": 1369,
-    "revenue": 1131.4,
-    "purchaseCost": 654.76
   },
   {
     "date": "2025-09-13",
@@ -22645,14 +21229,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-09-16",
-    "name": "XERO Ridgeway Mesh LOW - pánské turistické boty",
-    "amount": 1,
-    "revenue_vat": 3390,
-    "revenue": 2801.65,
-    "purchaseCost": 1666.66
-  },
-  {
-    "date": "2025-09-16",
     "name": "Xero Shoes X1 Mid Men – pánské barefoot basketbalové boty",
     "amount": 1,
     "revenue_vat": 4121,
@@ -22706,14 +21282,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3490,
     "revenue": 2884.3,
     "purchaseCost": 1785.72
-  },
-  {
-    "date": "2025-09-17",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2390,
-    "revenue": 1975.21,
-    "purchaseCost": 1309.53
   },
   {
     "date": "2025-09-17",
@@ -22805,27 +21373,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-09-18",
-    "name": "XERO HFS II - pánské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3290,
-    "revenue": 2719.01,
-    "purchaseCost": 876.03
-  },
-  {
-    "date": "2025-09-18",
     "name": "Xero Mesa Trail WP - dámské trailové voděodolné barefoot boty",
     "amount": 1,
     "revenue_vat": 2871,
     "revenue": 2372.73,
     "purchaseCost": 1785.72
-  },
-  {
-    "date": "2025-09-18",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1309.53
   },
   {
     "date": "2025-09-18",
@@ -22858,14 +21410,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3590,
     "revenue": 2966.94,
     "purchaseCost": 1500
-  },
-  {
-    "date": "2025-09-19",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2290,
-    "revenue": 1892.56,
-    "purchaseCost": 1309.52
   },
   {
     "date": "2025-09-19",
@@ -23045,14 +21589,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-09-23",
-    "name": "VÝPRODEJ Xero Shoes Denver pánské",
-    "amount": 1,
-    "revenue_vat": 2090,
-    "revenue": 1727.27,
-    "purchaseCost": 1166.66
-  },
-  {
-    "date": "2025-09-23",
     "name": "XERO Scrambler Trail Mid WP Women - dámská trailová voděodolná turistická barefoot obuv",
     "amount": 2,
     "revenue_vat": 7980,
@@ -23109,22 +21645,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-09-25",
-    "name": "Pracovní obuv - VÝPRODEJ Xero Shoes Denver Leather pánské",
-    "amount": 1,
-    "revenue_vat": 2600,
-    "revenue": 2148.76,
-    "purchaseCost": 1214.25
-  },
-  {
-    "date": "2025-09-25",
-    "name": "Sportovní ponožky KS QGO - běh, chůze, cyklistika",
-    "amount": 2,
-    "revenue_vat": 258,
-    "revenue": 213.22,
-    "purchaseCost": 108
-  },
-  {
-    "date": "2025-09-25",
     "name": "VÝPRODEJ Xero Gracie – lehké dámské barefoot holínky",
     "amount": 1,
     "revenue_vat": 1890,
@@ -23146,14 +21666,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3590,
     "revenue": 2966.94,
     "purchaseCost": 1500
-  },
-  {
-    "date": "2025-09-25",
-    "name": "VÝPRODEJ XERO Scrambler Trail Low WP Men - pánská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3190,
-    "revenue": 2636.36,
-    "purchaseCost": 1250
   },
   {
     "date": "2025-09-25",
@@ -23258,14 +21770,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3780,
     "revenue": 3123.96,
     "purchaseCost": 1500
-  },
-  {
-    "date": "2025-09-26",
-    "name": "VÝPRODEJ XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 1690,
-    "revenue": 1396.69,
-    "purchaseCost": 916.66
   },
   {
     "date": "2025-09-26",
@@ -23597,14 +22101,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-10-01",
-    "name": "Kilpi BARELO LOW-U",
-    "amount": 1,
-    "revenue_vat": 1971,
-    "revenue": 1628.93,
-    "purchaseCost": 616.37
-  },
-  {
-    "date": "2025-10-01",
     "name": "Sportovní ponožky KS QGO - běh, chůze, cyklistika",
     "amount": 2,
     "revenue_vat": 258,
@@ -23650,14 +22146,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3290,
     "revenue": 2719.01,
     "purchaseCost": 1547.62
-  },
-  {
-    "date": "2025-10-02",
-    "name": "KS Hike MERINO - turistické ponožky celoroční",
-    "amount": 1,
-    "revenue_vat": 249,
-    "revenue": 205.79,
-    "purchaseCost": 109
   },
   {
     "date": "2025-10-02",
@@ -23708,30 +22196,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 3000
   },
   {
-    "date": "2025-10-02",
-    "name": "XERO Ridgeway Mesh LOW - pánské turistické boty",
-    "amount": 1,
-    "revenue_vat": 3390,
-    "revenue": 2801.65,
-    "purchaseCost": 1666.66
-  },
-  {
-    "date": "2025-10-03",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 169,
-    "revenue": 139.67,
-    "purchaseCost": 91
-  },
-  {
-    "date": "2025-10-03",
-    "name": "Poukaz do Concept Store Třebíč v hodnotě 500,-",
-    "amount": 1,
-    "revenue_vat": 500,
-    "revenue": 413.22,
-    "purchaseCost": 0
-  },
-  {
     "date": "2025-10-03",
     "name": "VÝPRODEJ Xero Gracie – lehké dámské barefoot holínky",
     "amount": 1,
@@ -23754,14 +22218,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3590,
     "revenue": 2966.94,
     "purchaseCost": 1785.71
-  },
-  {
-    "date": "2025-10-03",
-    "name": "Xero Wynn – dámské retro barefoot tenisky pro maximální volnost pohybu",
-    "amount": 1,
-    "revenue_vat": 2690,
-    "revenue": 2223.14,
-    "purchaseCost": 1428.57
   },
   {
     "date": "2025-10-04",
@@ -24101,27 +22557,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-10-08",
-    "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2690,
-    "revenue": 2223.14,
-    "purchaseCost": 1309.52
-  },
-  {
-    "date": "2025-10-08",
     "name": "Xero Wynn – pánské retro barefoot tenisky pro maximální volnost pohybu",
     "amount": 1,
     "revenue_vat": 2990,
     "revenue": 2471.07,
     "purchaseCost": 1428.57
-  },
-  {
-    "date": "2025-10-09",
-    "name": "Be Lenka ArcticEdge UNISEX",
-    "amount": 1,
-    "revenue_vat": 4290,
-    "revenue": 3545.45,
-    "purchaseCost": 1879.5
   },
   {
     "date": "2025-10-09",
@@ -24333,30 +22773,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-10-13",
-    "name": "Be Lenka Synergy Fleece UNISEX",
-    "amount": 1,
-    "revenue_vat": 3391,
-    "revenue": 2802.48,
-    "purchaseCost": 1414.46
-  },
-  {
-    "date": "2025-10-13",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 169,
-    "revenue": 139.67,
-    "purchaseCost": 91
-  },
-  {
-    "date": "2025-10-13",
-    "name": "VÝPRODEJ Xero Shoes Denver Leather pánské",
-    "amount": 1,
-    "revenue_vat": 2590,
-    "revenue": 2140.5,
-    "purchaseCost": 1333.34
-  },
-  {
-    "date": "2025-10-13",
     "name": "XERO Alpine dámská zimní barefoot obuv",
     "amount": 1,
     "revenue_vat": 3105,
@@ -24445,14 +22861,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-10-15",
-    "name": "Be Lenka Zippu dětské zimní",
-    "amount": 1,
-    "revenue_vat": 1946,
-    "revenue": 1608.26,
-    "purchaseCost": 1312.48
-  },
-  {
-    "date": "2025-10-15",
     "name": "VÝPRODEJ Xero Breckenridge dámské kožené boty",
     "amount": 1,
     "revenue_vat": 2690,
@@ -24501,22 +22909,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-10-16",
-    "name": "Be Lenka Synergy Fleece UNISEX",
-    "amount": 1,
-    "revenue_vat": 3392,
-    "revenue": 2803.31,
-    "purchaseCost": 1414.46
-  },
-  {
-    "date": "2025-10-16",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 169,
-    "revenue": 139.67,
-    "purchaseCost": 91
-  },
-  {
-    "date": "2025-10-16",
     "name": "VÝPRODEJ Xero Breckenridge dámské kožené boty",
     "amount": 2,
     "revenue_vat": 5111,
@@ -24549,22 +22941,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-10-16",
-    "name": "VÝPRODEJ Xero Shoes Kona W – dámské barefoot slip-on boty v plážovém stylu",
-    "amount": 1,
-    "revenue_vat": 1390,
-    "revenue": 1148.76,
-    "purchaseCost": 666.67
-  },
-  {
-    "date": "2025-10-16",
-    "name": "XERO Ridgeway Mesh LOW - pánské turistické boty",
-    "amount": 1,
-    "revenue_vat": 3051,
-    "revenue": 2521.49,
-    "purchaseCost": 1666.67
-  },
-  {
-    "date": "2025-10-16",
     "name": "XERO Scrambler Trail Low WP Women - dámská trailová voděodolná turistická barefoot obuv",
     "amount": 1,
     "revenue_vat": 3590,
@@ -24578,22 +22954,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3591,
     "revenue": 2967.77,
     "purchaseCost": 2023.81
-  },
-  {
-    "date": "2025-10-17",
-    "name": "Be Lenka Synergy Fleece UNISEX",
-    "amount": 1,
-    "revenue_vat": 3392,
-    "revenue": 2803.31,
-    "purchaseCost": 1414.46
-  },
-  {
-    "date": "2025-10-17",
-    "name": "Be Lenka Winter 3.0 UNISEX",
-    "amount": 2,
-    "revenue_vat": 7634,
-    "revenue": 6309.1,
-    "purchaseCost": 3977.53
   },
   {
     "date": "2025-10-17",
@@ -24626,14 +22986,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3450,
     "revenue": 2851.24,
     "purchaseCost": 1500
-  },
-  {
-    "date": "2025-10-17",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 1890,
-    "revenue": 1561.98,
-    "purchaseCost": 666.67
   },
   {
     "date": "2025-10-17",
@@ -24852,22 +23204,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 1333.33
   },
   {
-    "date": "2025-10-21",
-    "name": "Xero Wynn – dámské retro barefoot tenisky pro maximální volnost pohybu",
-    "amount": 1,
-    "revenue_vat": 2990,
-    "revenue": 2471.07,
-    "purchaseCost": 1428.57
-  },
-  {
-    "date": "2025-10-22",
-    "name": "Be Lenka Synergy Fleece UNISEX",
-    "amount": 1,
-    "revenue_vat": 3392,
-    "revenue": 2803.31,
-    "purchaseCost": 1414.46
-  },
-  {
     "date": "2025-10-22",
     "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
     "amount": 2,
@@ -24954,14 +23290,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3990,
     "revenue": 3297.52,
     "purchaseCost": 2023.81
-  },
-  {
-    "date": "2025-10-23",
-    "name": "VÝPRODEJ XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 1890,
-    "revenue": 1561.98,
-    "purchaseCost": 916.66
   },
   {
     "date": "2025-10-23",
@@ -25173,27 +23501,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-10-29",
-    "name": "Xero Alpine Pull On dětské zimní",
-    "amount": 1,
-    "revenue_vat": 2590,
-    "revenue": 2140.5,
-    "purchaseCost": 1190.51
-  },
-  {
-    "date": "2025-10-29",
     "name": "Xero Prio pánské barefoot boty – běh, trénink, každodenní nošení",
     "amount": 1,
     "revenue_vat": 2390,
     "revenue": 1975.21,
     "purchaseCost": 1190.48
-  },
-  {
-    "date": "2025-10-29",
-    "name": "XERO Scrambler Trail Mid WP Women - dámská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3990,
-    "revenue": 3297.52,
-    "purchaseCost": 2023.81
   },
   {
     "date": "2025-10-30",
@@ -25258,14 +23570,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2490,
     "revenue": 2057.85,
     "purchaseCost": 1333.33
-  },
-  {
-    "date": "2025-10-31",
-    "name": "XERO HFS II - pánské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3290,
-    "revenue": 2719.01,
-    "purchaseCost": 876.03
   },
   {
     "date": "2025-11-01",
@@ -25374,10 +23678,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-11-03",
     "name": "XERO Alpine dámská zimní barefoot obuv",
-    "amount": 2,
-    "revenue_vat": 6555,
-    "revenue": 5417.36,
-    "purchaseCost": 3000
+    "amount": 1,
+    "revenue_vat": 3105,
+    "revenue": 2566.12,
+    "purchaseCost": 1500
   },
   {
     "date": "2025-11-03",
@@ -25389,27 +23693,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-04",
-    "name": "Be Lenka Zippu dětské zimní",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1312.48
-  },
-  {
-    "date": "2025-11-04",
     "name": "Kilpi BARELO LOW-U",
-    "amount": 2,
-    "revenue_vat": 3789,
-    "revenue": 3131.41,
-    "purchaseCost": 1362.17
-  },
-  {
-    "date": "2025-11-04",
-    "name": "Skinners 2.0 Comfort",
     "amount": 1,
-    "revenue_vat": 1249,
-    "revenue": 1032.23,
-    "purchaseCost": 719.83
+    "revenue_vat": 1599,
+    "revenue": 1321.49,
+    "purchaseCost": 616.36
   },
   {
     "date": "2025-11-04",
@@ -25541,27 +23829,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-07",
-    "name": "Kilpi BARELO LOW-U",
-    "amount": 1,
-    "revenue_vat": 1599,
-    "revenue": 1321.49,
-    "purchaseCost": 616.36
-  },
-  {
-    "date": "2025-11-07",
     "name": "VÝPRODEJ XERO Xcursion Fusion – Pánské turistické barefoot boty s membránou",
     "amount": 1,
     "revenue_vat": 2511,
     "revenue": 2075.21,
     "purchaseCost": 928.51
-  },
-  {
-    "date": "2025-11-07",
-    "name": "XERO Scrambler Trail Mid WP Women - dámská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3290,
-    "revenue": 2719.01,
-    "purchaseCost": 2023.81
   },
   {
     "date": "2025-11-08",
@@ -25661,14 +23933,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-10",
-    "name": "Be Lenka Nevada Neo UNISEX",
-    "amount": 1,
-    "revenue_vat": 3990,
-    "revenue": 3297.52,
-    "purchaseCost": 1768.26
-  },
-  {
-    "date": "2025-11-10",
     "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 189,
@@ -25757,19 +24021,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-11",
-    "name": "Be Lenka Synergy Fleece UNISEX",
-    "amount": 1,
-    "revenue_vat": 2990,
-    "revenue": 2471.07,
-    "purchaseCost": 1414.46
-  },
-  {
-    "date": "2025-11-11",
     "name": "Be Lenka Zippu dětské zimní",
-    "amount": 2,
-    "revenue_vat": 3980,
-    "revenue": 3289.26,
-    "purchaseCost": 2624.96
+    "amount": 1,
+    "revenue_vat": 1990,
+    "revenue": 1644.63,
+    "purchaseCost": 1312.48
   },
   {
     "date": "2025-11-11",
@@ -25797,14 +24053,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-11",
-    "name": "VÝPRODEJ Xero Shoes Dillon Slip-On Kids – dětské barefoot slip-on tenisky",
-    "amount": 1,
-    "revenue_vat": 960,
-    "revenue": 793.39,
-    "purchaseCost": 500
-  },
-  {
-    "date": "2025-11-11",
     "name": "Xero Dillon Leather – dámské kožené barefoot tenisky pro každodenní nošení",
     "amount": 1,
     "revenue_vat": 3390,
@@ -25826,22 +24074,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3591,
     "revenue": 2967.77,
     "purchaseCost": 2142.86
-  },
-  {
-    "date": "2025-11-12",
-    "name": "Be Lenka ArcticEdge UNISEX",
-    "amount": 1,
-    "revenue_vat": 2990,
-    "revenue": 2471.07,
-    "purchaseCost": 1879.5
-  },
-  {
-    "date": "2025-11-12",
-    "name": "Be Lenka Synergy Fleece UNISEX - zdravotní obuv",
-    "amount": 1,
-    "revenue_vat": 2691,
-    "revenue": 2223.97,
-    "purchaseCost": 1414.46
   },
   {
     "date": "2025-11-12",
@@ -25893,14 +24125,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-12",
-    "name": "Merrell Vapor Glove 6 - pánská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2390,
-    "revenue": 1975.21,
-    "purchaseCost": 1318.18
-  },
-  {
-    "date": "2025-11-12",
     "name": "Turistické ponožky KS Merib MERINO - chladné počasí",
     "amount": 1,
     "revenue_vat": 379,
@@ -25941,14 +24165,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-12",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1309.53
-  },
-  {
-    "date": "2025-11-12",
     "name": "XERO Ridgeway dámské voděodolné boty",
     "amount": 1,
     "revenue_vat": 4199,
@@ -25966,10 +24182,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-11-13",
     "name": "Be Lenka SnowFox Dámské Zimní",
-    "amount": 2,
-    "revenue_vat": 5440,
-    "revenue": 4495.87,
-    "purchaseCost": 4422.48
+    "amount": 1,
+    "revenue_vat": 2650,
+    "revenue": 2190.08,
+    "purchaseCost": 2211.24
   },
   {
     "date": "2025-11-13",
@@ -25998,10 +24214,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-11-14",
     "name": "Be Lenka SnowFox Dámské Zimní",
-    "amount": 2,
-    "revenue_vat": 5580,
-    "revenue": 4611.58,
-    "purchaseCost": 4422.49
+    "amount": 1,
+    "revenue_vat": 2790,
+    "revenue": 2305.79,
+    "purchaseCost": 2211.24
   },
   {
     "date": "2025-11-14",
@@ -26010,14 +24226,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3190,
     "revenue": 2636.36,
     "purchaseCost": 1250
-  },
-  {
-    "date": "2025-11-14",
-    "name": "XERO Alpine dámská zimní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2541,
-    "revenue": 2100,
-    "purchaseCost": 1500
   },
   {
     "date": "2025-11-14",
@@ -26094,10 +24302,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-11-16",
     "name": "VÝPRODEJ Xero Shoes Denver Leather pánské",
-    "amount": 3,
-    "revenue_vat": 8670,
-    "revenue": 7165.29,
-    "purchaseCost": 4000
+    "amount": 2,
+    "revenue_vat": 5780,
+    "revenue": 4776.86,
+    "purchaseCost": 2666.67
   },
   {
     "date": "2025-11-16",
@@ -26349,14 +24557,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-21",
-    "name": "Be Lenka Polaris Dámské Zimní",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1315.71
-  },
-  {
-    "date": "2025-11-21",
     "name": "KS 600/Speed",
     "amount": 1,
     "revenue_vat": 139,
@@ -26378,14 +24578,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2380,
     "revenue": 1966.94,
     "purchaseCost": 1071.5
-  },
-  {
-    "date": "2025-11-21",
-    "name": "VÝPRODEJ XERO Ridgeway dámské voděodolné boty",
-    "amount": 1,
-    "revenue_vat": 3590,
-    "revenue": 2966.94,
-    "purchaseCost": 1500
   },
   {
     "date": "2025-11-21",
@@ -26557,14 +24749,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-26",
-    "name": "Be Lenka ArcticEdge UNISEX ALL Black",
-    "amount": 1,
-    "revenue_vat": 2990,
-    "revenue": 2471.07,
-    "purchaseCost": 1879.5
-  },
-  {
-    "date": "2025-11-26",
     "name": "Be Lenka Synergy Fleece UNISEX",
     "amount": 1,
     "revenue_vat": 2990,
@@ -26710,10 +24894,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2025-11-28",
     "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 3,
-    "revenue_vat": 548,
-    "revenue": 452.9,
-    "purchaseCost": 306.01
+    "amount": 2,
+    "revenue_vat": 378,
+    "revenue": 312.4,
+    "purchaseCost": 204
   },
   {
     "date": "2025-11-28",
@@ -26949,14 +25133,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-12-05",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 189,
-    "revenue": 156.2,
-    "purchaseCost": 102
-  },
-  {
-    "date": "2025-12-05",
     "name": "Kilpi BARELO LOW-U",
     "amount": 1,
     "revenue_vat": 1599,
@@ -26970,22 +25146,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3150,
     "revenue": 2603.31,
     "purchaseCost": 1500
-  },
-  {
-    "date": "2025-12-05",
-    "name": "VÝPRODEJ XERO Ridgeway pánské voděodolné boty",
-    "amount": 1,
-    "revenue_vat": 3590,
-    "revenue": 2966.94,
-    "purchaseCost": 1500
-  },
-  {
-    "date": "2025-12-05",
-    "name": "VÝPRODEJ Xero Shoes Denver pánské",
-    "amount": 1,
-    "revenue_vat": 2390,
-    "revenue": 1975.21,
-    "purchaseCost": 1166.67
   },
   {
     "date": "2025-12-05",
@@ -27066,14 +25226,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1690,
     "revenue": 1396.69,
     "purchaseCost": 833.33
-  },
-  {
-    "date": "2025-12-09",
-    "name": "Be Lenka Polaris Dámské Zimní",
-    "amount": 1,
-    "revenue_vat": 4290,
-    "revenue": 3545.45,
-    "purchaseCost": 1315.7
   },
   {
     "date": "2025-12-09",
@@ -27173,27 +25325,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-12-11",
-    "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
-    "amount": 4,
-    "revenue_vat": 1156,
-    "revenue": 955.37,
-    "purchaseCost": 440
-  },
-  {
-    "date": "2025-12-11",
     "name": "XERO Ridgeway dámské voděodolné boty",
     "amount": 1,
     "revenue_vat": 4199,
     "revenue": 3470.25,
     "purchaseCost": 2142.86
-  },
-  {
-    "date": "2025-12-12",
-    "name": "Be Lenka Synergy Fleece UNISEX",
-    "amount": 1,
-    "revenue_vat": 3790,
-    "revenue": 3132.23,
-    "purchaseCost": 1414.46
   },
   {
     "date": "2025-12-12",
@@ -27405,27 +25541,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-12-17",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2490,
-    "revenue": 2057.85,
-    "purchaseCost": 1309.52
-  },
-  {
-    "date": "2025-12-17",
     "name": "Xero Prio NEO M - pánská multisportovní barefoot obuv",
     "amount": 1,
     "revenue_vat": 2790,
     "revenue": 2305.79,
     "purchaseCost": 1309.53
-  },
-  {
-    "date": "2025-12-18",
-    "name": "Dárkový kupon v  hodnotě 2000Kč kod YVOUJ3",
-    "amount": 1,
-    "revenue_vat": 2000,
-    "revenue": 1652.89,
-    "purchaseCost": 16.53
   },
   {
     "date": "2025-12-18",
@@ -27869,22 +25989,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-01-05",
-    "name": "Be Lenka ArcticEdge UNISEX",
-    "amount": 1,
-    "revenue_vat": 4290,
-    "revenue": 3545.45,
-    "purchaseCost": 1879.5
-  },
-  {
-    "date": "2026-01-05",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 189,
-    "revenue": 156.2,
-    "purchaseCost": 102
-  },
-  {
-    "date": "2026-01-05",
     "name": "VÝPRODEJ XERO Scrambler Trail Mid WP Men - pánská trailová voděodolná turistická barefoot obuv",
     "amount": 1,
     "revenue_vat": 3277,
@@ -27970,14 +26074,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 4290,
     "revenue": 3545.45,
     "purchaseCost": 1315.7
-  },
-  {
-    "date": "2026-01-09",
-    "name": "Turistické ponožky KS Merib MERINO - chladné počasí",
-    "amount": 1,
-    "revenue_vat": 290,
-    "revenue": 239.67,
-    "purchaseCost": 160
   },
   {
     "date": "2026-01-09",
@@ -28117,22 +26213,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-01-14",
-    "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
-    "amount": 1,
-    "revenue_vat": 190,
-    "revenue": 157.02,
-    "purchaseCost": 110
-  },
-  {
-    "date": "2026-01-14",
-    "name": "Turistické ponožky KS Merib MERINO - chladné počasí",
-    "amount": 2,
-    "revenue_vat": 580,
-    "revenue": 479.34,
-    "purchaseCost": 320
-  },
-  {
-    "date": "2026-01-14",
     "name": "XERO Alpine dámská zimní barefoot obuv",
     "amount": 1,
     "revenue_vat": 3850,
@@ -28146,14 +26226,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3850,
     "revenue": 3181.82,
     "purchaseCost": 2142.75
-  },
-  {
-    "date": "2026-01-14",
-    "name": "Xero Prio Big Kids - dětské barefoot",
-    "amount": 1,
-    "revenue_vat": 1699,
-    "revenue": 1404.13,
-    "purchaseCost": 714.28
   },
   {
     "date": "2026-01-15",
@@ -28194,14 +26266,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2746,
     "revenue": 2269.42,
     "purchaseCost": 1333.33
-  },
-  {
-    "date": "2026-01-16",
-    "name": "XERO Alpine pánská zimní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3305,
-    "revenue": 2731.4,
-    "purchaseCost": 2142.85
   },
   {
     "date": "2026-01-16",
@@ -28261,14 +26325,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-01-19",
-    "name": "Be Lenka Winter 3.0 UNISEX",
-    "amount": 1,
-    "revenue_vat": 3490,
-    "revenue": 2884.3,
-    "purchaseCost": 1988.76
-  },
-  {
-    "date": "2026-01-19",
     "name": "Čističe na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 219,
@@ -28325,14 +26381,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-01-21",
-    "name": "Skinners 2.0 Comfort",
-    "amount": 1,
-    "revenue_vat": 1249,
-    "revenue": 1032.23,
-    "purchaseCost": 719.83
-  },
-  {
-    "date": "2026-01-21",
     "name": "VÝPRODEJ XERO Alpine dámská zimní barefoot obuv",
     "amount": 1,
     "revenue_vat": 2993,
@@ -28373,30 +26421,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-01-23",
-    "name": "Be Lenka Synergy Fleece UNISEX",
-    "amount": 1,
-    "revenue_vat": 3990,
-    "revenue": 3297.52,
-    "purchaseCost": 1414.46
-  },
-  {
-    "date": "2026-01-23",
-    "name": "Čisticí kartáčky na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 99,
-    "revenue": 81.82,
-    "purchaseCost": 53
-  },
-  {
-    "date": "2026-01-23",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 189,
-    "revenue": 156.2,
-    "purchaseCost": 102
-  },
-  {
-    "date": "2026-01-23",
     "name": "VÝPRODEJ XERO Alpine dámská zimní barefoot obuv",
     "amount": 1,
     "revenue_vat": 2993,
@@ -28410,14 +26434,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2390,
     "revenue": 1975.21,
     "purchaseCost": 1166.67
-  },
-  {
-    "date": "2026-01-23",
-    "name": "XERO Ridgeway dámské voděodolné boty",
-    "amount": 1,
-    "revenue_vat": 3779,
-    "revenue": 3123.14,
-    "purchaseCost": 2142.86
   },
   {
     "date": "2026-01-24",
@@ -28565,14 +26581,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-01-28",
-    "name": "XERO Dillon MEN - pánská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 916.67
-  },
-  {
-    "date": "2026-01-28",
     "name": "Xero Wynn – dámské retro barefoot tenisky pro maximální volnost pohybu",
     "amount": 1,
     "revenue_vat": 2691,
@@ -28589,51 +26597,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-01-30",
-    "name": "Kilpi BARE HIGH WP-U – voděodolné barefoot boty s membránou",
-    "amount": 1,
-    "revenue_vat": 2691,
-    "revenue": 2223.97,
-    "purchaseCost": 1199.6
-  },
-  {
-    "date": "2026-01-30",
     "name": "VÝPRODEJ XERO Scrambler Trail Low WP Women - dámská trailová voděodolná turistická barefoot obuv",
     "amount": 1,
     "revenue_vat": 3031,
     "revenue": 2504.96,
     "purchaseCost": 1250
-  },
-  {
-    "date": "2026-01-30",
-    "name": "XERO Glenn – Stylové pánské boty pro přirozený komfort",
-    "amount": 1,
-    "revenue_vat": 3390,
-    "revenue": 2801.65,
-    "purchaseCost": 1785.71
-  },
-  {
-    "date": "2026-01-30",
-    "name": "Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 2000,
-    "revenue": 1652.89,
-    "purchaseCost": 1190.47
-  },
-  {
-    "date": "2026-01-30",
-    "name": "Xero Prio pánské barefoot boty – běh, trénink, každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 2151,
-    "revenue": 1777.69,
-    "purchaseCost": 1190.48
-  },
-  {
-    "date": "2026-01-30",
-    "name": "XERO Scrambler Trail Mid WP Men - pánská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3591,
-    "revenue": 2967.77,
-    "purchaseCost": 1166.67
   },
   {
     "date": "2026-01-30",
@@ -28653,27 +26621,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-01-31",
-    "name": "KS Lite Short - nízké sportovní ponožky",
-    "amount": 1,
-    "revenue_vat": 119,
-    "revenue": 98.35,
-    "purchaseCost": 42
-  },
-  {
-    "date": "2026-01-31",
     "name": "VÝPRODEJ XERO Alpine dámská zimní barefoot obuv",
     "amount": 2,
     "revenue_vat": 6300,
     "revenue": 5206.62,
     "purchaseCost": 3000
-  },
-  {
-    "date": "2026-01-31",
-    "name": "VÝPRODEJ XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 1890,
-    "revenue": 1561.98,
-    "purchaseCost": 916.66
   },
   {
     "date": "2026-01-31",
@@ -28802,14 +26754,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1690,
     "revenue": 1396.69,
     "purchaseCost": 583.33
-  },
-  {
-    "date": "2026-02-04",
-    "name": "XERO Scrambler Trail Mid WP Women - dámská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 3591,
-    "revenue": 2967.77,
-    "purchaseCost": 2023.81
   },
   {
     "date": "2026-02-05",
@@ -29148,14 +27092,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 2142.86
   },
   {
-    "date": "2026-02-12",
-    "name": "Xero Wynn – pánské retro barefoot tenisky pro maximální volnost pohybu",
-    "amount": 1,
-    "revenue_vat": 2290,
-    "revenue": 1892.56,
-    "purchaseCost": 1428.57
-  },
-  {
     "date": "2026-02-13",
     "name": "Xero Shoes Z-Trek barefoot sandály – pánské",
     "amount": 1,
@@ -29286,10 +27222,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-02-17",
     "name": "VÝPRODEJ Xero Shoes Denver Leather pánské",
-    "amount": 2,
-    "revenue_vat": 5636,
-    "revenue": 4657.85,
-    "purchaseCost": 2666.67
+    "amount": 1,
+    "revenue_vat": 2746,
+    "revenue": 2269.42,
+    "purchaseCost": 1333.33
   },
   {
     "date": "2026-02-17",
@@ -29362,14 +27298,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2511,
     "revenue": 2075.21,
     "purchaseCost": 1216.04
-  },
-  {
-    "date": "2026-02-19",
-    "name": "Skinners 2.0 Comfort",
-    "amount": 1,
-    "revenue_vat": 1249,
-    "revenue": 1032.23,
-    "purchaseCost": 719.83
   },
   {
     "date": "2026-02-19",
@@ -29653,14 +27581,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-02-25",
-    "name": "XERO HFS II - pánské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2961,
-    "revenue": 2447.11,
-    "purchaseCost": 1547.62
-  },
-  {
-    "date": "2026-02-25",
     "name": "XERO Ridgeway dámské voděodolné boty",
     "amount": 1,
     "revenue_vat": 3779,
@@ -29698,22 +27618,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3490,
     "revenue": 2884.3,
     "purchaseCost": 1785.72
-  },
-  {
-    "date": "2026-02-27",
-    "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
-    "amount": 2,
-    "revenue_vat": 520,
-    "revenue": 429.76,
-    "purchaseCost": 220
-  },
-  {
-    "date": "2026-02-27",
-    "name": "KS Hike MERINO - turistické ponožky celoroční",
-    "amount": 2,
-    "revenue_vat": 412,
-    "revenue": 340.5,
-    "purchaseCost": 218
   },
   {
     "date": "2026-02-27",
@@ -29770,30 +27674,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2490,
     "revenue": 2057.85,
     "purchaseCost": 1083.25
-  },
-  {
-    "date": "2026-02-27",
-    "name": "Xero Prio NEO M - pánská multisportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1309.53
-  },
-  {
-    "date": "2026-02-27",
-    "name": "XERO Ridgeway Mesh LOW - pánské turistické boty",
-    "amount": 1,
-    "revenue_vat": 3000,
-    "revenue": 2479.34,
-    "purchaseCost": 1666.67
-  },
-  {
-    "date": "2026-02-27",
-    "name": "XERO Scrambler Low EV MEN- pánské trailové barefoot boty s Michelin Fiberlite",
-    "amount": 1,
-    "revenue_vat": 3321,
-    "revenue": 2744.63,
-    "purchaseCost": 1904.76
   },
   {
     "date": "2026-02-28",
@@ -30045,14 +27925,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-04",
-    "name": "Skinners KIDS 2.0",
-    "amount": 1,
-    "revenue_vat": 1067,
-    "revenue": 881.82,
-    "purchaseCost": 490
-  },
-  {
-    "date": "2026-03-04",
     "name": "Turistické ponožky KS Merib MERINO - chladné počasí",
     "amount": 3,
     "revenue_vat": 1080,
@@ -30101,14 +27973,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-04",
-    "name": "XERO Dillon MEN - pánská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 958.68
-  },
-  {
-    "date": "2026-03-04",
     "name": "Xero Mesa Trail WP - pánské trailové voděodolné barefoot boty",
     "amount": 1,
     "revenue_vat": 2790,
@@ -30122,14 +27986,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3778,
     "revenue": 3122.32,
     "purchaseCost": 1619.05
-  },
-  {
-    "date": "2026-03-04",
-    "name": "XERO Scrambler Low EV WOMEN - dámské trailové barefoot boty s Michelin Fiberlite",
-    "amount": 1,
-    "revenue_vat": 3321,
-    "revenue": 2744.63,
-    "purchaseCost": 1904.76
   },
   {
     "date": "2026-03-04",
@@ -30157,14 +28013,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-05",
-    "name": "Kilpi BARELO LOW-U",
-    "amount": 1,
-    "revenue_vat": 1599,
-    "revenue": 1321.49,
-    "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-03-05",
     "name": "Legíny Alexo vel 40",
     "amount": 1,
     "revenue_vat": 720,
@@ -30174,18 +28022,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-03-05",
     "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 2,
-    "revenue_vat": 4302,
-    "revenue": 3555.38,
-    "purchaseCost": 2478.01
-  },
-  {
-    "date": "2026-03-05",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
     "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
+    "revenue_vat": 2151,
+    "revenue": 1777.69,
+    "purchaseCost": 1239
   },
   {
     "date": "2026-03-05",
@@ -30213,22 +28053,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-05",
-    "name": "VÝPRODEJ XERO Scrambler Low MAN - pánské trailové a trekové barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2365,
-    "revenue": 1954.55,
-    "purchaseCost": 1333.34
-  },
-  {
-    "date": "2026-03-05",
-    "name": "VÝPRODEJ XERO Scrambler Mid MEN - pánská turistická barefoot obuv s podrážkou Michelin Fiberlite",
-    "amount": 1,
-    "revenue_vat": 2651,
-    "revenue": 2190.91,
-    "purchaseCost": 1500
-  },
-  {
-    "date": "2026-03-05",
     "name": "XERO HFS II - dámské běžecké barefoot boty",
     "amount": 1,
     "revenue_vat": 3290,
@@ -30242,30 +28066,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3988,
     "revenue": 3295.87,
     "purchaseCost": 2005.28
-  },
-  {
-    "date": "2026-03-05",
-    "name": "XERO Scrambler Low EV WOMEN - dámské trailové barefoot boty s Michelin Fiberlite",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1375.21
-  },
-  {
-    "date": "2026-03-06",
-    "name": "Kilpi BARELO LOW-U",
-    "amount": 1,
-    "revenue_vat": 1599,
-    "revenue": 1321.49,
-    "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-03-06",
-    "name": "Merrell WRAPT - dámské turistické barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1327.51
   },
   {
     "date": "2026-03-06",
@@ -30282,22 +28082,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3051,
     "revenue": 2521.49,
     "purchaseCost": 1666.67
-  },
-  {
-    "date": "2026-03-06",
-    "name": "XERO HFS II - dámské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2961,
-    "revenue": 2447.11,
-    "purchaseCost": 1547.62
-  },
-  {
-    "date": "2026-03-06",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1309.53
   },
   {
     "date": "2026-03-06",
@@ -30322,14 +28106,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1521,
     "revenue": 1257.02,
     "purchaseCost": 583.33
-  },
-  {
-    "date": "2026-03-06",
-    "name": "Xero Wynn – dámské retro barefoot tenisky pro maximální volnost pohybu",
-    "amount": 1,
-    "revenue_vat": 2691,
-    "revenue": 2223.97,
-    "purchaseCost": 1428.57
   },
   {
     "date": "2026-03-07",
@@ -30397,22 +28173,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-09",
-    "name": "Skinners KIDS 2.0",
-    "amount": 1,
-    "revenue_vat": 1185,
-    "revenue": 979.34,
-    "purchaseCost": 689.26
-  },
-  {
-    "date": "2026-03-09",
-    "name": "VÝPRODEJ Xero Sunrise superlehká dámská obuv",
-    "amount": 1,
-    "revenue_vat": 1190,
-    "revenue": 983.47,
-    "purchaseCost": 625
-  },
-  {
-    "date": "2026-03-09",
     "name": "Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
     "amount": 1,
     "revenue_vat": 2390,
@@ -30434,14 +28194,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3590,
     "revenue": 2966.94,
     "purchaseCost": 1785.71
-  },
-  {
-    "date": "2026-03-09",
-    "name": "Xero Wynn – pánské retro barefoot tenisky pro maximální volnost pohybu",
-    "amount": 1,
-    "revenue_vat": 2990,
-    "revenue": 2471.07,
-    "purchaseCost": 1428.57
   },
   {
     "date": "2026-03-10",
@@ -30509,38 +28261,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-11",
-    "name": "Be Lenka Velocity UNISEX",
-    "amount": 1,
-    "revenue_vat": 2691,
-    "revenue": 2223.97,
-    "purchaseCost": 1536.5
-  },
-  {
-    "date": "2026-03-11",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 170,
-    "revenue": 140.5,
-    "purchaseCost": 102
-  },
-  {
-    "date": "2026-03-11",
-    "name": "Kilpi BARELO LOW-U",
-    "amount": 1,
-    "revenue_vat": 1599,
-    "revenue": 1321.49,
-    "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-03-11",
-    "name": "KS Hike MERINO - turistické ponožky celoroční",
-    "amount": 2,
-    "revenue_vat": 435,
-    "revenue": 359.51,
-    "purchaseCost": 218
-  },
-  {
-    "date": "2026-03-11",
     "name": "VÝPRODEJ XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
     "amount": 1,
     "revenue_vat": 1890,
@@ -30549,43 +28269,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-11",
-    "name": "VÝPRODEJ Xero Shoes Kona W – dámské barefoot slip-on boty v plážovém stylu",
-    "amount": 1,
-    "revenue_vat": 1321,
-    "revenue": 1091.74,
-    "purchaseCost": 666.67
-  },
-  {
-    "date": "2026-03-11",
-    "name": "Xero Dillon Leather – dámské kožené barefoot tenisky pro každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 3390,
-    "revenue": 2801.65,
-    "purchaseCost": 1666.66
-  },
-  {
-    "date": "2026-03-11",
-    "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2421,
-    "revenue": 2000.83,
-    "purchaseCost": 1309.53
-  },
-  {
-    "date": "2026-03-11",
     "name": "Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
     "amount": 1,
     "revenue_vat": 2390,
     "revenue": 1975.21,
     "purchaseCost": 1190.48
-  },
-  {
-    "date": "2026-03-11",
-    "name": "Xero Shoes Prio Little Kids – lehké barefoot tenisky pro aktivní děti",
-    "amount": 1,
-    "revenue_vat": 1369,
-    "revenue": 1131.4,
-    "purchaseCost": 654.76
   },
   {
     "date": "2026-03-11",
@@ -30653,14 +28341,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-13",
-    "name": "VÝPRODEJ XERO Ridgeway Mesh LOW - dámské turistické boty",
-    "amount": 1,
-    "revenue_vat": 2365,
-    "revenue": 1954.55,
-    "purchaseCost": 1166.75
-  },
-  {
-    "date": "2026-03-13",
     "name": "VÝRODEJ XERO HFS II - dámské běžecké barefoot boty",
     "amount": 1,
     "revenue_vat": 2240,
@@ -30669,35 +28349,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-13",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2290,
-    "revenue": 1892.56,
-    "purchaseCost": 1309.52
-  },
-  {
-    "date": "2026-03-13",
     "name": "XERO Phoenix Knit - dámské barefoot baleríny",
     "amount": 1,
     "revenue_vat": 1889,
     "revenue": 1561.16,
     "purchaseCost": 952.38
-  },
-  {
-    "date": "2026-03-13",
-    "name": "XERO Ridgeway Mesh LOW - pánské turistické boty",
-    "amount": 1,
-    "revenue_vat": 3051,
-    "revenue": 2521.49,
-    "purchaseCost": 1666.67
-  },
-  {
-    "date": "2026-03-13",
-    "name": "Xero Shoes Prio Little Kids – lehké barefoot tenisky pro aktivní děti",
-    "amount": 2,
-    "revenue_vat": 2464,
-    "revenue": 2036.36,
-    "purchaseCost": 1309.52
   },
   {
     "date": "2026-03-14",
@@ -30805,43 +28461,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-16",
-    "name": "Be Lenka TrailWalker 3.0 UNISEX",
-    "amount": 1,
-    "revenue_vat": 3591,
-    "revenue": 2967.77,
-    "purchaseCost": 1768.27
-  },
-  {
-    "date": "2026-03-16",
-    "name": "DOPRODEJ Be Lenka ArcticEdge UNISEX",
-    "amount": 1,
-    "revenue_vat": 2651,
-    "revenue": 2190.91,
-    "purchaseCost": 1879.5
-  },
-  {
-    "date": "2026-03-16",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 152,
-    "revenue": 125.62,
-    "purchaseCost": 91
-  },
-  {
-    "date": "2026-03-16",
     "name": "Kilpi BARELO LOW-U",
     "amount": 1,
     "revenue_vat": 1599,
     "revenue": 1321.49,
     "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-03-16",
-    "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
-    "amount": 1,
-    "revenue_vat": 260,
-    "revenue": 214.88,
-    "purchaseCost": 110
   },
   {
     "date": "2026-03-16",
@@ -30866,14 +28490,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3491,
     "revenue": 2885.13,
     "purchaseCost": 1750
-  },
-  {
-    "date": "2026-03-16",
-    "name": "XERO HFS II - dámské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2961,
-    "revenue": 2447.11,
-    "purchaseCost": 1547.62
   },
   {
     "date": "2026-03-16",
@@ -30933,22 +28549,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-17",
-    "name": "Kilpi BARELO LOW-U",
-    "amount": 1,
-    "revenue_vat": 1599,
-    "revenue": 1321.49,
-    "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-03-17",
-    "name": "Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2151,
-    "revenue": 1777.69,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2026-03-17",
     "name": "VÝPRODEJ Xero Breckenridge dámské kožené boty",
     "amount": 1,
     "revenue_vat": 2690,
@@ -31005,14 +28605,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-17",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 2,
-    "revenue_vat": 3300,
-    "revenue": 2727.28,
-    "purchaseCost": 1642.98
-  },
-  {
-    "date": "2026-03-17",
     "name": "Xero Z-Trail EV dámské turistické barefoot sandály",
     "amount": 1,
     "revenue_vat": 1979,
@@ -31026,14 +28618,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 422,
     "revenue": 348.76,
     "purchaseCost": 263.64
-  },
-  {
-    "date": "2026-03-18",
-    "name": "Be Lenka Rebound UNISEX",
-    "amount": 1,
-    "revenue_vat": 2241,
-    "revenue": 1852.07,
-    "purchaseCost": 1104.55
   },
   {
     "date": "2026-03-18",
@@ -31069,14 +28653,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-18",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 1650,
-    "revenue": 1363.64,
-    "purchaseCost": 821.49
-  },
-  {
-    "date": "2026-03-18",
     "name": "Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
     "amount": 1,
     "revenue_vat": 1796,
@@ -31093,43 +28669,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-19",
-    "name": "DOPRODEJ Be Lenka Winter 3.0 UNISEX",
-    "amount": 1,
-    "revenue_vat": 3315,
-    "revenue": 2739.67,
-    "purchaseCost": 2306
-  },
-  {
-    "date": "2026-03-19",
     "name": "DOPRODEJ XERO Alpine dámská zimní barefoot",
     "amount": 1,
     "revenue_vat": 2890,
     "revenue": 2388.43,
     "purchaseCost": 2142.75
-  },
-  {
-    "date": "2026-03-19",
-    "name": "Kilpi BARE HIGH WP-U – voděodolné barefoot boty s membránou",
-    "amount": 1,
-    "revenue_vat": 2691,
-    "revenue": 2223.97,
-    "purchaseCost": 1199.6
-  },
-  {
-    "date": "2026-03-19",
-    "name": "Tričko Dámské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-03-19",
-    "name": "Tričko Pánské Barefoot Concept Store Třebíč",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0,
-    "purchaseCost": 0
   },
   {
     "date": "2026-03-19",
@@ -31173,14 +28717,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-19",
-    "name": "Xero Dillon Leather – dámské kožené barefoot tenisky pro každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 3051,
-    "revenue": 2521.49,
-    "purchaseCost": 1666.67
-  },
-  {
-    "date": "2026-03-19",
     "name": "Xero Mesa Trail WP - dámské trailové voděodolné barefoot boty",
     "amount": 2,
     "revenue_vat": 5382,
@@ -31213,14 +28749,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-20",
-    "name": "VÝPRODEJ Xero Breckenridge dámské kožené boty",
-    "amount": 1,
-    "revenue_vat": 2556,
-    "revenue": 2112.4,
-    "purchaseCost": 1333.34
-  },
-  {
-    "date": "2026-03-20",
     "name": "VÝPRODEJ XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
     "amount": 1,
     "revenue_vat": 1890,
@@ -31250,22 +28778,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2651,
     "revenue": 2190.91,
     "purchaseCost": 1904.76
-  },
-  {
-    "date": "2026-03-20",
-    "name": "Xero Dillon Leather – dámské kožené barefoot tenisky pro každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 3051,
-    "revenue": 2521.49,
-    "purchaseCost": 1666.67
-  },
-  {
-    "date": "2026-03-20",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2690,
-    "revenue": 2223.14,
-    "purchaseCost": 1309.52
   },
   {
     "date": "2026-03-21",
@@ -31405,22 +28917,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-23",
-    "name": "DOPRODEJ XERO Alpine dámská zimní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2490,
-    "revenue": 2057.85,
-    "purchaseCost": 1500
-  },
-  {
-    "date": "2026-03-23",
-    "name": "KS CoolMax - chladivé běžecké ponožky",
-    "amount": 4,
-    "revenue_vat": 428,
-    "revenue": 353.72,
-    "purchaseCost": 170.41
-  },
-  {
-    "date": "2026-03-23",
     "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
     "amount": 2,
     "revenue_vat": 578,
@@ -31445,14 +28941,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-23",
-    "name": "VÝPRODEJ XERO Ridgeway Mesh LOW - dámské turistické boty",
-    "amount": 1,
-    "revenue_vat": 2490,
-    "revenue": 2057.85,
-    "purchaseCost": 1166.75
-  },
-  {
-    "date": "2026-03-23",
     "name": "VÝPRODEJ XERO Scrambler Low EV WOMEN - dámské trailové barefoot boty s Michelin Fiberlite",
     "amount": 2,
     "revenue_vat": 5580,
@@ -31474,14 +28962,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2690,
     "revenue": 2223.14,
     "purchaseCost": 1309.52
-  },
-  {
-    "date": "2026-03-23",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 1650,
-    "revenue": 1363.64,
-    "purchaseCost": 821.49
   },
   {
     "date": "2026-03-23",
@@ -31557,22 +29037,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-24",
-    "name": "Skinners 2.0 Comfort",
-    "amount": 1,
-    "revenue_vat": 1280,
-    "revenue": 1057.85,
-    "purchaseCost": 719.83
-  },
-  {
-    "date": "2026-03-24",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -250,
-    "revenue": -250,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-03-24",
     "name": "VÝPRODEJ XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
     "amount": 3,
     "revenue_vat": 5480,
@@ -31621,14 +29085,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-24",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2290,
-    "revenue": 1892.56,
-    "purchaseCost": 1309.52
-  },
-  {
-    "date": "2026-03-24",
     "name": "Xero Shoes Dillon Canvas – dámské barefoot tenisky",
     "amount": 1,
     "revenue_vat": 2024,
@@ -31650,14 +29106,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 169,
     "revenue": 139.67,
     "purchaseCost": 68
-  },
-  {
-    "date": "2026-03-25",
-    "name": "DOPRODEJ Be Lenka Winter 3.0 UNISEX",
-    "amount": 1,
-    "revenue_vat": 3490,
-    "revenue": 2884.3,
-    "purchaseCost": 2306
   },
   {
     "date": "2026-03-25",
@@ -31733,14 +29181,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-25",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2290,
-    "revenue": 1892.56,
-    "purchaseCost": 1309.52
-  },
-  {
-    "date": "2026-03-25",
     "name": "XERO Phoenix Knit - dámské barefoot baleríny",
     "amount": 1,
     "revenue_vat": 1889,
@@ -31781,30 +29221,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-26",
-    "name": "Kilpi BARE HIGH WP-U – voděodolné barefoot boty s membránou",
-    "amount": 1,
-    "revenue_vat": 2691,
-    "revenue": 2223.97,
-    "purchaseCost": 1199.6
-  },
-  {
-    "date": "2026-03-26",
-    "name": "VÝPRODEJ XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1690,
-    "revenue": 1396.69,
-    "purchaseCost": 958.26
-  },
-  {
-    "date": "2026-03-26",
-    "name": "VÝPRODEJ Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 1700,
-    "revenue": 1404.96,
-    "purchaseCost": 875
-  },
-  {
-    "date": "2026-03-26",
     "name": "VÝPRODEJ Xero Prio NEO W - dámská mulitsportovní barefoot obuv",
     "amount": 1,
     "revenue_vat": 1890,
@@ -31820,52 +29236,12 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 1250
   },
   {
-    "date": "2026-03-26",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2176,
-    "revenue": 1798.35,
-    "purchaseCost": 1309.53
-  },
-  {
-    "date": "2026-03-26",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 1690,
-    "revenue": 1396.69,
-    "purchaseCost": 821.49
-  },
-  {
-    "date": "2026-03-26",
-    "name": "Xero Shoes Prio Little Kids – lehké barefoot tenisky pro aktivní děti",
-    "amount": 1,
-    "revenue_vat": 1232,
-    "revenue": 1018.18,
-    "purchaseCost": 654.76
-  },
-  {
-    "date": "2026-03-27",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 152,
-    "revenue": 125.62,
-    "purchaseCost": 91
-  },
-  {
     "date": "2026-03-27",
     "name": "VÝPRODEJ Xero Breckenridge dámské kožené boty",
-    "amount": 2,
-    "revenue_vat": 5246,
-    "revenue": 4335.54,
-    "purchaseCost": 2666.67
-  },
-  {
-    "date": "2026-03-27",
-    "name": "VÝPRODEJ Xero Prio NEO M - pánská multisportovní barefoot obuv",
     "amount": 1,
-    "revenue_vat": 1796,
-    "revenue": 1484.3,
-    "purchaseCost": 958.25
+    "revenue_vat": 2690,
+    "revenue": 2223.14,
+    "purchaseCost": 1333.33
   },
   {
     "date": "2026-03-27",
@@ -32045,22 +29421,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-30",
-    "name": "KS Hike MERINO - turistické ponožky celoroční",
-    "amount": 1,
-    "revenue_vat": 206,
-    "revenue": 170.25,
-    "purchaseCost": 109
-  },
-  {
-    "date": "2026-03-30",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -191,
-    "revenue": -191,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-03-30",
     "name": "VÝPRODEJ Xero Gracie – lehké dámské barefoot holínky",
     "amount": 1,
     "revenue_vat": 1890,
@@ -32101,14 +29461,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-30",
-    "name": "VÝPRODEJ XERO Scrambler Trail Mid Women - lehká barefoot turistická bota pro ženy",
-    "amount": 1,
-    "revenue_vat": 3031,
-    "revenue": 2504.96,
-    "purchaseCost": 1126.67
-  },
-  {
-    "date": "2026-03-30",
     "name": "VÝPRODEJ Xero Shoes Tari W – dámské barefoot kožené chelsea boty",
     "amount": 1,
     "revenue_vat": 2490,
@@ -32122,14 +29474,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2691,
     "revenue": 2223.97,
     "purchaseCost": 1785.72
-  },
-  {
-    "date": "2026-03-30",
-    "name": "Xero Wynn – dámské retro barefoot tenisky pro maximální volnost pohybu",
-    "amount": 1,
-    "revenue_vat": 2691,
-    "revenue": 2223.97,
-    "purchaseCost": 1428.57
   },
   {
     "date": "2026-03-31",
@@ -32173,19 +29517,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-31",
-    "name": "VÝPRODEJ Xero Prio NEO M - pánská multisportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1796,
-    "revenue": 1484.3,
-    "purchaseCost": 958.25
-  },
-  {
-    "date": "2026-03-31",
     "name": "VÝPRODEJ Xero Prio NEO W - dámská mulitsportovní barefoot obuv",
-    "amount": 2,
-    "revenue_vat": 3686,
-    "revenue": 3046.28,
-    "purchaseCost": 1916.5
+    "amount": 1,
+    "revenue_vat": 1890,
+    "revenue": 1561.98,
+    "purchaseCost": 958.25
   },
   {
     "date": "2026-03-31",
@@ -32525,30 +29861,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-07",
-    "name": "Be Lenka Canvi - dětské barefoot tenisky (textilní, letní, veganské)",
-    "amount": 1,
-    "revenue_vat": 1161,
-    "revenue": 959.5,
-    "purchaseCost": 567
-  },
-  {
-    "date": "2026-04-07",
-    "name": "DOPRODEJ Be Lenka ArcticEdge UNISEX",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1879.51
-  },
-  {
-    "date": "2026-04-07",
-    "name": "Kilpi BARELO LOW-U",
-    "amount": 1,
-    "revenue_vat": 1599,
-    "revenue": 1321.49,
-    "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-04-07",
     "name": "KS CoolMax - chladivé běžecké ponožky",
     "amount": 2,
     "revenue_vat": 214,
@@ -32613,14 +29925,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-08",
-    "name": "Be Lenka Scoot - dětské barefoot tenisky (kožené, prodyšné, junior)",
-    "amount": 1,
-    "revenue_vat": 1701,
-    "revenue": 1405.79,
-    "purchaseCost": 567
-  },
-  {
-    "date": "2026-04-08",
     "name": "Čisticí kartáčky na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 99,
@@ -32654,10 +29958,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-04-08",
     "name": "VÝPRODEJ Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
-    "amount": 2,
-    "revenue_vat": 3580,
-    "revenue": 2958.68,
-    "purchaseCost": 1750
+    "amount": 1,
+    "revenue_vat": 1790,
+    "revenue": 1479.34,
+    "purchaseCost": 875
   },
   {
     "date": "2026-04-08",
@@ -32669,27 +29973,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-08",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1309.53
-  },
-  {
-    "date": "2026-04-08",
     "name": "Xero Shoes Z-Trek barefoot sandály – dámské",
     "amount": 1,
     "revenue_vat": 1690,
     "revenue": 1396.69,
     "purchaseCost": 833.33
-  },
-  {
-    "date": "2026-04-08",
-    "name": "Xero Z-Trail EV pánské turistické barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 1979,
-    "revenue": 1635.54,
-    "purchaseCost": 750
   },
   {
     "date": "2026-04-09",
@@ -32757,14 +30045,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-10",
-    "name": "Be Lenka Nevada Neo UNISEX",
-    "amount": 1,
-    "revenue_vat": 3591,
-    "revenue": 2967.77,
-    "purchaseCost": 1768.27
-  },
-  {
-    "date": "2026-04-10",
     "name": "VÝPRODEJ WOMAN Xero Mesa Trail II - dámské trailové barefoot boty",
     "amount": 1,
     "revenue_vat": 2490,
@@ -32778,14 +30058,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2390,
     "revenue": 1975.21,
     "purchaseCost": 1416.67
-  },
-  {
-    "date": "2026-04-10",
-    "name": "XERO Ridgeway Mesh LOW - pánské turistické boty",
-    "amount": 1,
-    "revenue_vat": 2490,
-    "revenue": 2057.85,
-    "purchaseCost": 1667
   },
   {
     "date": "2026-04-11",
@@ -32925,14 +30197,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-14",
-    "name": "Be Lenka Core - barefoot tenisky z kůže (minimalistické, unisex)",
-    "amount": 1,
-    "revenue_vat": 2241,
-    "revenue": 1852.07,
-    "purchaseCost": 956.51
-  },
-  {
-    "date": "2026-04-14",
     "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 170,
@@ -32989,22 +30253,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-14",
-    "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 2,
-    "revenue_vat": 4842,
-    "revenue": 4001.66,
-    "purchaseCost": 2619.05
-  },
-  {
-    "date": "2026-04-14",
-    "name": "Xero Prio pánské barefoot boty – běh, trénink, každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 2241,
-    "revenue": 1852.07,
-    "purchaseCost": 1190.48
-  },
-  {
-    "date": "2026-04-14",
     "name": "XERO Ridgeway dámské voděodolné boty",
     "amount": 1,
     "revenue_vat": 4199,
@@ -33021,14 +30269,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-15",
-    "name": "Be Lenka Canvi - dětské barefoot tenisky (textilní, letní, veganské)",
-    "amount": 1,
-    "revenue_vat": 1161,
-    "revenue": 959.5,
-    "purchaseCost": 567
-  },
-  {
-    "date": "2026-04-15",
     "name": "Be Lenka Rebound UNISEX",
     "amount": 1,
     "revenue_vat": 1990,
@@ -33037,27 +30277,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-15",
-    "name": "Be Lenka Scoot - dětské barefoot tenisky (kožené, prodyšné, junior)",
-    "amount": 1,
-    "revenue_vat": 1701,
-    "revenue": 1405.79,
-    "purchaseCost": 567
-  },
-  {
-    "date": "2026-04-15",
     "name": "Čističe na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 139,
     "revenue": 114.88,
     "purchaseCost": 75
-  },
-  {
-    "date": "2026-04-15",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 170,
-    "revenue": 140.5,
-    "purchaseCost": 102
   },
   {
     "date": "2026-04-15",
@@ -33114,30 +30338,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2511,
     "revenue": 2075.21,
     "purchaseCost": 1428.93
-  },
-  {
-    "date": "2026-04-15",
-    "name": "Xero Wynn – dámské retro barefoot tenisky pro maximální volnost pohybu",
-    "amount": 1,
-    "revenue_vat": 2691,
-    "revenue": 2223.97,
-    "purchaseCost": 1428.57
-  },
-  {
-    "date": "2026-04-16",
-    "name": "Be Lenka Canvi - dětské barefoot tenisky (textilní, letní, veganské)",
-    "amount": 1,
-    "revenue_vat": 1161,
-    "revenue": 959.5,
-    "purchaseCost": 567
-  },
-  {
-    "date": "2026-04-16",
-    "name": "Be Lenka Rebound High Top UNISEX",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1216.04
   },
   {
     "date": "2026-04-16",
@@ -33228,22 +30428,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 1309.53
   },
   {
-    "date": "2026-04-17",
-    "name": "Xero Mesa Trail WP - pánské trailové voděodolné barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3141,
-    "revenue": 2595.87,
-    "purchaseCost": 1785.72
-  },
-  {
-    "date": "2026-04-17",
-    "name": "Xero Prio NEO M - pánská multisportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1309.53
-  },
-  {
     "date": "2026-04-18",
     "name": "Be Lenka Rebound UNISEX",
     "amount": 1,
@@ -33306,14 +30490,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3051,
     "revenue": 2521.49,
     "purchaseCost": 1666.67
-  },
-  {
-    "date": "2026-04-18",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1309.53
   },
   {
     "date": "2026-04-18",
@@ -33445,22 +30621,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-20",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2421,
-    "revenue": 2000.83,
-    "purchaseCost": 1416
-  },
-  {
-    "date": "2026-04-20",
-    "name": "Pracovní obuv Z-trail EV sunset coral",
-    "amount": 1,
-    "revenue_vat": 1790,
-    "revenue": 1479.34,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-04-20",
     "name": "VÝPRODEJ Xero Gracie – lehké dámské barefoot holínky",
     "amount": 1,
     "revenue_vat": 1796,
@@ -33490,14 +30650,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3449,
     "revenue": 2850.41,
     "purchaseCost": 1416.75
-  },
-  {
-    "date": "2026-04-20",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 1889,
-    "revenue": 1561.16,
-    "purchaseCost": 952.38
   },
   {
     "date": "2026-04-20",
@@ -33549,14 +30701,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-22",
-    "name": "DOPRODEJ XERO Alpine pánská zimní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2890,
-    "revenue": 2388.43,
-    "purchaseCost": 1285.95
-  },
-  {
-    "date": "2026-04-22",
     "name": "VÝPRODEJ Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
     "amount": 1,
     "revenue_vat": 1701,
@@ -33580,36 +30724,12 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 1333.33
   },
   {
-    "date": "2026-04-22",
-    "name": "XERO Alpine dámská zimní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 4190,
-    "revenue": 3462.81,
-    "purchaseCost": 2142.75
-  },
-  {
-    "date": "2026-04-22",
-    "name": "Xero Mesa Trail WP - dámské trailové voděodolné barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3490,
-    "revenue": 2884.3,
-    "purchaseCost": 1785.72
-  },
-  {
-    "date": "2026-04-23",
-    "name": "DOPRODEJ Skinners 2.0 Comfort",
-    "amount": 1,
-    "revenue_vat": 980,
-    "revenue": 809.92,
-    "purchaseCost": 719.84
-  },
-  {
     "date": "2026-04-23",
     "name": "DOPRODEJ Skinners KIDS 2.0",
-    "amount": 2,
-    "revenue_vat": 1580,
-    "revenue": 1305.78,
-    "purchaseCost": 978.51
+    "amount": 1,
+    "revenue_vat": 790,
+    "revenue": 652.89,
+    "purchaseCost": 489.25
   },
   {
     "date": "2026-04-23",
@@ -33644,22 +30764,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 428.93
   },
   {
-    "date": "2026-04-23",
-    "name": "Xero Prio Big Kids - dětské barefoot",
-    "amount": 1,
-    "revenue_vat": 1529,
-    "revenue": 1263.64,
-    "purchaseCost": 714.29
-  },
-  {
-    "date": "2026-04-23",
-    "name": "Xero Shoes Prio Little Kids – lehké barefoot tenisky pro aktivní děti",
-    "amount": 1,
-    "revenue_vat": 1232,
-    "revenue": 1018.18,
-    "purchaseCost": 654.76
-  },
-  {
     "date": "2026-04-24",
     "name": "DOPRODEJ Skinners 2.0 Comfort",
     "amount": 1,
@@ -33682,14 +30786,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3580,
     "revenue": 2958.68,
     "purchaseCost": 1750
-  },
-  {
-    "date": "2026-04-24",
-    "name": "VÝPRODEJ Xero Prio NEO M - pánská multisportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1796,
-    "revenue": 1484.3,
-    "purchaseCost": 958.25
   },
   {
     "date": "2026-04-24",
@@ -33886,10 +30982,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-04-29",
     "name": "DOPRODEJ Skinners KIDS 2.0",
-    "amount": 4,
-    "revenue_vat": 3160,
-    "revenue": 2611.56,
-    "purchaseCost": 1957.02
+    "amount": 2,
+    "revenue_vat": 1580,
+    "revenue": 1305.78,
+    "purchaseCost": 978.51
   },
   {
     "date": "2026-04-29",
@@ -33909,27 +31005,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-29",
-    "name": "VÝPRODEJ Xero Prio NEO M - pánská multisportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1796,
-    "revenue": 1484.3,
-    "purchaseCost": 958.25
-  },
-  {
-    "date": "2026-04-29",
     "name": "VÝPRODEJ Xero Prio NEO W - dámská mulitsportovní barefoot obuv",
     "amount": 1,
     "revenue_vat": 1890,
     "revenue": 1561.98,
     "purchaseCost": 958.25
-  },
-  {
-    "date": "2026-04-29",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 1889,
-    "revenue": 1561.16,
-    "purchaseCost": 952.38
   },
   {
     "date": "2026-04-30",
@@ -33957,43 +31037,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-04-30",
-    "name": "Pracovní obuv XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1309.53
-  },
-  {
-    "date": "2026-04-30",
-    "name": "Pracovní obuv XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 1889,
-    "revenue": 1561.16,
-    "purchaseCost": 952.38
-  },
-  {
-    "date": "2026-04-30",
     "name": "VÝPRODEJ XERO Scrambler Trail Mid Women - lehká barefoot turistická bota pro ženy",
     "amount": 1,
     "revenue_vat": 3190,
     "revenue": 2636.36,
     "purchaseCost": 1121.71
-  },
-  {
-    "date": "2026-04-30",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1328
-  },
-  {
-    "date": "2026-04-30",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 1653,
-    "revenue": 1366.12,
-    "purchaseCost": 952.38
   },
   {
     "date": "2026-05-01",
@@ -34173,14 +31221,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-05",
-    "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
-    "amount": 1,
-    "revenue_vat": 260,
-    "revenue": 214.88,
-    "purchaseCost": 110
-  },
-  {
-    "date": "2026-05-05",
     "name": "VÝPRODEJ XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
     "amount": 1,
     "revenue_vat": 1890,
@@ -34213,51 +31253,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-05",
-    "name": "XERO Ridgeway dámské voděodolné boty",
-    "amount": 1,
-    "revenue_vat": 3779,
-    "revenue": 3123.14,
-    "purchaseCost": 2142.86
-  },
-  {
-    "date": "2026-05-05",
     "name": "Xero Shoes Z-Trek barefoot sandály – dámské",
     "amount": 1,
     "revenue_vat": 1790,
     "revenue": 1479.34,
     "purchaseCost": 892.75
-  },
-  {
-    "date": "2026-05-06",
-    "name": "Be Lenka Sophie - dámské elegantní barefoot baleríny",
-    "amount": 2,
-    "revenue_vat": 5022,
-    "revenue": 4150.42,
-    "purchaseCost": 2338
-  },
-  {
-    "date": "2026-05-06",
-    "name": "Be Lenka Summer 2.0 – dámské lehké barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 851.5
-  },
-  {
-    "date": "2026-05-06",
-    "name": "Čisticí kartáčky na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 89,
-    "revenue": 73.55,
-    "purchaseCost": 53
-  },
-  {
-    "date": "2026-05-06",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 170,
-    "revenue": 140.5,
-    "purchaseCost": 102
   },
   {
     "date": "2026-05-06",
@@ -34301,22 +31301,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-07",
-    "name": "Sleva START20",
-    "amount": 1,
-    "revenue_vat": -558,
-    "revenue": -461.16,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-05-07",
-    "name": "VÝPRODEJ  XERO Zelen - dámská barefoot sportovní obuv",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1250
-  },
-  {
-    "date": "2026-05-07",
     "name": "VÝPRODEJ Xero Prio NEO M - pánská multisportovní barefoot obuv",
     "amount": 1,
     "revenue_vat": 1890,
@@ -34338,14 +31322,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3490,
     "revenue": 2884.3,
     "purchaseCost": 1785.72
-  },
-  {
-    "date": "2026-05-07",
-    "name": "XERO Scrambler Low EV MEN- pánské trailové barefoot boty s Michelin Fiberlite",
-    "amount": 1,
-    "revenue_vat": 3321,
-    "revenue": 2744.63,
-    "purchaseCost": 1904.76
   },
   {
     "date": "2026-05-07",
@@ -34394,14 +31370,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2490,
     "revenue": 2057.85,
     "purchaseCost": 1166.75
-  },
-  {
-    "date": "2026-05-09",
-    "name": "VÝPRODEJ Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 1790,
-    "revenue": 1479.34,
-    "purchaseCost": 875
   },
   {
     "date": "2026-05-09",
@@ -34533,35 +31501,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-12",
-    "name": "DOPRODEJ Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2026-05-12",
     "name": "DOPRODEJ XERO Xcursion Fusion – Pánské turistické barefoot boty s membránou",
     "amount": 1,
     "revenue_vat": 2790,
     "revenue": 2305.79,
     "purchaseCost": 1416.67
-  },
-  {
-    "date": "2026-05-12",
-    "name": "KS 600/Speed",
-    "amount": 1,
-    "revenue_vat": 125,
-    "revenue": 103.31,
-    "purchaseCost": 56
-  },
-  {
-    "date": "2026-05-12",
-    "name": "Merrell Trail Glove 7 dámské barefoot",
-    "amount": 1,
-    "revenue_vat": 2421,
-    "revenue": 2000.83,
-    "purchaseCost": 1416
   },
   {
     "date": "2026-05-12",
@@ -34629,14 +31573,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-12",
-    "name": "VÝRODEJ XERO HFS II - dámské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2240,
-    "revenue": 1851.24,
-    "purchaseCost": 1083.25
-  },
-  {
-    "date": "2026-05-12",
     "name": "XERO HFS II - pánské běžecké barefoot boty",
     "amount": 1,
     "revenue_vat": 2790,
@@ -34653,35 +31589,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-12",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 1889,
-    "revenue": 1561.16,
-    "purchaseCost": 952.38
-  },
-  {
-    "date": "2026-05-12",
     "name": "Xero Shoes Z-Trek barefoot sandály – dámské",
     "amount": 1,
     "revenue_vat": 1790,
     "revenue": 1479.34,
     "purchaseCost": 892.75
-  },
-  {
-    "date": "2026-05-13",
-    "name": "Pracovní obuv XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 1653,
-    "revenue": 1366.12,
-    "purchaseCost": 952.38
-  },
-  {
-    "date": "2026-05-13",
-    "name": "VÝPRODEJ XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 958.27
   },
   {
     "date": "2026-05-13",
@@ -34717,22 +31629,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-14",
-    "name": "DOPRODEJ Skinners 2.0 Compression",
-    "amount": 1,
-    "revenue_vat": 990,
-    "revenue": 818.18,
-    "purchaseCost": 719.83
-  },
-  {
-    "date": "2026-05-14",
-    "name": "Merrell WRAPT - dámské turistické barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1327.51
-  },
-  {
-    "date": "2026-05-14",
     "name": "VÝPRODEJ Xero HFS - dámské běžecké barefoot boty",
     "amount": 1,
     "revenue_vat": 2349,
@@ -34742,10 +31638,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-05-14",
     "name": "VÝPRODEJ Xero Prio dámské barefoot boty – běh, trénink, každodenní nošení",
-    "amount": 3,
-    "revenue_vat": 5281,
-    "revenue": 4364.47,
-    "purchaseCost": 2625
+    "amount": 2,
+    "revenue_vat": 3491,
+    "revenue": 2885.13,
+    "purchaseCost": 1750
   },
   {
     "date": "2026-05-14",
@@ -34853,27 +31749,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-15",
-    "name": "Kilpi BARELO LOW-U",
-    "amount": 1,
-    "revenue_vat": 1971,
-    "revenue": 1628.93,
-    "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-05-15",
     "name": "KS CoolMax - chladivé běžecké ponožky",
     "amount": 2,
     "revenue_vat": 238,
     "revenue": 196.7,
     "purchaseCost": 85.21
-  },
-  {
-    "date": "2026-05-15",
-    "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
-    "amount": 1,
-    "revenue_vat": 260,
-    "revenue": 214.88,
-    "purchaseCost": 110
   },
   {
     "date": "2026-05-15",
@@ -35413,14 +32293,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-18",
-    "name": "XERO HFS II - pánské běžecké barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2468,
-    "revenue": 2039.67,
-    "purchaseCost": 1547.62
-  },
-  {
-    "date": "2026-05-18",
     "name": "Xero Mesa Trail WP - dámské trailové voděodolné barefoot boty",
     "amount": 1,
     "revenue_vat": 3490,
@@ -35510,18 +32382,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-05-19",
     "name": "KS 600/Speed",
-    "amount": 5,
-    "revenue_vat": 639,
-    "revenue": 528.1,
-    "purchaseCost": 280
-  },
-  {
-    "date": "2026-05-19",
-    "name": "KS CoolMax - chladivé běžecké ponožky",
-    "amount": 1,
-    "revenue_vat": 119,
-    "revenue": 98.35,
-    "purchaseCost": 42.6
+    "amount": 4,
+    "revenue_vat": 500,
+    "revenue": 413.22,
+    "purchaseCost": 224
   },
   {
     "date": "2026-05-19",
@@ -35566,10 +32430,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-05-19",
     "name": "Xero Dillon Leather – dámské kožené barefoot tenisky pro každodenní nošení",
-    "amount": 3,
-    "revenue_vat": 7629,
-    "revenue": 6304.95,
-    "purchaseCost": 4999.99
+    "amount": 2,
+    "revenue_vat": 5086,
+    "revenue": 4203.3,
+    "purchaseCost": 3333.33
   },
   {
     "date": "2026-05-19",
@@ -35637,27 +32501,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-19",
-    "name": "Xero Shoes Dillon Canvas – dámské barefoot tenisky",
-    "amount": 1,
-    "revenue_vat": 2024,
-    "revenue": 1672.73,
-    "purchaseCost": 1071.43
-  },
-  {
-    "date": "2026-05-19",
     "name": "Xero Shoes Z-Trek barefoot sandály – dámské",
     "amount": 2,
     "revenue_vat": 3580,
     "revenue": 2958.68,
     "purchaseCost": 1785.51
-  },
-  {
-    "date": "2026-05-19",
-    "name": "Xero Wynn – pánské retro barefoot tenisky pro maximální volnost pohybu",
-    "amount": 1,
-    "revenue_vat": 2691,
-    "revenue": 2223.97,
-    "purchaseCost": 1428.57
   },
   {
     "date": "2026-05-19",
@@ -35669,35 +32517,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-20",
-    "name": "Be Lenka TrailWalker 3.0 UNISEX",
-    "amount": 1,
-    "revenue_vat": 3990,
-    "revenue": 3297.52,
-    "purchaseCost": 1768.26
-  },
-  {
-    "date": "2026-05-20",
     "name": "MAN Xero Mesa Trail II - pánské trailové barefoot boty",
     "amount": 2,
     "revenue_vat": 5098,
     "revenue": 4213.22,
     "purchaseCost": 3095.24
-  },
-  {
-    "date": "2026-05-20",
-    "name": "Sleva",
-    "amount": 2,
-    "revenue_vat": -1114,
-    "revenue": -1114,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-05-20",
-    "name": "VÝPRODEJ Xero Prio NEO M - pánská multisportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1796,
-    "revenue": 1484.3,
-    "purchaseCost": 958.25
   },
   {
     "date": "2026-05-20",
@@ -35718,10 +32542,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-05-20",
     "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 2,
-    "revenue_vat": 3463,
-    "revenue": 2861.99,
-    "purchaseCost": 2005.28
+    "amount": 1,
+    "revenue_vat": 1574,
+    "revenue": 1300.83,
+    "purchaseCost": 952.38
   },
   {
     "date": "2026-05-20",
@@ -35733,43 +32557,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-20",
-    "name": "Xero Prio NEO M - pánská multisportovní barefoot obuv",
-    "amount": 2,
-    "revenue_vat": 5022,
-    "revenue": 4150.42,
-    "purchaseCost": 2619.05
-  },
-  {
-    "date": "2026-05-20",
-    "name": "Xero Shoes Z-Trek barefoot sandály – dámské",
-    "amount": 1,
-    "revenue_vat": 1611,
-    "revenue": 1331.4,
-    "purchaseCost": 892.75
-  },
-  {
-    "date": "2026-05-20",
     "name": "Xero Z-Trail EV dámské turistické barefoot sandály",
     "amount": 1,
     "revenue_vat": 2199,
     "revenue": 1817.36,
     "purchaseCost": 1071.43
-  },
-  {
-    "date": "2026-05-20",
-    "name": "Xero Z-Trail EV pánské turistické barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 1979,
-    "revenue": 1635.54,
-    "purchaseCost": 750
-  },
-  {
-    "date": "2026-05-21",
-    "name": "Be Lenka Cellestia - barefoot tenisky s perforací (kožené, unisex)",
-    "amount": 2,
-    "revenue_vat": 5922,
-    "revenue": 4894.22,
-    "purchaseCost": 2763.64
   },
   {
     "date": "2026-05-21",
@@ -35861,43 +32653,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-22",
-    "name": "Kilpi BARE LEATHER HIGH-U – kožené barefoot boty s membránou",
-    "amount": 1,
-    "revenue_vat": 3419,
-    "revenue": 2825.62,
-    "purchaseCost": 1234.68
-  },
-  {
-    "date": "2026-05-22",
-    "name": "KS CoolMax - chladivé běžecké ponožky",
-    "amount": 1,
-    "revenue_vat": 107,
-    "revenue": 88.43,
-    "purchaseCost": 42.6
-  },
-  {
-    "date": "2026-05-22",
     "name": "KS Hike MERINO - turistické ponožky celoroční",
     "amount": 1,
     "revenue_vat": 206,
     "revenue": 170.25,
     "purchaseCost": 109
-  },
-  {
-    "date": "2026-05-22",
-    "name": "Sleva TRMAR09",
-    "amount": 1,
-    "revenue_vat": -1000,
-    "revenue": -1000,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-05-22",
-    "name": "VÝPRODEJ Xero Breckenridge dámské kožené boty",
-    "amount": 1,
-    "revenue_vat": 2690,
-    "revenue": 2223.14,
-    "purchaseCost": 1333.33
   },
   {
     "date": "2026-05-22",
@@ -35938,14 +32698,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2690,
     "revenue": 2223.14,
     "purchaseCost": 1309.52
-  },
-  {
-    "date": "2026-05-22",
-    "name": "XERO Scrambler Low EV WOMEN - dámské trailové barefoot boty s Michelin Fiberlite",
-    "amount": 1,
-    "revenue_vat": 2768,
-    "revenue": 2287.6,
-    "purchaseCost": 1239.67
   },
   {
     "date": "2026-05-22",
@@ -36133,27 +32885,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-26",
-    "name": "Čisticí kartáčky na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 99,
-    "revenue": 81.82,
-    "purchaseCost": 53
-  },
-  {
-    "date": "2026-05-26",
     "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 3,
-    "revenue_vat": 567,
-    "revenue": 468.6,
-    "purchaseCost": 306
-  },
-  {
-    "date": "2026-05-26",
-    "name": "KS CoolMax - chladivé běžecké ponožky",
     "amount": 2,
-    "revenue_vat": 214,
-    "revenue": 176.86,
-    "purchaseCost": 85.21
+    "revenue_vat": 378,
+    "revenue": 312.4,
+    "purchaseCost": 204
   },
   {
     "date": "2026-05-26",
@@ -36170,14 +32906,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2468,
     "revenue": 2039.67,
     "purchaseCost": 1547.62
-  },
-  {
-    "date": "2026-05-26",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2093,
-    "revenue": 1729.75,
-    "purchaseCost": 1309.52
   },
   {
     "date": "2026-05-26",
@@ -36206,10 +32934,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-05-26",
     "name": "Xero Shoes Dillon Canvas – dámské barefoot tenisky",
-    "amount": 2,
-    "revenue_vat": 3780,
-    "revenue": 3123.96,
-    "purchaseCost": 2142.85
+    "amount": 1,
+    "revenue_vat": 1890,
+    "revenue": 1561.98,
+    "purchaseCost": 1071.43
   },
   {
     "date": "2026-05-26",
@@ -36218,14 +32946,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2249,
     "revenue": 1858.68,
     "purchaseCost": 1071.43
-  },
-  {
-    "date": "2026-05-26",
-    "name": "Xero Shoes Z-Trek barefoot sandály – dámské",
-    "amount": 1,
-    "revenue_vat": 1611,
-    "revenue": 1331.4,
-    "purchaseCost": 892.75
   },
   {
     "date": "2026-05-26",
@@ -36238,26 +32958,18 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-05-26",
     "name": "Xero Z-Trail EV dámské turistické barefoot sandály",
-    "amount": 7,
-    "revenue_vat": 11543,
-    "revenue": 9539.67,
-    "purchaseCost": 7500
+    "amount": 6,
+    "revenue_vat": 9894,
+    "revenue": 8176.86,
+    "purchaseCost": 6428.57
   },
   {
     "date": "2026-05-26",
     "name": "Xero Z-Trail EV pánské turistické barefoot sandály",
-    "amount": 4,
-    "revenue_vat": 6596,
-    "revenue": 5451.24,
-    "purchaseCost": 3964.29
-  },
-  {
-    "date": "2026-05-27",
-    "name": "Be Lenka ArcticEdge UNISEX",
-    "amount": 1,
-    "revenue_vat": 3861,
-    "revenue": 3190.91,
-    "purchaseCost": 1879.5
+    "amount": 3,
+    "revenue_vat": 4947,
+    "revenue": 4088.43,
+    "purchaseCost": 3214.29
   },
   {
     "date": "2026-05-27",
@@ -36269,38 +32981,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-27",
-    "name": "KS CoolMax - chladivé běžecké ponožky",
-    "amount": 3,
-    "revenue_vat": 321,
-    "revenue": 265.29,
-    "purchaseCost": 127.81
-  },
-  {
-    "date": "2026-05-27",
-    "name": "Sleva dorovnání na DOPRODEJ + 5procent",
-    "amount": 1,
-    "revenue_vat": -1140,
-    "revenue": -1140,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-05-27",
-    "name": "Sleva START20",
-    "amount": 1,
-    "revenue_vat": -558,
-    "revenue": -558,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-05-27",
-    "name": "VÝPRODEJ XERO Glenn – Stylové pánské boty pro přirozený komfort",
-    "amount": 1,
-    "revenue_vat": 2841,
-    "revenue": 2347.93,
-    "purchaseCost": 1250
-  },
-  {
-    "date": "2026-05-27",
     "name": "VÝPRODEJ XERO H-Trail - dámské turistické sandály",
     "amount": 1,
     "revenue_vat": 1690,
@@ -36309,27 +32989,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-27",
-    "name": "VÝPRODEJ XERO Scrambler Low EV WOMEN - dámské trailové barefoot boty s Michelin Fiberlite",
-    "amount": 1,
-    "revenue_vat": 2651,
-    "revenue": 2190.91,
-    "purchaseCost": 1571.9
-  },
-  {
-    "date": "2026-05-27",
     "name": "Xero Dillon Leather – dámské kožené barefoot tenisky pro každodenní nošení",
-    "amount": 2,
-    "revenue_vat": 5086,
-    "revenue": 4203.3,
-    "purchaseCost": 3333.33
-  },
-  {
-    "date": "2026-05-27",
-    "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
     "amount": 1,
-    "revenue_vat": 2018,
-    "revenue": 1667.77,
-    "purchaseCost": 1033.06
+    "revenue_vat": 2543,
+    "revenue": 2101.65,
+    "purchaseCost": 1666.66
   },
   {
     "date": "2026-05-27",
@@ -36346,14 +33010,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 4186,
     "revenue": 3459.5,
     "purchaseCost": 2619.04
-  },
-  {
-    "date": "2026-05-27",
-    "name": "XERO Nexus Knit WOMEN ČERNO/BÍLÉ - dámské barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1309.53
   },
   {
     "date": "2026-05-27",
@@ -36374,10 +33030,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-05-27",
     "name": "Xero Z-Trail EV dámské turistické barefoot sandály",
-    "amount": 5,
-    "revenue_vat": 8245,
-    "revenue": 6814.05,
-    "purchaseCost": 5357.14
+    "amount": 4,
+    "revenue_vat": 6596,
+    "revenue": 5451.24,
+    "purchaseCost": 4285.71
   },
   {
     "date": "2026-05-27",
@@ -36445,30 +33101,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-05-29",
-    "name": "Be Lenka Core - barefoot tenisky z kůže (minimalistické, unisex)",
-    "amount": 1,
-    "revenue_vat": 2241,
-    "revenue": 1852.07,
-    "purchaseCost": 956.51
-  },
-  {
-    "date": "2026-05-29",
-    "name": "DOPRODEJ Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2026-05-29",
-    "name": "KS CoolMax - chladivé běžecké ponožky",
-    "amount": 1,
-    "revenue_vat": 107,
-    "revenue": 88.43,
-    "purchaseCost": 42.6
-  },
-  {
-    "date": "2026-05-29",
     "name": "KS Hike MERINO - turistické ponožky celoroční",
     "amount": 1,
     "revenue_vat": 206,
@@ -36482,30 +33114,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 214,
     "revenue": 176.86,
     "purchaseCost": 84
-  },
-  {
-    "date": "2026-05-29",
-    "name": "MAN Xero Mesa Trail II - pánské trailové barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3059,
-    "revenue": 2528.1,
-    "purchaseCost": 1547.62
-  },
-  {
-    "date": "2026-05-29",
-    "name": "Sleva",
-    "amount": 2,
-    "revenue_vat": -1190,
-    "revenue": -1190,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-05-29",
-    "name": "VÝPRODEJ Xero Aqua X Sport dámské obojživelné barefoot trailovky",
-    "amount": 1,
-    "revenue_vat": 2990,
-    "revenue": 2471.07,
-    "purchaseCost": 1250
   },
   {
     "date": "2026-05-29",
@@ -36661,19 +33269,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-01",
-    "name": "DOPRODEJ Merrell Vapor Glove 6 - pánská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1318.18
-  },
-  {
-    "date": "2026-06-01",
     "name": "KS CoolMax - chladivé běžecké ponožky",
-    "amount": 8,
-    "revenue_vat": 952,
-    "revenue": 786.78,
-    "purchaseCost": 340.83
+    "amount": 3,
+    "revenue_vat": 357,
+    "revenue": 295.05,
+    "purchaseCost": 127.81
   },
   {
     "date": "2026-06-01",
@@ -36709,27 +33309,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-01",
-    "name": "Xero Prio pánské barefoot boty – běh, trénink, každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 2490,
-    "revenue": 2057.85,
-    "purchaseCost": 1190.48
-  },
-  {
-    "date": "2026-06-01",
     "name": "Xero Wynn – dámské retro barefoot tenisky pro maximální volnost pohybu",
     "amount": 1,
     "revenue_vat": 2990,
     "revenue": 2471.07,
     "purchaseCost": 1428.57
-  },
-  {
-    "date": "2026-06-02",
-    "name": "Be Lenka TrailWalker 3.0 UNISEX",
-    "amount": 1,
-    "revenue_vat": 3990,
-    "revenue": 3297.52,
-    "purchaseCost": 1768.26
   },
   {
     "date": "2026-06-02",
@@ -36757,30 +33341,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-02",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -399,
-    "revenue": -399,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-06-02",
-    "name": "VÝPRODEJ Xero Prio NEO W - dámská mulitsportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1796,
-    "revenue": 1484.3,
-    "purchaseCost": 958.25
-  },
-  {
-    "date": "2026-06-02",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1309.53
-  },
-  {
-    "date": "2026-06-02",
     "name": "Xero Z-Trail EV dámské turistické barefoot sandály",
     "amount": 2,
     "revenue_vat": 4178,
@@ -36805,22 +33365,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-03",
-    "name": "DOPRODEJ Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2026-06-03",
-    "name": "DOPRODEJ Skinners 2.0 Comfort",
-    "amount": 1,
-    "revenue_vat": 1390,
-    "revenue": 1148.76,
-    "purchaseCost": 719.83
-  },
-  {
-    "date": "2026-06-03",
     "name": "Kilpi COMPRESS-U",
     "amount": 1,
     "revenue_vat": 599,
@@ -36834,14 +33378,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 107,
     "revenue": 88.43,
     "purchaseCost": 42.6
-  },
-  {
-    "date": "2026-06-03",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -500,
-    "revenue": -500,
-    "purchaseCost": 0
   },
   {
     "date": "2026-06-03",
@@ -36885,43 +33421,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-04",
-    "name": "DOPRODEJ Merrell Vapor Glove 6 - dámská sportovní barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2026-06-04",
-    "name": "DOPRODEJ XERO Alpine Pull On Dámské zimní barefoot boty",
-    "amount": 1,
-    "revenue_vat": 2990,
-    "revenue": 2471.07,
-    "purchaseCost": 2023.75
-  },
-  {
-    "date": "2026-06-04",
     "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 169,
     "revenue": 139.67,
     "purchaseCost": 91
-  },
-  {
-    "date": "2026-06-04",
-    "name": "Kilpi BARELO LOW-U",
-    "amount": 1,
-    "revenue_vat": 1971,
-    "revenue": 1628.93,
-    "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-06-04",
-    "name": "Sleva",
-    "amount": 2,
-    "revenue_vat": -902,
-    "revenue": -902,
-    "purchaseCost": 0
   },
   {
     "date": "2026-06-04",
@@ -36938,94 +33442,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1790,
     "revenue": 1479.34,
     "purchaseCost": 875
-  },
-  {
-    "date": "2026-06-04",
-    "name": "XERO Nexus Knit WOMEN ČERNO/BÍLÉ - dámské barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 958.25
-  },
-  {
-    "date": "2026-06-05",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 170,
-    "revenue": 140.5,
-    "purchaseCost": 102
-  },
-  {
-    "date": "2026-06-05",
-    "name": "Kilpi BARELO LOW-U",
-    "amount": 1,
-    "revenue_vat": 1971,
-    "revenue": 1628.93,
-    "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-06-05",
-    "name": "KS CoolMax - chladivé běžecké ponožky",
-    "amount": 1,
-    "revenue_vat": 107,
-    "revenue": 88.43,
-    "purchaseCost": 42.6
-  },
-  {
-    "date": "2026-06-05",
-    "name": "KS Cross MERINO - Běžecké ponožky vhodné i na ULTRA",
-    "amount": 1,
-    "revenue_vat": 260,
-    "revenue": 214.88,
-    "purchaseCost": 110
-  },
-  {
-    "date": "2026-06-05",
-    "name": "KS Lite Short - nízké sportovní ponožky",
-    "amount": 1,
-    "revenue_vat": 107,
-    "revenue": 88.43,
-    "purchaseCost": 42
-  },
-  {
-    "date": "2026-06-05",
-    "name": "VÝPRODEJ XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1891,
-    "revenue": 1562.81,
-    "purchaseCost": 958.26
-  },
-  {
-    "date": "2026-06-05",
-    "name": "VÝPRODEJ Xero Shoes Kona W – dámské barefoot slip-on boty v plážovém stylu",
-    "amount": 1,
-    "revenue_vat": 1321,
-    "revenue": 1091.74,
-    "purchaseCost": 666.67
-  },
-  {
-    "date": "2026-06-05",
-    "name": "XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2421,
-    "revenue": 2000.83,
-    "purchaseCost": 1309.53
-  },
-  {
-    "date": "2026-06-05",
-    "name": "XERO Phoenix Knit - dámské barefoot baleríny",
-    "amount": 1,
-    "revenue_vat": 1889,
-    "revenue": 1561.16,
-    "purchaseCost": 952.38
-  },
-  {
-    "date": "2026-06-05",
-    "name": "XERO Scrambler Trail Low WP Women - dámská trailová voděodolná turistická barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 2518,
-    "revenue": 2080.99,
-    "purchaseCost": 1250
   },
   {
     "date": "2026-06-06",
@@ -37125,30 +33541,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-09",
-    "name": "Be Lenka Cityscape - kožené barefoot tenisky UNIXEX",
-    "amount": 1,
-    "revenue_vat": 2961,
-    "revenue": 2447.11,
-    "purchaseCost": 1384
-  },
-  {
-    "date": "2026-06-09",
-    "name": "Be Lenka Scoot - dětské barefoot tenisky (kožené, prodyšné, junior)",
-    "amount": 1,
-    "revenue_vat": 1701,
-    "revenue": 1405.79,
-    "purchaseCost": 567
-  },
-  {
-    "date": "2026-06-09",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 152,
-    "revenue": 125.62,
-    "purchaseCost": 91
-  },
-  {
-    "date": "2026-06-09",
     "name": "VÝPRODEJ Dámské sportovní barefoot boty Xero Shoes Prio",
     "amount": 1,
     "revenue_vat": 1790,
@@ -37189,22 +33581,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-10",
-    "name": "Be Lenka TrailTech  Slate Blue (Unisex)",
-    "amount": 1,
-    "revenue_vat": 2961,
-    "revenue": 2447.11,
-    "purchaseCost": 1383.5
-  },
-  {
-    "date": "2026-06-10",
-    "name": "KS CoolMax - chladivé běžecké ponožky",
-    "amount": 1,
-    "revenue_vat": 119,
-    "revenue": 98.35,
-    "purchaseCost": 42.6
-  },
-  {
-    "date": "2026-06-10",
     "name": "VÝPRODEJ XERO H-Trail - dámské turistické sandály",
     "amount": 1,
     "revenue_vat": 1690,
@@ -37229,27 +33605,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-10",
-    "name": "VÝPRODEJ Xero Shoes Z-Trek barefoot sandály – dámské",
-    "amount": 1,
-    "revenue_vat": 1416,
-    "revenue": 1170.25,
-    "purchaseCost": 625
-  },
-  {
-    "date": "2026-06-10",
     "name": "Xero Aqua Cloud - dámské barefoot sandály do vody i na souš",
     "amount": 1,
     "revenue_vat": 1450,
     "revenue": 1198.35,
     "purchaseCost": 714.29
-  },
-  {
-    "date": "2026-06-10",
-    "name": "XERO Nexus Knit MEN - pánské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1309.53
   },
   {
     "date": "2026-06-10",
@@ -37269,22 +33629,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-11",
-    "name": "Be Lenka Canvi - dětské barefoot tenisky (textilní, letní, veganské)",
-    "amount": 1,
-    "revenue_vat": 1290,
-    "revenue": 1066.12,
-    "purchaseCost": 567
-  },
-  {
-    "date": "2026-06-11",
-    "name": "Be Lenka Cityscape - kožené barefoot tenisky UNIXEX",
-    "amount": 1,
-    "revenue_vat": 2961,
-    "revenue": 2447.11,
-    "purchaseCost": 1384
-  },
-  {
-    "date": "2026-06-11",
     "name": "DOPRODEJ XERO Xcursion Fusion – Pánské turistické barefoot boty s membránou",
     "amount": 1,
     "revenue_vat": 2290,
@@ -37298,14 +33642,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 152,
     "revenue": 125.62,
     "purchaseCost": 91
-  },
-  {
-    "date": "2026-06-11",
-    "name": "KILPI STEP LOW-U - barefoot tenisky z pleteného textilu (lehké, prodyšné, unisex)",
-    "amount": 1,
-    "revenue_vat": 2390,
-    "revenue": 1975.21,
-    "purchaseCost": 813.57
   },
   {
     "date": "2026-06-11",
@@ -37338,14 +33674,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 197,
     "revenue": 162.81,
     "purchaseCost": 118
-  },
-  {
-    "date": "2026-06-12",
-    "name": "VÝPRODEJ XERO Dillon WOMEN - dámská městská barefoot obuv",
-    "amount": 1,
-    "revenue_vat": 1891,
-    "revenue": 1562.81,
-    "purchaseCost": 958.26
   },
   {
     "date": "2026-06-12",
@@ -37453,14 +33781,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-15",
-    "name": "Be Lenka TrailTech  Black Blue (Unisex)",
-    "amount": 1,
-    "revenue_vat": 2961,
-    "revenue": 2447.11,
-    "purchaseCost": 1383.5
-  },
-  {
-    "date": "2026-06-15",
     "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 169,
@@ -37474,14 +33794,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 119,
     "revenue": 98.35,
     "purchaseCost": 42
-  },
-  {
-    "date": "2026-06-15",
-    "name": "VÝPRODEJ XERO H-Trail - pánské turistické sandály",
-    "amount": 1,
-    "revenue_vat": 1690,
-    "revenue": 1396.69,
-    "purchaseCost": 750
   },
   {
     "date": "2026-06-15",
@@ -37501,51 +33813,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-15",
-    "name": "VÝPRODEJ XERO Scrambler Low EV WOMEN - dámské trailové barefoot boty s Michelin Fiberlite",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1904.77
-  },
-  {
-    "date": "2026-06-15",
     "name": "WOMAN Xero Mesa Trail II - dámské trailové barefoot boty",
     "amount": 1,
     "revenue_vat": 3059,
     "revenue": 2528.1,
     "purchaseCost": 1547.62
-  },
-  {
-    "date": "2026-06-15",
-    "name": "Xero Dillon Leather – pánské kožené barefoot tenisky pro každodenní nošení",
-    "amount": 1,
-    "revenue_vat": 3051,
-    "revenue": 2521.49,
-    "purchaseCost": 1666.67
-  },
-  {
-    "date": "2026-06-15",
-    "name": "XERO Nexus Knit WOMEN - dámské sportovní barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1309.53
-  },
-  {
-    "date": "2026-06-15",
-    "name": "Xero Shoes Prio Little Kids – lehké barefoot tenisky pro aktivní děti",
-    "amount": 1,
-    "revenue_vat": 1232,
-    "revenue": 1018.18,
-    "purchaseCost": 654.76
-  },
-  {
-    "date": "2026-06-16",
-    "name": "Be Lenka Zest - dětské barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 1290,
-    "revenue": 1066.12,
-    "purchaseCost": 567
   },
   {
     "date": "2026-06-16",
@@ -37554,14 +33826,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1990,
     "revenue": 1644.63,
     "purchaseCost": 1239
-  },
-  {
-    "date": "2026-06-16",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -900,
-    "revenue": -900,
-    "purchaseCost": 0
   },
   {
     "date": "2026-06-16",
@@ -37588,124 +33852,12 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 1309.52
   },
   {
-    "date": "2026-06-16",
-    "name": "XERO Nexus Knit MEN  ČERNO/BÍLÁ- pánské  barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1328
-  },
-  {
-    "date": "2026-06-17",
-    "name": "Dámské barefoot baleríny Xero Shoes Phoenix Knit",
-    "amount": 1,
-    "revenue_vat": 1889,
-    "revenue": 1561.16,
-    "purchaseCost": 952.38
-  },
-  {
     "date": "2026-06-17",
     "name": "Xero Shoes Z-Trek barefoot sandály – pánské",
     "amount": 1,
     "revenue_vat": 1790,
     "revenue": 1479.34,
     "purchaseCost": 892.75
-  },
-  {
-    "date": "2026-06-17",
-    "name": "Xero Z-Trail EV pánské turistické barefoot sandály",
-    "amount": 1,
-    "revenue_vat": 2199,
-    "revenue": 1817.36,
-    "purchaseCost": 1071.43
-  },
-  {
-    "date": "2026-06-18",
-    "name": "Dámské turistické barefoot sandály Xero Shoes Z-Trail EV - Multi-black",
-    "amount": 1,
-    "revenue_vat": 1979,
-    "revenue": 1635.54,
-    "purchaseCost": 1071.43
-  },
-  {
-    "date": "2026-06-18",
-    "name": "Dámské voděodolné turistické barefoot boty Xero Shoes Scrambler Trail Mid WP",
-    "amount": 1,
-    "revenue_vat": 3591,
-    "revenue": 2967.77,
-    "purchaseCost": 2023.81
-  },
-  {
-    "date": "2026-06-18",
-    "name": "Impregnace na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 170,
-    "revenue": 140.5,
-    "purchaseCost": 102
-  },
-  {
-    "date": "2026-06-19",
-    "name": "Dámské barefoot tenisky Xero Shoes Nexus Knit",
-    "amount": 1,
-    "revenue_vat": 2511,
-    "revenue": 2075.21,
-    "purchaseCost": 1309.53
-  },
-  {
-    "date": "2026-06-19",
-    "name": "Dámské kožené barefoot tenisky Xero Shoes Dillon Leather",
-    "amount": 2,
-    "revenue_vat": 6102,
-    "revenue": 5042.98,
-    "purchaseCost": 3333.34
-  },
-  {
-    "date": "2026-06-19",
-    "name": "Dámské voděodolné trailové barefoot boty Xero Shoes Mesa Trail WP",
-    "amount": 1,
-    "revenue_vat": 3141,
-    "revenue": 2595.87,
-    "purchaseCost": 1785.72
-  },
-  {
-    "date": "2026-06-19",
-    "name": "Dárkový kupon v  hodnotě 2000Kč",
-    "amount": 1,
-    "revenue_vat": 2000,
-    "revenue": 1652.89,
-    "purchaseCost": 16.53
-  },
-  {
-    "date": "2026-06-19",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax",
-    "amount": 1,
-    "revenue_vat": 107,
-    "revenue": 88.43,
-    "purchaseCost": 42.6
-  },
-  {
-    "date": "2026-06-19",
-    "name": "Pánské městské barefoot boty Xero Shoes Glenn",
-    "amount": 1,
-    "revenue_vat": 3390,
-    "revenue": 2801.65,
-    "purchaseCost": 1785.71
-  },
-  {
-    "date": "2026-06-19",
-    "name": "Pánské plátěné barefoot tenisky Xero Shoes Dillon Canvas",
-    "amount": 1,
-    "revenue_vat": 2024,
-    "revenue": 1672.73,
-    "purchaseCost": 1071.43
-  },
-  {
-    "date": "2026-06-19",
-    "name": "Unisex barefoot tenisky Be Lenka Rebound - Black White",
-    "amount": 1,
-    "revenue_vat": 2240,
-    "revenue": 1851.24,
-    "purchaseCost": 1104.55
   },
   {
     "date": "2026-06-20",
@@ -37782,10 +33934,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-06-23",
     "name": "Dámské barefoot baleríny Be Lenka Sophie",
-    "amount": 2,
-    "revenue_vat": 3980,
-    "revenue": 3289.26,
-    "purchaseCost": 2338
+    "amount": 1,
+    "revenue_vat": 1990,
+    "revenue": 1644.63,
+    "purchaseCost": 1169
   },
   {
     "date": "2026-06-23",
@@ -37806,18 +33958,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-06-23",
     "name": "Dámské barefoot sandály Xero Shoes Z-Trek - Porcelain Blue",
-    "amount": 4,
-    "revenue_vat": 5396,
-    "revenue": 4459.52,
-    "purchaseCost": 2857.2
-  },
-  {
-    "date": "2026-06-23",
-    "name": "Dámské barefoot tenisky Xero Shoes Nexus Knit",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1309.53
+    "amount": 3,
+    "revenue_vat": 4047,
+    "revenue": 3344.64,
+    "purchaseCost": 2142.9
   },
   {
     "date": "2026-06-23",
@@ -37826,14 +33970,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1890,
     "revenue": 1561.98,
     "purchaseCost": 904.96
-  },
-  {
-    "date": "2026-06-23",
-    "name": "Dámské turistické barefoot sandály Xero Shoes Z-Trail EV - Multi-black",
-    "amount": 1,
-    "revenue_vat": 1790,
-    "revenue": 1479.34,
-    "purchaseCost": 1071.43
   },
   {
     "date": "2026-06-23",
@@ -37850,14 +33986,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1450,
     "revenue": 1198.35,
     "purchaseCost": 714.29
-  },
-  {
-    "date": "2026-06-23",
-    "name": "VÝPRODEJ Pánská sportovní barefoot obuv Xero Shoes Prio Neo - Alloy",
-    "amount": 1,
-    "revenue_vat": 1985,
-    "revenue": 1640.5,
-    "purchaseCost": 958.25
   },
   {
     "date": "2026-06-23",
@@ -37893,27 +34021,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-24",
-    "name": "Pánské turistické barefoot sandály Xero Shoes Z-Trail EV - Multi-black",
-    "amount": 1,
-    "revenue_vat": 1979,
-    "revenue": 1635.54,
-    "purchaseCost": 904.96
-  },
-  {
-    "date": "2026-06-24",
     "name": "Pánské turistické barefoot sandály Xero Shoes Z-Trail EV - Multi-brown",
     "amount": 1,
     "revenue_vat": 2199,
     "revenue": 1817.36,
     "purchaseCost": 904.96
-  },
-  {
-    "date": "2026-06-24",
-    "name": "Unisex barefoot tenisky Kilpi Barelo Low-U",
-    "amount": 1,
-    "revenue_vat": 1971,
-    "revenue": 1628.93,
-    "purchaseCost": 745.8
   },
   {
     "date": "2026-06-24",
@@ -37980,14 +34092,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 42
   },
   {
-    "date": "2026-06-25",
-    "name": "Unisex barefoot tenisky Be Lenka Rebound - Denim Light",
-    "amount": 1,
-    "revenue_vat": 1790,
-    "revenue": 1479.34,
-    "purchaseCost": 956.2
-  },
-  {
     "date": "2026-06-26",
     "name": "Dámské barefoot sandály Xero Shoes Aqua Cloud - Blue Glow",
     "amount": 1,
@@ -38014,10 +34118,10 @@ export const productDataCZ: ProductSaleRecord[] = [
   {
     "date": "2026-06-26",
     "name": "Dámské barefoot sandály Xero Shoes Z-Trek - Porcelain Blue",
-    "amount": 2,
-    "revenue_vat": 2698,
-    "revenue": 2229.76,
-    "purchaseCost": 1428.6
+    "amount": 1,
+    "revenue_vat": 1349,
+    "revenue": 1114.88,
+    "purchaseCost": 714.3
   },
   {
     "date": "2026-06-26",
@@ -38025,14 +34129,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 1890,
     "revenue": 1561.98,
-    "purchaseCost": 904.96
-  },
-  {
-    "date": "2026-06-26",
-    "name": "Dámské turistické barefoot sandály Xero Shoes Z-Trail EV - Lake Blue Asphalt",
-    "amount": 1,
-    "revenue_vat": 1790,
-    "revenue": 1479.34,
     "purchaseCost": 904.96
   },
   {
@@ -38228,22 +34324,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 714.3
   },
   {
-    "date": "2026-07-01",
-    "name": "Pánské turistické barefoot sandály Xero Shoes Z-Trail EV - Multi-black",
-    "amount": 1,
-    "revenue_vat": 2199,
-    "revenue": 1817.36,
-    "purchaseCost": 904.96
-  },
-  {
-    "date": "2026-07-01",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -440,
-    "revenue": -440,
-    "purchaseCost": 0
-  },
-  {
     "date": "2026-07-02",
     "name": "Čističe na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
@@ -38293,14 +34373,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-07-02",
-    "name": "Pánské trailové barefoot boty Xero Shoes Scrambler Low EV",
-    "amount": 1,
-    "revenue_vat": 3321,
-    "revenue": 2744.63,
-    "purchaseCost": 1904.76
-  },
-  {
-    "date": "2026-07-02",
     "name": "Pánské turistické barefoot sandály Xero Shoes Z-Trail EV - Steel Gray Asphalt",
     "amount": 1,
     "revenue_vat": 2199,
@@ -38325,27 +34397,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-07-03",
-    "name": "Dámské běžecké barefoot boty Xero Shoes HFS II - Black",
-    "amount": 1,
-    "revenue_vat": 2961,
-    "revenue": 2447.11,
-    "purchaseCost": 1547.62
-  },
-  {
-    "date": "2026-07-03",
     "name": "Dámské turistické barefoot sandály Xero Shoes Z-Trail EV - Lake Blue Asphalt",
     "amount": 1,
     "revenue_vat": 1890,
     "revenue": 1561.98,
     "purchaseCost": 904.96
-  },
-  {
-    "date": "2026-07-03",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -349,
-    "revenue": -349,
-    "purchaseCost": 0
   },
   {
     "date": "2026-07-03",
@@ -38362,14 +34418,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1890,
     "revenue": 1561.98,
     "purchaseCost": 958.25
-  },
-  {
-    "date": "2026-07-03",
-    "name": "Xero Mesa Trail WP ČERNÁ - pánské trailové voděodolné barefoot boty",
-    "amount": 1,
-    "revenue_vat": 3490,
-    "revenue": 2884.3,
-    "purchaseCost": 1785.72
   },
   {
     "date": "2026-07-04",
@@ -38514,14 +34562,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1305,
     "revenue": 1078.51,
     "purchaseCost": 714.28
-  },
-  {
-    "date": "2026-07-07",
-    "name": "UKONČENO VÝPRODEJ Dámská sportovní barefoot obuv Xero Shoes Prio Neo - Surf Spray",
-    "amount": 1,
-    "revenue_vat": 1796,
-    "revenue": 1484.3,
-    "purchaseCost": 958.25
   },
   {
     "date": "2026-07-08",
@@ -38869,22 +34909,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-07-15",
-    "name": "Pánské turistické barefoot sandály Xero Shoes Z-Trail EV - Multi-black",
-    "amount": 1,
-    "revenue_vat": 2199,
-    "revenue": 1817.36,
-    "purchaseCost": 904.96
-  },
-  {
-    "date": "2026-07-15",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -299,
-    "revenue": -299,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-07-15",
     "name": "VÝPRODEJ Pánské voděodolné turistické barefoot boty Xero Shoes Scrambler Trail Mid WP",
     "amount": 1,
     "revenue_vat": 3449,
@@ -38924,14 +34948,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 714.28
   },
   {
-    "date": "2026-07-16",
-    "name": "VÝPRODEJ Dámské barefoot tenisky Xero Shoes Nexus Knit - Black",
-    "amount": 1,
-    "revenue_vat": 2176,
-    "revenue": 1798.35,
-    "purchaseCost": 1309.53
-  },
-  {
     "date": "2026-07-17",
     "name": "Dámské barefoot sandály Xero Shoes Z-Trek - Black",
     "amount": 1,
@@ -38957,35 +34973,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-07-17",
-    "name": "KONTROLNI_SMAZAT_DOPRODEJ Dámské sportovní barefoot boty Merrell Vapor Glove 6",
-    "amount": 1,
-    "revenue_vat": 2390,
-    "revenue": 1975.21,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2026-07-17",
     "name": "Pánské plátěné barefoot tenisky Xero Shoes Dillon Canvas - Black Gum",
     "amount": 1,
     "revenue_vat": 2249,
     "revenue": 1858.68,
     "purchaseCost": 1071.43
-  },
-  {
-    "date": "2026-07-17",
-    "name": "Sleva",
-    "amount": 3,
-    "revenue_vat": -1900,
-    "revenue": -1900,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-07-17",
-    "name": "XERO Nexus Knit MEN ČERNO/BÍLÁ - pánské barefoot tenisky pro volný čas",
-    "amount": 1,
-    "revenue_vat": 2790,
-    "revenue": 2305.79,
-    "purchaseCost": 1328
   },
   {
     "date": "2026-07-18",
@@ -39053,22 +35045,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-07-20",
-    "name": "DOPRODEJ Dámská sportovní barefoot obuv Xero Shoes Prio Neo - Whitecap Gray",
-    "amount": 1,
-    "revenue_vat": 1796,
-    "revenue": 1484.3,
-    "purchaseCost": 958.25
-  },
-  {
-    "date": "2026-07-20",
-    "name": "Unisex barefoot tenisky Be Lenka TrailTech - Black Blue",
-    "amount": 1,
-    "revenue_vat": -3290,
-    "revenue": -2719.01,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-07-20",
     "name": "VÝPRODEJ Pánská sportovní barefoot obuv Xero Shoes Prio Neo - Alloy",
     "amount": 1,
     "revenue_vat": 1985,
@@ -39082,14 +35058,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 4047,
     "revenue": 3344.64,
     "purchaseCost": 2142.9
-  },
-  {
-    "date": "2026-07-21",
-    "name": "Dámské běžecké barefoot boty Xero Shoes HFS II - Raspberry Sunset Coral Gradient",
-    "amount": 1,
-    "revenue_vat": 2961,
-    "revenue": 2447.11,
-    "purchaseCost": 1547.62
   },
   {
     "date": "2026-07-22",
@@ -39114,22 +35082,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 125.62,
     "revenue": 125.62,
     "purchaseCost": 91
-  },
-  {
-    "date": "2026-07-22",
-    "name": "Pánské sportovní barefoot boty Xero Shoes Prio - Black",
-    "amount": 1,
-    "revenue_vat": 2490,
-    "revenue": 2057.85,
-    "purchaseCost": 1190.48
-  },
-  {
-    "date": "2026-07-22",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -300,
-    "revenue": -300,
-    "purchaseCost": 0
   },
   {
     "date": "2026-07-22",
@@ -39277,46 +35229,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-07-28",
-    "name": "Dámské kožené barefoot tenisky Xero Shoes Dillon Leather - White",
-    "amount": 1,
-    "revenue_vat": 3051,
-    "revenue": 2521.49,
-    "purchaseCost": 1666.67
-  },
-  {
-    "date": "2026-07-28",
-    "name": "Dětské barefoot tenisky Xero Shoes Dillon Little Kids - Milky Blue",
-    "amount": 1,
-    "revenue_vat": 1341,
-    "revenue": 1108.26,
-    "purchaseCost": 714.28
-  },
-  {
-    "date": "2026-07-28",
-    "name": "DOPRODEJ Pánské sportovní barefoot boty Merrell Vapor Glove 6 - White/Black",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1318.18
-  },
-  {
-    "date": "2026-07-28",
-    "name": "Pánské barefoot sandály Xero Shoes Z-Trek - Brown",
-    "amount": 1,
-    "revenue_vat": 1460,
-    "revenue": 1206.61,
-    "purchaseCost": 714.3
-  },
-  {
-    "date": "2026-07-28",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -41,
-    "revenue": -41,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-07-28",
     "name": "Unisex barefoot tenisky Be Lenka Rebound - All White",
     "amount": 1,
     "revenue_vat": 1511,
@@ -39333,27 +35245,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-07-29",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -481,
-    "revenue": -481,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-07-29",
     "name": "Unisex barefoot tenisky Be Lenka Rebound - All White",
     "amount": 1,
     "revenue_vat": 1590,
     "revenue": 1314.05,
     "purchaseCost": 956.2
-  },
-  {
-    "date": "2026-07-29",
-    "name": "Unisex barefoot tenisky Kilpi Barelo Low-U - Modrá",
-    "amount": 1,
-    "revenue_vat": 1971,
-    "revenue": 1628.93,
-    "purchaseCost": 745.8
   },
   {
     "date": "2026-07-29",
@@ -39370,14 +35266,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1349,
     "revenue": 1114.88,
     "purchaseCost": 714.3
-  },
-  {
-    "date": "2026-07-30",
-    "name": "Dětské barefoot sandály Be Lenka Zest - Berry",
-    "amount": 1,
-    "revenue_vat": 1161,
-    "revenue": 959.5,
-    "purchaseCost": 567
   },
   {
     "date": "2026-07-30",
@@ -39405,14 +35293,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-07-30",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -171,
-    "revenue": -171,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-07-30",
     "name": "VÝPRODEJ Dámské trailové barefoot boty Xero Shoes Scrambler Low EV - Irish Cream",
     "amount": 1,
     "revenue_vat": 2790,
@@ -39429,14 +35309,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-07-31",
-    "name": "Pánské barefoot tenisky Xero Shoes Nexus Knit - Black",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1328
-  },
-  {
-    "date": "2026-07-31",
     "name": "Pánské turistické barefoot sandály Xero Shoes Z-Trail EV - Multi-black",
     "amount": 1,
     "revenue_vat": 1790,
@@ -39450,30 +35322,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1590,
     "revenue": 1314.05,
     "purchaseCost": 956.2
-  },
-  {
-    "date": "2026-07-31",
-    "name": "Unisex turistické barefoot boty Be Lenka TrailWalker 3.0 - Yellow",
-    "amount": 1,
-    "revenue_vat": 3591,
-    "revenue": 2967.77,
-    "purchaseCost": 1768.27
-  },
-  {
-    "date": "2026-07-31",
-    "name": "VÝPRODEJ Dámské turistické barefoot boty Xero Shoes Ridgeway Mesh Low - Fog",
-    "amount": 1,
-    "revenue_vat": 2290,
-    "revenue": 1892.56,
-    "purchaseCost": 1166.75
-  },
-  {
-    "date": "2026-07-31",
-    "name": "VÝPRODEJ Pánská sportovní barefoot obuv Xero Shoes Prio Neo - Alloy",
-    "amount": 1,
-    "revenue_vat": 1690,
-    "revenue": 1396.69,
-    "purchaseCost": 958.25
   },
   {
     "date": "2026-08-02",
@@ -39565,35 +35413,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-08-04",
-    "name": "Dámské sportovní barefoot boty Xero Shoes Prio - Black White",
-    "amount": 1,
-    "revenue_vat": 2241,
-    "revenue": 1852.07,
-    "purchaseCost": 1190.48
-  },
-  {
-    "date": "2026-08-04",
     "name": "DOPRODEJ Dámské sportovní barefoot boty Xero Shoes Zelen - Cloud/Porcelain Blue",
     "amount": 1,
     "revenue_vat": 1990,
     "revenue": 1644.63,
     "purchaseCost": 1250
-  },
-  {
-    "date": "2026-08-04",
-    "name": "Pánské turistické barefoot boty Xero Shoes Ridgeway Mesh Low - Faded Black",
-    "amount": 1,
-    "revenue_vat": 3390,
-    "revenue": 2801.65,
-    "purchaseCost": 1666.66
-  },
-  {
-    "date": "2026-08-04",
-    "name": "Sleva",
-    "amount": 2,
-    "revenue_vat": -951,
-    "revenue": -951,
-    "purchaseCost": 0
   },
   {
     "date": "2026-08-04",
@@ -39642,14 +35466,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1349,
     "revenue": 1114.88,
     "purchaseCost": 714.3
-  },
-  {
-    "date": "2026-08-06",
-    "name": "Dámské voděodolné turistické barefoot boty Xero Shoes Scrambler Trail Low WP - Morel Pure Cashmere",
-    "amount": 1,
-    "revenue_vat": 3231,
-    "revenue": 2670.25,
-    "purchaseCost": 1785.72
   },
   {
     "date": "2026-08-06",
@@ -39837,43 +35653,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-08-11",
-    "name": "Dámské barefoot baleríny Xero Shoes Phoenix Knit - Gray",
-    "amount": 2,
-    "revenue_vat": 3970,
-    "revenue": 3280.99,
-    "purchaseCost": 1333.88
-  },
-  {
-    "date": "2026-08-11",
     "name": "Dámské běžecké barefoot boty Xero Shoes HFS II - Raspberry Sunset Coral Gradient",
     "amount": 1,
     "revenue_vat": 1990,
     "revenue": 1644.63,
     "purchaseCost": 1547.62
-  },
-  {
-    "date": "2026-08-11",
-    "name": "Dětské barefoot sandály Be Lenka Zest - Blue",
-    "amount": 1,
-    "revenue_vat": 990,
-    "revenue": 818.18,
-    "purchaseCost": 567
-  },
-  {
-    "date": "2026-08-11",
-    "name": "Pracovní obuv Pánské voděodolné turistické barefoot boty Xero Shoes Scrambler Trail Low WP",
-    "amount": 1,
-    "revenue_vat": 2490,
-    "revenue": 2057.85,
-    "purchaseCost": 1250
-  },
-  {
-    "date": "2026-08-11",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -400,
-    "revenue": -400,
-    "purchaseCost": 0
   },
   {
     "date": "2026-08-11",
@@ -39901,51 +35685,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-08-12",
-    "name": "Dámské barefoot tenisky Xero Shoes Wynn - Tan/Pink Sand/Red",
-    "amount": 1,
-    "revenue_vat": 2691,
-    "revenue": 2223.97,
-    "purchaseCost": 1428.57
-  },
-  {
-    "date": "2026-08-12",
-    "name": "Dámské voděodolné trailové barefoot boty Xero Shoes Mesa Trail WP - Black",
-    "amount": 1,
-    "revenue_vat": 3141,
-    "revenue": 2595.87,
-    "purchaseCost": 1785.72
-  },
-  {
-    "date": "2026-08-12",
-    "name": "DOPRODEJ Barefoot ponožkoboty Skinners 2.0 Compression - Carmine",
-    "amount": 1,
-    "revenue_vat": 990,
-    "revenue": 818.18,
-    "purchaseCost": 719.83
-  },
-  {
-    "date": "2026-08-12",
-    "name": "DOPRODEJ Barefoot ponožkoboty Skinners 2.0 Compression - Pine",
-    "amount": 1,
-    "revenue_vat": 990,
-    "revenue": 818.18,
-    "purchaseCost": 719.83
-  },
-  {
-    "date": "2026-08-12",
     "name": "DOPRODEJ Dětské barefoot ponožkoboty Skinners Kids 2.0 - Poppy",
     "amount": 1,
     "revenue_vat": 790,
     "revenue": 652.89,
     "purchaseCost": 489.25
-  },
-  {
-    "date": "2026-08-12",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Šedá",
-    "amount": 2,
-    "revenue_vat": 226,
-    "revenue": 186.78,
-    "purchaseCost": 85.21
   },
   {
     "date": "2026-08-12",
@@ -39956,68 +35700,12 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 42
   },
   {
-    "date": "2026-08-12",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -100,
-    "revenue": -100,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-08-12",
-    "name": "Unisex barefoot tenisky Kilpi Barelo Low-U - Modrá",
-    "amount": 1,
-    "revenue_vat": 1416,
-    "revenue": 1170.25,
-    "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-08-12",
-    "name": "Unisex kožené voděodolné barefoot boty Kilpi Bare Leather High-U - Černá",
-    "amount": 1,
-    "revenue_vat": 3419,
-    "revenue": 2825.62,
-    "purchaseCost": 1234.68
-  },
-  {
-    "date": "2026-08-12",
-    "name": "Unisex sportovní barefoot tenisky Be Lenka Velocity - White",
-    "amount": 1,
-    "revenue_vat": 2691,
-    "revenue": 2223.97,
-    "purchaseCost": 1536.5
-  },
-  {
-    "date": "2026-08-12",
-    "name": "VÝPRODEJ Dámské barefoot tenisky Xero Shoes Nexus Knit - Black",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1309.53
-  },
-  {
-    "date": "2026-08-12",
-    "name": "VÝPRODEJ Dámské kožené barefoot chelsea boty Xero Shoes Tari - Black",
-    "amount": 1,
-    "revenue_vat": 2366,
-    "revenue": 1955.37,
-    "purchaseCost": 1333.33
-  },
-  {
     "date": "2026-08-13",
     "name": "DOPRODEJ Dětské barefoot ponožkoboty Skinners Kids 2.0 - Poppy",
     "amount": 1,
     "revenue_vat": 790,
     "revenue": 652.89,
     "purchaseCost": 489.25
-  },
-  {
-    "date": "2026-08-13",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Černá",
-    "amount": 1,
-    "revenue_vat": 119,
-    "revenue": 98.35,
-    "purchaseCost": 42.6
   },
   {
     "date": "2026-08-13",
@@ -40028,28 +35716,12 @@ export const productDataCZ: ProductSaleRecord[] = [
     "purchaseCost": 1438.02
   },
   {
-    "date": "2026-08-13",
-    "name": "VÝPRODEJ Dámské turistické barefoot boty Xero Shoes Scrambler Trail Mid - Asphalt Black",
-    "amount": 1,
-    "revenue_vat": 2290,
-    "revenue": 1892.56,
-    "purchaseCost": 1135.76
-  },
-  {
     "date": "2026-08-14",
     "name": "Běžecké ponožky Pondy KS Run-2EX",
     "amount": 1,
     "revenue_vat": 152,
     "revenue": 125.62,
     "purchaseCost": 68
-  },
-  {
-    "date": "2026-08-14",
-    "name": "Dámské barefoot slip-on boty Xero Shoes Prio Cost - Black White",
-    "amount": 1,
-    "revenue_vat": 2241,
-    "revenue": 1852.07,
-    "purchaseCost": 1190.51
   },
   {
     "date": "2026-08-14",
@@ -40066,14 +35738,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1490,
     "revenue": 1231.4,
     "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-08-14",
-    "name": "VÝPRODEJ Dámské sportovní barefoot boty Xero Shoes Prio - Black",
-    "amount": 1,
-    "revenue_vat": 1701,
-    "revenue": 1405.79,
-    "purchaseCost": 875
   },
   {
     "date": "2026-08-14",
@@ -40213,35 +35877,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-08-18",
-    "name": "Dámské barefoot sandály Xero Shoes Aqua Cloud - Blue Glow",
-    "amount": 1,
-    "revenue_vat": 1290,
-    "revenue": 1066.12,
-    "purchaseCost": 714.29
-  },
-  {
-    "date": "2026-08-18",
     "name": "Dámské barefoot sandály Xero Shoes Z-Trek - Porcelain Blue",
     "amount": 2,
     "revenue_vat": 2698,
     "revenue": 2229.76,
     "purchaseCost": 1428.6
-  },
-  {
-    "date": "2026-08-18",
-    "name": "Dámské sportovní barefoot boty Xero Shoes Prio - Dusty Blue",
-    "amount": 1,
-    "revenue_vat": 2490,
-    "revenue": 2057.85,
-    "purchaseCost": 1190.48
-  },
-  {
-    "date": "2026-08-18",
-    "name": "Dámské voděodolné turistické barefoot boty Xero Shoes Scrambler Trail Low WP - Black Asphalt",
-    "amount": 1,
-    "revenue_vat": 3590,
-    "revenue": 2966.94,
-    "purchaseCost": 1785.71
   },
   {
     "date": "2026-08-18",
@@ -40258,14 +35898,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 189,
     "revenue": 156.2,
     "purchaseCost": 102
-  },
-  {
-    "date": "2026-08-18",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -359,
-    "revenue": -359,
-    "purchaseCost": 0
   },
   {
     "date": "2026-08-18",
@@ -40301,62 +35933,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-08-19",
-    "name": "Dámské sportovní barefoot boty Xero Shoes Prio - Dusty Blue",
-    "amount": 1,
-    "revenue_vat": 2490,
-    "revenue": 2057.85,
-    "purchaseCost": 1190.48
-  },
-  {
-    "date": "2026-08-19",
-    "name": "Dámské trailové barefoot boty Xero Shoes Mesa Trail II - Asphalt Raspberry",
-    "amount": 1,
-    "revenue_vat": 3399,
-    "revenue": 2809.09,
-    "purchaseCost": 1547.62
-  },
-  {
-    "date": "2026-08-19",
-    "name": "Dětské barefoot tenisky Be Lenka Canvi - Coral Pink",
-    "amount": 1,
-    "revenue_vat": 890,
-    "revenue": 735.54,
-    "purchaseCost": 567
-  },
-  {
-    "date": "2026-08-19",
-    "name": "DOPRODEJ Dámské sportovní barefoot boty Merrell Vapor Glove 6 - Black",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2026-08-19",
-    "name": "Pánské trailové barefoot boty Xero Shoes Scrambler Low EV - Dark Irish Cream",
-    "amount": 1,
-    "revenue_vat": 3690,
-    "revenue": 3049.59,
-    "purchaseCost": 1904.76
-  },
-  {
-    "date": "2026-08-19",
-    "name": "Sleva",
-    "amount": 1,
-    "revenue_vat": -680,
-    "revenue": -680,
-    "purchaseCost": 0
-  },
-  {
-    "date": "2026-08-19",
-    "name": "Unisex barefoot boty Be Lenka Nevada Neo - Mustard",
-    "amount": 1,
-    "revenue_vat": 3490,
-    "revenue": 2884.3,
-    "purchaseCost": 1768.27
-  },
-  {
-    "date": "2026-08-19",
     "name": "Unisex barefoot tenisky Kilpi Barelo Low-U - Černá",
     "amount": 4,
     "revenue_vat": 5886,
@@ -40370,14 +35946,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1490,
     "revenue": 1231.4,
     "purchaseCost": 745.8
-  },
-  {
-    "date": "2026-08-19",
-    "name": "VÝPRODEJ Pánská sportovní barefoot obuv Xero Shoes Prio Neo - Alloy",
-    "amount": 1,
-    "revenue_vat": 1690,
-    "revenue": 1396.69,
-    "purchaseCost": 958.25
   },
   {
     "date": "2026-08-20",
@@ -40426,14 +35994,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 107,
     "revenue": 88.43,
     "purchaseCost": 42
-  },
-  {
-    "date": "2026-08-20",
-    "name": "VÝPRODEJ Dámské turistické barefoot boty Xero Shoes Ridgeway Mesh Low - Faded Black",
-    "amount": 1,
-    "revenue_vat": 2490,
-    "revenue": 2057.85,
-    "purchaseCost": 1166.75
   },
   {
     "date": "2026-08-20",

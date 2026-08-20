@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo, useRef } from 'react';
 import { useFilters, getDateRange } from '@/hooks/useFilters';
+import { useStoreFilter } from '@/hooks/useStoreFilter';
 import { formatCurrency, formatNumber, localIsoDate } from '@/lib/formatters';
 import {
   Award, Download, TrendingUp, TrendingDown,
@@ -383,6 +384,7 @@ function TrendChart({
 
 export default function BrandsPage() {
   const { filters } = useFilters();
+  const { store } = useStoreFilter();
   const { start, end, prevStart, prevEnd } = getDateRange(filters);
   const startStr     = localIsoDate(start);
   const endStr       = localIsoDate(end);
@@ -398,11 +400,11 @@ export default function BrandsPage() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`/api/brands?from=${startStr}&to=${endStr}&prevFrom=${prevStartStr}&prevTo=${prevEndStr}`)
+    fetch(`/api/brands?from=${startStr}&to=${endStr}&prevFrom=${prevStartStr}&prevTo=${prevEndStr}&store=${store}`)
       .then(r => r.json())
       .then((d: BrandsResponse) => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));
-  }, [startStr, endStr, prevStartStr, prevEndStr]);
+  }, [startStr, endStr, prevStartStr, prevEndStr, store]);
 
   const fc = (v: number) => formatCurrency(v, 'CZK');
 

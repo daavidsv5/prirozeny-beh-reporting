@@ -5,9 +5,12 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   Legend, ResponsiveContainer,
 } from 'recharts';
-import { mockData } from '@/data/mockGenerator';
+import { mockData, mockDataEshop, mockDataProdejna } from '@/data/mockGenerator';
 import { marginDataCZ } from '@/data/marginDataCZ';
+import { marginDataCZEshop } from '@/data/marginDataCZEshop';
+import { prodejnaMarginDataCZ } from '@/data/prodejnaMarginDataCZ';
 import { useHlavniDashboard } from '@/hooks/useHlavniDashboard';
+import { useStoreFilter, pickByStore } from '@/hooks/useStoreFilter';
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
@@ -23,12 +26,16 @@ interface MonthlyRow {
   marginRev: number;
 }
 
-function aggregateMonthly(year: number): MonthlyRow[] {
+function aggregateMonthly(
+  year: number,
+  data: typeof mockData,
+  marginData: typeof marginDataCZ
+): MonthlyRow[] {
   const months: MonthlyRow[] = Array.from({ length: 12 }, () => ({
     revenue: 0, orders: 0, cost: 0, purchaseCost: 0, marginRev: 0,
   }));
 
-  for (const r of mockData) {
+  for (const r of data) {
     if (r.country !== 'cz') continue;
     const [y, m] = r.date.split('-').map(Number);
     if (y !== year) continue;
@@ -38,7 +45,7 @@ function aggregateMonthly(year: number): MonthlyRow[] {
     months[i].cost    += r.cost;
   }
 
-  for (const r of marginDataCZ) {
+  for (const r of marginData) {
     const [y, m] = r.date.split('-').map(Number);
     if (y !== year) continue;
     months[m - 1].purchaseCost += r.purchaseCost;
@@ -125,9 +132,12 @@ function ChartCard({ title, subtitle, data, colorA, colorB, yearA, yearB, axisFo
 
 export default function HlavniDashboardPage() {
   const { yearA, yearB } = useHlavniDashboard();
+  const { store } = useStoreFilter();
+  const storeMockData     = pickByStore(store, mockData, mockDataEshop, mockDataProdejna);
+  const storeMarginDataCZ = pickByStore(store, marginDataCZ, marginDataCZEshop, prodejnaMarginDataCZ);
 
-  const monthsA = useMemo(() => aggregateMonthly(yearA), [yearA]);
-  const monthsB = useMemo(() => aggregateMonthly(yearB), [yearB]);
+  const monthsA = useMemo(() => aggregateMonthly(yearA, storeMockData, storeMarginDataCZ), [yearA, storeMockData, storeMarginDataCZ]);
+  const monthsB = useMemo(() => aggregateMonthly(yearB, storeMockData, storeMarginDataCZ), [yearB, storeMockData, storeMarginDataCZ]);
 
   const [cvrData, setCvrData] = useState<{ month: string; a: number; b: number }[] | null>(null);
   useEffect(() => {

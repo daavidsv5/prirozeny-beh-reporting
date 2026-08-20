@@ -46903,17 +46903,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-08-05"
     ],
     "revenues": [
-      1114.88
-    ],
-    "revsVat": [
-      1349
-    ]
-  },
-  {
-    "dates": [
-      "2026-08-05"
-    ],
-    "revenues": [
       1206.61
     ],
     "revsVat": [
@@ -47171,17 +47160,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       3590
-    ]
-  },
-  {
-    "dates": [
-      "2026-08-11"
-    ],
-    "revenues": [
-      1726.45
-    ],
-    "revsVat": [
-      2089
     ]
   },
   {
@@ -47460,6 +47438,50 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       4470
+    ]
+  },
+  {
+    "dates": [
+      "2026-08-20"
+    ],
+    "revenues": [
+      818.18
+    ],
+    "revsVat": [
+      990
+    ]
+  },
+  {
+    "dates": [
+      "2026-08-20"
+    ],
+    "revenues": [
+      859.5
+    ],
+    "revsVat": [
+      1040
+    ]
+  },
+  {
+    "dates": [
+      "2026-08-20"
+    ],
+    "revenues": [
+      1561.98
+    ],
+    "revsVat": [
+      1890
+    ]
+  },
+  {
+    "dates": [
+      "2026-08-20"
+    ],
+    "revenues": [
+      1680.99
+    ],
+    "revsVat": [
+      2034
     ]
   }
 ];

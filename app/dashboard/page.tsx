@@ -3,13 +3,16 @@
 import { useMemo } from 'react';
 import { useFilters, getDateRange } from '@/hooks/useFilters';
 import { useDashboardData } from '@/hooks/useDashboardData';
-import { mockData } from '@/data/mockGenerator';
+import { mockData, mockDataEshop, mockDataProdejna } from '@/data/mockGenerator';
 import { marginDataCZ } from '@/data/marginDataCZ';
+import { marginDataCZEshop } from '@/data/marginDataCZEshop';
+import { prodejnaMarginDataCZ } from '@/data/prodejnaMarginDataCZ';
 import { marginDataSK as _marginDataSK } from '@/data/marginDataSK';
 import { SK_LAUNCH_DATE } from '@/data/types';
 const marginDataSK = _marginDataSK.filter(r => r.date >= SK_LAUNCH_DATE);
 import { retentionDataCZ } from '@/data/retentionDataCZ';
 import { retentionDataSK } from '@/data/retentionDataSK';
+import { useStoreFilter, pickByStore } from '@/hooks/useStoreFilter';
 import KpiCard from '@/components/kpi/KpiCard';
 import KpiLineCharts from '@/components/charts/KpiLineCharts';
 import { AovChart, CpaChart } from '@/components/charts/AovCpaChart';
@@ -27,7 +30,10 @@ const periodTitles: Record<string, string> = {
 
 export default function DashboardPage() {
   const { filters, eurToCzk } = useFilters();
-  const { kpi, prevKpi, yoy, chartData, chartDataExtended, currentData, currency, hasPrevData } = useDashboardData(filters, mockData, eurToCzk);
+  const { store } = useStoreFilter();
+  const storeMockData   = pickByStore(store, mockData, mockDataEshop, mockDataProdejna);
+  const storeMarginDataCZ = pickByStore(store, marginDataCZ, marginDataCZEshop, prodejnaMarginDataCZ);
+  const { kpi, prevKpi, yoy, chartData, chartDataExtended, currentData, currency, hasPrevData } = useDashboardData(filters, storeMockData, eurToCzk);
 
   const { start, end, prevStart, prevEnd } = getDateRange(filters);
 
@@ -43,19 +49,19 @@ export default function DashboardPage() {
     let pc = 0, mr = 0, prevPc = 0, prevMr = 0;
     const marginData: { date: string; purchaseCost: number }[] = [];
     if (filters.countries.includes('cz')) {
-      for (const r of marginDataCZ) {
+      for (const r of storeMarginDataCZ) {
         if (r.date >= s && r.date <= e)  { pc += r.purchaseCost; mr += r.revenue; marginData.push({ date: r.date, purchaseCost: r.purchaseCost }); }
         if (r.date >= ps && r.date <= pe){ prevPc += r.purchaseCost; prevMr += r.revenue; }
       }
     }
-    if (filters.countries.includes('sk')) {
+    if (filters.countries.includes('sk') && store === 'all') {
       for (const r of marginDataSK) {
         if (r.date >= s && r.date <= e)  { pc += r.purchaseCost * skMult; mr += r.revenue * skMult; marginData.push({ date: r.date, purchaseCost: r.purchaseCost * skMult }); }
         if (r.date >= ps && r.date <= pe){ prevPc += r.purchaseCost * skMult; prevMr += r.revenue * skMult; }
       }
     }
     return { marginData, purchaseCost: pc, marginRev: mr, prevPurchaseCost: prevPc, prevMarginRev: prevMr };
-  }, [filters.countries, start, end, prevStart, prevEnd, skMult]);
+  }, [filters.countries, start, end, prevStart, prevEnd, skMult, storeMarginDataCZ, store]);
 
   const newCustomerCounts = useMemo(() => {
     const s  = localIsoDate(start);

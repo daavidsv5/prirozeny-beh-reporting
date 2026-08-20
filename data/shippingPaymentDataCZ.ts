@@ -34538,7 +34538,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-08-05",
     "type": "payment",
     "name": "Upgates Pay",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 0
   },
   {
@@ -34561,13 +34561,6 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "name": "PPL ParcelShop",
     "count": 1,
     "revenue_vat": 70
-  },
-  {
-    "date": "2026-08-05",
-    "type": "shipping",
-    "name": "Zásilkovna Z-Box",
-    "count": 1,
-    "revenue_vat": 80
   },
   {
     "date": "2026-08-06",
@@ -34748,15 +34741,15 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-08-11",
     "type": "payment",
     "name": "Upgates Pay",
-    "count": 3,
+    "count": 2,
     "revenue_vat": 0
   },
   {
     "date": "2026-08-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 3,
-    "revenue_vat": 177
+    "count": 2,
+    "revenue_vat": 118
   },
   {
     "date": "2026-08-11",
@@ -35037,5 +35030,40 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
     "revenue_vat": 85
+  },
+  {
+    "date": "2026-08-20",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 1,
+    "revenue_vat": 50
+  },
+  {
+    "date": "2026-08-20",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-08-20",
+    "type": "payment",
+    "name": "Upgates Pay",
+    "count": 3,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-08-20",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy",
+    "count": 2,
+    "revenue_vat": 118
+  },
+  {
+    "date": "2026-08-20",
+    "type": "shipping",
+    "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
+    "count": 2,
+    "revenue_vat": 0
   }
 ];

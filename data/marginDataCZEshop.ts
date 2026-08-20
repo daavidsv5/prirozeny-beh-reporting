@@ -7,7 +7,7 @@ export interface MarginDailyRecord {
   revenue: number;
 }
 
-export const marginDataCZ: MarginDailyRecord[] = [
+export const marginDataCZEshop: MarginDailyRecord[] = [
   {
     "date": "2023-03-03",
     "purchaseCost": 3155.63,
@@ -2805,8 +2805,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-04-03",
-    "purchaseCost": 5047.97,
-    "revenue": 8400.83
+    "purchaseCost": 4214.91,
+    "revenue": 6872.73
   },
   {
     "date": "2025-04-04",
@@ -2825,8 +2825,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-04-07",
-    "purchaseCost": 5923.16,
-    "revenue": 9352.08
+    "purchaseCost": 4507.16,
+    "revenue": 7286.79
   },
   {
     "date": "2025-04-08",
@@ -2835,18 +2835,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-04-09",
-    "purchaseCost": 6539.96,
-    "revenue": 11114.87
+    "purchaseCost": 5123.96,
+    "revenue": 8884.29
   },
   {
     "date": "2025-04-10",
-    "purchaseCost": 12673.59,
-    "revenue": 20913.22
+    "purchaseCost": 9120.66,
+    "revenue": 15584.29
   },
   {
     "date": "2025-04-11",
-    "purchaseCost": 9012.7,
-    "revenue": 14923.98
+    "purchaseCost": 7596.7,
+    "revenue": 12982.66
   },
   {
     "date": "2025-04-12",
@@ -2865,18 +2865,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-04-15",
-    "purchaseCost": 8681.82,
-    "revenue": 16146.29
+    "purchaseCost": 7681.82,
+    "revenue": 13047.94
   },
   {
     "date": "2025-04-16",
-    "purchaseCost": 9453.72,
-    "revenue": 16122.32
+    "purchaseCost": 7786.78,
+    "revenue": 13023.97
   },
   {
     "date": "2025-04-17",
-    "purchaseCost": 14022.7,
-    "revenue": 25024.83
+    "purchaseCost": 11980.92,
+    "revenue": 20812.43
   },
   {
     "date": "2025-04-18",
@@ -2910,28 +2910,28 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-04-24",
-    "purchaseCost": 8647.11,
-    "revenue": 14460.33
+    "purchaseCost": 7957.85,
+    "revenue": 13428.1
   },
   {
     "date": "2025-04-25",
-    "purchaseCost": 17730.91,
-    "revenue": 28835.54
+    "purchaseCost": 13877.13,
+    "revenue": 22870.25
   },
   {
     "date": "2025-04-26",
-    "purchaseCost": 5474.98,
-    "revenue": 8667.79
+    "purchaseCost": 5214.98,
+    "revenue": 8287.62
   },
   {
     "date": "2025-04-27",
-    "purchaseCost": 5821.86,
-    "revenue": 9161.17
+    "purchaseCost": 4678.88,
+    "revenue": 7351.25
   },
   {
     "date": "2025-04-28",
-    "purchaseCost": 7438.02,
-    "revenue": 12790.09
+    "purchaseCost": 6119.84,
+    "revenue": 10766.12
   },
   {
     "date": "2025-04-29",
@@ -2940,8 +2940,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-04-30",
-    "purchaseCost": 13826.78,
-    "revenue": 23968
+    "purchaseCost": 10076.07,
+    "revenue": 16904.36
   },
   {
     "date": "2025-05-01",
@@ -2950,8 +2950,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-05-02",
-    "purchaseCost": 6666.95,
-    "revenue": 11394.22
+    "purchaseCost": 4761.99,
+    "revenue": 8089.26
   },
   {
     "date": "2025-05-03",
@@ -2970,13 +2970,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-05-06",
-    "purchaseCost": 9242.93,
-    "revenue": 15178.52
+    "purchaseCost": 8003.93,
+    "revenue": 13443.81
   },
   {
     "date": "2025-05-07",
-    "purchaseCost": 6892.87,
-    "revenue": 11311.58
+    "purchaseCost": 5476.86,
+    "revenue": 9081
   },
   {
     "date": "2025-05-08",
@@ -2985,8 +2985,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-05-09",
-    "purchaseCost": 10497.15,
-    "revenue": 17269.42
+    "purchaseCost": 6434.87,
+    "revenue": 10536.36
   },
   {
     "date": "2025-05-10",
@@ -3000,8 +3000,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-05-12",
-    "purchaseCost": 9495.63,
-    "revenue": 15871.9
+    "purchaseCost": 8685.71,
+    "revenue": 13847.93
   },
   {
     "date": "2025-05-13",
@@ -3015,8 +3015,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-05-15",
-    "purchaseCost": 13031.55,
-    "revenue": 22761.97
+    "purchaseCost": 9103.21,
+    "revenue": 15450.39
   },
   {
     "date": "2025-05-16",
@@ -3036,7 +3036,7 @@ export const marginDataCZ: MarginDailyRecord[] = [
   {
     "date": "2025-05-19",
     "purchaseCost": 9514.02,
-    "revenue": 17787.61
+    "revenue": 15557.03
   },
   {
     "date": "2025-05-20",
@@ -3045,8 +3045,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-05-21",
-    "purchaseCost": 10113.11,
-    "revenue": 20306.64
+    "purchaseCost": 6463.17,
+    "revenue": 11062
   },
   {
     "date": "2025-05-22",
@@ -3055,8 +3055,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-05-23",
-    "purchaseCost": 1428.6,
-    "revenue": 2899.18
+    "purchaseCost": 500,
+    "revenue": 875.21
   },
   {
     "date": "2025-05-24",
@@ -3075,13 +3075,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-05-27",
-    "purchaseCost": 6304.61,
-    "revenue": 10345.47
+    "purchaseCost": 4977.11,
+    "revenue": 7990.92
   },
   {
     "date": "2025-05-28",
-    "purchaseCost": 10014.72,
-    "revenue": 15960.34
+    "purchaseCost": 7549.77,
+    "revenue": 12588.44
   },
   {
     "date": "2025-05-29",
@@ -3105,28 +3105,28 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-06-02",
-    "purchaseCost": 5085.06,
-    "revenue": 8638.02
+    "purchaseCost": 4887.86,
+    "revenue": 8211.58
   },
   {
     "date": "2025-06-03",
-    "purchaseCost": 6461.19,
-    "revenue": 11789.25
+    "purchaseCost": 5151.69,
+    "revenue": 9352.06
   },
   {
     "date": "2025-06-04",
-    "purchaseCost": 8480.11,
-    "revenue": 15328.11
+    "purchaseCost": 6408.63,
+    "revenue": 10949.6
   },
   {
     "date": "2025-06-05",
-    "purchaseCost": 12066.62,
-    "revenue": 20489.27
+    "purchaseCost": 10996.82,
+    "revenue": 18153.73
   },
   {
     "date": "2025-06-06",
-    "purchaseCost": 3904.65,
-    "revenue": 6165.28
+    "purchaseCost": 3404.64,
+    "revenue": 5264.45
   },
   {
     "date": "2025-06-07",
@@ -3140,13 +3140,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-06-09",
-    "purchaseCost": 9541.81,
-    "revenue": 16907.45
+    "purchaseCost": 8214.31,
+    "revenue": 14552.9
   },
   {
     "date": "2025-06-10",
-    "purchaseCost": 12381.24,
-    "revenue": 23168.59
+    "purchaseCost": 9125.14,
+    "revenue": 15691.72
   },
   {
     "date": "2025-06-11",
@@ -3160,8 +3160,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-06-13",
-    "purchaseCost": 12558.77,
-    "revenue": 21666.11
+    "purchaseCost": 10190.37,
+    "revenue": 17576.85
   },
   {
     "date": "2025-06-14",
@@ -3180,13 +3180,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-06-17",
-    "purchaseCost": 8373.94,
-    "revenue": 13790.92
+    "purchaseCost": 7654.11,
+    "revenue": 12758.69
   },
   {
     "date": "2025-06-18",
-    "purchaseCost": 13060.08,
-    "revenue": 22946.31
+    "purchaseCost": 10083.88,
+    "revenue": 17955.4
   },
   {
     "date": "2025-06-19",
@@ -3215,8 +3215,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-06-24",
-    "purchaseCost": 5105.22,
-    "revenue": 8040.5
+    "purchaseCost": 4385.38,
+    "revenue": 7147.94
   },
   {
     "date": "2025-06-25",
@@ -3245,28 +3245,28 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-06-30",
-    "purchaseCost": 9721.56,
-    "revenue": 16522.35
+    "purchaseCost": 8650.15,
+    "revenue": 14581.03
   },
   {
     "date": "2025-07-01",
-    "purchaseCost": 11234.76,
-    "revenue": 19212.42
+    "purchaseCost": 8352.86,
+    "revenue": 14098.37
   },
   {
     "date": "2025-07-02",
-    "purchaseCost": 8778.46,
-    "revenue": 15716.54
+    "purchaseCost": 6300.46,
+    "revenue": 11668.6
   },
   {
     "date": "2025-07-03",
-    "purchaseCost": 12440.75,
-    "revenue": 21276.9
+    "purchaseCost": 7423.47,
+    "revenue": 13222.35
   },
   {
     "date": "2025-07-04",
-    "purchaseCost": 4440.19,
-    "revenue": 7592.57
+    "purchaseCost": 3201.19,
+    "revenue": 5568.6
   },
   {
     "date": "2025-07-05",
@@ -3285,13 +3285,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-07-08",
-    "purchaseCost": 9811.92,
-    "revenue": 18659.52
+    "purchaseCost": 9092.08,
+    "revenue": 17766.96
   },
   {
     "date": "2025-07-09",
-    "purchaseCost": 9991.35,
-    "revenue": 18370.26
+    "purchaseCost": 7181.91,
+    "revenue": 13262.82
   },
   {
     "date": "2025-07-10",
@@ -3300,8 +3300,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-07-11",
-    "purchaseCost": 12488.75,
-    "revenue": 21879.35
+    "purchaseCost": 6511.65,
+    "revenue": 11353.73
   },
   {
     "date": "2025-07-12",
@@ -3315,18 +3315,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-07-14",
-    "purchaseCost": 9205.09,
-    "revenue": 15543.81
+    "purchaseCost": 8252.69,
+    "revenue": 13685.13
   },
   {
     "date": "2025-07-15",
-    "purchaseCost": 15831.88,
-    "revenue": 27237.18
+    "purchaseCost": 12404.53,
+    "revenue": 21601.65
   },
   {
     "date": "2025-07-16",
-    "purchaseCost": 15782.47,
-    "revenue": 28173.57
+    "purchaseCost": 10513.74,
+    "revenue": 18352.91
   },
   {
     "date": "2025-07-17",
@@ -3335,8 +3335,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-07-18",
-    "purchaseCost": 9386.45,
-    "revenue": 16301.68
+    "purchaseCost": 5785.71,
+    "revenue": 10633.08
   },
   {
     "date": "2025-07-19",
@@ -3350,28 +3350,28 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-07-21",
-    "purchaseCost": 8260.5,
-    "revenue": 13918.2
+    "purchaseCost": 5405.6,
+    "revenue": 9061.17
   },
   {
     "date": "2025-07-22",
-    "purchaseCost": 7985.39,
-    "revenue": 13589.23
+    "purchaseCost": 5889.93,
+    "revenue": 9913.19
   },
   {
     "date": "2025-07-23",
-    "purchaseCost": 10036.66,
-    "revenue": 17384.33
+    "purchaseCost": 5834.05,
+    "revenue": 10435.56
   },
   {
     "date": "2025-07-24",
-    "purchaseCost": 9687.66,
-    "revenue": 15285.96
+    "purchaseCost": 7319.26,
+    "revenue": 11609.93
   },
   {
     "date": "2025-07-25",
-    "purchaseCost": 7683.72,
-    "revenue": 13452.91
+    "purchaseCost": 6494.46,
+    "revenue": 11659.52
   },
   {
     "date": "2025-07-26",
@@ -3390,8 +3390,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-07-29",
-    "purchaseCost": 10025.27,
-    "revenue": 17385.97
+    "purchaseCost": 9305.43,
+    "revenue": 16493.41
   },
   {
     "date": "2025-07-30",
@@ -3425,23 +3425,23 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-08-05",
-    "purchaseCost": 10015.05,
-    "revenue": 17766.95
+    "purchaseCost": 7086.2,
+    "revenue": 12660.34
   },
   {
     "date": "2025-08-06",
-    "purchaseCost": 5059.54,
-    "revenue": 8404.13
+    "purchaseCost": 4339.7,
+    "revenue": 7511.57
   },
   {
     "date": "2025-08-07",
-    "purchaseCost": 4428.6,
-    "revenue": 7396.71
+    "purchaseCost": 2642.9,
+    "revenue": 4512.41
   },
   {
     "date": "2025-08-08",
-    "purchaseCost": 7337.24,
-    "revenue": 15176.85
+    "purchaseCost": 6824.64,
+    "revenue": 13691.73
   },
   {
     "date": "2025-08-09",
@@ -3455,28 +3455,28 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-08-11",
-    "purchaseCost": 11380.25,
-    "revenue": 21219.86
+    "purchaseCost": 8261.24,
+    "revenue": 15733.08
   },
   {
     "date": "2025-08-12",
-    "purchaseCost": 11659.22,
-    "revenue": 20144.65
+    "purchaseCost": 10945.01,
+    "revenue": 18913.25
   },
   {
     "date": "2025-08-13",
-    "purchaseCost": 10251.5,
-    "revenue": 17094.23
+    "purchaseCost": 6894.15,
+    "revenue": 11416.55
   },
   {
     "date": "2025-08-14",
-    "purchaseCost": 6892.69,
-    "revenue": 12190.08
+    "purchaseCost": 2738.59,
+    "revenue": 5190.08
   },
   {
     "date": "2025-08-15",
-    "purchaseCost": 2571.51,
-    "revenue": 4395.88
+    "purchaseCost": 2071.51,
+    "revenue": 3495.05
   },
   {
     "date": "2025-08-16",
@@ -3490,28 +3490,28 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-08-18",
-    "purchaseCost": 8130.14,
-    "revenue": 14085.95
+    "purchaseCost": 5874.61,
+    "revenue": 10120.66
   },
   {
     "date": "2025-08-19",
-    "purchaseCost": 7167.51,
-    "revenue": 12089.27
+    "purchaseCost": 2833.3,
+    "revenue": 4743.81
   },
   {
     "date": "2025-08-20",
-    "purchaseCost": 9205.78,
-    "revenue": 15147.11
+    "purchaseCost": 4767.38,
+    "revenue": 8065.29
   },
   {
     "date": "2025-08-21",
-    "purchaseCost": 7893.05,
-    "revenue": 14411.56
+    "purchaseCost": 7238.34,
+    "revenue": 13280.16
   },
   {
     "date": "2025-08-22",
-    "purchaseCost": 3880.71,
-    "revenue": 7066.12
+    "purchaseCost": 1714.3,
+    "revenue": 3281
   },
   {
     "date": "2025-08-23",
@@ -3525,13 +3525,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-08-25",
-    "purchaseCost": 4435.76,
-    "revenue": 7651.25
+    "purchaseCost": 1833.25,
+    "revenue": 3198.35
   },
   {
     "date": "2025-08-26",
-    "purchaseCost": 4928.46,
-    "revenue": 8271.91
+    "purchaseCost": 2642.76,
+    "revenue": 4734.72
   },
   {
     "date": "2025-08-27",
@@ -3540,13 +3540,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-08-28",
-    "purchaseCost": 6458.67,
-    "revenue": 10781.81
+    "purchaseCost": 4101.49,
+    "revenue": 6857.85
   },
   {
     "date": "2025-08-29",
-    "purchaseCost": 4678.04,
-    "revenue": 8318.18
+    "purchaseCost": 3249.44,
+    "revenue": 5501.65
   },
   {
     "date": "2025-08-30",
@@ -3560,8 +3560,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-09-01",
-    "purchaseCost": 1389.61,
-    "revenue": 2492.56
+    "purchaseCost": 961.11,
+    "revenue": 1699.17
   },
   {
     "date": "2025-09-02",
@@ -3570,18 +3570,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-09-03",
-    "purchaseCost": 12160.19,
-    "revenue": 20584.28
+    "purchaseCost": 10493.5,
+    "revenue": 17899.16
   },
   {
     "date": "2025-09-04",
-    "purchaseCost": 5393.85,
-    "revenue": 8486.78
+    "purchaseCost": 4154.85,
+    "revenue": 6511.57
   },
   {
     "date": "2025-09-05",
-    "purchaseCost": 6691.48,
-    "revenue": 11254.55
+    "purchaseCost": 4500.09,
+    "revenue": 7717.36
   },
   {
     "date": "2025-09-06",
@@ -3595,8 +3595,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-09-08",
-    "purchaseCost": 4668.89,
-    "revenue": 7230.58
+    "purchaseCost": 3252.89,
+    "revenue": 5007.44
   },
   {
     "date": "2025-09-09",
@@ -3605,18 +3605,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-09-10",
-    "purchaseCost": 13457.9,
-    "revenue": 23590.07
+    "purchaseCost": 8780.21,
+    "revenue": 15231.39
   },
   {
     "date": "2025-09-11",
-    "purchaseCost": 12399.74,
-    "revenue": 21328.09
+    "purchaseCost": 11899.74,
+    "revenue": 20452.88
   },
   {
     "date": "2025-09-12",
-    "purchaseCost": 12607.15,
-    "revenue": 21727.27
+    "purchaseCost": 11952.39,
+    "revenue": 20595.87
   },
   {
     "date": "2025-09-13",
@@ -3635,23 +3635,23 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-09-16",
-    "purchaseCost": 10442.44,
-    "revenue": 18271.9
+    "purchaseCost": 8775.77,
+    "revenue": 15470.25
   },
   {
     "date": "2025-09-17",
-    "purchaseCost": 10289.62,
-    "revenue": 18258.67
+    "purchaseCost": 8980.09,
+    "revenue": 16283.46
   },
   {
     "date": "2025-09-18",
-    "purchaseCost": 14989.89,
-    "revenue": 27101.65
+    "purchaseCost": 12804.33,
+    "revenue": 22076.85
   },
   {
     "date": "2025-09-19",
-    "purchaseCost": 5702.38,
-    "revenue": 9719
+    "purchaseCost": 4392.85,
+    "revenue": 7826.44
   },
   {
     "date": "2025-09-20",
@@ -3670,8 +3670,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-09-23",
-    "purchaseCost": 8714.28,
-    "revenue": 13686.77
+    "purchaseCost": 7547.62,
+    "revenue": 11959.5
   },
   {
     "date": "2025-09-24",
@@ -3680,13 +3680,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-09-25",
-    "purchaseCost": 19679.39,
-    "revenue": 34090.08
+    "purchaseCost": 17107.15,
+    "revenue": 29091.74
   },
   {
     "date": "2025-09-26",
-    "purchaseCost": 10657.62,
-    "revenue": 19106.61
+    "purchaseCost": 9740.96,
+    "revenue": 17709.92
   },
   {
     "date": "2025-09-27",
@@ -3710,18 +3710,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-10-01",
-    "purchaseCost": 7146.98,
-    "revenue": 12868.6
+    "purchaseCost": 6530.62,
+    "revenue": 11239.67
   },
   {
     "date": "2025-10-02",
-    "purchaseCost": 10074,
-    "revenue": 18383.47
+    "purchaseCost": 8298.33,
+    "revenue": 15376.03
   },
   {
     "date": "2025-10-03",
-    "purchaseCost": 5555.28,
-    "revenue": 10271.89
+    "purchaseCost": 4035.71,
+    "revenue": 7495.86
   },
   {
     "date": "2025-10-04",
@@ -3745,13 +3745,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-10-08",
-    "purchaseCost": 7912.43,
-    "revenue": 14436.36
+    "purchaseCost": 6602.9,
+    "revenue": 12213.22
   },
   {
     "date": "2025-10-09",
-    "purchaseCost": 16558.07,
-    "revenue": 29156.19
+    "purchaseCost": 14678.57,
+    "revenue": 25610.74
   },
   {
     "date": "2025-10-10",
@@ -3770,8 +3770,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-10-13",
-    "purchaseCost": 5775.33,
-    "revenue": 10367.78
+    "purchaseCost": 2936.53,
+    "revenue": 5285.13
   },
   {
     "date": "2025-10-14",
@@ -3780,18 +3780,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-10-15",
-    "purchaseCost": 8907.14,
-    "revenue": 15422.31
+    "purchaseCost": 7594.67,
+    "revenue": 13814.05
   },
   {
     "date": "2025-10-16",
-    "purchaseCost": 13898.32,
-    "revenue": 23276.04
+    "purchaseCost": 10059.52,
+    "revenue": 16662.81
   },
   {
     "date": "2025-10-17",
-    "purchaseCost": 12877.4,
-    "revenue": 23085.96
+    "purchaseCost": 6818.74,
+    "revenue": 12411.57
   },
   {
     "date": "2025-10-18",
@@ -3810,18 +3810,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-10-21",
-    "purchaseCost": 11112.08,
-    "revenue": 20248.75
+    "purchaseCost": 9683.51,
+    "revenue": 17777.68
   },
   {
     "date": "2025-10-22",
-    "purchaseCost": 18564.18,
-    "revenue": 32736.37
+    "purchaseCost": 17149.72,
+    "revenue": 29933.06
   },
   {
     "date": "2025-10-23",
-    "purchaseCost": 6583.42,
-    "revenue": 11448.76
+    "purchaseCost": 5666.75,
+    "revenue": 9886.78
   },
   {
     "date": "2025-10-24",
@@ -3850,8 +3850,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-10-29",
-    "purchaseCost": 5738.13,
-    "revenue": 9636.37
+    "purchaseCost": 2523.81,
+    "revenue": 4198.35
   },
   {
     "date": "2025-10-30",
@@ -3860,8 +3860,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-10-31",
-    "purchaseCost": 3977.63,
-    "revenue": 8074.38
+    "purchaseCost": 3101.6,
+    "revenue": 5355.37
   },
   {
     "date": "2025-11-01",
@@ -3875,13 +3875,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-11-03",
-    "purchaseCost": 9226.19,
-    "revenue": 16903.3
+    "purchaseCost": 7726.19,
+    "revenue": 14052.06
   },
   {
     "date": "2025-11-04",
-    "purchaseCost": 10625.91,
-    "revenue": 18792.57
+    "purchaseCost": 7847.8,
+    "revenue": 14305.79
   },
   {
     "date": "2025-11-05",
@@ -3895,8 +3895,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-11-07",
-    "purchaseCost": 5779.93,
-    "revenue": 8421.5
+    "purchaseCost": 3139.75,
+    "revenue": 4381
   },
   {
     "date": "2025-11-08",
@@ -3910,28 +3910,28 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-11-10",
-    "purchaseCost": 14918.07,
-    "revenue": 27029.75
+    "purchaseCost": 13149.81,
+    "revenue": 23732.23
   },
   {
     "date": "2025-11-11",
-    "purchaseCost": 13399.09,
-    "revenue": 21271.9
+    "purchaseCost": 10172.15,
+    "revenue": 16362.81
   },
   {
     "date": "2025-11-12",
-    "purchaseCost": 21360.61,
-    "revenue": 33919.86
+    "purchaseCost": 15438.93,
+    "revenue": 24943.82
   },
   {
     "date": "2025-11-13",
-    "purchaseCost": 8005.82,
-    "revenue": 11314.88
+    "purchaseCost": 5794.57,
+    "revenue": 9009.09
   },
   {
     "date": "2025-11-14",
-    "purchaseCost": 10862.96,
-    "revenue": 15652.9
+    "purchaseCost": 7151.72,
+    "revenue": 11247.11
   },
   {
     "date": "2025-11-15",
@@ -3940,8 +3940,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-11-16",
-    "purchaseCost": 8494.86,
-    "revenue": 14919.84
+    "purchaseCost": 7161.53,
+    "revenue": 12531.41
   },
   {
     "date": "2025-11-17",
@@ -3965,8 +3965,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-11-21",
-    "purchaseCost": 5481.78,
-    "revenue": 10064.46
+    "purchaseCost": 2666.07,
+    "revenue": 4791.73
   },
   {
     "date": "2025-11-22",
@@ -3990,8 +3990,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-11-26",
-    "purchaseCost": 10280.16,
-    "revenue": 17635.54
+    "purchaseCost": 8400.66,
+    "revenue": 15164.47
   },
   {
     "date": "2025-11-27",
@@ -4000,8 +4000,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-11-28",
-    "purchaseCost": 15737.44,
-    "revenue": 23967.78
+    "purchaseCost": 15635.44,
+    "revenue": 23827.28
   },
   {
     "date": "2025-11-29",
@@ -4035,8 +4035,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-12-05",
-    "purchaseCost": 9441.14,
-    "revenue": 15594.23
+    "purchaseCost": 6672.48,
+    "revenue": 10495.88
   },
   {
     "date": "2025-12-06",
@@ -4055,8 +4055,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-12-09",
-    "purchaseCost": 5815.6,
-    "revenue": 11239.67
+    "purchaseCost": 4499.9,
+    "revenue": 7694.22
   },
   {
     "date": "2025-12-10",
@@ -4065,13 +4065,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-12-11",
-    "purchaseCost": 2673.86,
-    "revenue": 4565.29
+    "purchaseCost": 2233.86,
+    "revenue": 3609.92
   },
   {
     "date": "2025-12-12",
-    "purchaseCost": 4414.46,
-    "revenue": 8702.48
+    "purchaseCost": 3000,
+    "revenue": 5570.25
   },
   {
     "date": "2025-12-13",
@@ -4095,13 +4095,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2025-12-17",
-    "purchaseCost": 10400.47,
-    "revenue": 17900
+    "purchaseCost": 9090.94,
+    "revenue": 15842.15
   },
   {
     "date": "2025-12-18",
-    "purchaseCost": 2766.53,
-    "revenue": 6892.56
+    "purchaseCost": 2750,
+    "revenue": 5239.67
   },
   {
     "date": "2025-12-21",
@@ -4175,8 +4175,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-01-05",
-    "purchaseCost": 3731.5,
-    "revenue": 7203.3
+    "purchaseCost": 1750,
+    "revenue": 3501.65
   },
   {
     "date": "2026-01-06",
@@ -4195,8 +4195,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-01-09",
-    "purchaseCost": 6285.12,
-    "revenue": 12121.49
+    "purchaseCost": 6125.12,
+    "revenue": 11881.82
   },
   {
     "date": "2026-01-10",
@@ -4220,8 +4220,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-01-14",
-    "purchaseCost": 5429.79,
-    "revenue": 8404.13
+    "purchaseCost": 4285.51,
+    "revenue": 6363.64
   },
   {
     "date": "2026-01-15",
@@ -4230,8 +4230,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-01-16",
-    "purchaseCost": 8190.55,
-    "revenue": 13025.61
+    "purchaseCost": 6047.69,
+    "revenue": 10294.21
   },
   {
     "date": "2026-01-17",
@@ -4245,8 +4245,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-01-19",
-    "purchaseCost": 10803.8,
-    "revenue": 17097.54
+    "purchaseCost": 8815.04,
+    "revenue": 14213.24
   },
   {
     "date": "2026-01-20",
@@ -4255,8 +4255,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-01-21",
-    "purchaseCost": 5525.09,
-    "revenue": 8685.12
+    "purchaseCost": 4805.26,
+    "revenue": 7652.89
   },
   {
     "date": "2026-01-22",
@@ -4265,8 +4265,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-01-23",
-    "purchaseCost": 6378.99,
-    "revenue": 11107.44
+    "purchaseCost": 2666.67,
+    "revenue": 4448.76
   },
   {
     "date": "2026-01-24",
@@ -4290,8 +4290,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-01-28",
-    "purchaseCost": 10008.89,
-    "revenue": 17185.15
+    "purchaseCost": 9092.22,
+    "revenue": 15540.52
   },
   {
     "date": "2026-01-29",
@@ -4300,13 +4300,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-01-30",
-    "purchaseCost": 10639.5,
-    "revenue": 18871.07
+    "purchaseCost": 4106.57,
+    "revenue": 7447.1
   },
   {
     "date": "2026-01-31",
-    "purchaseCost": 9536.81,
-    "revenue": 15998.36
+    "purchaseCost": 8578.14,
+    "revenue": 14338.03
   },
   {
     "date": "2026-02-01",
@@ -4322,11 +4322,6 @@ export const marginDataCZ: MarginDailyRecord[] = [
     "date": "2026-02-03",
     "purchaseCost": 2583.33,
     "revenue": 4955.37
-  },
-  {
-    "date": "2026-02-04",
-    "purchaseCost": 2023.81,
-    "revenue": 2967.77
   },
   {
     "date": "2026-02-05",
@@ -4365,8 +4360,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-02-12",
-    "purchaseCost": 8354.16,
-    "revenue": 13998.35
+    "purchaseCost": 6925.59,
+    "revenue": 12105.79
   },
   {
     "date": "2026-02-13",
@@ -4390,8 +4385,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-02-17",
-    "purchaseCost": 9148.93,
-    "revenue": 19335.54
+    "purchaseCost": 7815.59,
+    "revenue": 16947.11
   },
   {
     "date": "2026-02-18",
@@ -4400,8 +4395,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-02-19",
-    "purchaseCost": 6269.2,
-    "revenue": 10793.38
+    "purchaseCost": 5549.36,
+    "revenue": 9761.15
   },
   {
     "date": "2026-02-20",
@@ -4430,8 +4425,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-02-25",
-    "purchaseCost": 11503.01,
-    "revenue": 17988.44
+    "purchaseCost": 9955.39,
+    "revenue": 15541.33
   },
   {
     "date": "2026-02-26",
@@ -4440,8 +4435,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-02-27",
-    "purchaseCost": 12318.64,
-    "revenue": 19885.14
+    "purchaseCost": 6999.67,
+    "revenue": 11815.7
   },
   {
     "date": "2026-02-28",
@@ -4465,18 +4460,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-03-04",
-    "purchaseCost": 16098.42,
-    "revenue": 28317.37
+    "purchaseCost": 12744.98,
+    "revenue": 23046.29
   },
   {
     "date": "2026-03-05",
-    "purchaseCost": 15027.49,
-    "revenue": 23421.51
+    "purchaseCost": 8834.14,
+    "revenue": 13871.08
   },
   {
     "date": "2026-03-06",
-    "purchaseCost": 11472.03,
-    "revenue": 18364.47
+    "purchaseCost": 5113.01,
+    "revenue": 8221.48
   },
   {
     "date": "2026-03-07",
@@ -4490,8 +4485,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-03-09",
-    "purchaseCost": 9361.87,
-    "revenue": 14454.54
+    "purchaseCost": 6619.05,
+    "revenue": 10020.66
   },
   {
     "date": "2026-03-10",
@@ -4500,8 +4495,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-03-11",
-    "purchaseCost": 11905.8,
-    "revenue": 19056.22
+    "purchaseCost": 5005.87,
+    "revenue": 7985.13
   },
   {
     "date": "2026-03-12",
@@ -4510,8 +4505,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-03-13",
-    "purchaseCost": 11071.35,
-    "revenue": 17518.2
+    "purchaseCost": 5618.89,
+    "revenue": 9113.24
   },
   {
     "date": "2026-03-14",
@@ -4525,28 +4520,28 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-03-16",
-    "purchaseCost": 14648.16,
-    "revenue": 22445.46
+    "purchaseCost": 9251.76,
+    "revenue": 14499.17
   },
   {
     "date": "2026-03-17",
-    "purchaseCost": 18611.46,
-    "revenue": 27089.28
+    "purchaseCost": 14983.67,
+    "revenue": 21262.82
   },
   {
     "date": "2026-03-18",
-    "purchaseCost": 10213.4,
-    "revenue": 15513.23
+    "purchaseCost": 8287.36,
+    "revenue": 12297.52
   },
   {
     "date": "2026-03-19",
-    "purchaseCost": 19624.27,
-    "revenue": 27901.66
+    "purchaseCost": 14452,
+    "revenue": 20416.53
   },
   {
     "date": "2026-03-20",
-    "purchaseCost": 9191.79,
-    "revenue": 13926.45
+    "purchaseCost": 4882.26,
+    "revenue": 7069.42
   },
   {
     "date": "2026-03-21",
@@ -4560,28 +4555,28 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-03-23",
-    "purchaseCost": 16866.67,
-    "revenue": 25699.19
+    "purchaseCost": 13208.02,
+    "revenue": 19866.13
   },
   {
     "date": "2026-03-24",
-    "purchaseCost": 14676.38,
-    "revenue": 23249.19
+    "purchaseCost": 12647.03,
+    "revenue": 20548.78
   },
   {
     "date": "2026-03-25",
-    "purchaseCost": 21263.47,
-    "revenue": 32793.4
+    "purchaseCost": 17647.94,
+    "revenue": 28016.54
   },
   {
     "date": "2026-03-26",
-    "purchaseCost": 8026.88,
-    "revenue": 13437.18
+    "purchaseCost": 2208.24,
+    "revenue": 4198.34
   },
   {
     "date": "2026-03-27",
-    "purchaseCost": 6555.12,
-    "revenue": 10788.43
+    "purchaseCost": 4172.53,
+    "revenue": 7066.11
   },
   {
     "date": "2026-03-28",
@@ -4595,13 +4590,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-03-30",
-    "purchaseCost": 10574.79,
-    "revenue": 17430.5
+    "purchaseCost": 7910.55,
+    "revenue": 12722.32
   },
   {
     "date": "2026-03-31",
-    "purchaseCost": 11482.1,
-    "revenue": 19123.15
+    "purchaseCost": 9565.6,
+    "revenue": 16154.55
   },
   {
     "date": "2026-04-01",
@@ -4635,13 +4630,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-04-07",
-    "purchaseCost": 11986.1,
-    "revenue": 18581
+    "purchaseCost": 8793.79,
+    "revenue": 13994.22
   },
   {
     "date": "2026-04-08",
-    "purchaseCost": 10709.21,
-    "revenue": 16911.58
+    "purchaseCost": 7207.68,
+    "revenue": 10746.28
   },
   {
     "date": "2026-04-09",
@@ -4650,8 +4645,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-04-10",
-    "purchaseCost": 5935.26,
-    "revenue": 9058.68
+    "purchaseCost": 2500,
+    "revenue": 4033.06
   },
   {
     "date": "2026-04-11",
@@ -4670,28 +4665,28 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-04-14",
-    "purchaseCost": 14805.31,
-    "revenue": 24129.79
+    "purchaseCost": 10039.28,
+    "revenue": 16423.99
   },
   {
     "date": "2026-04-15",
-    "purchaseCost": 11606.44,
-    "revenue": 19285.15
+    "purchaseCost": 8941.86,
+    "revenue": 14555.39
   },
   {
     "date": "2026-04-16",
-    "purchaseCost": 5744.23,
-    "revenue": 8761.16
+    "purchaseCost": 3961.19,
+    "revenue": 5726.45
   },
   {
     "date": "2026-04-17",
-    "purchaseCost": 13005.8,
-    "revenue": 18662.83
+    "purchaseCost": 9910.55,
+    "revenue": 13991.75
   },
   {
     "date": "2026-04-18",
-    "purchaseCost": 13577.91,
-    "revenue": 21763.67
+    "purchaseCost": 12268.38,
+    "revenue": 19688.46
   },
   {
     "date": "2026-04-19",
@@ -4700,8 +4695,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-04-20",
-    "purchaseCost": 9803.44,
-    "revenue": 18645.46
+    "purchaseCost": 7435.06,
+    "revenue": 13604.13
   },
   {
     "date": "2026-04-21",
@@ -4710,18 +4705,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-04-22",
-    "purchaseCost": 9380.52,
-    "revenue": 14578.52
+    "purchaseCost": 4166.1,
+    "revenue": 5842.98
   },
   {
     "date": "2026-04-23",
-    "purchaseCost": 7617.13,
-    "revenue": 13093.4
+    "purchaseCost": 5038.99,
+    "revenue": 9348.77
   },
   {
     "date": "2026-04-24",
-    "purchaseCost": 5114.93,
-    "revenue": 7962.81
+    "purchaseCost": 4156.68,
+    "revenue": 6478.51
   },
   {
     "date": "2026-04-25",
@@ -4745,13 +4740,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-04-29",
-    "purchaseCost": 6659.14,
-    "revenue": 10186.77
+    "purchaseCost": 3770,
+    "revenue": 5835.53
   },
   {
     "date": "2026-04-30",
-    "purchaseCost": 7939.84,
-    "revenue": 12696.71
+    "purchaseCost": 3397.55,
+    "revenue": 5619.01
   },
   {
     "date": "2026-05-01",
@@ -4775,18 +4770,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-05-05",
-    "purchaseCost": 8533.34,
-    "revenue": 13491.74
+    "purchaseCost": 6280.48,
+    "revenue": 10153.72
   },
   {
     "date": "2026-05-06",
-    "purchaseCost": 6397.99,
-    "revenue": 11699.18
+    "purchaseCost": 3053.48,
+    "revenue": 5690.08
   },
   {
     "date": "2026-05-07",
-    "purchaseCost": 12397.81,
-    "revenue": 19308.26
+    "purchaseCost": 9243.05,
+    "revenue": 14719
   },
   {
     "date": "2026-05-08",
@@ -4795,8 +4790,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-05-09",
-    "purchaseCost": 4089.29,
-    "revenue": 6373.56
+    "purchaseCost": 3214.29,
+    "revenue": 4894.22
   },
   {
     "date": "2026-05-10",
@@ -4810,23 +4805,23 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-05-12",
-    "purchaseCost": 17083.02,
-    "revenue": 27947.95
+    "purchaseCost": 12336.38,
+    "revenue": 20786.78
   },
   {
     "date": "2026-05-13",
-    "purchaseCost": 10850.96,
-    "revenue": 14209.93
+    "purchaseCost": 8940.31,
+    "revenue": 11199.18
   },
   {
     "date": "2026-05-14",
-    "purchaseCost": 29724.76,
-    "revenue": 40744.63
+    "purchaseCost": 26802.42,
+    "revenue": 36371.9
   },
   {
     "date": "2026-05-15",
-    "purchaseCost": 29851.21,
-    "revenue": 41796.71
+    "purchaseCost": 28995.4,
+    "revenue": 39952.9
   },
   {
     "date": "2026-05-16",
@@ -4840,28 +4835,28 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-05-18",
-    "purchaseCost": 46146.52,
-    "revenue": 61969.47
+    "purchaseCost": 44598.9,
+    "revenue": 59929.8
   },
   {
     "date": "2026-05-19",
-    "purchaseCost": 52787.39,
-    "revenue": 71947.13
+    "purchaseCost": 48522.11,
+    "revenue": 65735.55
   },
   {
     "date": "2026-05-20",
-    "purchaseCost": 16350.82,
-    "revenue": 24869.48
+    "purchaseCost": 8309.61,
+    "revenue": 12523.14
   },
   {
     "date": "2026-05-21",
-    "purchaseCost": 10974.74,
-    "revenue": 18510.75
+    "purchaseCost": 8211.1,
+    "revenue": 13616.53
   },
   {
     "date": "2026-05-22",
-    "purchaseCost": 13299.21,
-    "revenue": 21170.25
+    "purchaseCost": 9448.93,
+    "revenue": 14745.46
   },
   {
     "date": "2026-05-23",
@@ -4880,13 +4875,13 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-05-26",
-    "purchaseCost": 29645.47,
-    "revenue": 41841.33
+    "purchaseCost": 24310.14,
+    "revenue": 34077.7
   },
   {
     "date": "2026-05-27",
-    "purchaseCost": 27849.56,
-    "revenue": 37542.5
+    "purchaseCost": 17939.67,
+    "revenue": 23807.44
   },
   {
     "date": "2026-05-28",
@@ -4895,8 +4890,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-05-29",
-    "purchaseCost": 10002.16,
-    "revenue": 15031.5
+    "purchaseCost": 4966.43,
+    "revenue": 7637.2
   },
   {
     "date": "2026-05-30",
@@ -4910,28 +4905,23 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-06-01",
-    "purchaseCost": 7533.11,
-    "revenue": 12653.72
+    "purchaseCost": 4811.43,
+    "revenue": 8459.51
   },
   {
     "date": "2026-06-02",
-    "purchaseCost": 9410.53,
-    "revenue": 15120.03
+    "purchaseCost": 5374.49,
+    "revenue": 8662
   },
   {
     "date": "2026-06-03",
-    "purchaseCost": 8835.1,
-    "revenue": 13337.2
+    "purchaseCost": 6876.27,
+    "revenue": 11043.81
   },
   {
     "date": "2026-06-04",
-    "purchaseCost": 6682.81,
-    "revenue": 10021.15
-  },
-  {
-    "date": "2026-06-05",
-    "purchaseCost": 6179.25,
-    "revenue": 10458.7
+    "purchaseCost": 1716,
+    "revenue": 3103.31
   },
   {
     "date": "2026-06-06",
@@ -4950,23 +4940,23 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-06-09",
-    "purchaseCost": 6703.25,
-    "revenue": 11888.43
+    "purchaseCost": 4661.24,
+    "revenue": 7909.91
   },
   {
     "date": "2026-06-10",
-    "purchaseCost": 10366.18,
-    "revenue": 16511.57
+    "purchaseCost": 7005.54,
+    "revenue": 10490.07
   },
   {
     "date": "2026-06-11",
-    "purchaseCost": 6551.83,
-    "revenue": 11919.85
+    "purchaseCost": 3787.26,
+    "revenue": 6431.41
   },
   {
     "date": "2026-06-12",
-    "purchaseCost": 8915.45,
-    "revenue": 13909.1
+    "purchaseCost": 7957.19,
+    "revenue": 12346.29
   },
   {
     "date": "2026-06-13",
@@ -4980,28 +4970,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-06-15",
-    "purchaseCost": 12117.84,
-    "revenue": 19134.72
+    "purchaseCost": 4448.62,
+    "revenue": 7370.25
   },
   {
     "date": "2026-06-16",
-    "purchaseCost": 6568.53,
-    "revenue": 9881.83
+    "purchaseCost": 4673.53,
+    "revenue": 7409.92
   },
   {
     "date": "2026-06-17",
-    "purchaseCost": 2916.57,
-    "revenue": 4857.86
-  },
-  {
-    "date": "2026-06-18",
-    "purchaseCost": 3197.24,
-    "revenue": 4743.81
-  },
-  {
-    "date": "2026-06-19",
-    "purchaseCost": 10449.4,
-    "revenue": 17781
+    "purchaseCost": 892.75,
+    "revenue": 1479.34
   },
   {
     "date": "2026-06-20",
@@ -5020,23 +5000,23 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-06-23",
-    "purchaseCost": 12801.78,
-    "revenue": 20259.53
+    "purchaseCost": 7579.27,
+    "revenue": 12074.39
   },
   {
     "date": "2026-06-24",
-    "purchaseCost": 8270.06,
-    "revenue": 14666.96
+    "purchaseCost": 6619.3,
+    "revenue": 11402.49
   },
   {
     "date": "2026-06-25",
-    "purchaseCost": 4400.37,
-    "revenue": 6962.82
+    "purchaseCost": 3444.17,
+    "revenue": 5483.48
   },
   {
     "date": "2026-06-26",
-    "purchaseCost": 10691.14,
-    "revenue": 17780.99
+    "purchaseCost": 9071.88,
+    "revenue": 15186.77
   },
   {
     "date": "2026-06-27",
@@ -5060,18 +5040,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-07-01",
-    "purchaseCost": 3185.05,
-    "revenue": 5004.64
+    "purchaseCost": 2280.09,
+    "revenue": 3627.28
   },
   {
     "date": "2026-07-02",
-    "purchaseCost": 8045.4,
-    "revenue": 13120.67
+    "purchaseCost": 6140.64,
+    "revenue": 10376.04
   },
   {
     "date": "2026-07-03",
-    "purchaseCost": 7815.6,
-    "revenue": 11412.16
+    "purchaseCost": 4482.27,
+    "revenue": 6429.75
   },
   {
     "date": "2026-07-04",
@@ -5090,8 +5070,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-07-07",
-    "purchaseCost": 3952.62,
-    "revenue": 6223.97
+    "purchaseCost": 2994.37,
+    "revenue": 4739.67
   },
   {
     "date": "2026-07-08",
@@ -5130,18 +5110,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-07-15",
-    "purchaseCost": 6036.51,
-    "revenue": 10681.17
+    "purchaseCost": 5131.55,
+    "revenue": 9162.81
   },
   {
     "date": "2026-07-16",
-    "purchaseCost": 4761.92,
-    "revenue": 7293.39
+    "purchaseCost": 3452.39,
+    "revenue": 5495.04
   },
   {
     "date": "2026-07-17",
-    "purchaseCost": 6495.63,
-    "revenue": 8824.81
+    "purchaseCost": 3928.62,
+    "revenue": 6443.81
   },
   {
     "date": "2026-07-18",
@@ -5155,18 +5135,18 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-07-20",
-    "purchaseCost": 1916.5,
-    "revenue": 405.79
+    "purchaseCost": 958.25,
+    "revenue": 1640.5
   },
   {
     "date": "2026-07-21",
-    "purchaseCost": 3690.52,
-    "revenue": 5791.75
+    "purchaseCost": 2142.9,
+    "revenue": 3344.64
   },
   {
     "date": "2026-07-22",
-    "purchaseCost": 3668.32,
-    "revenue": 5718.18
+    "purchaseCost": 2477.84,
+    "revenue": 3960.33
   },
   {
     "date": "2026-07-23",
@@ -5195,23 +5175,23 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-07-28",
-    "purchaseCost": 9637.71,
-    "revenue": 14035.04
+    "purchaseCost": 5224.28,
+    "revenue": 7595.05
   },
   {
     "date": "2026-07-29",
-    "purchaseCost": 3606.77,
-    "revenue": 4767.77
+    "purchaseCost": 2860.96,
+    "revenue": 3619.84
   },
   {
     "date": "2026-07-30",
-    "purchaseCost": 6002.11,
-    "revenue": 8565.36
+    "purchaseCost": 5435.11,
+    "revenue": 7776.86
   },
   {
     "date": "2026-07-31",
-    "purchaseCost": 7796.71,
-    "revenue": 11958.68
+    "purchaseCost": 2575.45,
+    "revenue": 4057.03
   },
   {
     "date": "2026-08-02",
@@ -5225,8 +5205,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-08-04",
-    "purchaseCost": 6130.97,
-    "revenue": 8354.79
+    "purchaseCost": 3273.82,
+    "revenue": 4652.07
   },
   {
     "date": "2026-08-05",
@@ -5235,8 +5215,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-08-06",
-    "purchaseCost": 5965.66,
-    "revenue": 9633.06
+    "purchaseCost": 4179.94,
+    "revenue": 6962.81
   },
   {
     "date": "2026-08-07",
@@ -5260,23 +5240,23 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-08-11",
-    "purchaseCost": 7427.67,
-    "revenue": 12426.44
+    "purchaseCost": 4276.78,
+    "revenue": 6669.42
   },
   {
     "date": "2026-08-12",
-    "purchaseCost": 13454.07,
-    "revenue": 19171.91
+    "purchaseCost": 2555.06,
+    "revenue": 2809.09
   },
   {
     "date": "2026-08-13",
-    "purchaseCost": 3105.64,
-    "revenue": 4288.43
+    "purchaseCost": 1927.27,
+    "revenue": 2297.52
   },
   {
     "date": "2026-08-14",
-    "purchaseCost": 10159.05,
-    "revenue": 13653.72
+    "purchaseCost": 8093.54,
+    "revenue": 10395.86
   },
   {
     "date": "2026-08-15",
@@ -5295,17 +5275,17 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-08-18",
-    "purchaseCost": 10136.82,
-    "revenue": 15018.69
+    "purchaseCost": 6446.34,
+    "revenue": 9286.78
   },
   {
     "date": "2026-08-19",
-    "purchaseCost": 13618.67,
-    "revenue": 21108.42
+    "purchaseCost": 4443.3,
+    "revenue": 7210.73
   },
   {
     "date": "2026-08-20",
-    "purchaseCost": 4611.33,
-    "revenue": 6978.5
+    "purchaseCost": 3444.57,
+    "revenue": 4920.65
   }
 ];

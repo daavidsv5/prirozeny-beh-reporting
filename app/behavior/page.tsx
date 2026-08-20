@@ -3,11 +3,14 @@
 import { useMemo } from 'react';
 import { TrendingUp, TrendingDown } from 'lucide-react';
 import { useFilters, getDateRange } from '@/hooks/useFilters';
-import { mockData } from '@/data/mockGenerator';
+import { mockData, mockDataEshop, mockDataProdejna } from '@/data/mockGenerator';
 import { getDisplayCurrency, EUR_TO_CZK } from '@/data/types';
 import { formatCurrency, formatPercent, formatDate, localIsoDate } from '@/lib/formatters';
 import { hourlyDataCZ } from '@/data/hourlyDataCZ';
+import { hourlyDataCZEshop } from '@/data/hourlyDataCZEshop';
+import { hourlyDataCZProdejna } from '@/data/hourlyDataCZProdejna';
 import { hourlyDataSK } from '@/data/hourlyDataSK';
+import { useStoreFilter, pickByStore } from '@/hooks/useStoreFilter';
 import {
   BarChart,
   Bar,
@@ -32,6 +35,9 @@ function formatYAxis(v: number, cur: 'CZK' | 'EUR') {
 
 export default function BehaviorPage() {
   const { filters, eurToCzk } = useFilters();
+  const { store } = useStoreFilter();
+  const storeMockData    = pickByStore(store, mockData, mockDataEshop, mockDataProdejna);
+  const storeHourlyDataCZ = pickByStore(store, hourlyDataCZ, hourlyDataCZEshop, hourlyDataCZProdejna);
   const { start, end } = getDateRange(filters);
 
   const startStr = localIsoDate(start);
@@ -46,10 +52,10 @@ export default function BehaviorPage() {
   // Filter mockData by date range + selected countries
   const filtered = useMemo(
     () =>
-      mockData.filter(
+      storeMockData.filter(
         r => r.date >= startStr && r.date <= endStr && filters.countries.includes(r.country)
       ),
-    [startStr, endStr, filters.countries]
+    [startStr, endStr, filters.countries, storeMockData]
   );
 
   // Aggregate by weekday
@@ -91,7 +97,7 @@ export default function BehaviorPage() {
     const totRev  = new Array(24).fill(0);
     const totDays = new Array(24).fill(0);
 
-    const source = isSKOnly ? hourlyDataSK : isCZOnly ? hourlyDataCZ : null;
+    const source = isSKOnly ? hourlyDataSK : isCZOnly ? storeHourlyDataCZ : null;
 
     if (source) {
       for (const p of source) {
@@ -100,9 +106,11 @@ export default function BehaviorPage() {
         totDays[p.hour] += p.dayCount;
       }
     } else {
-      // Vše: CZ in CZK + SK converted to CZK
-      for (const p of hourlyDataCZ) { totRev[p.hour] += p.totalRevenue;         totDays[p.hour] += p.dayCount; }
-      for (const p of hourlyDataSK) { totRev[p.hour] += p.totalRevenue * eur; totDays[p.hour] += p.dayCount; }
+      // Vše (bez store filtru): CZ in CZK + SK converted to CZK
+      for (const p of storeHourlyDataCZ) { totRev[p.hour] += p.totalRevenue;         totDays[p.hour] += p.dayCount; }
+      if (store === 'all') {
+        for (const p of hourlyDataSK) { totRev[p.hour] += p.totalRevenue * eur; totDays[p.hour] += p.dayCount; }
+      }
     }
 
     return Array.from({ length: 24 }, (_, h) => ({
@@ -110,7 +118,7 @@ export default function BehaviorPage() {
       revenue: totDays[h] > 0 ? Math.round(totRev[h] / totDays[h]) : 0,
     }));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters.countries, eurToCzk]);
+  }, [filters.countries, eurToCzk, storeHourlyDataCZ, store]);
 
   const strongest = [...stats].sort((a, b) => b.avgRevenue - a.avgRevenue)[0];
   const weakest   = [...stats].sort((a, b) => a.avgRevenue - b.avgRevenue)[0];

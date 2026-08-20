@@ -1,6 +1,8 @@
 import { auth } from '@/auth';
 import { NextRequest, NextResponse } from 'next/server';
 import { productDataCZ } from '@/data/productDataCZ';
+import { productDataCZEshop } from '@/data/productDataCZEshop';
+import { productDataCZProdejna } from '@/data/productDataCZProdejna';
 import { localIsoDate } from '@/lib/formatters';
 import { getProducts, czName } from '@/lib/upgatesProducts';
 
@@ -40,6 +42,10 @@ export async function GET(req: NextRequest) {
   const e  = searchParams.get('to')       ?? today;
   const ps = searchParams.get('prevFrom') ?? '';
   const pe = searchParams.get('prevTo')   ?? '';
+  const storeParam = searchParams.get('store') ?? 'all';
+  const productData = storeParam === 'eshop' ? productDataCZEshop
+    : storeParam === 'prodejna' ? productDataCZProdejna
+    : productDataCZ;
 
   const rawProducts = await getProducts();
 
@@ -66,7 +72,7 @@ export async function GET(req: NextRequest) {
   const dailyMap     = new Map<string, Map<string, number>>(); // brand → date → revenue (current)
   const dailyPrevMap = new Map<string, Map<string, number>>(); // brand → date → revenue (prev)
 
-  for (const r of productDataCZ) {
+  for (const r of productData) {
     const brand = nameManufMap.get(r.name) ?? '(bez výrobce)';
 
     if (r.date >= s && r.date <= e) {

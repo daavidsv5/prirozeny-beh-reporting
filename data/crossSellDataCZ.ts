@@ -15,7 +15,7 @@ export interface CrossSellData {
 }
 
 export const crossSellDataCZ: CrossSellData = {
-  "totalOrders": 4834,
+  "totalOrders": 4837,
   "multiItemOrders": 844,
   "pairs": [
     {

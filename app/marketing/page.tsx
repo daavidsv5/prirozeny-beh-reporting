@@ -2,7 +2,11 @@
 
 import { useFilters, getDateRange } from '@/hooks/useFilters';
 import { useDashboardData } from '@/hooks/useDashboardData';
-import { mockData, getMarketingSourceData, getDailyMarketingData } from '@/data/mockGenerator';
+import { mockData, mockDataEshop, mockDataProdejna, getMarketingSourceData, getDailyMarketingData } from '@/data/mockGenerator';
+import { realDataCZ } from '@/data/realDataCZ';
+import { realDataCZEshop } from '@/data/realDataCZEshop';
+import { realDataCZProdejna } from '@/data/realDataCZProdejna';
+import { useStoreFilter, pickByStore } from '@/hooks/useStoreFilter';
 import KpiCard from '@/components/kpi/KpiCard';
 import CostPnoChart from '@/components/charts/CostPnoChart';
 import { formatCurrency, formatPercent, formatNumber, formatDate, formatShortDate, localIsoDate } from '@/lib/formatters';
@@ -39,7 +43,10 @@ function pnoColor(pno: number): string {
 
 export default function MarketingPage() {
   const { filters, eurToCzk } = useFilters();
-  const { kpi, yoy, chartData, currentData, currency, hasPrevData } = useDashboardData(filters, mockData, eurToCzk);
+  const { store } = useStoreFilter();
+  const storeMockData    = pickByStore(store, mockData, mockDataEshop, mockDataProdejna);
+  const storeRealDataCZ  = pickByStore(store, realDataCZ, realDataCZEshop, realDataCZProdejna);
+  const { kpi, yoy, chartData, currentData, currency, hasPrevData } = useDashboardData(filters, storeMockData, eurToCzk);
   const fc = (v: number) => formatCurrency(v, currency);
 
   const { start, end } = getDateRange(filters);
@@ -65,7 +72,8 @@ export default function MarketingPage() {
     localIsoDate(sDaily),
     localIsoDate(eDaily),
     filters.countries,
-    eurToCzk
+    eurToCzk,
+    storeRealDataCZ
   );
 
   const dailyRows = allDailyMarketing.slice(0, 30).map(r => ({ ...r }));
@@ -86,7 +94,8 @@ export default function MarketingPage() {
     localIsoDate(sDaily),
     localIsoDate(eDaily),
     filters.countries,
-    eurToCzk
+    eurToCzk,
+    storeRealDataCZ
   );
 
   // Per-channel summary metrics
@@ -107,7 +116,8 @@ export default function MarketingPage() {
     localIsoDate(prevStart),
     localIsoDate(prevEnd),
     filters.countries,
-    eurToCzk
+    eurToCzk,
+    storeRealDataCZ
   ) : [];
   const fbPrev = prevSourceData.find(s => s.source === 'Facebook Ads') ?? { cost: 0, clicks: 0 };
   const ggPrev = prevSourceData.find(s => s.source === 'Google Ads')   ?? { cost: 0, clicks: 0 };

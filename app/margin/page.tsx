@@ -3,10 +3,15 @@
 import { useMemo } from 'react';
 import { useFilters, getDateRange } from '@/hooks/useFilters';
 import { marginDataCZ } from '@/data/marginDataCZ';
+import { marginDataCZEshop } from '@/data/marginDataCZEshop';
+import { prodejnaMarginDataCZ } from '@/data/prodejnaMarginDataCZ';
 import { marginDataSK as _marginDataSK } from '@/data/marginDataSK';
 import { realDataCZ } from '@/data/realDataCZ';
+import { realDataCZEshop } from '@/data/realDataCZEshop';
+import { realDataCZProdejna } from '@/data/realDataCZProdejna';
 import { realDataSK as _realDataSK } from '@/data/realDataSK';
 import { SK_LAUNCH_DATE } from '@/data/types';
+import { useStoreFilter, pickByStore } from '@/hooks/useStoreFilter';
 
 const marginDataSK = _marginDataSK.filter(r => r.date >= SK_LAUNCH_DATE);
 const realDataSK   = _realDataSK.filter(r => r.date >= SK_LAUNCH_DATE);
@@ -57,6 +62,9 @@ const MarzeTooltip = ({ active, payload, label, currency, isMonthly }: any) => {
 export default function MarginPage() {
   const { filters, eurToCzk } = useFilters();
   const { start, end } = getDateRange(filters);
+  const { store } = useStoreFilter();
+  const storeMarginDataCZ = pickByStore(store, marginDataCZ, marginDataCZEshop, prodejnaMarginDataCZ);
+  const storeRealDataCZ   = pickByStore(store, realDataCZ, realDataCZEshop, realDataCZProdejna);
 
   const startStr = localIsoDate(start);
   const endStr   = localIsoDate(end);
@@ -65,6 +73,7 @@ export default function MarginPage() {
   const isCZOnly  = filters.countries.length === 1 && filters.countries[0] === 'cz';
   const isSKOnly  = filters.countries.length === 1 && filters.countries[0] === 'sk';
   const isAll     = !isCZOnly && !isSKOnly;
+  const includeSK = !isCZOnly && store === 'all';
 
   // SK values are in EUR; multiply by this to get the display currency
   const skMult = isSKOnly ? 1 : eurToCzk;
@@ -73,11 +82,11 @@ export default function MarginPage() {
   // Build index of realData by date
   const realCZByDate = useMemo(() => {
     const m: Record<string, { revenue_vat: number; revenue: number; orders: number; cost: number }> = {};
-    for (const r of realDataCZ) {
+    for (const r of storeRealDataCZ) {
       m[r.date] = { revenue_vat: r.revenue_vat, revenue: r.revenue, orders: r.orders, cost: r.cost };
     }
     return m;
-  }, []);
+  }, [storeRealDataCZ]);
 
   const realSKByDate = useMemo(() => {
     const m: Record<string, { revenue_vat: number; revenue: number; orders: number; cost: number }> = {};
@@ -93,7 +102,7 @@ export default function MarginPage() {
 
     // Pre-build margin data maps for fast lookup
     const marginCZMap: Record<string, number> = {};
-    for (const r of marginDataCZ) marginCZMap[r.date] = r.revenue;
+    for (const r of storeMarginDataCZ) marginCZMap[r.date] = r.revenue;
     const marginSKMap: Record<string, number> = {};
     for (const r of marginDataSK) marginSKMap[r.date] = r.revenue;
 
@@ -102,7 +111,7 @@ export default function MarginPage() {
 
     // CZ data
     if (!isSKOnly) {
-      for (const r of marginDataCZ) {
+      for (const r of storeMarginDataCZ) {
         if (r.date < startStr || r.date > endStr) continue;
         datesInRange.add(r.date);
         purchaseCost += r.purchaseCost;
@@ -132,7 +141,7 @@ export default function MarginPage() {
     }
 
     // SK data
-    if (!isCZOnly) {
+    if (includeSK) {
       for (const r of marginDataSK) {
         if (r.date < startStr || r.date > endStr) continue;
         datesInRange.add(r.date);
@@ -167,7 +176,7 @@ export default function MarginPage() {
     for (const [d, v] of Object.entries(dailyMap)) {
       let dayRev = 0;
       if (!isSKOnly && marginCZMap[d]) dayRev += marginCZMap[d];
-      if (!isCZOnly && marginSKMap[d]) dayRev += marginSKMap[d] * skMult;
+      if (includeSK && marginSKMap[d]) dayRev += marginSKMap[d] * skMult;
       v.marzePct     = dayRev > 0 ? (v.marze / dayRev) * 100 : 0;
       v.hrubyZiskPct = dayRev > 0 ? (v.hrubyZisk / dayRev) * 100 : 0;
     }
@@ -214,7 +223,7 @@ export default function MarginPage() {
       skHasPurchaseCost,
       isMonthly: dayCount > 60,
     };
-  }, [startStr, endStr, realCZByDate, realSKByDate, isCZOnly, isSKOnly, skMult]);
+  }, [startStr, endStr, realCZByDate, realSKByDate, isCZOnly, isSKOnly, skMult, storeMarginDataCZ, includeSK]);
 
   const { revVat, rev, orders, cost, margin, marginPct, grossProfit, grossPct, pno } = totals;
   const dateTickFormatter = isMonthly ? formatMonthYear : formatShortDate;

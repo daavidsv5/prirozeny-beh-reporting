@@ -3,13 +3,16 @@
 import { useMemo } from 'react';
 import { useFilters, getDateRange } from '@/hooks/useFilters';
 import { useDashboardData } from '@/hooks/useDashboardData';
-import { mockData } from '@/data/mockGenerator';
+import { mockData, mockDataEshop, mockDataProdejna } from '@/data/mockGenerator';
 import KpiCard from '@/components/kpi/KpiCard';
 import { formatCurrency, formatNumber, formatPercent, formatDate, formatShortDate, localIsoDate } from '@/lib/formatters';
 import { Wallet, Banknote, ShoppingCart, BarChart2, XCircle, AlertTriangle, Lightbulb, CalendarDays } from 'lucide-react';
 import { orderValueDataCZ } from '@/data/orderValueDataCZ';
+import { orderValueDataCZEshop } from '@/data/orderValueDataCZEshop';
+import { orderValueDataCZProdejna } from '@/data/orderValueDataCZProdejna';
 import { orderValueDataSK as _orderValueDataSK } from '@/data/orderValueDataSK';
 import { getDisplayCurrency, SK_LAUNCH_DATE } from '@/data/types';
+import { useStoreFilter, pickByStore } from '@/hooks/useStoreFilter';
 
 const orderValueDataSK = _orderValueDataSK.filter(r => r.date >= SK_LAUNCH_DATE);
 import { C } from '@/lib/chartColors';
@@ -75,7 +78,10 @@ function buildHistogram(values: number[], buckets: typeof CZK_BUCKETS) {
 
 export default function OrdersPage() {
   const { filters, eurToCzk } = useFilters();
-  const { kpi, prevKpi, yoy, chartData, currentData, currency, hasPrevData } = useDashboardData(filters, mockData, eurToCzk);
+  const { store } = useStoreFilter();
+  const storeMockData = pickByStore(store, mockData, mockDataEshop, mockDataProdejna);
+  const storeOrderValueDataCZ = pickByStore(store, orderValueDataCZ, orderValueDataCZEshop, orderValueDataCZProdejna);
+  const { kpi, prevKpi, yoy, chartData, currentData, currency, hasPrevData } = useDashboardData(filters, storeMockData, eurToCzk);
 
   const { start, end } = getDateRange(filters);
   const subtitle = `${formatDate(start)} – ${formatDate(end)}`;
@@ -139,13 +145,13 @@ export default function OrdersPage() {
     const skMult = onlySK ? 1 : eurToCzk;
 
     if (filters.countries.includes('cz')) {
-      for (const r of orderValueDataCZ) {
+      for (const r of storeOrderValueDataCZ) {
         if (r.date >= localIsoDate(start) && r.date <= localIsoDate(end)) {
           filtered.push(r.value);
         }
       }
     }
-    if (filters.countries.includes('sk')) {
+    if (filters.countries.includes('sk') && store === 'all') {
       for (const r of orderValueDataSK) {
         if (r.date >= localIsoDate(start) && r.date <= localIsoDate(end)) {
           filtered.push(r.value * skMult);
@@ -158,7 +164,7 @@ export default function OrdersPage() {
       histogram: buildHistogram(filtered, buckets),
       hasOrderValueData: filtered.length > 0,
     };
-  }, [filters.countries, start, end, currency, eurToCzk]);
+  }, [filters.countries, start, end, currency, eurToCzk, storeOrderValueDataCZ, store]);
 
   const kpiCards = [
     { title: 'Tržby s DPH',     value: fc(kpi.revenuevat), yoy: yoy.revenuevat, sparklineData: dailyRevenue, icon: <Wallet size={16} /> },

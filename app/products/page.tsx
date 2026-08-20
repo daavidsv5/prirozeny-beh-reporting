@@ -9,10 +9,13 @@ import {
 import StatCard from '@/components/kpi/StatCard';
 import { useFilters, getDateRange } from '@/hooks/useFilters';
 import { useDashboardData } from '@/hooks/useDashboardData';
-import { mockData } from '@/data/mockGenerator';
+import { mockData, mockDataEshop, mockDataProdejna } from '@/data/mockGenerator';
 import { productDataCZ } from '@/data/productDataCZ';
+import { productDataCZEshop } from '@/data/productDataCZEshop';
+import { productDataCZProdejna } from '@/data/productDataCZProdejna';
 import { productDataSK } from '@/data/productDataSK';
 import { getDisplayCurrency } from '@/data/types';
+import { useStoreFilter, pickByStore } from '@/hooks/useStoreFilter';
 import { formatCurrency, formatNumber, formatDate, localIsoDate, formatMonthYear } from '@/lib/formatters';
 
 type SortKey = 'name' | 'amount' | 'revenue' | 'revenue_vat' | 'abc' | 'margin' | 'marginPct';
@@ -77,12 +80,13 @@ function aggregateByName(
   countries: string[],
   startStr: string,
   endStr: string,
-  skMult: number
+  skMult: number,
+  productsCZ: typeof productDataCZ
 ): Record<string, { amount: number; revenue: number; revenue_vat: number; purchaseCost: number }> {
   const byName: Record<string, { amount: number; revenue: number; revenue_vat: number; purchaseCost: number }> = {};
 
   if (countries.includes('cz')) {
-    for (const r of productDataCZ) {
+    for (const r of productsCZ) {
       if (r.date < startStr || r.date > endStr) continue;
       if (!byName[r.name]) byName[r.name] = { amount: 0, revenue: 0, revenue_vat: 0, purchaseCost: 0 };
       byName[r.name].amount       += r.amount;
@@ -119,6 +123,7 @@ function aggregateProductTrend(
   endStr: string,
   skMult: number,
   isMonthly: boolean,
+  productsCZ: typeof productDataCZ,
 ): { key: string; [name: string]: number | string }[] {
   const buckets = new Map<string, Record<string, number>>();
 
@@ -129,7 +134,7 @@ function aggregateProductTrend(
   };
 
   const sources = [
-    ...(countries.includes('cz') ? productDataCZ.map(r => ({ ...r, mult: 1 })) : []),
+    ...(countries.includes('cz') ? productsCZ.map(r => ({ ...r, mult: 1 })) : []),
     ...(countries.includes('sk') ? productDataSK.map(r => ({ ...r, mult: skMult })) : []),
   ];
 
@@ -168,10 +173,11 @@ interface ProductTrendChartProps {
   currency: string;
   isMonthly: boolean;
   fc: (v: number) => string;
+  productsCZ: typeof productDataCZ;
 }
 
 function ProductTrendChart({
-  allProductNames, countries, startStr, endStr, skMult, currency, isMonthly, fc,
+  allProductNames, countries, startStr, endStr, skMult, currency, isMonthly, fc, productsCZ,
 }: ProductTrendChartProps) {
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
   const [query, setQuery] = useState('');
@@ -213,8 +219,8 @@ function ProductTrendChart({
 
   const chartData = useMemo(() => {
     if (selectedProducts.length === 0) return [];
-    return aggregateProductTrend(selectedProducts, countries, startStr, endStr, skMult, isMonthly);
-  }, [selectedProducts, countries, startStr, endStr, skMult, isMonthly]);
+    return aggregateProductTrend(selectedProducts, countries, startStr, endStr, skMult, isMonthly, productsCZ);
+  }, [selectedProducts, countries, startStr, endStr, skMult, isMonthly, productsCZ]);
 
   const fmtKey = (key: string) => isMonthly
     ? formatMonthYear(key + '-01')
@@ -409,7 +415,10 @@ function ProductTrendChart({
 
 export default function ProductsPage() {
   const { filters, eurToCzk } = useFilters();
-  const { kpi, prevKpi, yoy, hasPrevData: hasPrevDataDash } = useDashboardData(filters, mockData, eurToCzk);
+  const { store } = useStoreFilter();
+  const storeMockData    = pickByStore(store, mockData, mockDataEshop, mockDataProdejna);
+  const storeProductData = pickByStore(store, productDataCZ, productDataCZEshop, productDataCZProdejna);
+  const { kpi, prevKpi, yoy, hasPrevData: hasPrevDataDash } = useDashboardData(filters, storeMockData, eurToCzk);
   const [sortKey, setSortKey] = useState<SortKey>('revenue');
   const [sortDir, setSortDir] = useState<SortDir>('desc');
   const [abcFilter, setAbcFilter] = useState<AbcFilter>('all');
@@ -430,8 +439,8 @@ export default function ProductsPage() {
   const skMult = onlySK ? 1 : eurToCzk;
 
   const { rows, hasPrevData, abcStats, prevTotalAmount } = useMemo(() => {
-    const current = aggregateByName(filters.countries, startStr, endStr, skMult);
-    const prev    = aggregateByName(filters.countries, prevStartStr, prevEndStr, skMult);
+    const current = aggregateByName(filters.countries, startStr, endStr, skMult, storeProductData);
+    const prev    = aggregateByName(filters.countries, prevStartStr, prevEndStr, skMult, storeProductData);
 
     const hasPrev = Object.values(prev).some(r => r.amount > 0);
 
@@ -499,15 +508,15 @@ export default function ProductsPage() {
     const prevTotalAmount = list.reduce((s, r) => s + r.prevAmount, 0);
 
     return { rows: fullList, hasPrevData: hasPrev, abcStats, prevTotalAmount };
-  }, [filters.countries, startStr, endStr, prevStartStr, prevEndStr, skMult, sortKey, sortDir]);
+  }, [filters.countries, startStr, endStr, prevStartStr, prevEndStr, skMult, sortKey, sortDir, storeProductData]);
 
   // All product names for autocomplete (sorted A-Z)
   const allProductNames = useMemo(() => {
     const names = new Set<string>();
-    for (const r of productDataCZ) names.add(r.name);
+    for (const r of storeProductData) names.add(r.name);
     for (const r of productDataSK) names.add(r.name);
     return Array.from(names).sort((a, b) => a.localeCompare(b, 'cs'));
-  }, []);
+  }, [storeProductData]);
 
   // Apply ABC filter
   const filteredRows = abcFilter === 'all' ? rows : rows.filter(r => r.abc === abcFilter);
@@ -649,6 +658,7 @@ export default function ProductsPage() {
         currency={currency}
         isMonthly={isMonthly}
         fc={fc}
+        productsCZ={storeProductData}
       />
 
       {/* Product table */}

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import Sidebar from './Sidebar';
 import TopBarWrapper from './TopBarWrapper';
 import { HlavniDashboardProvider } from '@/hooks/useHlavniDashboard';
+import { StoreFilterProvider } from '@/hooks/useStoreFilter';
 
 interface SidebarCtx {
   isOpen: boolean;
@@ -34,6 +35,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
   const close = () => setIsOpen(false);
 
   return (
+    <StoreFilterProvider>
     <HlavniDashboardProvider>
     <SidebarContext.Provider value={{ isOpen, toggle, close }}>
       <div className="flex h-screen">
@@ -57,5 +59,6 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
       </div>
     </SidebarContext.Provider>
     </HlavniDashboardProvider>
+    </StoreFilterProvider>
   );
 }

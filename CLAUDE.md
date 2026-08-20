@@ -242,6 +242,12 @@ Výchozí stránka aplikace (redirect z `/`). Zobrazuje 8 grouped bar chartů s 
 | `data/shippingPaymentDataCZ.ts` | Doprava+platby po dnech — auto-gen |
 | `data/prodejnaDataCZ.ts` | Prodejna objednávky (status 19+21) po dnech: orders, revenue_vat, revenue — auto-gen |
 | `data/prodejnaMarginDataCZ.ts` | Marže prodejna objednávek po dnech — auto-gen (stejná struktura jako `marginDataCZ`) |
+| `data/realDataCZEshop.ts` / `realDataCZProdejna.ts` | Store-split verze `realDataCZ.ts` (RealDailyRecord[]) — auto-gen, viz „Selektor Vše / E-shop / Prodejna" |
+| `data/marginDataCZEshop.ts` | Store-split verze `marginDataCZ.ts` pro E-shop — auto-gen (Prodejna = `prodejnaMarginDataCZ.ts`) |
+| `data/productDataCZEshop.ts` / `productDataCZProdejna.ts` | Store-split verze `productDataCZ.ts` — auto-gen |
+| `data/hourlyDataCZEshop.ts` / `hourlyDataCZProdejna.ts` | Store-split verze `hourlyDataCZ.ts` — auto-gen |
+| `data/orderValueDataCZEshop.ts` / `orderValueDataCZProdejna.ts` | Store-split verze `orderValueDataCZ.ts` — auto-gen |
+| `hooks/useStoreFilter.tsx` | Context pro Vše/E-shop/Prodejna selektor — `useStoreFilter()`, `pickByStore()`, `STORE_FILTER_ROUTES` |
 | `lib/db.ts` | PostgreSQL pool singleton (Neon, SSL vždy zapnuté) |
 | `lib/users.ts` | CRUD funkce pro tabulku users |
 | `lib/retentionUtils.ts` | Všechny výpočty pro `/retention` (KPI, YoY, RFM, distribuce, Noví vs. stávající) |
@@ -343,6 +349,20 @@ Tooltip obou grafů (custom `content` v `app/retention/page.tsx`) zobrazuje hodn
 **Ceník dopravců** — editovatelná tabulka uložená v `localStorage` (`carrierCosts_v1`).
 
 **Tabulka Zisk / ztráta per dopravce** — zobrazí se pouze pokud je vyplněn ceník.
+
+### Selektor Vše / E-shop / Prodejna (TopBar)
+
+Na 8 přehledech (`/hlavni-dashboard`, `/dashboard`, `/marketing`, `/orders`, `/margin`, `/products`, `/brands`, `/behavior`) se v TopBaru zobrazuje 3-cestný přepínač **Vše (Eshop + Prodejna) / E-shop / Prodejna** — stav v `hooks/useStoreFilter.tsx` (`StoreFilterProvider`, `useStoreFilter()`), routy definované v `STORE_FILTER_ROUTES`. Zapojeno v `ConditionalLayout.tsx`, render v `TopBar.tsx`.
+
+**Určení store:**
+- Objednávky: `status_id` 19 (Obchod – Vydáno) nebo 21 (Obchod – objednávka) → Prodejna, jinak E-shop (`orderStore()` v `updateData.js`).
+- Marketingové náklady: sloupec `campaign_name` z Google Sheets CSV (index 7, dosud nevyužívaný) — obsahuje-li „prodejna" (case-insensitive), jde o náklad Prodejny, jinak E-shop (`campaignStore()`). V historii to pokrývá jen pár kampaní (FB + Seznam) — Prodejna marketingové investice jsou proto téměř nulové, což je očekávané (fyzická prodejna se prakticky nepropaguje). Tanganica nemá `campaign_name` → vždy E-shop.
+
+**Store-split datové soubory** (generuje `updateData.js`, viz tabulka Klíčové soubory níže) — `realDataCZEshop/Prodejna.ts`, `marginDataCZEshop.ts` (Prodejna už existovala jako `prodejnaMarginDataCZ.ts`), `productDataCZEshop/Prodejna.ts`, `hourlyDataCZEshop/Prodejna.ts`, `orderValueDataCZEshop/Prodejna.ts`. Soubory „Vše" (`realDataCZ.ts`, `marginDataCZ.ts` atd.) zůstávají beze změny — store filtr je čistě doplňkový.
+
+**Známé omezení:** stornovaná objednávka (`status_id === 2`) ztrácí informaci o původním 19/21 stavu → `orders_cancelled` nelze store-přiřadit. V E-shop/Prodejna store-split souborech je proto vždy `0`; přesné číslo (Storna, Podíl storen na `/orders`) je jen v nefiltrovaném běhu „Vše".
+
+Na stránkách se store vybírá pomocí `pickByStore(store, dataVše, dataEshop, dataProdejna)` z `hooks/useStoreFilter.tsx`. `/brands` posílá `store` jako query param do `/api/brands`.
 
 ### Struktura sidebaru (`components/layout/Sidebar.tsx`)
 

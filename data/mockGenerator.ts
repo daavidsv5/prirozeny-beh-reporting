@@ -1,13 +1,19 @@
 import { DailyRecord, EUR_TO_CZK } from './types';
 import { realDataCZ } from './realDataCZ';
+import { realDataCZEshop } from './realDataCZEshop';
+import { realDataCZProdejna } from './realDataCZProdejna';
+
+function toDailyRecords(rows: typeof realDataCZ): DailyRecord[] {
+  return rows.map(r => ({
+    date: r.date, country: r.country, currency: 'CZK' as const,
+    orders: r.orders, orders_cancelled: r.orders_cancelled, revenue_vat: r.revenue_vat, revenue: r.revenue, cost: r.cost,
+  }));
+}
 
 // CZ: real data only
-const realCZ: DailyRecord[] = realDataCZ.map(r => ({
-  date: r.date, country: r.country, currency: 'CZK' as const,
-  orders: r.orders, orders_cancelled: r.orders_cancelled, revenue_vat: r.revenue_vat, revenue: r.revenue, cost: r.cost,
-}));
-
-export const mockData: DailyRecord[] = [...realCZ];
+export const mockData: DailyRecord[] = toDailyRecords(realDataCZ);
+export const mockDataEshop: DailyRecord[] = toDailyRecords(realDataCZEshop);
+export const mockDataProdejna: DailyRecord[] = toDailyRecords(realDataCZProdejna);
 
 // Daily marketing data with per-channel breakdown
 export interface DailyMarketingRow {
@@ -30,7 +36,8 @@ export function getDailyMarketingData(
   dateStart: string,
   dateEnd: string,
   _countries: string[],
-  _eurToCzk: number = EUR_TO_CZK
+  _eurToCzk: number = EUR_TO_CZK,
+  records: typeof realDataCZ = realDataCZ
 ): DailyMarketingRow[] {
   const byDate: Record<string, DailyMarketingRow> = {};
 
@@ -45,7 +52,7 @@ export function getDailyMarketingData(
     }
   };
 
-  for (const r of realDataCZ.filter(d => d.date >= dateStart && d.date <= dateEnd)) {
+  for (const r of records.filter(d => d.date >= dateStart && d.date <= dateEnd)) {
     ensure(r.date);
     byDate[r.date].cost            += r.cost;
     byDate[r.date].cost_facebook   += r.cost_facebook;
@@ -80,9 +87,10 @@ export function getMarketingSourceData(
   dateStart: string,
   dateEnd: string,
   _countries: string[],
-  _eurToCzk: number = EUR_TO_CZK
+  _eurToCzk: number = EUR_TO_CZK,
+  records: typeof realDataCZ = realDataCZ
 ): MarketingSource[] {
-  const rows = realDataCZ.filter(d => d.date >= dateStart && d.date <= dateEnd);
+  const rows = records.filter(d => d.date >= dateStart && d.date <= dateEnd);
 
   const sum = (key: string) => rows.reduce((s, d) => s + ((d as any)[key] || 0), 0);
 

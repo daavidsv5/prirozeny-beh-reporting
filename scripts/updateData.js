@@ -105,7 +105,13 @@ function normalizeSource(raw) {
   return s; // ostatní zdroje zachovat tak jak jsou
 }
 
-function aggregateCost(csv) {
+// Kampaň patří do Prodejny, pokud campaign_name obsahuje "prodejna" (case-insensitive).
+// Zbytek (vč. kampaní bez campaign_name) patří do E-shopu.
+function campaignStore(campaignName) {
+  return (campaignName || '').toLowerCase().includes('prodejna') ? 'prodejna' : 'eshop';
+}
+
+function aggregateCost(csv, storeFilter) {
   const rows = parseCSV(csv);
   const byDay = {};
   const byDaySource = {};
@@ -116,8 +122,10 @@ function aggregateCost(csv) {
     const source = normalizeSource(cols[2]);
     const cost   = parseNum(cols[4]);
     const clicks = parseNum(cols[5]);
+    const campaignName = cols[7] || '';
 
     if (!date) continue;
+    if (storeFilter && campaignStore(campaignName) !== storeFilter) continue;
     byDay[date] = (byDay[date] || 0) + cost;
     if (!byDaySource[date]) byDaySource[date] = {};
     if (!byDaySource[date][source]) byDaySource[date][source] = { cost: 0, clicks: 0 };
@@ -132,7 +140,9 @@ function aggregateCost(csv) {
 // Od 2026-05-10 se náklady stahují denně živě z publikovaného Google Sheets CSV
 // exportu (sloupce: Datum, Vygenerovaný obrat, Reklamní výdaje, PNO, Uživatelé,
 // Objednávky, Konverzní poměr).
-function loadTanganicaArchive() {
+// Tanganica nemá campaign_name → nelze rozlišit Prodejnu, vše patří do E-shopu.
+function loadTanganicaArchive(storeFilter) {
+  if (storeFilter === 'prodejna') return { byDay: {}, byDaySource: {} };
   if (!fs.existsSync(TANGANICA_COSTS_FILE)) return { byDay: {}, byDaySource: {} };
   const raw = JSON.parse(fs.readFileSync(TANGANICA_COSTS_FILE, 'utf8'));
   const byDay = {};
@@ -144,10 +154,11 @@ function loadTanganicaArchive() {
   return { byDay, byDaySource };
 }
 
-function aggregateTanganicaCsv(csv) {
-  const rows = parseCSV(csv);
+function aggregateTanganicaCsv(csv, storeFilter) {
   const byDay = {};
   const byDaySource = {};
+  if (storeFilter === 'prodejna') return { byDay, byDaySource };
+  const rows = parseCSV(csv);
   for (const cols of rows) {
     if (cols.length < 3) continue;
     const date = cols[0].trim();
@@ -159,10 +170,10 @@ function aggregateTanganicaCsv(csv) {
   return { byDay, byDaySource };
 }
 
-async function loadTanganicaCosts() {
-  const archive = loadTanganicaArchive();
+async function loadTanganicaCosts(storeFilter) {
+  const archive = loadTanganicaArchive(storeFilter);
   const csv = await fetchUrl(SHEETS.tanganica_cz);
-  const live = aggregateTanganicaCsv(csv);
+  const live = aggregateTanganicaCsv(csv, storeFilter);
   // Živá data mají přednost při případném překryvu dat s archivem.
   return mergeCostResults(archive, live);
 }
@@ -198,6 +209,11 @@ function isExcluded(order) {
   return false;
 }
 
+// Prodejna = status_id 19 (Obchod – Vydáno) nebo 21 (Obchod – objednávka), jinak E-shop.
+function orderStore(order) {
+  return (order.status_id === 19 || order.status_id === 21) ? 'prodejna' : 'eshop';
+}
+
 // ── Agregační funkce (Upgates JSON → struktury pro data/*.ts) ─────────────────
 
 // buy_price v Upgates je s DPH — přepočet na cenu bez DPH dle sazby produktu.
@@ -211,7 +227,7 @@ function buyPriceWithoutVat(p) {
   return (p.buy_price || 0) / (1 + vatRate);
 }
 
-function aggregateOrders(orders) {
+function aggregateOrders(orders, storeFilter) {
   const byDay = {};
 
   for (const o of orders) {
@@ -219,9 +235,13 @@ function aggregateOrders(orders) {
     if (!byDay[date]) byDay[date] = { orders: 0, orders_cancelled: 0, revenue_vat: 0, revenue: 0 };
 
     if (isExcluded(o)) {
-      if (o.status_id === 2) byDay[date].orders_cancelled++;
+      // Stornovaná objednávka (status_id 2) ztrácí informaci o původním 19/21
+      // stavu → nelze store-přiřadit, počítá se jen v nefiltrovaném běhu (Vše).
+      if (o.status_id === 2 && !storeFilter) byDay[date].orders_cancelled++;
       continue;
     }
+
+    if (storeFilter && orderStore(o) !== storeFilter) continue;
 
     byDay[date].orders++;
     for (const p of (o.products || [])) {
@@ -279,11 +299,12 @@ function aggregateMarginProdejna(orders) {
     }));
 }
 
-function aggregateProducts(orders) {
+function aggregateProducts(orders, storeFilter) {
   const byDateProduct = {};
 
   for (const o of orders) {
     if (isExcluded(o)) continue;
+    if (storeFilter && orderStore(o) !== storeFilter) continue;
     const date = orderDate(o);
 
     for (const p of (o.products || [])) {
@@ -310,11 +331,12 @@ function aggregateProducts(orders) {
     }));
 }
 
-function aggregateMargin(orders) {
+function aggregateMargin(orders, storeFilter) {
   const byDay = {};
 
   for (const o of orders) {
     if (isExcluded(o)) continue;
+    if (storeFilter && orderStore(o) !== storeFilter) continue;
     const date = orderDate(o);
     if (!byDay[date]) byDay[date] = { purchaseCost: 0, revenue: 0 };
 
@@ -334,7 +356,7 @@ function aggregateMargin(orders) {
     }));
 }
 
-function aggregateHourly(orders) {
+function aggregateHourly(orders, storeFilter) {
   const cancelledIds = new Set(
     orders.filter(o => o.status_id === 2).map(o => o.order_id)
   );
@@ -345,6 +367,7 @@ function aggregateHourly(orders) {
 
   for (const o of orders) {
     if (!o.statistics_yn || cancelledIds.has(o.order_id)) continue;
+    if (storeFilter && orderStore(o) !== storeFilter) continue;
     const dateStr = o.creation_time.substring(0, 10);
     const hour    = parseInt(o.creation_time.substring(11, 13), 10);
     if (isNaN(hour) || hour < 0 || hour > 23) continue;
@@ -457,11 +480,12 @@ function aggregateShippingPayment(orders) {
     .map(r => ({ ...r, revenue_vat: Math.round(r.revenue_vat * 100) / 100 }));
 }
 
-function aggregateOrderValues(orders) {
+function aggregateOrderValues(orders, storeFilter) {
   const result = [];
 
   for (const o of orders) {
     if (isExcluded(o)) continue;
+    if (storeFilter && orderStore(o) !== storeFilter) continue;
     let value = 0;
     for (const p of (o.products || [])) {
       if (p.type !== 'product') continue;
@@ -817,6 +841,41 @@ async function main() {
     writeOrderValueTsFile(path.join(DATA_DIR, 'orderValueDataCZ.ts'), 'orderValueDataCZ', orderValuesCZ);
     log(`CZ order values: ${orderValuesCZ.length} orders`);
     log('Written orderValueDataCZ.ts');
+
+    // ── 3b) Store split (E-shop / Prodejna) pro TopBar selektor ─────────────
+    // Vše (výše) zůstává beze změny — tady jen doplňkové soubory pro filtrované pohledy.
+    for (const store of ['eshop', 'prodejna']) {
+      const suffix = store === 'eshop' ? 'Eshop' : 'Prodejna';
+
+      const sheetsCostStore    = aggregateCost(csvCostCZ, store);
+      const tanganicaCostStore = await loadTanganicaCosts(store);
+      const { byDay: costByDayStore, byDaySource: costSrcStore } = mergeCostResults(sheetsCostStore, tanganicaCostStore);
+
+      const ordersByDayStore = aggregateOrders(orders, store);
+      const recordsStore     = mergeDailyRecords(ordersByDayStore, costByDayStore, costSrcStore);
+      writeTsFile(path.join(DATA_DIR, `realDataCZ${suffix}.ts`), `realDataCZ${suffix}`, 'RealDailyRecord', recordsStore);
+      log(`CZ ${store}: ${recordsStore.reduce((s, r) => s + r.orders, 0)} objednávek | ${recordsStore.reduce((s, r) => s + r.revenue, 0).toFixed(0)} Kč`);
+      log(`Written realDataCZ${suffix}.ts`);
+
+      const productsStore = aggregateProducts(orders, store);
+      writeProductTsFile(path.join(DATA_DIR, `productDataCZ${suffix}.ts`), `productDataCZ${suffix}`, productsStore);
+      log(`Written productDataCZ${suffix}.ts`);
+
+      const hourlyStore = aggregateHourly(orders, store);
+      writeHourlyTsFile(path.join(DATA_DIR, `hourlyDataCZ${suffix}.ts`), `hourlyDataCZ${suffix}`, hourlyStore);
+      log(`Written hourlyDataCZ${suffix}.ts`);
+
+      const orderValuesStore = aggregateOrderValues(orders, store);
+      writeOrderValueTsFile(path.join(DATA_DIR, `orderValueDataCZ${suffix}.ts`), `orderValueDataCZ${suffix}`, orderValuesStore);
+      log(`Written orderValueDataCZ${suffix}.ts`);
+
+      // Prodejna margin už existuje jako prodejnaMarginDataCZ.ts — jen E-shop je nový.
+      if (store === 'eshop') {
+        const marginStore = aggregateMargin(orders, store);
+        writeMarginTsFile(path.join(DATA_DIR, `marginDataCZ${suffix}.ts`), `marginDataCZ${suffix}`, marginStore);
+        log(`Written marginDataCZ${suffix}.ts`);
+      }
+    }
 
     const retentionCZ = aggregateRetention(orders);
     writeRetentionTsFile(path.join(DATA_DIR, 'retentionDataCZ.ts'), 'retentionDataCZ', retentionCZ);

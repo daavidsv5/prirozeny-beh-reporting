@@ -10,6 +10,7 @@ import { RefreshCw, Menu } from 'lucide-react';
 import { useSidebar } from './ConditionalLayout';
 import { lastUpdate } from '@/data/lastUpdate';
 import { useHlavniDashboard } from '@/hooks/useHlavniDashboard';
+import { useStoreFilter, STORE_FILTER_ROUTES, StoreScope } from '@/hooks/useStoreFilter';
 
 interface TopBarProps {
   filters: FilterState;
@@ -38,6 +39,14 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
   const isAdmin = (session?.user as { role?: string })?.role === 'admin';
   const isHlavniDashboard = pathname === '/hlavni-dashboard';
   const dash = useHlavniDashboard();
+  const { store, setStore } = useStoreFilter();
+  const showStoreFilter = STORE_FILTER_ROUTES.includes(pathname ?? '');
+
+  const storeOptions: { value: StoreScope; label: string }[] = [
+    { value: 'all',      label: 'Vše' },
+    { value: 'eshop',    label: 'E-shop' },
+    { value: 'prodejna', label: 'Prodejna' },
+  ];
 
   const handleUpdate = async () => {
     setUpdating(true);
@@ -79,6 +88,30 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
         >
           <Menu size={20} />
         </button>
+
+        {/* ── Vše / E-shop / Prodejna selector ── */}
+        {showStoreFilter && (
+          <div className="flex items-center gap-1.5 flex-shrink-0">
+            <span className="text-xs text-slate-400 font-medium hidden sm:inline">Obchod:</span>
+            <div className="flex rounded-lg border border-slate-200 overflow-hidden bg-white">
+              {storeOptions.map((opt, idx) => (
+                <button
+                  key={opt.value}
+                  onClick={() => setStore(opt.value)}
+                  className={`px-2.5 md:px-3 py-1.5 text-sm font-medium transition-colors focus:outline-none ${
+                    idx > 0 ? 'border-l border-slate-200' : ''
+                  } ${
+                    store === opt.value
+                      ? 'bg-blue-600 text-white'
+                      : 'text-slate-600 hover:bg-slate-50'
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* ── Hlavní Dashboard selectors ── */}
         {isHlavniDashboard ? (

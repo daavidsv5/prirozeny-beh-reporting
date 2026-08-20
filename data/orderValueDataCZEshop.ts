@@ -6,7 +6,7 @@ export interface OrderValueRecord {
   value: number;
 }
 
-export const orderValueDataCZ: OrderValueRecord[] = [
+export const orderValueDataCZEshop: OrderValueRecord[] = [
   {
     "date": "2023-03-03",
     "value": 2974.38
@@ -6405,10 +6405,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-04-03",
-    "value": 1528.1
-  },
-  {
-    "date": "2025-04-03",
     "value": 1734.71
   },
   {
@@ -6469,10 +6465,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-04-07",
-    "value": 2065.29
-  },
-  {
-    "date": "2025-04-07",
     "value": 295.05
   },
   {
@@ -6501,10 +6493,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-04-09",
-    "value": 2230.58
-  },
-  {
-    "date": "2025-04-09",
     "value": 1479.34
   },
   {
@@ -6522,14 +6510,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-04-10",
     "value": 4329.75
-  },
-  {
-    "date": "2025-04-10",
-    "value": 1817.36
-  },
-  {
-    "date": "2025-04-10",
-    "value": 3511.57
   },
   {
     "date": "2025-04-10",
@@ -6566,10 +6546,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-04-11",
     "value": 1809.92
-  },
-  {
-    "date": "2025-04-11",
-    "value": 1941.32
   },
   {
     "date": "2025-04-11",
@@ -6685,10 +6661,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-04-15",
-    "value": 3098.35
-  },
-  {
-    "date": "2025-04-15",
     "value": 875.21
   },
   {
@@ -6710,10 +6682,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-04-16",
     "value": 2801.65
-  },
-  {
-    "date": "2025-04-16",
-    "value": 3098.35
   },
   {
     "date": "2025-04-16",
@@ -6754,14 +6722,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-04-17",
     "value": 1528.93
-  },
-  {
-    "date": "2025-04-17",
-    "value": 2147.11
-  },
-  {
-    "date": "2025-04-17",
-    "value": 2065.29
   },
   {
     "date": "2025-04-17",
@@ -6925,10 +6885,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-04-24",
-    "value": 1032.23
-  },
-  {
-    "date": "2025-04-24",
     "value": 2884.3
   },
   {
@@ -6961,15 +6917,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-04-25",
-    "value": 5759.5
-  },
-  {
-    "date": "2025-04-25",
     "value": 1479.34
-  },
-  {
-    "date": "2025-04-25",
-    "value": 205.79
   },
   {
     "date": "2025-04-25",
@@ -7005,15 +6953,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-04-26",
-    "value": 380.17
-  },
-  {
-    "date": "2025-04-26",
     "value": 2305.79
-  },
-  {
-    "date": "2025-04-27",
-    "value": 1809.92
   },
   {
     "date": "2025-04-27",
@@ -7038,10 +6978,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-04-28",
     "value": 875.21
-  },
-  {
-    "date": "2025-04-28",
-    "value": 2023.97
   },
   {
     "date": "2025-04-28",
@@ -7117,15 +7053,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-04-30",
-    "value": 2230.58
-  },
-  {
-    "date": "2025-04-30",
     "value": 875.21
-  },
-  {
-    "date": "2025-04-30",
-    "value": 1941.32
   },
   {
     "date": "2025-04-30",
@@ -7134,10 +7062,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-04-30",
     "value": 1644.63
-  },
-  {
-    "date": "2025-04-30",
-    "value": 2891.74
   },
   {
     "date": "2025-04-30",
@@ -7166,10 +7090,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-05-02",
     "value": 1479.34
-  },
-  {
-    "date": "2025-05-02",
-    "value": 3304.96
   },
   {
     "date": "2025-05-02",
@@ -7265,10 +7185,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-05-06",
-    "value": 1734.71
-  },
-  {
-    "date": "2025-05-06",
     "value": 1198.35
   },
   {
@@ -7278,10 +7194,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-05-06",
     "value": 114.88
-  },
-  {
-    "date": "2025-05-07",
-    "value": 2230.58
   },
   {
     "date": "2025-05-07",
@@ -7317,15 +7229,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-05-09",
-    "value": 4295.87
-  },
-  {
-    "date": "2025-05-09",
     "value": 2801.65
-  },
-  {
-    "date": "2025-05-09",
-    "value": 2437.19
   },
   {
     "date": "2025-05-09",
@@ -7382,10 +7286,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-05-12",
     "value": 1479.34
-  },
-  {
-    "date": "2025-05-12",
-    "value": 2023.97
   },
   {
     "date": "2025-05-12",
@@ -7457,15 +7357,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-05-15",
-    "value": 3098.35
-  },
-  {
-    "date": "2025-05-15",
     "value": 2471.07
-  },
-  {
-    "date": "2025-05-15",
-    "value": 4213.23
   },
   {
     "date": "2025-05-15",
@@ -7561,10 +7453,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-05-19",
-    "value": 2230.58
-  },
-  {
-    "date": "2025-05-19",
     "value": 5280.16
   },
   {
@@ -7613,19 +7501,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-05-21",
-    "value": 2891.74
-  },
-  {
-    "date": "2025-05-21",
     "value": 1750.42
-  },
-  {
-    "date": "2025-05-21",
-    "value": 3098.35
-  },
-  {
-    "date": "2025-05-21",
-    "value": 3254.55
   },
   {
     "date": "2025-05-21",
@@ -7666,10 +7542,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-05-23",
     "value": 875.21
-  },
-  {
-    "date": "2025-05-23",
-    "value": 2023.97
   },
   {
     "date": "2025-05-24",
@@ -7749,10 +7621,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-05-27",
-    "value": 2354.55
-  },
-  {
-    "date": "2025-05-27",
     "value": 1975.21
   },
   {
@@ -7786,14 +7654,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-05-28",
     "value": 900.83
-  },
-  {
-    "date": "2025-05-28",
-    "value": 1148.76
-  },
-  {
-    "date": "2025-05-28",
-    "value": 2223.14
   },
   {
     "date": "2025-05-28",
@@ -7877,10 +7737,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-06-02",
-    "value": 426.44
-  },
-  {
-    "date": "2025-06-02",
     "value": 900.83
   },
   {
@@ -7898,10 +7754,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-06-03",
     "value": 1734.71
-  },
-  {
-    "date": "2025-06-03",
-    "value": 2437.19
   },
   {
     "date": "2025-06-03",
@@ -7929,15 +7781,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-06-04",
-    "value": 1941.32
-  },
-  {
-    "date": "2025-06-04",
     "value": 1479.34
-  },
-  {
-    "date": "2025-06-04",
-    "value": 2437.19
   },
   {
     "date": "2025-06-04",
@@ -7993,10 +7837,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-06-05",
-    "value": 2335.54
-  },
-  {
-    "date": "2025-06-05",
     "value": 2719.01
   },
   {
@@ -8022,10 +7862,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-06-06",
     "value": 1396.69
-  },
-  {
-    "date": "2025-06-06",
-    "value": 900.83
   },
   {
     "date": "2025-06-06",
@@ -8073,10 +7909,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-06-09",
-    "value": 2354.55
-  },
-  {
-    "date": "2025-06-09",
     "value": 1776.86
   },
   {
@@ -8105,10 +7937,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-06-10",
-    "value": 2354.55
-  },
-  {
-    "date": "2025-06-10",
     "value": 900.83
   },
   {
@@ -8121,15 +7949,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-06-10",
-    "value": 3098.35
-  },
-  {
-    "date": "2025-06-10",
     "value": 2297.52
-  },
-  {
-    "date": "2025-06-10",
-    "value": 2023.97
   },
   {
     "date": "2025-06-10",
@@ -8218,14 +8038,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-06-13",
     "value": 900.83
-  },
-  {
-    "date": "2025-06-13",
-    "value": 1858.68
-  },
-  {
-    "date": "2025-06-13",
-    "value": 2230.58
   },
   {
     "date": "2025-06-13",
@@ -8389,10 +8201,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-06-17",
-    "value": 1032.23
-  },
-  {
-    "date": "2025-06-17",
     "value": 1817.36
   },
   {
@@ -8429,10 +8237,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-06-18",
-    "value": 1941.32
-  },
-  {
-    "date": "2025-06-18",
     "value": 1561.98
   },
   {
@@ -8446,10 +8250,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-06-18",
     "value": 1817.36
-  },
-  {
-    "date": "2025-06-18",
-    "value": 3049.59
   },
   {
     "date": "2025-06-18",
@@ -8653,10 +8453,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-06-24",
-    "value": 892.56
-  },
-  {
-    "date": "2025-06-24",
     "value": 900.83
   },
   {
@@ -8809,10 +8605,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-06-30",
-    "value": 1941.32
-  },
-  {
-    "date": "2025-06-30",
     "value": 1684.3
   },
   {
@@ -8857,15 +8649,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-01",
-    "value": 3172.73
-  },
-  {
-    "date": "2025-07-01",
     "value": 2471.07
-  },
-  {
-    "date": "2025-07-01",
-    "value": 1941.32
   },
   {
     "date": "2025-07-01",
@@ -8901,15 +8685,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-02",
-    "value": 2023.97
-  },
-  {
-    "date": "2025-07-02",
     "value": 2305.79
-  },
-  {
-    "date": "2025-07-02",
-    "value": 2023.97
   },
   {
     "date": "2025-07-02",
@@ -8925,15 +8701,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-03",
-    "value": 4295.87
-  },
-  {
-    "date": "2025-07-03",
     "value": 900.83
-  },
-  {
-    "date": "2025-07-03",
-    "value": 1734.71
   },
   {
     "date": "2025-07-03",
@@ -8950,10 +8718,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-07-03",
     "value": 900.83
-  },
-  {
-    "date": "2025-07-03",
-    "value": 2023.97
   },
   {
     "date": "2025-07-03",
@@ -8990,10 +8754,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-07-04",
     "value": 900.83
-  },
-  {
-    "date": "2025-07-04",
-    "value": 2023.97
   },
   {
     "date": "2025-07-04",
@@ -9097,10 +8857,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-08",
-    "value": 892.56
-  },
-  {
-    "date": "2025-07-08",
     "value": 4611.58
   },
   {
@@ -9146,14 +8902,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-07-09",
     "value": 900.83
-  },
-  {
-    "date": "2025-07-09",
-    "value": 3297.52
-  },
-  {
-    "date": "2025-07-09",
-    "value": 1809.92
   },
   {
     "date": "2025-07-09",
@@ -9213,14 +8961,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-11",
-    "value": 2230.58
-  },
-  {
-    "date": "2025-07-11",
-    "value": 2437.19
-  },
-  {
-    "date": "2025-07-11",
     "value": 2719.01
   },
   {
@@ -9229,19 +8969,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-11",
-    "value": 1561.98
-  },
-  {
-    "date": "2025-07-11",
     "value": 900.83
-  },
-  {
-    "date": "2025-07-11",
-    "value": 2437.19
-  },
-  {
-    "date": "2025-07-11",
-    "value": 1858.68
   },
   {
     "date": "2025-07-11",
@@ -9313,10 +9041,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-14",
-    "value": 1858.68
-  },
-  {
-    "date": "2025-07-14",
     "value": 1396.69
   },
   {
@@ -9345,10 +9069,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-15",
-    "value": 2801.65
-  },
-  {
-    "date": "2025-07-15",
     "value": 900.83
   },
   {
@@ -9366,14 +9086,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-07-15",
     "value": 1776.86
-  },
-  {
-    "date": "2025-07-15",
-    "value": 892.56
-  },
-  {
-    "date": "2025-07-15",
-    "value": 1941.32
   },
   {
     "date": "2025-07-15",
@@ -9433,27 +9145,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-16",
-    "value": 1396.69
-  },
-  {
-    "date": "2025-07-16",
-    "value": 1238.84
-  },
-  {
-    "date": "2025-07-16",
     "value": 900.83
-  },
-  {
-    "date": "2025-07-16",
-    "value": 2023.97
-  },
-  {
-    "date": "2025-07-16",
-    "value": 2138.85
-  },
-  {
-    "date": "2025-07-16",
-    "value": 213.22
   },
   {
     "date": "2025-07-16",
@@ -9462,10 +9154,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-07-16",
     "value": 900.83
-  },
-  {
-    "date": "2025-07-16",
-    "value": 2809.09
   },
   {
     "date": "2025-07-16",
@@ -9517,23 +9205,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-18",
-    "value": 892.56
-  },
-  {
-    "date": "2025-07-18",
     "value": 1858.68
-  },
-  {
-    "date": "2025-07-18",
-    "value": 1817.36
-  },
-  {
-    "date": "2025-07-18",
-    "value": 2057.85
-  },
-  {
-    "date": "2025-07-18",
-    "value": 900.83
   },
   {
     "date": "2025-07-18",
@@ -9601,23 +9273,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-21",
-    "value": 3552.89
-  },
-  {
-    "date": "2025-07-21",
-    "value": 156.2
-  },
-  {
-    "date": "2025-07-21",
     "value": 1198.35
-  },
-  {
-    "date": "2025-07-21",
-    "value": 900.83
-  },
-  {
-    "date": "2025-07-21",
-    "value": 247.11
   },
   {
     "date": "2025-07-21",
@@ -9630,10 +9286,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-07-21",
     "value": 900.83
-  },
-  {
-    "date": "2025-07-22",
-    "value": 2189.26
   },
   {
     "date": "2025-07-22",
@@ -9650,10 +9302,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-07-22",
     "value": 900.83
-  },
-  {
-    "date": "2025-07-22",
-    "value": 1486.78
   },
   {
     "date": "2025-07-22",
@@ -9716,10 +9364,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
     "value": 900.83
   },
   {
-    "date": "2025-07-23",
-    "value": 6948.77
-  },
-  {
     "date": "2025-07-24",
     "value": 892.56
   },
@@ -9729,15 +9373,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-07-24",
-    "value": 1941.32
-  },
-  {
-    "date": "2025-07-24",
     "value": 892.56
-  },
-  {
-    "date": "2025-07-24",
-    "value": 1734.71
   },
   {
     "date": "2025-07-24",
@@ -9774,14 +9410,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-07-25",
     "value": 999.18
-  },
-  {
-    "date": "2025-07-25",
-    "value": 892.56
-  },
-  {
-    "date": "2025-07-25",
-    "value": 900.83
   },
   {
     "date": "2025-07-25",
@@ -9922,10 +9550,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-07-29",
     "value": 3626.45
-  },
-  {
-    "date": "2025-07-29",
-    "value": 892.56
   },
   {
     "date": "2025-07-29",
@@ -10109,18 +9733,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-08-05",
-    "value": 1975.21
-  },
-  {
-    "date": "2025-08-05",
-    "value": 1734.71
-  },
-  {
-    "date": "2025-08-05",
-    "value": 1396.69
-  },
-  {
-    "date": "2025-08-05",
     "value": 2719.01
   },
   {
@@ -10145,10 +9757,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-08-06",
-    "value": 892.56
-  },
-  {
-    "date": "2025-08-06",
     "value": 1561.98
   },
   {
@@ -10158,10 +9766,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-08-07",
     "value": 900.83
-  },
-  {
-    "date": "2025-08-07",
-    "value": 2884.3
   },
   {
     "date": "2025-08-07",
@@ -10198,10 +9802,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-08-08",
     "value": 1941.32
-  },
-  {
-    "date": "2025-08-08",
-    "value": 1485.12
   },
   {
     "date": "2025-08-08",
@@ -10285,14 +9885,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-08-11",
-    "value": 2719.01
-  },
-  {
-    "date": "2025-08-11",
-    "value": 2767.77
-  },
-  {
-    "date": "2025-08-11",
     "value": 1148.76
   },
   {
@@ -10310,10 +9902,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-08-12",
     "value": 2966.94
-  },
-  {
-    "date": "2025-08-12",
-    "value": 1231.4
   },
   {
     "date": "2025-08-12",
@@ -10365,19 +9953,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-08-13",
-    "value": 2884.3
-  },
-  {
-    "date": "2025-08-13",
-    "value": 1396.69
-  },
-  {
-    "date": "2025-08-13",
     "value": 966.12
-  },
-  {
-    "date": "2025-08-13",
-    "value": 1396.69
   },
   {
     "date": "2025-08-13",
@@ -10398,22 +9974,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-08-14",
     "value": 3297.52
-  },
-  {
-    "date": "2025-08-14",
-    "value": 2471.07
-  },
-  {
-    "date": "2025-08-14",
-    "value": 2305.79
-  },
-  {
-    "date": "2025-08-14",
-    "value": 2223.14
-  },
-  {
-    "date": "2025-08-15",
-    "value": 900.83
   },
   {
     "date": "2025-08-15",
@@ -10461,14 +10021,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-08-18",
-    "value": 2023.97
-  },
-  {
-    "date": "2025-08-18",
-    "value": 1941.32
-  },
-  {
-    "date": "2025-08-18",
     "value": 304.13
   },
   {
@@ -10497,15 +10049,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-08-19",
-    "value": 4990.91
-  },
-  {
-    "date": "2025-08-19",
     "value": 3049.59
-  },
-  {
-    "date": "2025-08-19",
-    "value": 2354.55
   },
   {
     "date": "2025-08-19",
@@ -10525,14 +10069,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-08-20",
-    "value": 1809.92
-  },
-  {
-    "date": "2025-08-20",
-    "value": 2230.58
-  },
-  {
-    "date": "2025-08-20",
     "value": 1479.34
   },
   {
@@ -10541,23 +10077,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-08-20",
-    "value": 818.18
-  },
-  {
-    "date": "2025-08-20",
-    "value": 2223.14
-  },
-  {
-    "date": "2025-08-20",
     "value": 1892.56
   },
   {
     "date": "2025-08-21",
     "value": 1231.4
-  },
-  {
-    "date": "2025-08-21",
-    "value": 1131.4
   },
   {
     "date": "2025-08-21",
@@ -10593,14 +10117,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-08-22",
-    "value": 2223.14
-  },
-  {
-    "date": "2025-08-22",
-    "value": 1561.98
-  },
-  {
-    "date": "2025-08-22",
     "value": 1479.34
   },
   {
@@ -10633,31 +10149,15 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-08-25",
-    "value": 2147.11
-  },
-  {
-    "date": "2025-08-25",
-    "value": 2305.79
-  },
-  {
-    "date": "2025-08-25",
     "value": 900.83
   },
   {
     "date": "2025-08-25",
     "value": 900.83
-  },
-  {
-    "date": "2025-08-26",
-    "value": 2636.36
   },
   {
     "date": "2025-08-26",
     "value": 875.21
-  },
-  {
-    "date": "2025-08-26",
-    "value": 900.83
   },
   {
     "date": "2025-08-26",
@@ -10697,23 +10197,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-08-28",
-    "value": 1982.64
-  },
-  {
-    "date": "2025-08-28",
-    "value": 1941.32
-  },
-  {
-    "date": "2025-08-28",
     "value": 2966.94
   },
   {
     "date": "2025-08-28",
     "value": 2958.68
-  },
-  {
-    "date": "2025-08-29",
-    "value": 2816.53
   },
   {
     "date": "2025-08-29",
@@ -10773,10 +10261,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-09-01",
-    "value": 793.39
-  },
-  {
-    "date": "2025-09-01",
     "value": 1404.13
   },
   {
@@ -10813,10 +10297,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-09-03",
-    "value": 2685.12
-  },
-  {
-    "date": "2025-09-03",
     "value": 875.21
   },
   {
@@ -10846,18 +10326,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-09-04",
     "value": 900.83
-  },
-  {
-    "date": "2025-09-04",
-    "value": 1975.21
-  },
-  {
-    "date": "2025-09-05",
-    "value": 1561.98
-  },
-  {
-    "date": "2025-09-05",
-    "value": 1975.21
   },
   {
     "date": "2025-09-05",
@@ -10901,10 +10369,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-09-08",
-    "value": 2223.14
-  },
-  {
-    "date": "2025-09-08",
     "value": 900.83
   },
   {
@@ -10945,10 +10409,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-09-10",
-    "value": 2305.79
-  },
-  {
-    "date": "2025-09-10",
     "value": 2966.94
   },
   {
@@ -10957,19 +10417,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-09-10",
-    "value": 979.34
-  },
-  {
-    "date": "2025-09-10",
-    "value": 2223.14
-  },
-  {
-    "date": "2025-09-10",
     "value": 2305.79
-  },
-  {
-    "date": "2025-09-10",
-    "value": 2850.41
   },
   {
     "date": "2025-09-10",
@@ -11001,10 +10449,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-09-11",
-    "value": 875.21
-  },
-  {
-    "date": "2025-09-11",
     "value": 2595.87
   },
   {
@@ -11022,10 +10466,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-09-12",
     "value": 1405.79
-  },
-  {
-    "date": "2025-09-12",
-    "value": 1131.4
   },
   {
     "date": "2025-09-12",
@@ -11177,10 +10617,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-09-16",
-    "value": 2801.65
-  },
-  {
-    "date": "2025-09-16",
     "value": 1809.92
   },
   {
@@ -11206,10 +10642,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-09-17",
     "value": 1404.13
-  },
-  {
-    "date": "2025-09-17",
-    "value": 1975.21
   },
   {
     "date": "2025-09-17",
@@ -11245,14 +10677,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-09-18",
-    "value": 2305.79
-  },
-  {
-    "date": "2025-09-18",
-    "value": 2719.01
-  },
-  {
-    "date": "2025-09-18",
     "value": 716.53
   },
   {
@@ -11282,10 +10706,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-09-19",
     "value": 2966.94
-  },
-  {
-    "date": "2025-09-19",
-    "value": 1892.56
   },
   {
     "date": "2025-09-19",
@@ -11365,10 +10785,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-09-23",
-    "value": 1727.27
-  },
-  {
-    "date": "2025-09-23",
     "value": 1809.92
   },
   {
@@ -11405,15 +10821,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-09-25",
-    "value": 2148.76
-  },
-  {
-    "date": "2025-09-25",
     "value": 1809.92
-  },
-  {
-    "date": "2025-09-25",
-    "value": 2849.58
   },
   {
     "date": "2025-09-25",
@@ -11482,10 +10890,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-09-26",
     "value": 1561.98
-  },
-  {
-    "date": "2025-09-26",
-    "value": 1396.69
   },
   {
     "date": "2025-09-26",
@@ -11617,10 +11021,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-10-01",
-    "value": 1628.93
-  },
-  {
-    "date": "2025-10-01",
     "value": 885.12
   },
   {
@@ -11653,10 +11053,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-10-02",
-    "value": 3007.44
-  },
-  {
-    "date": "2025-10-02",
     "value": 1561.98
   },
   {
@@ -11666,14 +11062,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-10-02",
     "value": 1479.34
-  },
-  {
-    "date": "2025-10-03",
-    "value": 413.22
-  },
-  {
-    "date": "2025-10-03",
-    "value": 2362.81
   },
   {
     "date": "2025-10-03",
@@ -11841,10 +11229,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-10-08",
-    "value": 2223.14
-  },
-  {
-    "date": "2025-10-08",
     "value": 2388.43
   },
   {
@@ -11874,10 +11258,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-10-09",
     "value": 2223.14
-  },
-  {
-    "date": "2025-10-09",
-    "value": 3545.45
   },
   {
     "date": "2025-10-09",
@@ -11961,14 +11341,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-10-13",
-    "value": 2140.5
-  },
-  {
-    "date": "2025-10-13",
-    "value": 2942.15
-  },
-  {
-    "date": "2025-10-13",
     "value": 2566.12
   },
   {
@@ -12021,10 +11393,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-10-15",
-    "value": 1608.26
-  },
-  {
-    "date": "2025-10-15",
     "value": 2223.14
   },
   {
@@ -12053,19 +11421,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-10-16",
-    "value": 4091.74
-  },
-  {
-    "date": "2025-10-16",
     "value": 1975.21
   },
   {
     "date": "2025-10-16",
     "value": 2966.94
-  },
-  {
-    "date": "2025-10-16",
-    "value": 2521.49
   },
   {
     "date": "2025-10-16",
@@ -12085,19 +11445,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-10-17",
-    "value": 5957.86
-  },
-  {
-    "date": "2025-10-17",
-    "value": 1561.98
-  },
-  {
-    "date": "2025-10-17",
     "value": 1982.64
-  },
-  {
-    "date": "2025-10-17",
-    "value": 3154.55
   },
   {
     "date": "2025-10-17",
@@ -12181,10 +11529,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-10-21",
-    "value": 2471.07
-  },
-  {
-    "date": "2025-10-21",
     "value": 2223.14
   },
   {
@@ -12225,10 +11569,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-10-22",
-    "value": 2803.31
-  },
-  {
-    "date": "2025-10-22",
     "value": 1975.21
   },
   {
@@ -12262,10 +11602,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-10-23",
     "value": 2851.24
-  },
-  {
-    "date": "2025-10-23",
-    "value": 1561.98
   },
   {
     "date": "2025-10-24",
@@ -12352,10 +11688,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
     "value": 2223.14
   },
   {
-    "date": "2025-10-29",
-    "value": 5438.02
-  },
-  {
     "date": "2025-10-30",
     "value": 2966.94
   },
@@ -12374,10 +11706,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-10-30",
     "value": 3702.48
-  },
-  {
-    "date": "2025-10-31",
-    "value": 2719.01
   },
   {
     "date": "2025-10-31",
@@ -12429,10 +11757,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-11-03",
-    "value": 2851.24
-  },
-  {
-    "date": "2025-11-03",
     "value": 2388.43
   },
   {
@@ -12445,15 +11769,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-11-04",
-    "value": 2842.15
-  },
-  {
-    "date": "2025-11-04",
     "value": 1809.92
-  },
-  {
-    "date": "2025-11-04",
-    "value": 1644.63
   },
   {
     "date": "2025-11-04",
@@ -12517,14 +11833,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-11-07",
-    "value": 1321.49
-  },
-  {
-    "date": "2025-11-07",
-    "value": 2719.01
-  },
-  {
-    "date": "2025-11-07",
     "value": 2075.21
   },
   {
@@ -12585,10 +11893,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-11-10",
-    "value": 3297.52
-  },
-  {
-    "date": "2025-11-10",
     "value": 2850.41
   },
   {
@@ -12609,19 +11913,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-11-11",
-    "value": 2471.07
-  },
-  {
-    "date": "2025-11-11",
     "value": 1784.3
-  },
-  {
-    "date": "2025-11-11",
-    "value": 793.39
-  },
-  {
-    "date": "2025-11-11",
-    "value": 1644.63
   },
   {
     "date": "2025-11-11",
@@ -12653,14 +11945,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-11-12",
-    "value": 1975.21
-  },
-  {
-    "date": "2025-11-12",
-    "value": 2223.97
-  },
-  {
-    "date": "2025-11-12",
     "value": 790.91
   },
   {
@@ -12677,14 +11961,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-11-12",
-    "value": 2471.07
-  },
-  {
-    "date": "2025-11-12",
-    "value": 2305.79
-  },
-  {
-    "date": "2025-11-12",
     "value": 6030.58
   },
   {
@@ -12698,10 +11974,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-11-13",
     "value": 2190.08
-  },
-  {
-    "date": "2025-11-13",
-    "value": 2305.79
   },
   {
     "date": "2025-11-13",
@@ -12722,10 +11994,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-11-14",
     "value": 2636.36
-  },
-  {
-    "date": "2025-11-14",
-    "value": 4405.79
   },
   {
     "date": "2025-11-14",
@@ -12766,10 +12034,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-11-16",
     "value": 1718.18
-  },
-  {
-    "date": "2025-11-16",
-    "value": 2388.43
   },
   {
     "date": "2025-11-16",
@@ -12885,14 +12149,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-11-21",
-    "value": 2305.79
-  },
-  {
-    "date": "2025-11-21",
-    "value": 2966.94
-  },
-  {
-    "date": "2025-11-21",
     "value": 353.72
   },
   {
@@ -12997,10 +12253,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-11-26",
-    "value": 2471.07
-  },
-  {
-    "date": "2025-11-26",
     "value": 1561.98
   },
   {
@@ -13046,10 +12298,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-11-28",
     "value": 1561.98
-  },
-  {
-    "date": "2025-11-28",
-    "value": 140.5
   },
   {
     "date": "2025-11-28",
@@ -13185,10 +12433,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-12-05",
-    "value": 5098.35
-  },
-  {
-    "date": "2025-12-05",
     "value": 2893.39
   },
   {
@@ -13233,10 +12477,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-12-09",
-    "value": 3545.45
-  },
-  {
-    "date": "2025-12-09",
     "value": 1852.07
   },
   {
@@ -13269,15 +12509,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-12-11",
-    "value": 955.37
-  },
-  {
-    "date": "2025-12-11",
     "value": 3609.92
-  },
-  {
-    "date": "2025-12-12",
-    "value": 3132.23
   },
   {
     "date": "2025-12-12",
@@ -13373,10 +12605,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2025-12-17",
-    "value": 2057.85
-  },
-  {
-    "date": "2025-12-17",
     "value": 3016.53
   },
   {
@@ -13386,10 +12614,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2025-12-18",
     "value": 2636.36
-  },
-  {
-    "date": "2025-12-18",
-    "value": 1652.89
   },
   {
     "date": "2025-12-18",
@@ -13549,14 +12773,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-01-05",
-    "value": 3545.45
-  },
-  {
-    "date": "2026-01-05",
-    "value": 156.2
-  },
-  {
-    "date": "2026-01-05",
     "value": 793.39
   },
   {
@@ -13598,10 +12814,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-01-09",
     "value": 3181.82
-  },
-  {
-    "date": "2026-01-09",
-    "value": 239.67
   },
   {
     "date": "2026-01-09",
@@ -13677,18 +12889,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-01-14",
-    "value": 1404.13
-  },
-  {
-    "date": "2026-01-14",
-    "value": 396.69
-  },
-  {
-    "date": "2026-01-14",
-    "value": 239.67
-  },
-  {
-    "date": "2026-01-14",
     "value": 3181.82
   },
   {
@@ -13718,10 +12918,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-01-16",
     "value": 2080.99
-  },
-  {
-    "date": "2026-01-16",
-    "value": 2731.4
   },
   {
     "date": "2026-01-16",
@@ -13765,10 +12961,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-01-19",
-    "value": 2884.3
-  },
-  {
-    "date": "2026-01-19",
     "value": 2305.79
   },
   {
@@ -13782,10 +12974,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-01-20",
     "value": 1321.49
-  },
-  {
-    "date": "2026-01-21",
-    "value": 1032.23
   },
   {
     "date": "2026-01-21",
@@ -13810,14 +12998,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-01-23",
     "value": 1975.21
-  },
-  {
-    "date": "2026-01-23",
-    "value": 3123.14
-  },
-  {
-    "date": "2026-01-23",
-    "value": 3535.54
   },
   {
     "date": "2026-01-23",
@@ -13873,10 +13053,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-01-28",
-    "value": 1644.63
-  },
-  {
-    "date": "2026-01-28",
     "value": 2863.64
   },
   {
@@ -13909,26 +13085,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-01-30",
-    "value": 2801.65
-  },
-  {
-    "date": "2026-01-30",
-    "value": 2223.97
-  },
-  {
-    "date": "2026-01-30",
-    "value": 1777.69
-  },
-  {
-    "date": "2026-01-30",
-    "value": 1652.89
-  },
-  {
-    "date": "2026-01-30",
-    "value": 2967.77
-  },
-  {
-    "date": "2026-01-30",
     "value": 4942.14
   },
   {
@@ -13942,10 +13098,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-01-31",
     "value": 2075.21
-  },
-  {
-    "date": "2026-01-31",
-    "value": 1660.33
   },
   {
     "date": "2026-01-31",
@@ -14002,10 +13154,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-02-03",
     "value": 1396.69
-  },
-  {
-    "date": "2026-02-04",
-    "value": 2967.77
   },
   {
     "date": "2026-02-05",
@@ -14137,10 +13285,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-02-12",
-    "value": 1892.56
-  },
-  {
-    "date": "2026-02-12",
     "value": 3297.52
   },
   {
@@ -14205,10 +13349,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-02-17",
-    "value": 2388.43
-  },
-  {
-    "date": "2026-02-17",
     "value": 2614.05
   },
   {
@@ -14246,10 +13386,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-02-19",
     "value": 2471.07
-  },
-  {
-    "date": "2026-02-19",
-    "value": 1032.23
   },
   {
     "date": "2026-02-19",
@@ -14373,10 +13509,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-02-25",
-    "value": 2447.11
-  },
-  {
-    "date": "2026-02-25",
     "value": 2521.49
   },
   {
@@ -14405,14 +13537,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-02-27",
-    "value": 2460.34
-  },
-  {
-    "date": "2026-02-27",
-    "value": 2914.88
-  },
-  {
-    "date": "2026-02-27",
     "value": 2057.85
   },
   {
@@ -14426,10 +13550,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-02-27",
     "value": 1561.98
-  },
-  {
-    "date": "2026-02-27",
-    "value": 2694.22
   },
   {
     "date": "2026-02-28",
@@ -14561,15 +13681,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-04",
-    "value": 2526.45
-  },
-  {
-    "date": "2026-03-04",
     "value": 1396.69
-  },
-  {
-    "date": "2026-03-04",
-    "value": 2744.63
   },
   {
     "date": "2026-03-04",
@@ -14581,15 +13693,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-05",
-    "value": 2305.79
-  },
-  {
-    "date": "2026-03-05",
     "value": 1396.69
-  },
-  {
-    "date": "2026-03-05",
-    "value": 5290.09
   },
   {
     "date": "2026-03-05",
@@ -14602,10 +13706,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-03-05",
     "value": 1734.71
-  },
-  {
-    "date": "2026-03-05",
-    "value": 1954.55
   },
   {
     "date": "2026-03-05",
@@ -14622,26 +13722,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-03-06",
     "value": 3841.31
-  },
-  {
-    "date": "2026-03-06",
-    "value": 2447.11
-  },
-  {
-    "date": "2026-03-06",
-    "value": 2223.97
-  },
-  {
-    "date": "2026-03-06",
-    "value": 2075.21
-  },
-  {
-    "date": "2026-03-06",
-    "value": 1321.49
-  },
-  {
-    "date": "2026-03-06",
-    "value": 2075.21
   },
   {
     "date": "2026-03-06",
@@ -14682,14 +13762,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-03-09",
     "value": 3123.14
-  },
-  {
-    "date": "2026-03-09",
-    "value": 983.47
-  },
-  {
-    "date": "2026-03-09",
-    "value": 3450.41
   },
   {
     "date": "2026-03-09",
@@ -14737,39 +13809,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-11",
-    "value": 2801.65
-  },
-  {
-    "date": "2026-03-11",
     "value": 2223.97
   },
   {
     "date": "2026-03-11",
     "value": 1561.98
-  },
-  {
-    "date": "2026-03-11",
-    "value": 1091.74
-  },
-  {
-    "date": "2026-03-11",
-    "value": 1131.4
-  },
-  {
-    "date": "2026-03-11",
-    "value": 310.75
-  },
-  {
-    "date": "2026-03-11",
-    "value": 2223.97
-  },
-  {
-    "date": "2026-03-11",
-    "value": 1510.75
-  },
-  {
-    "date": "2026-03-11",
-    "value": 2000.83
   },
   {
     "date": "2026-03-11",
@@ -14793,27 +13837,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-13",
-    "value": 1954.55
-  },
-  {
-    "date": "2026-03-13",
     "value": 1851.24
   },
   {
     "date": "2026-03-13",
-    "value": 1892.56
-  },
-  {
-    "date": "2026-03-13",
     "value": 1561.16
-  },
-  {
-    "date": "2026-03-13",
-    "value": 2521.49
-  },
-  {
-    "date": "2026-03-13",
-    "value": 2036.36
   },
   {
     "date": "2026-03-13",
@@ -14897,19 +13925,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-16",
-    "value": 2447.11
-  },
-  {
-    "date": "2026-03-16",
-    "value": 3308.27
-  },
-  {
-    "date": "2026-03-16",
     "value": 1483.47
-  },
-  {
-    "date": "2026-03-16",
-    "value": 2190.91
   },
   {
     "date": "2026-03-16",
@@ -14933,10 +13949,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-17",
-    "value": 1363.64
-  },
-  {
-    "date": "2026-03-17",
     "value": 5310.75
   },
   {
@@ -14945,23 +13957,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-17",
-    "value": 1363.64
-  },
-  {
-    "date": "2026-03-17",
     "value": 1561.98
   },
   {
     "date": "2026-03-17",
-    "value": 1777.69
-  },
-  {
-    "date": "2026-03-17",
     "value": 1396.69
-  },
-  {
-    "date": "2026-03-17",
-    "value": 1321.49
   },
   {
     "date": "2026-03-17",
@@ -14997,15 +13997,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-18",
-    "value": 1363.64
-  },
-  {
-    "date": "2026-03-18",
     "value": 2801.65
-  },
-  {
-    "date": "2026-03-18",
-    "value": 1852.07
   },
   {
     "date": "2026-03-18",
@@ -15029,15 +14021,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-19",
-    "value": 2521.49
-  },
-  {
-    "date": "2026-03-19",
     "value": 1561.98
-  },
-  {
-    "date": "2026-03-19",
-    "value": 4963.64
   },
   {
     "date": "2026-03-19",
@@ -15061,23 +14045,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-20",
-    "value": 2521.49
-  },
-  {
-    "date": "2026-03-20",
     "value": 1479.34
   },
   {
     "date": "2026-03-20",
-    "value": 2223.14
-  },
-  {
-    "date": "2026-03-20",
     "value": 196.69
-  },
-  {
-    "date": "2026-03-20",
-    "value": 2112.4
   },
   {
     "date": "2026-03-20",
@@ -15193,22 +14165,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-23",
-    "value": 2057.85
-  },
-  {
-    "date": "2026-03-23",
-    "value": 353.72
-  },
-  {
-    "date": "2026-03-23",
-    "value": 1363.64
-  },
-  {
-    "date": "2026-03-23",
-    "value": 2057.85
-  },
-  {
-    "date": "2026-03-23",
     "value": 2223.14
   },
   {
@@ -15246,10 +14202,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-03-24",
     "value": 1699.18
-  },
-  {
-    "date": "2026-03-24",
-    "value": 2700.41
   },
   {
     "date": "2026-03-24",
@@ -15293,14 +14245,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-25",
-    "value": 2884.3
-  },
-  {
-    "date": "2026-03-25",
-    "value": 1892.56
-  },
-  {
-    "date": "2026-03-25",
     "value": 139.67
   },
   {
@@ -15336,40 +14280,12 @@ export const orderValueDataCZ: OrderValueRecord[] = [
     "value": 4198.34
   },
   {
-    "date": "2026-03-26",
-    "value": 1396.69
-  },
-  {
-    "date": "2026-03-26",
-    "value": 2423.14
-  },
-  {
-    "date": "2026-03-26",
-    "value": 2223.97
-  },
-  {
-    "date": "2026-03-26",
-    "value": 1396.69
-  },
-  {
-    "date": "2026-03-26",
-    "value": 1798.35
-  },
-  {
     "date": "2026-03-27",
     "value": 1876.86
   },
   {
     "date": "2026-03-27",
-    "value": 2238.02
-  },
-  {
-    "date": "2026-03-27",
     "value": 2223.14
-  },
-  {
-    "date": "2026-03-27",
-    "value": 1484.3
   },
   {
     "date": "2026-03-27",
@@ -15453,14 +14369,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-03-30",
-    "value": 2032.97
-  },
-  {
-    "date": "2026-03-30",
-    "value": 2675.21
-  },
-  {
-    "date": "2026-03-30",
     "value": 2223.97
   },
   {
@@ -15474,10 +14382,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-03-30",
     "value": 2504.96
-  },
-  {
-    "date": "2026-03-31",
-    "value": 2968.6
   },
   {
     "date": "2026-03-31",
@@ -15637,18 +14541,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-04-07",
-    "value": 1321.49
-  },
-  {
-    "date": "2026-04-07",
-    "value": 2305.79
-  },
-  {
-    "date": "2026-04-07",
-    "value": 959.5
-  },
-  {
-    "date": "2026-04-07",
     "value": 1479.34
   },
   {
@@ -15681,23 +14573,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-04-08",
-    "value": 1405.79
-  },
-  {
-    "date": "2026-04-08",
     "value": 1483.47
   },
   {
     "date": "2026-04-08",
     "value": 1941.32
-  },
-  {
-    "date": "2026-04-08",
-    "value": 3280.17
-  },
-  {
-    "date": "2026-04-08",
-    "value": 1479.34
   },
   {
     "date": "2026-04-08",
@@ -15730,14 +14610,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-04-10",
     "value": 4033.06
-  },
-  {
-    "date": "2026-04-10",
-    "value": 2057.85
-  },
-  {
-    "date": "2026-04-10",
-    "value": 2967.77
   },
   {
     "date": "2026-04-11",
@@ -15817,23 +14689,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-04-14",
-    "value": 4001.66
-  },
-  {
-    "date": "2026-04-14",
     "value": 716.53
   },
   {
     "date": "2026-04-14",
     "value": 3470.25
-  },
-  {
-    "date": "2026-04-14",
-    "value": 1852.07
-  },
-  {
-    "date": "2026-04-14",
-    "value": 1852.07
   },
   {
     "date": "2026-04-14",
@@ -15853,10 +14713,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-04-15",
-    "value": 2505.79
-  },
-  {
-    "date": "2026-04-15",
     "value": 1405.79
   },
   {
@@ -15866,10 +14722,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-04-15",
     "value": 2521.49
-  },
-  {
-    "date": "2026-04-15",
-    "value": 2223.97
   },
   {
     "date": "2026-04-15",
@@ -15897,19 +14749,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-04-16",
-    "value": 959.5
-  },
-  {
-    "date": "2026-04-16",
     "value": 1817.36
   },
   {
     "date": "2026-04-16",
     "value": 1479.34
-  },
-  {
-    "date": "2026-04-16",
-    "value": 2075.21
   },
   {
     "date": "2026-04-16",
@@ -15921,19 +14765,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-04-17",
-    "value": 2075.21
-  },
-  {
-    "date": "2026-04-17",
     "value": 1479.34
   },
   {
     "date": "2026-04-17",
     "value": 2000.83
-  },
-  {
-    "date": "2026-04-17",
-    "value": 2595.87
   },
   {
     "date": "2026-04-17",
@@ -15950,10 +14786,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-04-18",
     "value": 3800.83
-  },
-  {
-    "date": "2026-04-18",
-    "value": 2075.21
   },
   {
     "date": "2026-04-18",
@@ -16045,18 +14877,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-04-20",
-    "value": 2000.83
-  },
-  {
-    "date": "2026-04-20",
-    "value": 1479.34
-  },
-  {
-    "date": "2026-04-20",
-    "value": 1561.16
-  },
-  {
-    "date": "2026-04-20",
     "value": 3144.63
   },
   {
@@ -16078,14 +14898,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-04-21",
     "value": 1954.55
-  },
-  {
-    "date": "2026-04-22",
-    "value": 2388.43
-  },
-  {
-    "date": "2026-04-22",
-    "value": 6347.11
   },
   {
     "date": "2026-04-22",
@@ -16113,19 +14925,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-04-23",
-    "value": 1263.64
-  },
-  {
-    "date": "2026-04-23",
     "value": 652.89
-  },
-  {
-    "date": "2026-04-23",
-    "value": 1462.81
-  },
-  {
-    "date": "2026-04-23",
-    "value": 1018.18
   },
   {
     "date": "2026-04-23",
@@ -16146,10 +14946,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-04-24",
     "value": 1404.13
-  },
-  {
-    "date": "2026-04-24",
-    "value": 1484.3
   },
   {
     "date": "2026-04-24",
@@ -16269,15 +15065,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-04-29",
-    "value": 3045.46
-  },
-  {
-    "date": "2026-04-29",
     "value": 652.89
-  },
-  {
-    "date": "2026-04-29",
-    "value": 1305.78
   },
   {
     "date": "2026-04-29",
@@ -16294,18 +15082,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-04-30",
     "value": 114.88
-  },
-  {
-    "date": "2026-04-30",
-    "value": 2075.21
-  },
-  {
-    "date": "2026-04-30",
-    "value": 3636.37
-  },
-  {
-    "date": "2026-04-30",
-    "value": 1366.12
   },
   {
     "date": "2026-04-30",
@@ -16397,23 +15173,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-05",
-    "value": 3338.02
-  },
-  {
-    "date": "2026-05-05",
     "value": 3733.06
   },
   {
     "date": "2026-05-06",
     "value": 4205.78
-  },
-  {
-    "date": "2026-05-06",
-    "value": 1644.63
-  },
-  {
-    "date": "2026-05-06",
-    "value": 4364.47
   },
   {
     "date": "2026-05-06",
@@ -16429,19 +15193,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-07",
-    "value": 2744.63
-  },
-  {
-    "date": "2026-05-07",
     "value": 2471.07
   },
   {
     "date": "2026-05-07",
     "value": 2223.14
-  },
-  {
-    "date": "2026-05-07",
-    "value": 1844.63
   },
   {
     "date": "2026-05-07",
@@ -16482,10 +15238,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-05-09",
     "value": 2223.97
-  },
-  {
-    "date": "2026-05-09",
-    "value": 1479.34
   },
   {
     "date": "2026-05-10",
@@ -16545,19 +15297,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-12",
-    "value": 1561.16
-  },
-  {
-    "date": "2026-05-12",
-    "value": 3645.46
-  },
-  {
-    "date": "2026-05-12",
     "value": 4495.87
-  },
-  {
-    "date": "2026-05-12",
-    "value": 1954.55
   },
   {
     "date": "2026-05-12",
@@ -16585,19 +15325,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-13",
-    "value": 1366.12
-  },
-  {
-    "date": "2026-05-13",
     "value": 2058.68
   },
   {
     "date": "2026-05-13",
     "value": 1561.98
-  },
-  {
-    "date": "2026-05-13",
-    "value": 1644.63
   },
   {
     "date": "2026-05-13",
@@ -16629,10 +15361,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-14",
-    "value": 2297.52
-  },
-  {
-    "date": "2026-05-14",
     "value": 1405.79
   },
   {
@@ -16650,10 +15378,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-05-14",
     "value": 1362.81
-  },
-  {
-    "date": "2026-05-14",
-    "value": 2075.21
   },
   {
     "date": "2026-05-14",
@@ -16702,10 +15426,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-05-15",
     "value": 2809.09
-  },
-  {
-    "date": "2026-05-15",
-    "value": 1843.81
   },
   {
     "date": "2026-05-15",
@@ -17001,10 +15721,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-18",
-    "value": 2039.67
-  },
-  {
-    "date": "2026-05-18",
     "value": 3452.07
   },
   {
@@ -17097,19 +15813,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-19",
-    "value": 2223.97
-  },
-  {
-    "date": "2026-05-19",
     "value": 1895.87
   },
   {
     "date": "2026-05-19",
     "value": 1362.81
-  },
-  {
-    "date": "2026-05-19",
-    "value": 213.23
   },
   {
     "date": "2026-05-19",
@@ -17138,14 +15846,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-05-19",
     "value": 1362.81
-  },
-  {
-    "date": "2026-05-19",
-    "value": 1672.73
-  },
-  {
-    "date": "2026-05-19",
-    "value": 2101.65
   },
   {
     "date": "2026-05-19",
@@ -17252,36 +15952,12 @@ export const orderValueDataCZ: OrderValueRecord[] = [
     "value": 1817.36
   },
   {
-    "date": "2026-05-20",
-    "value": 2892.56
-  },
-  {
-    "date": "2026-05-20",
-    "value": 2898.52
-  },
-  {
-    "date": "2026-05-20",
-    "value": 1635.54
-  },
-  {
-    "date": "2026-05-20",
-    "value": 2075.21
-  },
-  {
-    "date": "2026-05-20",
-    "value": 2844.51
-  },
-  {
     "date": "2026-05-21",
     "value": 1561.98
   },
   {
     "date": "2026-05-21",
     "value": 2223.14
-  },
-  {
-    "date": "2026-05-21",
-    "value": 4894.22
   },
   {
     "date": "2026-05-21",
@@ -17322,18 +15998,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-05-22",
     "value": 2966.94
-  },
-  {
-    "date": "2026-05-22",
-    "value": 2376.03
-  },
-  {
-    "date": "2026-05-22",
-    "value": 2825.62
-  },
-  {
-    "date": "2026-05-22",
-    "value": 1223.14
   },
   {
     "date": "2026-05-22",
@@ -17445,31 +16109,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-26",
-    "value": 1818.18
-  },
-  {
-    "date": "2026-05-26",
-    "value": 1331.4
-  },
-  {
-    "date": "2026-05-26",
     "value": 1362.81
   },
   {
     "date": "2026-05-26",
     "value": 2801.65
-  },
-  {
-    "date": "2026-05-26",
-    "value": 1451.24
-  },
-  {
-    "date": "2026-05-26",
-    "value": 1800
-  },
-  {
-    "date": "2026-05-26",
-    "value": 1362.81
   },
   {
     "date": "2026-05-26",
@@ -17541,10 +16185,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-27",
-    "value": 2367.77
-  },
-  {
-    "date": "2026-05-27",
     "value": 3831.4
   },
   {
@@ -17553,15 +16193,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-27",
-    "value": 3798.7
-  },
-  {
-    "date": "2026-05-27",
     "value": 809.92
-  },
-  {
-    "date": "2026-05-27",
-    "value": 1667.77
   },
   {
     "date": "2026-05-27",
@@ -17569,23 +16201,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-27",
-    "value": 1362.81
-  },
-  {
-    "date": "2026-05-27",
     "value": 1729.75
   },
   {
     "date": "2026-05-27",
-    "value": 2436.36
-  },
-  {
-    "date": "2026-05-27",
     "value": 1300.83
-  },
-  {
-    "date": "2026-05-27",
-    "value": 2101.65
   },
   {
     "date": "2026-05-27",
@@ -17669,27 +16289,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-05-29",
-    "value": 1940.5
-  },
-  {
-    "date": "2026-05-29",
     "value": 1654.55
   },
   {
     "date": "2026-05-29",
     "value": 2958.68
-  },
-  {
-    "date": "2026-05-29",
-    "value": 1471.07
-  },
-  {
-    "date": "2026-05-29",
-    "value": 1454.63
-  },
-  {
-    "date": "2026-05-29",
-    "value": 2528.1
   },
   {
     "date": "2026-05-30",
@@ -17757,19 +16361,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-06-01",
-    "value": 1939.67
-  },
-  {
-    "date": "2026-06-01",
     "value": 196.7
   },
   {
     "date": "2026-06-01",
     "value": 1849.59
-  },
-  {
-    "date": "2026-06-01",
-    "value": 2254.54
   },
   {
     "date": "2026-06-01",
@@ -17781,23 +16377,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-06-02",
-    "value": 2075.21
-  },
-  {
-    "date": "2026-06-02",
-    "value": 1484.3
-  },
-  {
-    "date": "2026-06-02",
     "value": 1066.12
   },
   {
     "date": "2026-06-02",
     "value": 2362.81
-  },
-  {
-    "date": "2026-06-02",
-    "value": 2898.52
   },
   {
     "date": "2026-06-02",
@@ -17810,10 +16394,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-06-03",
     "value": 2057.02
-  },
-  {
-    "date": "2026-06-03",
-    "value": 2293.39
   },
   {
     "date": "2026-06-03",
@@ -17837,51 +16417,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-06-04",
-    "value": 1454.21
-  },
-  {
-    "date": "2026-06-04",
     "value": 1484.3
   },
   {
     "date": "2026-06-04",
-    "value": 1347.93
-  },
-  {
-    "date": "2026-06-04",
-    "value": 4115.7
-  },
-  {
-    "date": "2026-06-04",
     "value": 139.67
-  },
-  {
-    "date": "2026-06-05",
-    "value": 2652.9
-  },
-  {
-    "date": "2026-06-05",
-    "value": 2000.83
-  },
-  {
-    "date": "2026-06-05",
-    "value": 3709.92
-  },
-  {
-    "date": "2026-06-05",
-    "value": 140.5
-  },
-  {
-    "date": "2026-06-05",
-    "value": 176.86
-  },
-  {
-    "date": "2026-06-05",
-    "value": 214.88
-  },
-  {
-    "date": "2026-06-05",
-    "value": 1562.81
   },
   {
     "date": "2026-06-06",
@@ -17933,10 +16473,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-06-09",
-    "value": 3978.52
-  },
-  {
-    "date": "2026-06-09",
     "value": 1396.69
   },
   {
@@ -17965,19 +16501,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-06-10",
-    "value": 2404.14
-  },
-  {
-    "date": "2026-06-10",
     "value": 2190.91
-  },
-  {
-    "date": "2026-06-10",
-    "value": 2447.11
-  },
-  {
-    "date": "2026-06-10",
-    "value": 1170.25
   },
   {
     "date": "2026-06-10",
@@ -17997,27 +16521,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-06-11",
-    "value": 1975.21
-  },
-  {
-    "date": "2026-06-11",
     "value": 1892.56
   },
   {
     "date": "2026-06-11",
-    "value": 2447.11
-  },
-  {
-    "date": "2026-06-11",
     "value": 1405.79
-  },
-  {
-    "date": "2026-06-11",
-    "value": 1066.12
-  },
-  {
-    "date": "2026-06-12",
-    "value": 1562.81
   },
   {
     "date": "2026-06-12",
@@ -18061,43 +16569,15 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-06-15",
-    "value": 2305.79
-  },
-  {
-    "date": "2026-06-15",
     "value": 2528.1
-  },
-  {
-    "date": "2026-06-15",
-    "value": 1018.18
-  },
-  {
-    "date": "2026-06-15",
-    "value": 4968.6
-  },
-  {
-    "date": "2026-06-15",
-    "value": 2075.21
   },
   {
     "date": "2026-06-15",
     "value": 1701.65
   },
   {
-    "date": "2026-06-15",
-    "value": 1396.69
-  },
-  {
     "date": "2026-06-16",
     "value": 2057.85
-  },
-  {
-    "date": "2026-06-16",
-    "value": 1405.79
-  },
-  {
-    "date": "2026-06-16",
-    "value": 1066.12
   },
   {
     "date": "2026-06-16",
@@ -18114,46 +16594,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-06-17",
     "value": 1479.34
-  },
-  {
-    "date": "2026-06-17",
-    "value": 1817.36
-  },
-  {
-    "date": "2026-06-17",
-    "value": 1561.16
-  },
-  {
-    "date": "2026-06-18",
-    "value": 1635.54
-  },
-  {
-    "date": "2026-06-18",
-    "value": 3108.27
-  },
-  {
-    "date": "2026-06-19",
-    "value": 1652.89
-  },
-  {
-    "date": "2026-06-19",
-    "value": 1761.16
-  },
-  {
-    "date": "2026-06-19",
-    "value": 2801.65
-  },
-  {
-    "date": "2026-06-19",
-    "value": 6522.32
-  },
-  {
-    "date": "2026-06-19",
-    "value": 2521.49
-  },
-  {
-    "date": "2026-06-19",
-    "value": 2521.49
   },
   {
     "date": "2026-06-20",
@@ -18193,15 +16633,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-06-23",
-    "value": 1479.34
-  },
-  {
-    "date": "2026-06-23",
     "value": 838.85
-  },
-  {
-    "date": "2026-06-23",
-    "value": 1644.63
   },
   {
     "date": "2026-06-23",
@@ -18209,19 +16641,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-06-23",
-    "value": 2305.79
-  },
-  {
-    "date": "2026-06-23",
-    "value": 1640.5
-  },
-  {
-    "date": "2026-06-23",
     "value": 1718.18
-  },
-  {
-    "date": "2026-06-23",
-    "value": 1114.88
   },
   {
     "date": "2026-06-23",
@@ -18257,14 +16677,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-06-24",
-    "value": 1635.54
-  },
-  {
-    "date": "2026-06-24",
-    "value": 1628.93
-  },
-  {
-    "date": "2026-06-24",
     "value": 1396.69
   },
   {
@@ -18292,10 +16704,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
     "value": 793.39
   },
   {
-    "date": "2026-06-25",
-    "value": 1479.34
-  },
-  {
     "date": "2026-06-26",
     "value": 1206.61
   },
@@ -18317,10 +16725,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-06-26",
-    "value": 1479.34
-  },
-  {
-    "date": "2026-06-26",
     "value": 1561.98
   },
   {
@@ -18330,10 +16734,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-06-26",
     "value": 2594.22
-  },
-  {
-    "date": "2026-06-26",
-    "value": 1114.88
   },
   {
     "date": "2026-06-26",
@@ -18405,10 +16805,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-07-01",
-    "value": 1377.36
-  },
-  {
-    "date": "2026-07-01",
     "value": 1198.35
   },
   {
@@ -18436,20 +16832,8 @@ export const orderValueDataCZ: OrderValueRecord[] = [
     "value": 3296.7
   },
   {
-    "date": "2026-07-02",
-    "value": 2744.63
-  },
-  {
     "date": "2026-07-03",
     "value": 1561.98
-  },
-  {
-    "date": "2026-07-03",
-    "value": 2535.3
-  },
-  {
-    "date": "2026-07-03",
-    "value": 2447.11
   },
   {
     "date": "2026-07-03",
@@ -18522,10 +16906,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-07-07",
     "value": 1314.05
-  },
-  {
-    "date": "2026-07-07",
-    "value": 1484.3
   },
   {
     "date": "2026-07-07",
@@ -18705,19 +17085,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-07-15",
-    "value": 1518.36
-  },
-  {
-    "date": "2026-07-15",
     "value": 1561.98
   },
   {
     "date": "2026-07-15",
     "value": 1206.61
-  },
-  {
-    "date": "2026-07-16",
-    "value": 1798.35
   },
   {
     "date": "2026-07-16",
@@ -18737,10 +17109,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-07-17",
-    "value": 1805.79
-  },
-  {
-    "date": "2026-07-17",
     "value": 1858.68
   },
   {
@@ -18750,10 +17118,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-07-17",
     "value": 1148.76
-  },
-  {
-    "date": "2026-07-17",
-    "value": 575.21
   },
   {
     "date": "2026-07-17",
@@ -18789,19 +17153,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-07-20",
-    "value": 1484.3
-  },
-  {
-    "date": "2026-07-20",
     "value": 1640.5
   },
   {
     "date": "2026-07-21",
     "value": 1114.88
-  },
-  {
-    "date": "2026-07-21",
-    "value": 2447.11
   },
   {
     "date": "2026-07-21",
@@ -18818,10 +17174,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-07-22",
     "value": 1561.98
-  },
-  {
-    "date": "2026-07-22",
-    "value": 1757.85
   },
   {
     "date": "2026-07-23",
@@ -18877,19 +17229,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-07-28",
-    "value": 1206.61
-  },
-  {
-    "date": "2026-07-28",
     "value": 1644.63
-  },
-  {
-    "date": "2026-07-28",
-    "value": 1644.63
-  },
-  {
-    "date": "2026-07-28",
-    "value": 2521.49
   },
   {
     "date": "2026-07-28",
@@ -18897,15 +17237,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-07-28",
-    "value": 1067.26
-  },
-  {
-    "date": "2026-07-28",
     "value": 1248.76
-  },
-  {
-    "date": "2026-07-29",
-    "value": 1147.93
   },
   {
     "date": "2026-07-29",
@@ -18933,27 +17265,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-07-30",
-    "value": 788.5
-  },
-  {
-    "date": "2026-07-30",
     "value": 1206.61
   },
   {
     "date": "2026-07-31",
-    "value": 2967.77
-  },
-  {
-    "date": "2026-07-31",
     "value": 1314.05
-  },
-  {
-    "date": "2026-07-31",
-    "value": 3289.25
-  },
-  {
-    "date": "2026-07-31",
-    "value": 1644.63
   },
   {
     "date": "2026-07-31",
@@ -19013,14 +17329,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-08-04",
-    "value": 1301.07
-  },
-  {
-    "date": "2026-08-04",
-    "value": 2401.65
-  },
-  {
-    "date": "2026-08-04",
     "value": 2759.51
   },
   {
@@ -19038,10 +17346,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-08-06",
     "value": 1206.61
-  },
-  {
-    "date": "2026-08-06",
-    "value": 2670.25
   },
   {
     "date": "2026-08-06",
@@ -19125,19 +17429,7 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-08-11",
-    "value": 2057.85
-  },
-  {
-    "date": "2026-08-11",
     "value": 2966.94
-  },
-  {
-    "date": "2026-08-11",
-    "value": 1553.72
-  },
-  {
-    "date": "2026-08-11",
-    "value": 2145.45
   },
   {
     "date": "2026-08-11",
@@ -19149,39 +17441,11 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-08-12",
-    "value": 2825.62
-  },
-  {
-    "date": "2026-08-12",
-    "value": 4267.77
-  },
-  {
-    "date": "2026-08-12",
-    "value": 3394.22
-  },
-  {
-    "date": "2026-08-12",
-    "value": 2595.87
-  },
-  {
-    "date": "2026-08-12",
-    "value": 1544.63
-  },
-  {
-    "date": "2026-08-12",
-    "value": 1734.71
-  },
-  {
-    "date": "2026-08-12",
     "value": 2156.2
   },
   {
     "date": "2026-08-13",
     "value": 1644.63
-  },
-  {
-    "date": "2026-08-13",
-    "value": 1990.91
   },
   {
     "date": "2026-08-13",
@@ -19202,14 +17466,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-08-14",
     "value": 1727.27
-  },
-  {
-    "date": "2026-08-14",
-    "value": 1852.07
-  },
-  {
-    "date": "2026-08-14",
-    "value": 1405.79
   },
   {
     "date": "2026-08-15",
@@ -19257,18 +17513,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-08-18",
-    "value": 2607.94
-  },
-  {
-    "date": "2026-08-18",
-    "value": 1066.12
-  },
-  {
-    "date": "2026-08-18",
-    "value": 2057.85
-  },
-  {
-    "date": "2026-08-18",
     "value": 1231.4
   },
   {
@@ -19293,18 +17537,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-08-19",
-    "value": 2057.85
-  },
-  {
-    "date": "2026-08-19",
-    "value": 1644.63
-  },
-  {
-    "date": "2026-08-19",
-    "value": 3049.59
-  },
-  {
-    "date": "2026-08-19",
     "value": 1114.88
   },
   {
@@ -19312,28 +17544,8 @@ export const orderValueDataCZ: OrderValueRecord[] = [
     "value": 3694.2
   },
   {
-    "date": "2026-08-19",
-    "value": 735.54
-  },
-  {
-    "date": "2026-08-19",
-    "value": 2129.09
-  },
-  {
-    "date": "2026-08-19",
-    "value": 1396.69
-  },
-  {
-    "date": "2026-08-19",
-    "value": 2884.3
-  },
-  {
     "date": "2026-08-20",
     "value": 818.18
-  },
-  {
-    "date": "2026-08-20",
-    "value": 2057.85
   },
   {
     "date": "2026-08-20",
