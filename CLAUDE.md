@@ -54,9 +54,20 @@ Objednávky se stahují z Upgates REST API (Basic Auth, `LOGIN:API_KEY` v Base64
 | `scripts/upgatesCache.json` | Cache všech objednávek (ignorováno v .gitignore) |
 
 **Sync strategie:**
-- **Full sync** — při prázdné cache nebo `--full` flagu; stáhne vše od `2023-03-03`; ~49 stránek, ~40 s
-- **Inkrementální sync** — denně; `last_update_time_from` za posledních 30 dní; ~4 stránky, ~5 s
+- **Full sync** — při prázdné cache nebo `--full` flagu; stáhne vše od `2023-03-03`; ~57 stránek, ~40 s
+- **Inkrementální sync** — denně; `last_update_time_from` za posledních 30 dní, ale nikdy méně nazpátek než `lastIncrementalSync − 3 dny` (viz níže "Pojistky proti díře v datech"); ~4 stránky, ~5 s
 - `mergeOrders()` přepisuje záznamy dle `order_id` → zachytí storna a změny statusů
+- **Důležité:** GitHub Actions checkout nemá `scripts/upgatesCache.json` (je v `.gitignore`, nepersistuje mezi běhy) → na GHA se tak fakticky **vždy dělá full sync**, i bez `--full` flagu. Inkrementální větev se reálně uplatní jen při lokálním spuštění (perzistentní cache na disku) nebo na self-hosted runneru.
+
+### Pojistky proti díře v datech (incident 2026-07)
+
+V červenci 2026 se zjistilo, že tržby v aplikaci byly za květen výrazně nižší než v administraci Upgates (238k vs. 724k Kč). Příčina: lokální `scripts/upgatesCache.json` (persistentní, na rozdíl od GHA) měl po full syncu 11. 5. 2026 jen inkrementální syncy s pevným 30denním oknem — objednávky vytvořené mezi tímto full syncem a chvílí, kdy je pokrylo aktuální rolling okno, natrvalo propadly. Lokální spuštění `updateData.js` a následný push pak touto neúplnou verzí přepsalo správná GHA data.
+
+Opravy:
+- `scripts/upgatesClient.js` — inkrementální `last_update_time_from` je `min(dnes − 30 dní, lastIncrementalSync − 3 dny)`. I víc než měsíční výpadek syncu už nemůže vytvořit trvalou díru.
+- `scripts/updateData.js` → `checkForRevenueRegression()` — před přepsáním `realDataCZ.ts` porovná tržby za "uzavřené" období (starší 35 dní) s aktuálním stavem na disku; při poklesu > 10 % zaloguje hlasité VAROVÁNÍ (běh nepřeruší, jen upozorní v logu/GHA výstupu).
+- `scripts/updateData.bat` — opravena zastaralá cesta (mířila na starou přejmenovanou složku `Shoptet reporting` místo `Prirozeny-beh-reporting`), Windows Task Scheduler záloha tak celou dobu tiše selhávala.
+- **Doporučení:** lokální spuštění `updateData.js` (např. kvůli testu) před commitem/pushem raději spouštět s `--full`, ať se nikdy neuplatní lokální inkrementální cache s případnou mezerou.
 
 **Stavy objednávek Upgates** (všechny known status_id):
 
@@ -272,6 +283,8 @@ KPI boxy (11 + 2 ve vlastním řádku): Tržby s/bez DPH, Počet obj., AOV, Mark
 
 **Grafy (4 celkem, 2×2 mřížka):** Tržby+Objednávky, Náklady+PNO, AOV (YoY), CPA (YoY) — komponenty `AovChart` a `CpaChart` z `components/charts/AovCpaChart.tsx`.
 
+**Grafy prodloužené do konce měsíce/roku (`chartDataExtended`, 2026-08):** U otevřených period (`current_month`/`current_year`) `hooks/useDashboardData.ts` vrací kromě `chartData` (jen dny s reálnými daty) i `chartDataExtended` — sjednocení dní aktuálního období s loňskými daty rozšířenými až do konce měsíce/roku, takže loňská (přerušovaná) křivka pokračuje až na konec osy X, zatímco letošní křivka viditelně končí posledním dostupným dnem (pole = `null` pro dny bez letošních dat). `KpiLineCharts.tsx` a `AovCpaChart.tsx` přijímají `ExtendedChartDataPoint[]`; jejich tooltipy filtrují `p.value != null`, aby u budoucích dnů nezobrazily zavádějící „0". Sparklines v KPI kartách nadále používají nerozšířený `chartData`. Stejný princip jako u Celtic-supply reportingu.
+
 **Odstraněno:** Storna, Podíl storen, sekce Prodejna (přesunuta na `/prodejna`).
 
 Marže a Hrubý zisk se počítají z `marginDataCZ`:
@@ -307,9 +320,14 @@ Data z `getDailyMarketingData()` a `getMarketingSourceData()` v `data/mockGenera
 
 ### `/retention` — Retenční analýza
 
-- **Měsíční graf Noví vs. stávající zákazníci** — 100% stacked bar, hned pod KPI boxy
-  - Data z `computeMonthlyNewVsReturning()` v `lib/retentionUtils.ts`
-  - Zelená = noví (první nákup v daném měsíci), Modrá = stávající (vrátili se)
+Sjednoceno se strukturou Celtic-supply reportingu (2026-08). Dva grouped bar charty hned pod KPI boxy (dva sloupce vedle sebe per měsíc, ne stacked, ne 100% stacked):
+- **„Noví vs. stávající zákazníci — vývoj po měsících"** — absolutní počty, data z `computeMonthlyNewVsReturning()` v `lib/retentionUtils.ts`. Zelená = noví (první nákup v daném měsíci), modrá = stávající (vrátili se).
+- **„Noví vs. stávající zákazníci — tržby bez DPH po měsících"** — stejná struktura, data z `computeMonthlyNewVsReturningRevenue()` (sčítá `c.revenues`)
+
+Tooltip obou grafů (custom `content` v `app/retention/page.tsx`) zobrazuje hodnotu + podíl v měsíci, srovnání se stejným měsícem loňského roku (YoY % + předchozí hodnota) a řádek Celkem.
+
+**Meziroční srovnání aktuálního (nedokončeného) měsíce k předcházejícímu dni, ne k celému loňskému měsíci** — `computeCurrentMonthYoyCutoff()` v `lib/retentionUtils.ts` spočítá loňská data jen do stejného dne v měsíci jako letos (`cutoffDay` = den včerejška). Tooltip při najetí na aktuální měsíc použije tato cutoff data a zobrazí popisek „vs. loňský rok (do X. dne)" místo celého loňského měsíce.
+
 - RFM segmentace, LTV, AOV, repeat purchase rate
 
 ### `/shipping` — Doprava a platby
