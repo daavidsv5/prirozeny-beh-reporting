@@ -21,6 +21,25 @@ export interface ChartDataPoint {
   cpa_prev: number;
 }
 
+/** Jako ChartDataPoint, ale current-year pole jsou `null` pro dny bez dat (dny do konce
+ *  probíhajícího měsíce/roku) — umožňuje grafu zobrazit loňskou křivku až do konce
+ *  měsíce/roku, zatímco letošní křivka viditelně končí posledním dostupným dnem. */
+export interface ExtendedChartDataPoint {
+  date: string;
+  revenue: number | null;
+  revenue_prev: number;
+  orders: number | null;
+  orders_prev: number;
+  cost: number | null;
+  cost_prev: number;
+  pno: number | null;
+  pno_prev: number;
+  aov: number | null;
+  aov_prev: number;
+  cpa: number | null;
+  cpa_prev: number;
+}
+
 export interface DashboardData {
   currentData: DailyRecord[];
   prevData: DailyRecord[];
@@ -28,6 +47,7 @@ export interface DashboardData {
   prevKpi: KpiData;
   yoy: Record<keyof KpiData, number>;
   chartData: ChartDataPoint[];
+  chartDataExtended: ExtendedChartDataPoint[];
   currency: Currency;
   /** False when no previous-year data exists (e.g. CZ launched May 2025) */
   hasPrevData: boolean;
@@ -124,9 +144,26 @@ export function useDashboardData(
       currentByDate[r.date].cost    += v.cost;
     }
 
+    // For "current_month" / "current_year" the period is still open (end = yesterday), so
+    // prevEnd only reaches the same day last year. For the KPI charts we still want to see
+    // last year's curve run all the way to the end of the month/year, so fetch a wider slice
+    // of last year's data just for chart rendering (KPI/YoY math above stays untouched).
+    let chartPrevEnd = prevEnd;
+    if (filters.timePeriod === 'current_month') {
+      chartPrevEnd = new Date(start.getFullYear(), start.getMonth() + 1, 0);
+      chartPrevEnd.setFullYear(chartPrevEnd.getFullYear() - 1);
+    } else if (filters.timePeriod === 'current_year') {
+      chartPrevEnd = new Date(start.getFullYear(), 11, 31);
+      chartPrevEnd.setFullYear(chartPrevEnd.getFullYear() - 1);
+    }
+    const chartPrevEndStr = isoDate(chartPrevEnd);
+    const prevDataForChart = chartPrevEnd > prevEnd
+      ? allData.filter(r => r.date >= prevStartStr && r.date <= chartPrevEndStr && filters.countries.includes(r.country))
+      : prevData;
+
     // Previous period shifted +1 year to align with current dates
     const prevByShiftedDate: Record<string, { revenue: number; orders: number; cost: number }> = {};
-    for (const r of prevData) {
+    for (const r of prevDataForChart) {
       const v = normalizedValues(r, currency, eurToCzk);
       const d = new Date(r.date);
       d.setFullYear(d.getFullYear() + 1);
@@ -157,8 +194,31 @@ export function useDashboardData(
       };
     });
 
+    // Union of dates: lets last year's line keep going past today even where this year's
+    // data doesn't exist yet (open current_month/current_year periods).
+    const allChartDates = new Set([...Object.keys(currentByDate), ...Object.keys(prevByShiftedDate)]);
+    const chartDataExtended: ExtendedChartDataPoint[] = Array.from(allChartDates).sort().map(date => {
+      const cur  = currentByDate[date];
+      const prev = prevByShiftedDate[date] ?? { revenue: 0, orders: 0, cost: 0 };
+      return {
+        date,
+        revenue:      cur ? cur.revenue : null,
+        revenue_prev: prev.revenue,
+        orders:       cur ? cur.orders : null,
+        orders_prev:  prev.orders,
+        cost:         cur ? cur.cost : null,
+        cost_prev:    prev.cost,
+        pno:      cur ? (cur.revenue > 0 ? Math.round(cur.cost  / cur.revenue  * 10000) / 100 : 0) : null,
+        pno_prev: prev.revenue > 0 ? Math.round(prev.cost / prev.revenue * 10000) / 100 : 0,
+        aov:      cur ? (cur.orders > 0 ? cur.revenue  / cur.orders  : 0) : null,
+        aov_prev: prev.orders > 0 ? prev.revenue / prev.orders : 0,
+        cpa:      cur ? (cur.orders > 0 ? cur.cost  / cur.orders  : 0) : null,
+        cpa_prev: prev.orders > 0 ? prev.cost / prev.orders : 0,
+      };
+    });
+
     const hasPrevData = prevData.some(r => r.orders > 0 || r.revenue > 0);
 
-    return { currentData, prevData, kpi, prevKpi, yoy, chartData, currency, hasPrevData };
+    return { currentData, prevData, kpi, prevKpi, yoy, chartData, chartDataExtended, currency, hasPrevData };
   }, [filters, allData, eurToCzk]);
 }

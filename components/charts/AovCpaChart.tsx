@@ -4,7 +4,7 @@ import {
   LineChart, Line, XAxis, YAxis,
   CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
-import { ChartDataPoint } from '@/hooks/useDashboardData';
+import { ExtendedChartDataPoint as ChartDataPoint } from '@/hooks/useDashboardData';
 import { formatCurrency, formatShortDate } from '@/lib/formatters';
 import { Currency } from '@/data/types';
 import { C } from '@/lib/chartColors';

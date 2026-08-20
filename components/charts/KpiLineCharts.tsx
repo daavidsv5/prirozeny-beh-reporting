@@ -4,7 +4,7 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid,
   Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
-import { ChartDataPoint } from '@/hooks/useDashboardData';
+import { ExtendedChartDataPoint as ChartDataPoint } from '@/hooks/useDashboardData';
 import { formatCurrency, formatShortDate, formatMonthYear } from '@/lib/formatters';
 import { Currency } from '@/data/types';
 import { C } from '@/lib/chartColors';
@@ -44,7 +44,7 @@ function makeTooltip(
         <p className="font-semibold text-slate-600 mb-2 pb-1.5 border-b border-slate-100">
           {tickFormatter(label)}
         </p>
-        {payload.map((p: any) => (
+        {payload.map((p: any) => p.value != null && (
           <div key={p.name} className="flex items-center justify-between gap-4 py-0.5">
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: p.stroke }} />
@@ -155,7 +155,7 @@ function PnoChartCard({ data, hasPrevData, tickFormatter }: {
     return (
       <div className="bg-white border border-slate-200 rounded-xl shadow-lg p-3 text-xs min-w-[170px]">
         <p className="font-semibold text-slate-600 mb-2 pb-1.5 border-b border-slate-100">{tickFormatter(label)}</p>
-        {payload.map((p: any) => (
+        {payload.map((p: any) => p.value != null && (
           <div key={p.name} className="flex items-center justify-between gap-4 py-0.5">
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: p.stroke }} />

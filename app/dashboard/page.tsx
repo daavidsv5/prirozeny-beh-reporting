@@ -27,7 +27,7 @@ const periodTitles: Record<string, string> = {
 
 export default function DashboardPage() {
   const { filters, eurToCzk } = useFilters();
-  const { kpi, prevKpi, yoy, chartData, currentData, currency, hasPrevData } = useDashboardData(filters, mockData, eurToCzk);
+  const { kpi, prevKpi, yoy, chartData, chartDataExtended, currentData, currency, hasPrevData } = useDashboardData(filters, mockData, eurToCzk);
 
   const { start, end, prevStart, prevEnd } = getDateRange(filters);
 
@@ -168,12 +168,12 @@ export default function DashboardPage() {
       )}
 
       {/* KPI line charts — Tržby, Objednávky, Náklady, PNO */}
-      <KpiLineCharts data={chartData} currency={currency} hasPrevData={hasPrevData} isMonthly={isMonthly} />
+      <KpiLineCharts data={chartDataExtended} currency={currency} hasPrevData={hasPrevData} isMonthly={isMonthly} />
 
       {/* AOV + CPA charts */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-        <AovChart data={chartData} currency={currency} hasPrevData={hasPrevData} />
-        <CpaChart data={chartData} currency={currency} hasPrevData={hasPrevData} />
+        <AovChart data={chartDataExtended} currency={currency} hasPrevData={hasPrevData} />
+        <CpaChart data={chartDataExtended} currency={currency} hasPrevData={hasPrevData} />
       </div>
 
       {/* Table */}
