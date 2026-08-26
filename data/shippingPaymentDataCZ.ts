@@ -7,6 +7,7 @@ export interface ShippingPaymentRecord {
   name: string;
   count: number;
   revenue_vat: number;
+  free_count: number;   // orders with free shipping (price_with_vat === 0), excl. pickup/return/email; always 0 for payment records
 }
 
 export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
@@ -15,35230 +16,40295 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-03-03",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-03-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 1
   },
   {
     "date": "2023-03-03",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-03-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-03-06",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 1
   },
   {
     "date": "2023-03-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-03-07",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-03-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-03-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-03-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-03-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-03-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-03-28",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-03-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-03-29",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-03-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-04-01",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-04-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-04-05",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-04-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-04-10",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-04-10",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-04-12",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-04-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 1
   },
   {
     "date": "2023-04-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-04-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-04-17",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-04-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-04-20",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-04-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-04-23",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-04-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 2
   },
   {
     "date": "2023-04-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-04-26",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-04-29",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-04-29",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-04-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-04-30",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-04-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-05-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-05-03",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-04",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-05-06",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-08",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-09",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-10",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-05-11",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2023-05-12",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-13",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-14",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-05-15",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-05-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-05-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-05-24",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-26",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-26",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-05-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-05-29",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-05-30",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-05-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-05-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-01",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-06-04",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-06-05",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-06",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-07",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-08",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-08",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2023-06-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-06-09",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-10",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-06-10",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2023-06-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2023-06-11",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-06-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 5,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 4
   },
   {
     "date": "2023-06-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-12",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-12",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 5,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 4
   },
   {
     "date": "2023-06-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-13",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-14",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-14",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-06-17",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-06-18",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-19",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-20",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-06-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-06-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-06-21",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-22",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-22",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-22",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-06-24",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-25",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-26",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-06-26",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-26",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-06-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2023-06-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-27",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2023-06-28",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-06-28",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-06-29",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-29",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-30",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-06-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-06-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-01",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-07-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-02",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-03",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-03",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-04",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-04",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-05",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 2
   },
   {
     "date": "2023-07-06",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2023-07-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-07",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-07",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-07-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-07-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-09",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-07-09",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-09",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2023-07-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-10",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-11",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-07-11",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 3
   },
   {
     "date": "2023-07-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-12",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-07-12",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2023-07-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-07-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-07-13",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-07-13",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2023-07-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-14",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2023-07-15",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-15",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-16",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2023-07-17",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-07-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2023-07-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2023-07-18",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-18",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-18",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 6
   },
   {
     "date": "2023-07-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2023-07-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-19",
     "type": "payment",
     "name": "GoPay",
     "count": 8,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 210
+    "revenue_vat": 210,
+    "free_count": 0
   },
   {
     "date": "2023-07-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 3
   },
   {
     "date": "2023-07-20",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-20",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-07-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-21",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-21",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 1
   },
   {
     "date": "2023-07-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-22",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-07-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-23",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-23",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-23",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2023-07-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-07-24",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2023-07-25",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-26",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-27",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-27",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-27",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 1
   },
   {
     "date": "2023-07-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-28",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-29",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-29",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-07-29",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2023-07-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-07-30",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-07-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-07-31",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-31",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-07-31",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2023-08-01",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-01",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-08-02",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-08-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-08-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2023-08-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-08-03",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-08-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-08-04",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-08-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-08-05",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2023-08-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-06",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2023-08-07",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-08",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-08-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-08-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-10",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-08-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-08-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-14",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-14",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-08-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-08-16",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-08-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-17",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-20",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-21",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-22",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-22",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-08-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2023-08-23",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-23",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-08-24",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-08-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-08-24",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-08-25",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-08-26",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-27",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-28",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-29",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-30",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-08-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-08-31",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-08-31",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-01",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-09-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-09-02",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-09-03",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-05",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-06",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-09-07",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-08",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-09-10",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2023-09-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-09-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2023-09-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-09-12",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-09-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-13",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-13",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-14",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-09-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-09-15",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-09-17",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-18",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-19",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-20",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-09-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-09-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-09-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-09-28",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-09-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-10-04",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-10-04",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-10-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-10-05",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-10-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-10-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-10-08",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-10-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-10-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-10-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-10-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-10-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-10-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-10-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-10-18",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-10-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-10-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-10-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-10-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-10-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-10-23",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-10-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-10-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-10-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-10-31",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-10-31",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-11-01",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-01",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-11-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-11-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-11-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-11-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-04",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-11-04",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2023-11-06",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-07",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-11-07",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2023-11-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-08",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-11-08",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-11-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-08",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-11-10",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-11",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-11-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-11-12",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-12",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-11-13",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-11-14",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-11-15",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-11-18",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-19",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-20",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-24",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-11-27",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-11-28",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-11-29",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-11-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-11-30",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-11-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-11-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-12-01",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2023-12-03",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-03",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-03",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-12-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2023-12-04",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-12-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2023-12-05",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-06",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-06",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-08",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-12-09",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-09",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-12-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-12-10",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-12-12",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-12",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-12-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 1
   },
   {
     "date": "2023-12-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2023-12-13",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-12-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2023-12-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-14",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-14",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2023-12-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-12-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2023-12-15",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2023-12-16",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2023-12-17",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2023-12-18",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2023-12-18",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-26",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2023-12-30",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2023-12-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-01-04",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-01-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2024-01-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-01-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-01-08",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-01-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-01-10",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-01-10",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-01-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-01-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-01-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-01-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-01-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-01-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-01-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-01-22",
     "type": "shipping",
     "name": "SK Packeta Home",
     "count": 1,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 0
   },
   {
     "date": "2024-01-25",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-01-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-01-28",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-01-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-02-01",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-02-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-02-07",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-02-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2024-02-08",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-02-08",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-02-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-02-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-02-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-02-13",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-02-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-02-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-02-16",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-02-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-02-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-02-19",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-02-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-02-23",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-02-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2024-02-25",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-02-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-02-26",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-02-26",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-02-27",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-02-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-02-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-03",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-05",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 1
   },
   {
     "date": "2024-03-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-03-07",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-03-08",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-03-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-09",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-11",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2024-03-13",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-03-16",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-03-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-03-18",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-03-19",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-19",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-03-20",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-20",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-20",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-03-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-22",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-23",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-24",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-03-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-03-29",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-30",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-30",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-31",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-03-31",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-31",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-03-31",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-04-01",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-02",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-03",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-03",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-04",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-04",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-05",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-05",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-04-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-06",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-06",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-07",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-07",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-08",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-09",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-09",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-09",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-04-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-04-09",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2024-04-10",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-10",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-11",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-04-12",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2024-04-12",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-12",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-13",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-13",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-04-14",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-14",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 3
   },
   {
     "date": "2024-04-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-15",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-15",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-04-17",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-18",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-18",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-04-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2024-04-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-04-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-20",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 2
   },
   {
     "date": "2024-04-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-21",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-04-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-04-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 2
   },
   {
     "date": "2024-04-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-23",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-23",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-04-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-24",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 2
   },
   {
     "date": "2024-04-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-25",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-25",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-04-26",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-04-27",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-28",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-04-29",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-29",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-29",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 3
   },
   {
     "date": "2024-04-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 41.32
+    "revenue_vat": 41.32,
+    "free_count": 0
   },
   {
     "date": "2024-04-30",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-04-30",
     "type": "shipping",
     "name": "Zásilkovna SK Výdejní místo SLOVENSKO",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-04-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-01",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-01",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-01",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-05-02",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-05-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-03",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-03",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-04",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-05-04",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-04",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 1
   },
   {
     "date": "2024-05-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-05",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-05",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-05-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-06",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-06",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 2
   },
   {
     "date": "2024-05-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-07",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-07",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 1
   },
   {
     "date": "2024-05-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-08",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2024-05-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2024-05-09",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-09",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-09",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-05-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-05-10",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-10",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-10",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2024-05-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-12",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-05-12",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-05-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-05-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-05-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-13",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-05-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-05-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-05-14",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-05-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-15",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-15",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-16",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-17",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-17",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2024-05-18",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-05-18",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-05-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-19",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-05-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-05-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-20",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-20",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-05-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-23",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-23",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-24",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-25",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-26",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-27",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-28",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-05-28",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-28",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2024-05-28",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2024-05-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-05-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-05-31",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2024-05-31",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-05-31",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-05-31",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-06-01",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-02",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-02",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-06-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-06-03",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-06-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-04",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-04",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-06-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-06-05",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-05",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-06",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-07",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-06-09",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-10",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-10",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-11",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-11",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-06-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-06-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-12",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-06-13",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-13",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-06-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-14",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-06-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-15",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-15",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-16",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-06-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-06-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-17",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-06-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-18",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-06-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-22",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-06-22",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-23",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-06-24",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-06-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-26",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-06-27",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-06-28",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-06-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-06-29",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-06-30",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-06-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-01",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-01",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-07-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-07-02",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-04",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-04",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-04",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-07-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-07",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-07-07",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 2
   },
   {
     "date": "2024-07-08",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-08",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-08",
     "type": "shipping",
     "name": "Zásilkovna SK Z-Box SLOVENSKO",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-08",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-09",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-09",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2024-07-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-10",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-07-10",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-11",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-12",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 2
   },
   {
     "date": "2024-07-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-07-14",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-14",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-07-15",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-15",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-07-15",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-16",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-17",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-07-18",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-19",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-19",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-07-20",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2024-07-21",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-21",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-07-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-21",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 95
+    "revenue_vat": 95,
+    "free_count": 0
   },
   {
     "date": "2024-07-22",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-07-22",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-22",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2024-07-22",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-07-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-23",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-07-23",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-23",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 0
   },
   {
     "date": "2024-07-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-24",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-07-24",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-24",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-07-25",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-07-25",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2024-07-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-07-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-07-26",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2024-07-26",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-27",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-07-28",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-29",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-29",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 2
   },
   {
     "date": "2024-07-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-07-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-30",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-30",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-30",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-07-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-07-31",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-31",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-07-31",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-07-31",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-08-01",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-02",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-03",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-04",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-05",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-06",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-06",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-07",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-08",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-09",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-10",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-11",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2024-08-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-08-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2024-08-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-12",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-08-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2024-08-12",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-13",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-08-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-14",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-14",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-14",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-08-15",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-15",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 5,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 4
   },
   {
     "date": "2024-08-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-08-16",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-17",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-17",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 2
   },
   {
     "date": "2024-08-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-08-18",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-08-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-19",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-08-19",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-08-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-08-20",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 2
   },
   {
     "date": "2024-08-21",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-21",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 3
   },
   {
     "date": "2024-08-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-22",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-23",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2024-08-25",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-08-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-26",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-26",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-26",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 3
   },
   {
     "date": "2024-08-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-27",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-28",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-28",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-28",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-08-29",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-08-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-08-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-08-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-08-30",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-01",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-01",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-09-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-09-02",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-02",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-03",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-03",
     "type": "payment",
     "name": "GoPay",
     "count": 8,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-03",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2024-09-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-04",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-09-04",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-04",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2024-09-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-05",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-05",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-06",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-09-06",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-06",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-09-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-09-07",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-07",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-09-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-09-08",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-08",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2024-09-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-09-09",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-09",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-09",
     "type": "shipping",
     "name": "Zásilkovna SK Výdejní místo SLOVENSKO",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-09-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-09-10",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-10",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-09-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-09-11",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-09-11",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-12",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-12",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-13",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-14",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-15",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2024-09-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-09-16",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-17",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-18",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-20",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-21",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-21",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-22",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-22",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-22",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-23",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-23",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-09-23",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-23",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-09-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2024-09-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-24",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-09-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-09-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-26",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-26",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-26",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-27",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-28",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-29",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-29",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-29",
     "type": "shipping",
     "name": "Zásilkovna SK Výdejní místo SLOVENSKO",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-09-30",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-09-30",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-30",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-09-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-10-01",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-10-01",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-10-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-10-01",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-10-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-03",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-10-06",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-10-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-10-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-08",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-10-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2024-10-09",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-09",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 95
+    "revenue_vat": 95,
+    "free_count": 0
   },
   {
     "date": "2024-10-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 2
   },
   {
     "date": "2024-10-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-10-10",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-10-12",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-10-13",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-10-14",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-14",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-10-15",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-15",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-10-16",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2024-10-17",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-10-18",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-18",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-10-19",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-21",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-21",
     "type": "shipping",
     "name": "Zásilkovna SK Výdejní místo SLOVENSKO",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 3
   },
   {
     "date": "2024-10-22",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-10-23",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-23",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-10-24",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-25",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-10-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-10-26",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-26",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-10-27",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-10-29",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-10-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-10-29",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-10-30",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-10-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-11-03",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-11-04",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-04",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-04",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-06",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-07",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-11-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-11-08",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-11-09",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-11-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-11-10",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-11-11",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-11",
     "type": "shipping",
     "name": "Individuální doprava",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-11-12",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-11-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-11-13",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2024-11-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-11-14",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-11-15",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-11-15",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-15",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-11-16",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-17",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-18",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-18",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-11-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-19",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-19",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-11-20",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-20",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-23",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2024-11-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-11-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-25",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-26",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-27",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2024-11-29",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-29",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-30",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-11-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-11-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-11-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-12-04",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-12-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-12-05",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 2
   },
   {
     "date": "2024-12-06",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-06",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-07",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2024-12-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-08",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-10",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-13",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-13",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-12-14",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-15",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-16",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2024-12-16",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2024-12-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2024-12-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-17",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-18",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-18",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-19",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-20",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-12-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-12-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-12-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-27",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-27",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-28",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-28",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-29",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-12-29",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-29",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2024-12-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2024-12-31",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2024-12-31",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2024-12-31",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2024-12-31",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-01",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-02",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-03",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-04",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-04",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-04",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-05",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-06",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-01-06",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-06",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-01-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-07",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-07",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-01-08",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-01-09",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-10",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-10",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-12",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-13",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-01-13",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2025-01-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-14",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-14",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-01-14",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-15",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-15",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-15",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-01-16",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-16",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-01-16",
     "type": "shipping",
     "name": "Zásilkovna SK Z-Box SLOVENSKO",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-01-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-17",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-01-18",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-01-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-19",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-19",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-01-19",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-20",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-21",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-23",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-23",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-23",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-01-24",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-25",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-01-25",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-26",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-26",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-26",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-27",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-28",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-28",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-28",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-29",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-01-30",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-01-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-01-31",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-01-31",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-02",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-02-05",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-02-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-07",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-02-07",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-09",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-02-10",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-11",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-02-11",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-11",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-12",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-02-13",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-13",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-02-14",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-14",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-15",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-15",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-15",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-16",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-16",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-02-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-02-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-02-18",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-02-19",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-02-19",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-02-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-20",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-24",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-24",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-02-26",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-26",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-02-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-27",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-02-28",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-02-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-01",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-03-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-03",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-03",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-03",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-04",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-03-05",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-03-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-06",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-03-06",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-03-07",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-03-09",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-03-10",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-03-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-12",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-12",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-14",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-03-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-20",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-20",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-03-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-23",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-23",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-03-24",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-03-25",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-03-26",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-26",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-27",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-03-28",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-28",
     "type": "shipping",
     "name": "Individuální doprava",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-29",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-03-29",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-29",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2025-03-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-03-30",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2025-03-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-03-31",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-31",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-03-31",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-03-31",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-03-31",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2025-03-31",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-31",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-03-31",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-01",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-04-01",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-01",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-04-02",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-03",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-03",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-03",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-03",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-03",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2025-04-04",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-04",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-04",
     "type": "payment",
     "name": "Hotově",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-04",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-04",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-04",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-05",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-06",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-06",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-07",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-04-07",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-07",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-07",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-07",
     "type": "shipping",
     "name": "Zásilkovna SK Z-Box SLOVENSKO",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 2
   },
   {
     "date": "2025-04-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-04-08",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-08",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-09",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-04-09",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-09",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-09",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-09",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-10",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-10",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-10",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-10",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-10",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-11",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-11",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-11",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-11",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-12",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-04-12",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-13",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-14",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-04-14",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2025-04-14",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-04-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-04-15",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-15",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-15",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 6,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 5
   },
   {
     "date": "2025-04-16",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-04-16",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-16",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-16",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-17",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-04-17",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-17",
     "type": "payment",
     "name": "Hotově",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-17",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-17",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-04-17",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-17",
     "type": "shipping",
     "name": "Zásilkovna SK Z-Box SLOVENSKO",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-18",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-19",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-19",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-04-20",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-21",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-04-21",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2025-04-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-22",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-04-22",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-22",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-23",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-23",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-23",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 3
   },
   {
     "date": "2025-04-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-24",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-24",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-24",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-24",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-25",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-04-25",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-25",
     "type": "payment",
     "name": "Hotově",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-25",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-25",
     "type": "shipping",
     "name": "Individuální doprava",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-25",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 1
   },
   {
     "date": "2025-04-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-25",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-26",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-04-26",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-26",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-26",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-26",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-27",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-27",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-27",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-27",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-28",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-04-28",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-28",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-28",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-28",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-04-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-04-29",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-29",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-04-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 2
   },
   {
     "date": "2025-04-30",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 4,
-    "revenue_vat": 200
+    "revenue_vat": 200,
+    "free_count": 0
   },
   {
     "date": "2025-04-30",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-30",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-04-30",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-04-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 2
   },
   {
     "date": "2025-04-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 3
   },
   {
     "date": "2025-05-01",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-01",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-05-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-05-02",
     "type": "payment",
     "name": "Hotově",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-02",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-02",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-03",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-03",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-03",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2025-05-03",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-04",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-04",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-04",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 2
   },
   {
     "date": "2025-05-05",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-05",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-06",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-06",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-06",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-06",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-06",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 1
   },
   {
     "date": "2025-05-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-06",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-07",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-07",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-07",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-07",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-08",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-08",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-09",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-09",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-09",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-10",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-11",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-11",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-12",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-12",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-12",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-05-12",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-13",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-05-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-05-14",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-05-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-05-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-15",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-15",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-15",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-15",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-15",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-16",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-16",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2025-05-17",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-17",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-18",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-05-19",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-19",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-19",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-19",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 2
   },
   {
     "date": "2025-05-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-20",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-20",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-21",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-21",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-21",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-21",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-05-21",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-05-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-22",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-22",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-23",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-23",
     "type": "payment",
     "name": "Hotově",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-23",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-24",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-25",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-25",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-05-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-26",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-26",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-26",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-05-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-27",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-27",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-27",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-27",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-27",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-28",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-28",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-28",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-05-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 1
   },
   {
     "date": "2025-05-28",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 2
   },
   {
     "date": "2025-05-29",
     "type": "payment",
     "name": "Bankovní převod",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-05-29",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-29",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-05-30",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-05-30",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-05-31",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-05-31",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-06-01",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-01",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 2
   },
   {
     "date": "2025-06-01",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-02",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-02",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-06-02",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-06-03",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-06-03",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-03",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2025-06-03",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-03",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-04",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 4,
-    "revenue_vat": 200
+    "revenue_vat": 200,
+    "free_count": 0
   },
   {
     "date": "2025-06-04",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-04",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 2
   },
   {
     "date": "2025-06-04",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-06-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-06-05",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-06-05",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-05",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 8,
-    "revenue_vat": 472
+    "revenue_vat": 472,
+    "free_count": 0
   },
   {
     "date": "2025-06-05",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-06-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-06-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-06-06",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-06",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-06-06",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-07",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-06-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-06-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-08",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-08",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2025-06-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-06-09",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-09",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-09",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-09",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 3
   },
   {
     "date": "2025-06-09",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-06-10",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-10",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 1
   },
   {
     "date": "2025-06-10",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-06-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-06-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-06-11",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-11",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2025-06-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-12",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-06-12",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2025-06-12",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-06-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-13",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-06-13",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-13",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2025-06-13",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-06-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-06-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 2
   },
   {
     "date": "2025-06-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-06-14",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-06-14",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-06-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-06-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-06-15",
     "type": "payment",
     "name": "GoPay",
     "count": 8,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-15",
     "type": "shipping",
     "name": "GLS domů",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-06-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 0
   },
   {
     "date": "2025-06-15",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 0
   },
   {
     "date": "2025-06-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2025-06-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-06-16",
     "type": "payment",
     "name": "GoPay",
     "count": 9,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-16",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 7,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 3
   },
   {
     "date": "2025-06-16",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 320
+    "revenue_vat": 320,
+    "free_count": 0
   },
   {
     "date": "2025-06-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-06-17",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-17",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 7,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 2
   },
   {
     "date": "2025-06-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-06-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-06-18",
     "type": "payment",
     "name": "GoPay",
     "count": 9,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-18",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 7,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 2
   },
   {
     "date": "2025-06-18",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-06-18",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-06-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-06-19",
     "type": "payment",
     "name": "GoPay",
     "count": 8,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-19",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 7,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 3
   },
   {
     "date": "2025-06-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-06-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-20",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-06-20",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 2
   },
   {
     "date": "2025-06-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-06-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-21",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-06-21",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 2
   },
   {
     "date": "2025-06-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-22",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-06-22",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2025-06-22",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-06-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-06-23",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-23",
     "type": "payment",
     "name": "GoPay",
     "count": 9,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 7,
-    "revenue_vat": 354
+    "revenue_vat": 354,
+    "free_count": 1
   },
   {
     "date": "2025-06-23",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-06-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-24",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 1
   },
   {
     "date": "2025-06-24",
     "type": "shipping",
     "name": "Individuální doprava",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-25",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 5,
-    "revenue_vat": 250
+    "revenue_vat": 250,
+    "free_count": 0
   },
   {
     "date": "2025-06-25",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 7,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 4
   },
   {
     "date": "2025-06-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-06-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 2
   },
   {
     "date": "2025-06-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-06-26",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2025-06-26",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-06-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-27",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-06-27",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-27",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 0
   },
   {
     "date": "2025-06-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-06-28",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 1
   },
   {
     "date": "2025-06-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-06-29",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-29",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-06-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-06-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-06-30",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-30",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-06-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 4
   },
   {
     "date": "2025-06-30",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-06-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-06-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-01",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-01",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-01",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2025-07-01",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-07-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 3
   },
   {
     "date": "2025-07-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-02",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-02",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-02",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-02",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-07-02",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-07-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-07-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-07-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-03",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-07-03",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-03",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-03",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 1
   },
   {
     "date": "2025-07-03",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-07-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 0
   },
   {
     "date": "2025-07-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 1
   },
   {
     "date": "2025-07-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-07-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-07-04",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-04",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-04",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-07-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-07-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-05",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2025-07-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-07-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-07-06",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-06",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 4
   },
   {
     "date": "2025-07-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-07-07",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-07",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 2
   },
   {
     "date": "2025-07-08",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-08",
     "type": "payment",
     "name": "GoPay",
     "count": 8,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-08",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 2
   },
   {
     "date": "2025-07-08",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-07-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-08",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-09",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-09",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-09",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-09",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 2
   },
   {
     "date": "2025-07-09",
     "type": "shipping",
     "name": "Individuální doprava",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-09",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-09",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-07-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-10",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 1
   },
   {
     "date": "2025-07-10",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-07-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-07-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-11",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-11",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-11",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 2
   },
   {
     "date": "2025-07-11",
     "type": "shipping",
     "name": "Individuální doprava",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-11",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-07-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-07-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-12",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-12",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-07-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-13",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-13",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-07-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-07-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-14",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-14",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-14",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 1
   },
   {
     "date": "2025-07-14",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-07-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-07-15",
     "type": "payment",
     "name": "GoPay",
     "count": 10,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-15",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 9,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 4
   },
   {
     "date": "2025-07-15",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-07-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-07-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-07-16",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-16",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-16",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 11,
-    "revenue_vat": 531
+    "revenue_vat": 531,
+    "free_count": 2
   },
   {
     "date": "2025-07-16",
     "type": "shipping",
     "name": "Individuální doprava",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-16",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2025-07-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-17",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2025-07-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-07-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-07-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-07-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-18",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2025-07-18",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-07-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-19",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-19",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 2
   },
   {
     "date": "2025-07-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-07-20",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-20",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-20",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2025-07-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-21",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-21",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-21",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-21",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 3
   },
   {
     "date": "2025-07-21",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-07-21",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-22",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-22",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-22",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-22",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 2
   },
   {
     "date": "2025-07-22",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-07-22",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 0
   },
   {
     "date": "2025-07-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-23",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-23",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-07-23",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-23",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-23",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 7,
-    "revenue_vat": 354
+    "revenue_vat": 354,
+    "free_count": 1
   },
   {
     "date": "2025-07-23",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-24",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-24",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 8,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 3
   },
   {
     "date": "2025-07-24",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-07-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-25",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-25",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-25",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-25",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 1
   },
   {
     "date": "2025-07-25",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-07-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-07-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-26",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-26",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-07-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-07-27",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2025-07-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-07-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-28",
     "type": "payment",
     "name": "GoPay",
     "count": 9,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 8,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 3
   },
   {
     "date": "2025-07-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-29",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-29",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2025-07-29",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-07-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-30",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-30",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 1
   },
   {
     "date": "2025-07-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-31",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-31",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-07-31",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-07-31",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-07-31",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-07-31",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-07-31",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-08-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-08-01",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-01",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 2
   },
   {
     "date": "2025-08-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-08-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-01",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-02",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-08-02",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-03",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-08-03",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-08-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-08-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-04",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-04",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-04",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 1
   },
   {
     "date": "2025-08-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-05",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-08-05",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-05",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 1
   },
   {
     "date": "2025-08-05",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-08-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 2
   },
   {
     "date": "2025-08-06",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-06",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2025-08-06",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-08-07",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-07",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2025-08-07",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-08-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-08",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-08-08",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-08",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 3
   },
   {
     "date": "2025-08-08",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-08",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-08-09",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-08-09",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2025-08-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-08-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-08-10",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 1
   },
   {
     "date": "2025-08-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-08-11",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-11",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-11",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 7,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 3
   },
   {
     "date": "2025-08-11",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-08-12",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-12",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-12",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 3
   },
   {
     "date": "2025-08-12",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-08-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 1
   },
   {
     "date": "2025-08-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-13",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-08-13",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-13",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-13",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2025-08-13",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-08-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-08-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-14",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-14",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-14",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-14",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-14",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-14",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-08-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-15",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-15",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2025-08-15",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-16",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 2
   },
   {
     "date": "2025-08-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2025-08-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-18",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-18",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-18",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 3
   },
   {
     "date": "2025-08-18",
     "type": "shipping",
     "name": "Individuální doprava",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-18",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-19",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-08-19",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-19",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-19",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-08-19",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-20",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-08-20",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-20",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2025-08-20",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2025-08-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 0
   },
   {
     "date": "2025-08-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-21",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-21",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-21",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 2
   },
   {
     "date": "2025-08-21",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-08-22",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-22",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2025-08-22",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-23",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-24",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-08-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-25",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-25",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-25",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-25",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2025-08-25",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-08-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-26",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-26",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-08-26",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-27",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-27",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 2
   },
   {
     "date": "2025-08-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-08-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-28",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-28",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-28",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-28",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-08-28",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-08-29",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-29",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-08-29",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-08-30",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-08-30",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-08-31",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-31",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-08-31",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-08-31",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2025-08-31",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-08-31",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-08-31",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-01",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-01",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-01",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-01",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-09-02",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2025-09-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-09-02",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 95
+    "revenue_vat": 95,
+    "free_count": 0
   },
   {
     "date": "2025-09-03",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-09-03",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-03",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 5
   },
   {
     "date": "2025-09-03",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-03",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-09-04",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-09-04",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-04",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-09-04",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-09-05",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-05",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-05",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-09-05",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-09-06",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-06",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2025-09-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-07",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-07",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-08",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-09-08",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-08",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2025-09-08",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-09-09",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-09",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-09",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-09-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-09-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-09-10",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-10",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-09-10",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-09-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 2
   },
   {
     "date": "2025-09-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 5,
-    "revenue_vat": 250
+    "revenue_vat": 250,
+    "free_count": 0
   },
   {
     "date": "2025-09-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-11",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2025-09-11",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-09-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-09-12",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-12",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 2
   },
   {
     "date": "2025-09-12",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-09-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-13",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 4,
-    "revenue_vat": 200
+    "revenue_vat": 200,
+    "free_count": 0
   },
   {
     "date": "2025-09-13",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2025-09-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-09-13",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-09-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-14",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-09-14",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-14",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-09-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-09-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 4,
-    "revenue_vat": 200
+    "revenue_vat": 200,
+    "free_count": 0
   },
   {
     "date": "2025-09-15",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2025-09-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2025-09-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 4,
-    "revenue_vat": 320
+    "revenue_vat": 320,
+    "free_count": 0
   },
   {
     "date": "2025-09-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-16",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-16",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-09-16",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-09-16",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-09-17",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-17",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-17",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-09-17",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-09-18",
     "type": "payment",
     "name": "GoPay",
     "count": 8,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-18",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 4
   },
   {
     "date": "2025-09-18",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-09-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 0
   },
   {
     "date": "2025-09-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 1
   },
   {
     "date": "2025-09-18",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-19",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-19",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2025-09-19",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-09-20",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-09-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-22",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-09-22",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-09-22",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 5,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 4
   },
   {
     "date": "2025-09-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-23",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-23",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2025-09-23",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-09-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-09-24",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-24",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-09-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-09-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-25",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-09-25",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-25",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-25",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 9,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 8
   },
   {
     "date": "2025-09-25",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-09-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-09-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-09-26",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-09-26",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-09-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-27",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-09-27",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-27",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-09-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-09-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 4,
-    "revenue_vat": 200
+    "revenue_vat": 200,
+    "free_count": 0
   },
   {
     "date": "2025-09-28",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 3
   },
   {
     "date": "2025-09-28",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-09-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-09-29",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-09-29",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-09-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-09-30",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-30",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-09-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-09-30",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-09-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2025-09-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-10-01",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-01",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-10-01",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-01",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-02",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-10-02",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-02",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 2
   },
   {
     "date": "2025-10-02",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-02",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-10-03",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-03",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-10-03",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-04",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 6,
-    "revenue_vat": 300
+    "revenue_vat": 300,
+    "free_count": 0
   },
   {
     "date": "2025-10-04",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-10-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-10-04",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-10-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-05",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-10-05",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-10-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 0
   },
   {
     "date": "2025-10-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2025-10-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-06",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-06",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2025-10-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 1
   },
   {
     "date": "2025-10-07",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-10-07",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 8,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 8
   },
   {
     "date": "2025-10-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-10-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-08",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-08",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-08",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-10-08",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-09",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 4,
-    "revenue_vat": 200
+    "revenue_vat": 200,
+    "free_count": 0
   },
   {
     "date": "2025-10-09",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-09",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-09",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 5
   },
   {
     "date": "2025-10-09",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-10-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-10-10",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2025-10-10",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-10-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-11",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2025-10-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-12",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-12",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-10-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-10-13",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-13",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-13",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-13",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-10-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-14",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-10-14",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-14",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-10-14",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-14",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-10-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-10-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-10-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-10-15",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-15",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-10-15",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-15",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-10-15",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-10-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-16",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-16",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-10-16",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-10-16",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-10-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-17",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-17",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-17",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-10-17",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-10-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-10-17",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-10-18",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-18",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-10-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-10-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-19",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-10-19",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-10-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-20",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-20",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-10-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-21",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-10-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-21",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-10-21",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-10-22",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-10-22",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-22",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-22",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-10-22",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-10-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-10-23",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-23",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-10-23",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-23",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-23",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-10-23",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-24",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-24",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-24",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-24",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-25",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-10-26",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-10-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-10-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-10-27",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-10-28",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-10-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-10-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-29",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-29",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-30",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-10-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-10-31",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-31",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-31",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-10-31",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-31",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-10-31",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-11-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-11-02",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-02",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-11-03",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-03",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-03",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-03",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-03",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-11-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-04",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-11-04",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-04",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 4
   },
   {
     "date": "2025-11-04",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-05",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-11-05",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-06",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-11-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-06",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-07",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-11-07",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-07",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-11-08",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-08",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-11-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-08",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-09",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-11-09",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-11-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 5,
-    "revenue_vat": 250
+    "revenue_vat": 250,
+    "free_count": 0
   },
   {
     "date": "2025-11-10",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-10",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-10",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-11-10",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-10",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-11-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-11-11",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-11",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-11",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2025-11-11",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-11-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-12",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-11-12",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-12",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-12",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 5
   },
   {
     "date": "2025-11-12",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-11-12",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-13",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-13",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-13",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-11-13",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-11-14",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-14",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-11-15",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-16",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-16",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-11-16",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-11-17",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 8,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 8
   },
   {
     "date": "2025-11-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-11-18",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 4
   },
   {
     "date": "2025-11-18",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 95
+    "revenue_vat": 95,
+    "free_count": 0
   },
   {
     "date": "2025-11-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-11-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-11-19",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-11-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-11-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-20",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-11-21",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-21",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-21",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-21",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-21",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-21",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-11-22",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-11-23",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-23",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-23",
     "type": "shipping",
     "name": "GLS domů",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-11-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-11-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-11-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-11-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-24",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-24",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-11-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2025-11-25",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-25",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-11-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-11-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-11-26",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-26",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 4
   },
   {
     "date": "2025-11-26",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-27",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2025-11-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-11-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-11-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-11-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-11-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-11-28",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-28",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-28",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 5
   },
   {
     "date": "2025-11-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-11-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-29",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-29",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-11-29",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 0
   },
   {
     "date": "2025-11-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-11-30",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-11-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-12-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-12-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-12-02",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-02",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2025-12-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-12-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-03",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-03",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-03",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-04",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-04",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-04",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-12-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-05",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-05",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-12-05",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-12-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-07",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-07",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-08",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-08",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-12-08",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-09",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-09",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-09",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-09",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-10",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-10",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-12-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-11",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-12-12",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-12",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-12-12",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-13",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-13",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2025-12-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-14",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-12-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 4,
-    "revenue_vat": 200
+    "revenue_vat": 200,
+    "free_count": 0
   },
   {
     "date": "2025-12-15",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-15",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-12-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-12-15",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-16",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2025-12-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-12-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-17",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-17",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2025-12-17",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-12-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-18",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-12-18",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-22",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-12-24",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-12-25",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-12-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-26",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 4
   },
   {
     "date": "2025-12-26",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-12-27",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2025-12-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2025-12-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2025-12-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2025-12-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2025-12-30",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-30",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-30",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2025-12-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2025-12-31",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-31",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-01-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-02",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-02",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2026-01-03",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-01-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-01-04",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-04",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-01-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-01-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-05",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-05",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-05",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-05",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-01-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-06",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-07",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-01-07",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-01-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-08",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-01-09",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-09",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-09",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-01-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-09",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-01-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-01-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2026-01-11",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 5
   },
   {
     "date": "2026-01-11",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-01-11",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-01-12",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-01-12",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-12",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-13",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 3
   },
   {
     "date": "2026-01-14",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-14",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-14",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-14",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-01-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-15",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-15",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-01-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-16",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-16",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2026-01-16",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-01-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-01-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-01-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-18",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-01-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-01-19",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-19",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-19",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-01-19",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-01-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-20",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-21",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-21",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-21",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-01-21",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-01-22",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-01-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-23",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-23",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-01-23",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-01-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2026-01-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-01-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-25",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-01-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-01-26",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-26",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2026-01-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-01-27",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-01-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-01-28",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-28",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 7,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 6
   },
   {
     "date": "2026-01-28",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-30",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-30",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-30",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-30",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2026-01-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-01-31",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-01-31",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-31",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2026-01-31",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-01-31",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-01",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-02-01",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-02",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-02-02",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-02-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-02-03",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-03",
     "type": "shipping",
     "name": "PPL ParcelShop Registrovaní zákazníci",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-02-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-04",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-04",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-05",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2026-02-06",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-02-06",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-07",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-02-07",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-02-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-08",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-02-08",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-02-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2026-02-08",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-09",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 0
   },
   {
     "date": "2026-02-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-02-10",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-02-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-02-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2026-02-11",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-11",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-11",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-11",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-02-11",
     "type": "shipping",
     "name": "Zásilkovna SK Výdejní místo SLOVENSKO",
     "count": 1,
-    "revenue_vat": 120
+    "revenue_vat": 120,
+    "free_count": 0
   },
   {
     "date": "2026-02-12",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-12",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-02-12",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-02-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-02-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-02-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-02-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-02-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-15",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-02-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-02-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-02-16",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2026-02-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-17",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-17",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-02-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-02-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-17",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 0
   },
   {
     "date": "2026-02-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-18",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-18",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-02-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-19",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-19",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-19",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-19",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-02-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-19",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-02-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-02-20",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-20",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-02-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-02-21",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-22",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2026-02-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-23",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-23",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-23",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-02-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-02-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2026-02-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-02-24",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-02-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-02-25",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-02-25",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-25",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-02-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 5,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 4
   },
   {
     "date": "2026-02-25",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-02-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-26",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-27",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-02-27",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-27",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-27",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-02-27",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-02-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-02-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-02-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-28",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-02-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-28",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-03-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-01",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2026-03-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-02",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-03-02",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-03-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-03-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-03-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-03",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-03",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-03-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-03-03",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-03-04",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-03-04",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-04",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 1
   },
   {
     "date": "2026-03-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2026-03-04",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-03-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-05",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-03-05",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-05",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-05",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-05",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-03-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-05",
     "type": "shipping",
     "name": "Individuální doprava",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-05",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-03-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-03-06",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-06",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-06",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-06",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-06",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2026-03-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-03-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-03-07",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-08",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-08",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-03-09",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-09",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-09",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-09",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-09",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-03-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-09",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-10",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-03-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 6,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 5
   },
   {
     "date": "2026-03-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-03-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-11",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-11",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-11",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-03-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-11",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 7
   },
   {
     "date": "2026-03-12",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-12",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-03-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-13",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-03-13",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-13",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-13",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2026-03-13",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-03-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-14",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-14",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-14",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-03-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-03-15",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-15",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-03-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2026-03-15",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-03-15",
     "type": "shipping",
     "name": "Zásilkovna SK Z-Box SLOVENSKO",
     "count": 1,
-    "revenue_vat": 120
+    "revenue_vat": 120,
+    "free_count": 0
   },
   {
     "date": "2026-03-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-16",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-16",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-03-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2026-03-16",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-03-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-03-17",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-17",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-17",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-17",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-03-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2026-03-17",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2026-03-17",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-03-17",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-18",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-18",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-03-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-03-18",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-19",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-03-19",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-19",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-03-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-03-19",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-19",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 0
   },
   {
     "date": "2026-03-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-03-20",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-20",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-03-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-20",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-03-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-03-21",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-21",
     "type": "payment",
     "name": "GoPay",
     "count": 8,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-03-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 5,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 4
   },
   {
     "date": "2026-03-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-22",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-22",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-22",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-03-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2026-03-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-03-23",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-23",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-03-23",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-23",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-03-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-23",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2026-03-23",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 0
   },
   {
     "date": "2026-03-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-24",
     "type": "payment",
     "name": "GoPay",
     "count": 8,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-24",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-03-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 5,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 4
   },
   {
     "date": "2026-03-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-03-24",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 320
+    "revenue_vat": 320,
+    "free_count": 0
   },
   {
     "date": "2026-03-25",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-03-25",
     "type": "payment",
     "name": "GoPay",
     "count": 10,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-25",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 7,
-    "revenue_vat": 413
+    "revenue_vat": 413,
+    "free_count": 0
   },
   {
     "date": "2026-03-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 5,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 3
   },
   {
     "date": "2026-03-25",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-03-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-26",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-26",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-03-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-27",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-27",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-27",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-27",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-03-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-28",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-03-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2026-03-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-03-29",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-29",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-03-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-03-29",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-30",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-30",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-30",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-03-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2026-03-30",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-03-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-03-31",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-31",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-03-31",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-31",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-31",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-03-31",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2026-03-31",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-04-01",
     "type": "payment",
     "name": "GoPay",
     "count": 10,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 7,
-    "revenue_vat": 413
+    "revenue_vat": 413,
+    "free_count": 0
   },
   {
     "date": "2026-04-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-04-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-04-02",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2026-04-02",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-04-03",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-03",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-04-04",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-04-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-04-05",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-05",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-04-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-04-06",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-04-06",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-04-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-04-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-07",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-04-07",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-07",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-04-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-04-07",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-04-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-04-07",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-08",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-08",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-08",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-04-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-04-08",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-04-09",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-04-09",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-04-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-10",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-10",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-04-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-04-11",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 4,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 2
   },
   {
     "date": "2026-04-11",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-12",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-04-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-13",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-04-13",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-04-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-04-13",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-04-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-14",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-14",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-14",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-04-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 5,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 4
   },
   {
     "date": "2026-04-14",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-04-15",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-15",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-04-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2026-04-15",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 0
   },
   {
     "date": "2026-04-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-04-16",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-16",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-04-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2026-04-17",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-17",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-17",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-04-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2026-04-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-04-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 4,
-    "revenue_vat": 200
+    "revenue_vat": 200,
+    "free_count": 0
   },
   {
     "date": "2026-04-18",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-18",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-04-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-04-18",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 210
+    "revenue_vat": 210,
+    "free_count": 0
   },
   {
     "date": "2026-04-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-19",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2026-04-19",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-19",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-04-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-04-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 4,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 3
   },
   {
     "date": "2026-04-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2026-04-20",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-04-20",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-20",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-04-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2026-04-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-04-21",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-21",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-04-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-04-22",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-22",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-22",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-22",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-23",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-23",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-23",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-23",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-04-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-04-23",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-24",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-24",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-04-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-04-24",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-25",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-04-25",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-04-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-04-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-04-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-26",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-26",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-04-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-27",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-27",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-04-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-04-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-28",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-04-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2026-04-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-04-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-04-29",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-29",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-04-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-29",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-04-30",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-30",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-04-30",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-30",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-30",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-30",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-04-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-04-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-05-01",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-05-01",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-01",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-05-02",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-02",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-03",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-05-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-05-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2026-05-05",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-05",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-05",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-05-06",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-06",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-06",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-05-07",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-07",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-07",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-05-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-07",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 0
   },
   {
     "date": "2026-05-07",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-05-08",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-05-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-09",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-09",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-09",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-10",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-05-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-05-11",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 354
+    "revenue_vat": 354,
+    "free_count": 0
   },
   {
     "date": "2026-05-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-12",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-05-12",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-12",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-12",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-05-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2026-05-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-13",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-13",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-05-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 2
   },
   {
     "date": "2026-05-14",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2026-05-14",
     "type": "payment",
     "name": "GoPay",
     "count": 10,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-14",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 0
   },
   {
     "date": "2026-05-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 5,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 3
   },
   {
     "date": "2026-05-14",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-05-14",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 95
+    "revenue_vat": 95,
+    "free_count": 0
   },
   {
     "date": "2026-05-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 320
+    "revenue_vat": 320,
+    "free_count": 0
   },
   {
     "date": "2026-05-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-05-15",
     "type": "payment",
     "name": "GoPay",
     "count": 11,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-15",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 375
+    "revenue_vat": 375,
+    "free_count": 0
   },
   {
     "date": "2026-05-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 6,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 4
   },
   {
     "date": "2026-05-15",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 320
+    "revenue_vat": 320,
+    "free_count": 0
   },
   {
     "date": "2026-05-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-05-16",
     "type": "payment",
     "name": "GoPay",
     "count": 8,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 354
+    "revenue_vat": 354,
+    "free_count": 0
   },
   {
     "date": "2026-05-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 6
   },
   {
     "date": "2026-05-16",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 3,
-    "revenue_vat": 210
+    "revenue_vat": 210,
+    "free_count": 0
   },
   {
     "date": "2026-05-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 10,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-17",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-05-17",
     "type": "payment",
     "name": "GoPay",
     "count": 16,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-17",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 12,
-    "revenue_vat": 708
+    "revenue_vat": 708,
+    "free_count": 0
   },
   {
     "date": "2026-05-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 9,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 7
   },
   {
     "date": "2026-05-17",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 0
   },
   {
     "date": "2026-05-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 9,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "payment",
     "name": "GoPay",
     "count": 18,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 13,
-    "revenue_vat": 767
+    "revenue_vat": 767,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 7
   },
   {
     "date": "2026-05-18",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 4,
-    "revenue_vat": 320
+    "revenue_vat": 320,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 11,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 4,
-    "revenue_vat": 200
+    "revenue_vat": 200,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "payment",
     "name": "GoPay",
     "count": 21,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 19,
-    "revenue_vat": 1121
+    "revenue_vat": 1121,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 8,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 5
   },
   {
     "date": "2026-05-19",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 95
+    "revenue_vat": 95,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 6,
-    "revenue_vat": 480
+    "revenue_vat": 480,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-20",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 2,
-    "revenue_vat": 170
+    "revenue_vat": 170,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-21",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-21",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-21",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-05-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-05-21",
     "type": "shipping",
     "name": "Individuální doprava",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-21",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-05-22",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-05-22",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-22",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-05-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-05-22",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 0
   },
   {
     "date": "2026-05-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-23",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-23",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-05-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-24",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-05-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-05-25",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-05-25",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-25",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-25",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-05-25",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-05-25",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-26",
     "type": "payment",
     "name": "GoPay",
     "count": 17,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-26",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 13,
-    "revenue_vat": 767
+    "revenue_vat": 767,
+    "free_count": 0
   },
   {
     "date": "2026-05-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-26",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-26",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-05-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 5,
-    "revenue_vat": 400
+    "revenue_vat": 400,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 3,
-    "revenue_vat": 150
+    "revenue_vat": 150,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "payment",
     "name": "GoPay",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-05-27",
     "type": "shipping",
     "name": "Individuální doprava",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-27",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "payment",
     "name": "GoPay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 95
+    "revenue_vat": 95,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-05-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-29",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-29",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-29",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-05-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-05-29",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-30",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-30",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-05-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-31",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-31",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-05-31",
     "type": "payment",
     "name": "GoPay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-31",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-31",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-05-31",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-05-31",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-05-31",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-05-31",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-06-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-01",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-01",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-01",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-06-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-06-01",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-06-01",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-02",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-02",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-02",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-02",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-06-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-06-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-06-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-03",
     "type": "payment",
     "name": "GoPay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-03",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2026-06-04",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-04",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-04",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-04",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-04",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-05",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-06",
     "type": "payment",
     "name": "GoPay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-07",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-07",
     "type": "payment",
     "name": "GoPay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-06-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-06-08",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-08",
     "type": "payment",
     "name": "GoPay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-08",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-08",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-06-08",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-06-08",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-06-09",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-09",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-09",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-06-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-09",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-10",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-10",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-10",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-06-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 0
   },
   {
     "date": "2026-06-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-11",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-11",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-11",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-06-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-06-12",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-12",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-12",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-06-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-13",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-13",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-14",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-14",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-15",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-15",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-15",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-15",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-06-15",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-15",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-16",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-16",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-16",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-16",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-16",
     "type": "shipping",
     "name": "Zásilkovna SK Z-Box SLOVENSKO",
     "count": 1,
-    "revenue_vat": 120
+    "revenue_vat": 120,
+    "free_count": 0
   },
   {
     "date": "2026-06-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-17",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-17",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-17",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-17",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-18",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-19",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-20",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-20",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-06-20",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-21",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-21",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-21",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-22",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-22",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-23",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-23",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-23",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-23",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-06-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-23",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-23",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-06-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-23",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-24",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-06-24",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-24",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-24",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-24",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-06-24",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 3,
-    "revenue_vat": 255
+    "revenue_vat": 255,
+    "free_count": 0
   },
   {
     "date": "2026-06-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-06-25",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-25",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-25",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-06-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-26",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-26",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-26",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-06-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 1
   },
   {
     "date": "2026-06-26",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-06-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-27",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-27",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-27",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-28",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-28",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-06-28",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-06-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-29",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-06-29",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-29",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-06-30",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-06-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-06-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-07-01",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-01",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-07-01",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-01",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-01",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-01",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-07-02",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-02",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-02",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-02",
     "type": "shipping",
     "name": "GLS domů",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-07-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-07-02",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-07-03",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-07-03",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-03",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-07-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-04",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-07-04",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-04",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-05",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-07-05",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-07-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-05",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-05",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-06",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-06",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-07-06",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2026-07-07",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-07-07",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-07",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-07",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 2,
-    "revenue_vat": 140
+    "revenue_vat": 140,
+    "free_count": 0
   },
   {
     "date": "2026-07-08",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-08",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-07-08",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 6,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 1
   },
   {
     "date": "2026-07-08",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-09",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-09",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-07-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-07-10",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-07-10",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-07-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 3,
-    "revenue_vat": 240
+    "revenue_vat": 240,
+    "free_count": 0
   },
   {
     "date": "2026-07-11",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-11",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-07-11",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-07-11",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-12",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-12",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-07-12",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-07-12",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-07-12",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-07-12",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-13",
     "type": "payment",
     "name": "Dobírka",
     "count": 2,
-    "revenue_vat": 100
+    "revenue_vat": 100,
+    "free_count": 0
   },
   {
     "date": "2026-07-13",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-13",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-13",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-07-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-14",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-14",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-07-14",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 5,
-    "revenue_vat": 295
+    "revenue_vat": 295,
+    "free_count": 0
   },
   {
     "date": "2026-07-14",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-07-15",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-15",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-15",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-15",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-07-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-16",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-16",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-16",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-17",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-17",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-17",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-07-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-18",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-18",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-07-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-19",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-19",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-19",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-07-19",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-20",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-20",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-20",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-21",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-21",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-21",
     "type": "shipping",
     "name": "Osobně na pobočce Barefoot concept store Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-21",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-22",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-22",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-22",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-07-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-23",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-07-24",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-24",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-25",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-26",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-26",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-26",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-07-26",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-07-27",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-27",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-07-27",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-27",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-27",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-27",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-27",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-28",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-28",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-28",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-28",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-28",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-07-28",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-28",
     "type": "shipping",
     "name": "Zásilkovna domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-28",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-28",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-29",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-29",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-29",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-29",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-07-30",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-30",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-30",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-30",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-30",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-30",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-07-31",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-07-31",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-31",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-31",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-31",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-31",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-08-02",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-02",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-02",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-02",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-02",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-08-03",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-03",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 7,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-03",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-03",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-03",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-03",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2026-08-04",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-04",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-04",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-04",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-08-04",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-05",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-05",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-05",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-05",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-08-05",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-08-05",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-08-06",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-06",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-06",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-06",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-06",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-08-06",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-08-07",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-07",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-08-08",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-08",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 3,
-    "revenue_vat": 177
+    "revenue_vat": 177,
+    "free_count": 0
   },
   {
     "date": "2026-08-08",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-09",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-09",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-08-09",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-08-09",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-08-10",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-10",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-10",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-08-10",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-10",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-08-10",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-08-11",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-11",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-11",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-08-12",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-12",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-12",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-12",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-12",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-08-13",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-13",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-13",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-08-13",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-08-14",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-14",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-14",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-08-14",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-08-15",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-08-15",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-16",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-16",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-16",
     "type": "shipping",
     "name": "GLS domů",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-08-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-08-16",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-16",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-08-16",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-08-17",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-17",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-18",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-18",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-18",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-18",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 4,
-    "revenue_vat": 236
+    "revenue_vat": 236,
+    "free_count": 0
   },
   {
     "date": "2026-08-18",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-08-18",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 2,
-    "revenue_vat": 160
+    "revenue_vat": 160,
+    "free_count": 0
   },
   {
     "date": "2026-08-19",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-19",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-19",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-19",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-19",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-08-19",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-19",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-08-20",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-20",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-20",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 118
+    "revenue_vat": 118,
+    "free_count": 0
   },
   {
     "date": "2026-08-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-08-21",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-21",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-21",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-21",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-08-22",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-22",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-22",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-22",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-22",
     "type": "shipping",
     "name": "PPL doručení na Vaši adresu",
     "count": 1,
-    "revenue_vat": 85
+    "revenue_vat": 85,
+    "free_count": 0
   },
   {
     "date": "2026-08-22",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-08-23",
     "type": "payment",
     "name": "Dobírka",
     "count": 1,
-    "revenue_vat": 50
+    "revenue_vat": 50,
+    "free_count": 0
   },
   {
     "date": "2026-08-23",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-23",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-23",
     "type": "shipping",
     "name": "Zásilkovna Výdejní místo",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
   },
   {
     "date": "2026-08-24",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-24",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-24",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-08-24",
     "type": "shipping",
     "name": "PPL ParcelShop",
     "count": 1,
-    "revenue_vat": 70
+    "revenue_vat": 70,
+    "free_count": 0
   },
   {
     "date": "2026-08-25",
     "type": "payment",
     "name": "Bankovní převod - rychlá platba QR kódem",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-25",
     "type": "payment",
     "name": "Hotově na pokladně",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-25",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-25",
     "type": "payment",
     "name": "Upgates Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
     "count": 2,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 1
   },
   {
     "date": "2026-08-25",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy - REGISTROVANÍ",
     "count": 1,
-    "revenue_vat": 59
+    "revenue_vat": 59,
+    "free_count": 0
   },
   {
     "date": "2026-08-25",
     "type": "shipping",
     "name": "Zásilkovna Z-Box",
     "count": 1,
-    "revenue_vat": 80
+    "revenue_vat": 80,
+    "free_count": 0
+  },
+  {
+    "date": "2026-08-26",
+    "type": "payment",
+    "name": "Dobírka",
+    "count": 2,
+    "revenue_vat": 100,
+    "free_count": 0
+  },
+  {
+    "date": "2026-08-26",
+    "type": "payment",
+    "name": "Kartou na pokladně Barefoot Třebíč",
+    "count": 1,
+    "revenue_vat": 0,
+    "free_count": 0
+  },
+  {
+    "date": "2026-08-26",
+    "type": "shipping",
+    "name": "GLS domů",
+    "count": 1,
+    "revenue_vat": 80,
+    "free_count": 0
+  },
+  {
+    "date": "2026-08-26",
+    "type": "shipping",
+    "name": "PPL doručení na Vaši adresu",
+    "count": 1,
+    "revenue_vat": 85,
+    "free_count": 0
   }
 ];

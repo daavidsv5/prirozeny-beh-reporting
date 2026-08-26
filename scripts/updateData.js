@@ -448,6 +448,12 @@ function aggregateCrossSell(orders) {
   return { totalOrders, multiItemOrders, pairs };
 }
 
+// Osobní odběr / zpětná doprava / zaslání emailem se nepočítá jako "doprava zdarma"
+// (nemá cenu, ale není to výsledek slevy/prahu zdarma dopravy)
+function isPickupName(name) {
+  return ['odběr', 'odber', 'zpětná', 'zpetná', 'emailem', 'údržbu'].some(e => name.toLowerCase().includes(e));
+}
+
 function aggregateShippingPayment(orders) {
   const byKey           = {};
   const seenOrderMethod = new Set();
@@ -459,16 +465,20 @@ function aggregateShippingPayment(orders) {
     if (o.shipment && o.shipment.name) {
       const name = o.shipment.name.trim();
       const key  = `${date}||shipping||${name}`;
-      if (!byKey[key]) byKey[key] = { date, type: 'shipping', name, count: 0, revenue_vat: 0 };
+      if (!byKey[key]) byKey[key] = { date, type: 'shipping', name, count: 0, revenue_vat: 0, free_count: 0 };
       const omKey = `${o.order_id}||${name}`;
-      if (!seenOrderMethod.has(omKey)) { seenOrderMethod.add(omKey); byKey[key].count++; }
+      if (!seenOrderMethod.has(omKey)) {
+        seenOrderMethod.add(omKey);
+        byKey[key].count++;
+        if ((o.shipment.price_with_vat || 0) === 0 && !isPickupName(name)) byKey[key].free_count++;
+      }
       byKey[key].revenue_vat += o.shipment.price_with_vat || 0;
     }
 
     if (o.payment && o.payment.name) {
       const name = o.payment.name.trim();
       const key  = `${date}||payment||${name}`;
-      if (!byKey[key]) byKey[key] = { date, type: 'payment', name, count: 0, revenue_vat: 0 };
+      if (!byKey[key]) byKey[key] = { date, type: 'payment', name, count: 0, revenue_vat: 0, free_count: 0 };
       const omKey = `${o.order_id}||payment||${name}`;
       if (!seenOrderMethod.has(omKey)) { seenOrderMethod.add(omKey); byKey[key].count++; }
       byKey[key].revenue_vat += o.payment.price_with_vat || 0;
@@ -713,6 +723,7 @@ export interface ShippingPaymentRecord {
   name: string;
   count: number;
   revenue_vat: number;
+  free_count: number;   // orders with free shipping (price_with_vat === 0), excl. pickup/return/email; always 0 for payment records
 }
 
 export const ${varName}: ShippingPaymentRecord[] = ${JSON.stringify(records, null, 2)};

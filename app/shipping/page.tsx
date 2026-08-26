@@ -33,6 +33,7 @@ import {
   Pie,
   Cell,
   TooltipProps,
+  ReferenceLine,
 } from 'recharts';
 
 type Period = 'day' | 'week' | 'month';
@@ -186,7 +187,7 @@ export default function ShippingPage() {
 
   // ── Merge CZ + SK ──────────────────────────────────────────────────────────
   const records = useMemo(() => {
-    const out: { date: string; type: 'shipping' | 'payment'; name: string; count: number; revenue_vat: number }[] = [];
+    const out: { date: string; type: 'shipping' | 'payment'; name: string; count: number; revenue_vat: number; free_count?: number }[] = [];
     if (filters.countries.includes('cz')) {
       for (const r of shippingPaymentDataCZ) {
         if (r.date < startStr || r.date > endStr) continue;
@@ -207,7 +208,7 @@ export default function ShippingPage() {
 
   // ── Prev year records ──────────────────────────────────────────────────────
   const prevRecords = useMemo(() => {
-    const out: { date: string; type: 'shipping' | 'payment'; name: string; count: number; revenue_vat: number }[] = [];
+    const out: { date: string; type: 'shipping' | 'payment'; name: string; count: number; revenue_vat: number; free_count?: number }[] = [];
     if (filters.countries.includes('cz')) {
       for (const r of shippingPaymentDataCZ) {
         if (r.date < prevStartStr || r.date > prevEndStr) continue;
@@ -232,6 +233,11 @@ export default function ShippingPage() {
     return ((curr - prev) / prev) * 100;
   }
 
+  // Osobní odběr se vylučuje z výpočtu dopravy zdarma (má shippingRevVat=0 ale není "zdarma")
+  function isPickup(name: string) {
+    return ['odběr', 'odber'].some(e => name.toLowerCase().includes(e));
+  }
+
   // ── KPIs ───────────────────────────────────────────────────────────────────
   const totalShippingRev  = shipping.reduce((s, r) => s + r.revenue_vat, 0);
   const totalPaymentRev   = payment.reduce((s, r) => s + r.revenue_vat, 0);
@@ -239,23 +245,45 @@ export default function ShippingPage() {
   const totalPayCount     = payment.reduce((s, r) => s + r.count, 0);
   const avgShipping       = totalShipCount > 0 ? totalShippingRev / totalShipCount : 0;
   const avgPayment        = totalPayCount  > 0 ? totalPaymentRev  / totalPayCount  : 0;
-  // Free shipping = shipping records where revenue_vat === 0 (or name includes zdarma/free)
-  const freeShippingCount = shipping
-    .filter(r => r.revenue_vat === 0 || r.name.toLowerCase().includes('zdarma') || r.name.toLowerCase().includes('free'))
-    .reduce((s, r) => s + r.count, 0);
-  const freeShippingPct   = totalShipCount > 0 ? (freeShippingCount / totalShipCount) * 100 : 0;
+  const shipExclPickup    = shipping.filter(r => !isPickup(r.name));
+  const shipExclPickupCnt = shipExclPickup.reduce((s, r) => s + r.count, 0);
+  const freeShippingCount = shipExclPickup.reduce((s, r) => s + (r.free_count ?? 0), 0);
+  const freeShippingPct   = shipExclPickupCnt > 0 ? (freeShippingCount / shipExclPickupCnt) * 100 : 0;
 
   // Prev year KPIs
-  const prevTotalShippingRev = prevShipping.reduce((s, r) => s + r.revenue_vat, 0);
-  const prevTotalPaymentRev  = prevPayment.reduce((s, r) => s + r.revenue_vat, 0);
-  const prevShipCount        = prevShipping.reduce((s, r) => s + r.count, 0);
-  const prevPayCount         = prevPayment.reduce((s, r) => s + r.count, 0);
-  const prevAvgShipping      = prevShipCount > 0 ? prevTotalShippingRev / prevShipCount : 0;
-  const prevAvgPayment       = prevPayCount  > 0 ? prevTotalPaymentRev  / prevPayCount  : 0;
-  const prevFreeCount        = prevShipping
-    .filter(r => r.revenue_vat === 0 || r.name.toLowerCase().includes('zdarma') || r.name.toLowerCase().includes('free'))
-    .reduce((s, r) => s + r.count, 0);
-  const prevFreeShippingPct  = prevShipCount > 0 ? (prevFreeCount / prevShipCount) * 100 : 0;
+  const prevTotalShippingRev  = prevShipping.reduce((s, r) => s + r.revenue_vat, 0);
+  const prevTotalPaymentRev   = prevPayment.reduce((s, r) => s + r.revenue_vat, 0);
+  const prevShipCount         = prevShipping.reduce((s, r) => s + r.count, 0);
+  const prevPayCount          = prevPayment.reduce((s, r) => s + r.count, 0);
+  const prevAvgShipping       = prevShipCount > 0 ? prevTotalShippingRev / prevShipCount : 0;
+  const prevAvgPayment        = prevPayCount  > 0 ? prevTotalPaymentRev  / prevPayCount  : 0;
+  const prevShipExclPickup    = prevShipping.filter(r => !isPickup(r.name));
+  const prevShipExclPickupCnt = prevShipExclPickup.reduce((s, r) => s + r.count, 0);
+  const prevFreeCount         = prevShipExclPickup.reduce((s, r) => s + (r.free_count ?? 0), 0);
+  const prevFreeShippingPct   = prevShipExclPickupCnt > 0 ? (prevFreeCount / prevShipExclPickupCnt) * 100 : 0;
+
+  // ── Free shipping % trend ─────────────────────────────────────────────────
+  const freeShipTrend = useMemo(() => {
+    const byPeriod: Record<string, { count: number; free: number }> = {};
+    for (const r of shipping) {
+      if (isPickup(r.name)) continue;
+      const key = periodKey(r.date, period);
+      if (!byPeriod[key]) byPeriod[key] = { count: 0, free: 0 };
+      byPeriod[key].count += r.count;
+      byPeriod[key].free  += r.free_count ?? 0;
+    }
+    return Object.entries(byPeriod)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([key, v]) => ({
+        label: formatPeriodLabel(key, period),
+        pct: v.count > 0 ? Math.round(v.free / v.count * 1000) / 10 : 0,
+      }));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [shipping, period]);
+
+  const freeShipAvgPct = freeShipTrend.length > 0
+    ? Math.round(freeShipTrend.reduce((s, r) => s + r.pct, 0) / freeShipTrend.length * 10) / 10
+    : 0;
 
   // Sparkline — daily totals for shipping and payment revenue
   const sparkShipping = useMemo(() => {
@@ -450,7 +478,7 @@ export default function ShippingPage() {
             variant={!hasAnyCost ? 'default' : shippingProfitLoss >= 0 ? 'green' : 'red'}
           />
           <KpiCard title="Prům. doprava"        value={fc(avgShipping)}                               yoy={yoyPct(avgShipping, prevAvgShipping)}            icon={<DollarSign size={16} />} sparklineData={[]}            hasPrevData={hasPrevData} />
-          <KpiCard title="Doprava zdarma"       value={formatNumber(freeShippingCount)}               yoy={yoyPct(freeShippingPct, prevFreeShippingPct)}   icon={<Gift size={16} />}       sparklineData={[]}            hasPrevData={hasPrevData} />
+          <KpiCard title="Doprava zdarma"       value={formatNumber(freeShippingCount)}               yoy={yoyPct(freeShippingCount, prevFreeCount)}       icon={<Gift size={16} />}       sparklineData={[]}            hasPrevData={hasPrevData} />
           <KpiCard title="Doprava zdarma %"     value={formatPercent(freeShippingPct, 1)}             yoy={yoyPct(freeShippingPct, prevFreeShippingPct)}   icon={<Gift size={16} />}       sparklineData={[]}            hasPrevData={hasPrevData} />
         </div>
       </div>
@@ -468,7 +496,7 @@ export default function ShippingPage() {
 
       {/* Carrier P&L table */}
       {hasAnyCost && (
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="px-5 py-4 border-b border-slate-100">
             <h2 className="text-sm font-semibold text-slate-700">Zisk / Ztráta dopravce</h2>
             <p className="text-xs text-slate-400 mt-0.5">Doprava zákazník minus reálné náklady e-shopu</p>
@@ -586,6 +614,40 @@ export default function ShippingPage() {
         </ResponsiveContainer>
       </div>
 
+      {/* Free shipping % trend chart */}
+      {freeShipTrend.length > 0 && (
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between gap-3 flex-wrap">
+            <div>
+              <h2 className="text-sm font-semibold text-slate-700">Doprava zdarma % v čase</h2>
+              <p className="text-xs text-slate-400 mt-0.5">Podíl objednávek s dopravou zdarma (bez Osobního odběru)</p>
+            </div>
+            <span className="text-xs text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">
+              Ø {freeShipAvgPct.toFixed(1)} % za období
+            </span>
+          </div>
+          <div className="p-5">
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={freeShipTrend} margin={{ top: 5, right: 16, left: 10, bottom: 5 }} barCategoryGap="30%">
+                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" vertical={false} />
+                <XAxis dataKey="label" tick={{ fontSize: 11, fill: '#9ca3af' }} interval="preserveStartEnd" axisLine={false} tickLine={false} />
+                <YAxis
+                  tickFormatter={v => `${v} %`}
+                  domain={[0, 100]}
+                  tick={{ fontSize: 11, fill: '#9ca3af' }}
+                  width={48}
+                  axisLine={false}
+                  tickLine={false}
+                />
+                <Tooltip formatter={(v: number) => [`${Number(v).toFixed(1)} %`, 'Doprava zdarma %']} cursor={{ fill: '#f8fafc' }} />
+                <ReferenceLine y={freeShipAvgPct} stroke="#94a3b8" strokeDasharray="4 3" strokeWidth={1.5}
+                  label={{ value: `Ø ${freeShipAvgPct.toFixed(1)} %`, position: 'insideTopRight', fontSize: 10, fill: '#94a3b8' }} />
+                <Bar dataKey="pct" name="Doprava zdarma %" fill={C.primary} barSize={barSize} radius={[3, 3, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      )}
 
       {/* Donut + table grid — pies in row 1, tables in row 2 so they align */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
@@ -642,6 +704,10 @@ export default function ShippingPage() {
 
         {/* ── Shipping table ── */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="px-5 py-4 border-b border-slate-100">
+            <h2 className="text-sm font-semibold text-slate-700">Způsoby doručení — tabulka</h2>
+            <p className="text-xs text-slate-400 mt-0.5">Detailní přehled objednávek a tržeb dle dopravce</p>
+          </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -687,6 +753,10 @@ export default function ShippingPage() {
 
         {/* ── Payment table ── */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="px-5 py-4 border-b border-slate-100">
+            <h2 className="text-sm font-semibold text-slate-700">Způsoby platby — tabulka</h2>
+            <p className="text-xs text-slate-400 mt-0.5">Detailní přehled objednávek a tržeb dle způsobu platby</p>
+          </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -733,7 +803,7 @@ export default function ShippingPage() {
       </div>
 
       {/* Carrier cost tables */}
-      <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between gap-3 flex-wrap">
           <div>
             <h2 className="text-sm font-semibold text-slate-700">Ceník dopravců</h2>

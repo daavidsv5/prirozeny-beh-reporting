@@ -343,12 +343,18 @@ Tooltip obou grafů (custom `content` v `app/retention/page.tsx`) zobrazuje hodn
 - `Doprava e-shop` — náklady e-shopu dle ceníku dopravců
 - `Doprava zisk / ztráta` — rozdíl; `variant='green'` nebo `'red'`
 - `Prům. doprava` — průměrná doprava na objednávku
-- `Doprava zdarma` — počet objednávek s dopravou zdarma (revenue_vat === 0 nebo name obsahuje "zdarma"/"free")
-- `Doprava zdarma %` — podíl objednávek s dopravou zdarma z celkového počtu
+- `Doprava zdarma` — počet objednávek s dopravou zdarma (`free_count`, bez Osobního odběru)
+- `Doprava zdarma %` — podíl objednávek s dopravou zdarma z celkového počtu (bez Osobního odběru)
 
 **Ceník dopravců** — editovatelná tabulka uložená v `localStorage` (`carrierCosts_v1`).
 
 **Tabulka Zisk / ztráta per dopravce** — zobrazí se pouze pokud je vyplněn ceník.
+
+**Výpočet dopravy zdarma (přepracováno 2026-08)** — `scripts/updateData.js` → `aggregateShippingPayment()` počítá pole **`free_count`** přímo na úrovni objednávky (`o.shipment.price_with_vat === 0`), ne přes `revenue_vat === 0`/název obsahující "zdarma"/"free" na denně agregovaném záznamu jako dřív — to při mixu placené/zdarma dopravy stejnou metodou ve stejný den dávalo chybný výsledek (stejný bug, jaký měl dřív Bioprodukt reporting). `free_count` se nepočítá pro Osobní odběr/zpětnou dopravu/zaslání emailem (`isPickupName()` helper). `ShippingPaymentRecord.free_count` je nové pole (0 u payment záznamů).
+
+`app/shipping/page.tsx` — KPI i nový **graf „Doprava zdarma % v čase"** (sloupcový, respektuje Den/Týden/Měsíc přepínač, referenční čára na průměru, umístěn za grafem „Vývoj využitelnosti plateb") používají `r.free_count ?? 0` a helper `isPickup(name)` vylučující Osobní odběr i z jmenovatele — sjednoceno se schématem Celtic-supply/Bioprodukt/Sardinerie/Zbozi z bali/Úleva pro nohy reportingu. Zároveň opraven YoY badge u KPI „Doprava zdarma" (počet) — dřív počítal z procenta místo z počtu.
+
+**Sjednocení vizuálního stylu karet (2026-08)** — všechny karty v sekci sjednoceny na `rounded-xl border-gray-100` s hlavičkou jako samostatný `div` (`px-5 py-4 border-b border-slate-100` + `h2` + `p` podnadpis); doplněny chybějící nadpisy tabulek Dopravce/Platební metoda.
 
 ### Selektor Vše / E-shop / Prodejna (TopBar)
 
