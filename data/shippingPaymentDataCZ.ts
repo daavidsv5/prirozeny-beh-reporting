@@ -39687,7 +39687,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-08-11",
     "type": "payment",
     "name": "Kartou na pokladně Barefoot Třebíč",
-    "count": 2,
+    "count": 3,
     "revenue_vat": 0,
     "free_count": 0
   },
@@ -39943,7 +39943,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-08-18",
     "type": "payment",
     "name": "Upgates Pay",
-    "count": 4,
+    "count": 3,
     "revenue_vat": 0,
     "free_count": 0
   },
@@ -39951,8 +39951,8 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-08-18",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 4,
-    "revenue_vat": 236,
+    "count": 3,
+    "revenue_vat": 177,
     "free_count": 0
   },
   {
@@ -40055,7 +40055,7 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-08-20",
     "type": "payment",
     "name": "Upgates Pay",
-    "count": 4,
+    "count": 3,
     "revenue_vat": 0,
     "free_count": 0
   },
@@ -40063,8 +40063,8 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "date": "2026-08-20",
     "type": "shipping",
     "name": "GLS výdejní místa a boxy",
-    "count": 2,
-    "revenue_vat": 118,
+    "count": 1,
+    "revenue_vat": 59,
     "free_count": 0
   },
   {
@@ -40345,6 +40345,14 @@ export const shippingPaymentDataCZ: ShippingPaymentRecord[] = [
     "name": "Dobírka",
     "count": 1,
     "revenue_vat": 50,
+    "free_count": 0
+  },
+  {
+    "date": "2026-08-27",
+    "type": "payment",
+    "name": "Hotově na pokladně",
+    "count": 2,
+    "revenue_vat": 0,
     "free_count": 0
   },
   {

@@ -16,7 +16,7 @@ export interface CrossSellData {
 
 export const crossSellDataCZ: CrossSellData = {
   "totalOrders": 4864,
-  "multiItemOrders": 851,
+  "multiItemOrders": 852,
   "pairs": [
     {
       "productA": "Skinners 2.0 Comfort",

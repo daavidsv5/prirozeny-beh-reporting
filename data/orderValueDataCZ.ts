@@ -19273,10 +19273,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   },
   {
     "date": "2026-08-18",
-    "value": 2305.79
-  },
-  {
-    "date": "2026-08-18",
     "value": 1114.88
   },
   {
@@ -19334,10 +19330,6 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-08-20",
     "value": 859.5
-  },
-  {
-    "date": "2026-08-20",
-    "value": 1561.98
   },
   {
     "date": "2026-08-20",
@@ -19454,5 +19446,13 @@ export const orderValueDataCZ: OrderValueRecord[] = [
   {
     "date": "2026-08-27",
     "value": 2057.85
+  },
+  {
+    "date": "2026-08-27",
+    "value": 818.18
+  },
+  {
+    "date": "2026-08-27",
+    "value": 3290.09
   }
 ];

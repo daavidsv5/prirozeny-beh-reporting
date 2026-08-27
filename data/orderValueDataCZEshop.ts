@@ -17521,10 +17521,6 @@ export const orderValueDataCZEshop: OrderValueRecord[] = [
   },
   {
     "date": "2026-08-18",
-    "value": 2305.79
-  },
-  {
-    "date": "2026-08-18",
     "value": 1114.88
   },
   {
@@ -17550,10 +17546,6 @@ export const orderValueDataCZEshop: OrderValueRecord[] = [
   {
     "date": "2026-08-20",
     "value": 859.5
-  },
-  {
-    "date": "2026-08-20",
-    "value": 1561.98
   },
   {
     "date": "2026-08-20",

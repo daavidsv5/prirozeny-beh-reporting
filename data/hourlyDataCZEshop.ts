@@ -610,9 +610,9 @@ export const hourlyDataCZEshop: HourlyPoint[] = [
     "dayOfWeek": 2,
     "hour": 18,
     "dayCount": 155,
-    "totalRevenue": 83472.3,
-    "totalOrders": 47,
-    "avgRevenue": 538.53,
+    "totalRevenue": 81166.51,
+    "totalOrders": 46,
+    "avgRevenue": 523.65,
     "avgOrders": 0.3
   },
   {
@@ -1033,10 +1033,10 @@ export const hourlyDataCZEshop: HourlyPoint[] = [
     "dayOfWeek": 4,
     "hour": 17,
     "dayCount": 150,
-    "totalRevenue": 52861.52,
-    "totalOrders": 30,
-    "avgRevenue": 352.41,
-    "avgOrders": 0.2
+    "totalRevenue": 51299.54,
+    "totalOrders": 29,
+    "avgRevenue": 342,
+    "avgOrders": 0.19
   },
   {
     "dayOfWeek": 4,

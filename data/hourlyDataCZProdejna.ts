@@ -879,7 +879,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 0,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -888,7 +888,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 1,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -897,7 +897,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 2,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -906,7 +906,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 3,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -915,7 +915,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 4,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -924,7 +924,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 5,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -933,7 +933,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 6,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -942,7 +942,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 7,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -951,7 +951,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 8,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -960,79 +960,79 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 9,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 12973.55,
     "totalOrders": 6,
-    "avgRevenue": 294.85,
-    "avgOrders": 0.14
+    "avgRevenue": 288.3,
+    "avgOrders": 0.13
   },
   {
     "dayOfWeek": 4,
     "hour": 10,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 31850.43,
     "totalOrders": 14,
-    "avgRevenue": 723.87,
-    "avgOrders": 0.32
+    "avgRevenue": 707.79,
+    "avgOrders": 0.31
   },
   {
     "dayOfWeek": 4,
     "hour": 11,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 28133.57,
     "totalOrders": 10,
-    "avgRevenue": 639.4,
-    "avgOrders": 0.23
+    "avgRevenue": 625.19,
+    "avgOrders": 0.22
   },
   {
     "dayOfWeek": 4,
     "hour": 12,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 3803.37,
     "totalOrders": 3,
-    "avgRevenue": 86.44,
+    "avgRevenue": 84.52,
     "avgOrders": 0.07
   },
   {
     "dayOfWeek": 4,
     "hour": 13,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 30023.98,
     "totalOrders": 13,
-    "avgRevenue": 682.36,
-    "avgOrders": 0.3
+    "avgRevenue": 667.2,
+    "avgOrders": 0.29
   },
   {
     "dayOfWeek": 4,
     "hour": 14,
-    "dayCount": 44,
-    "totalRevenue": 19723.16,
-    "totalOrders": 9,
-    "avgRevenue": 448.25,
-    "avgOrders": 0.2
+    "dayCount": 45,
+    "totalRevenue": 20541.34,
+    "totalOrders": 10,
+    "avgRevenue": 456.47,
+    "avgOrders": 0.22
   },
   {
     "dayOfWeek": 4,
     "hour": 15,
-    "dayCount": 44,
-    "totalRevenue": 39424.82,
-    "totalOrders": 18,
-    "avgRevenue": 896.02,
-    "avgOrders": 0.41
+    "dayCount": 45,
+    "totalRevenue": 42714.91,
+    "totalOrders": 19,
+    "avgRevenue": 949.22,
+    "avgOrders": 0.42
   },
   {
     "dayOfWeek": 4,
     "hour": 16,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 2594.21,
     "totalOrders": 2,
-    "avgRevenue": 58.96,
-    "avgOrders": 0.05
+    "avgRevenue": 57.65,
+    "avgOrders": 0.04
   },
   {
     "dayOfWeek": 4,
     "hour": 17,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -1041,7 +1041,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 18,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -1050,7 +1050,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 19,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -1059,7 +1059,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 20,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -1068,7 +1068,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 21,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -1077,7 +1077,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 22,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,
@@ -1086,7 +1086,7 @@ export const hourlyDataCZProdejna: HourlyPoint[] = [
   {
     "dayOfWeek": 4,
     "hour": 23,
-    "dayCount": 44,
+    "dayCount": 45,
     "totalRevenue": 0,
     "totalOrders": 0,
     "avgRevenue": 0,

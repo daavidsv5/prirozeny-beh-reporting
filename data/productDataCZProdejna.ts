@@ -4141,6 +4141,14 @@ export const productDataCZProdejna: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-19",
+    "name": "Chladivé běžecké ponožky Pondy KS CoolMax",
+    "amount": 1,
+    "revenue_vat": 107,
+    "revenue": 88.43,
+    "purchaseCost": 42.6
+  },
+  {
+    "date": "2026-06-19",
     "name": "Dámské barefoot tenisky Xero Shoes Nexus Knit",
     "amount": 1,
     "revenue_vat": 2511,
@@ -4170,14 +4178,6 @@ export const productDataCZProdejna: ProductSaleRecord[] = [
     "revenue_vat": 2000,
     "revenue": 1652.89,
     "purchaseCost": 16.53
-  },
-  {
-    "date": "2026-06-19",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax",
-    "amount": 1,
-    "revenue_vat": 107,
-    "revenue": 88.43,
-    "purchaseCost": 42.6
   },
   {
     "date": "2026-06-19",
@@ -4597,6 +4597,14 @@ export const productDataCZProdejna: ProductSaleRecord[] = [
   },
   {
     "date": "2026-08-12",
+    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Šedá",
+    "amount": 2,
+    "revenue_vat": 226,
+    "revenue": 186.78,
+    "purchaseCost": 85.21
+  },
+  {
+    "date": "2026-08-12",
     "name": "Dámské barefoot tenisky Xero Shoes Wynn - Tan/Pink Sand/Red",
     "amount": 1,
     "revenue_vat": 2691,
@@ -4626,14 +4634,6 @@ export const productDataCZProdejna: ProductSaleRecord[] = [
     "revenue_vat": 990,
     "revenue": 818.18,
     "purchaseCost": 719.83
-  },
-  {
-    "date": "2026-08-12",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Šedá",
-    "amount": 2,
-    "revenue_vat": 226,
-    "revenue": 186.78,
-    "purchaseCost": 85.21
   },
   {
     "date": "2026-08-12",
@@ -4898,5 +4898,37 @@ export const productDataCZProdejna: ProductSaleRecord[] = [
     "revenue_vat": 1490,
     "revenue": 1231.4,
     "purchaseCost": 714.28
+  },
+  {
+    "date": "2026-08-27",
+    "name": "Dětské barefoot boty Xero Shoes Prio Big Kids - Gray/Lime",
+    "amount": 1,
+    "revenue_vat": 1529,
+    "revenue": 1263.64,
+    "purchaseCost": 708.34
+  },
+  {
+    "date": "2026-08-27",
+    "name": "Dětské barefoot sandály Be Lenka Zest - Berry",
+    "amount": 1,
+    "revenue_vat": 990,
+    "revenue": 818.18,
+    "purchaseCost": 567
+  },
+  {
+    "date": "2026-08-27",
+    "name": "Dětské barefoot sandály Be Lenka Zest - Blue",
+    "amount": 1,
+    "revenue_vat": 941,
+    "revenue": 777.69,
+    "purchaseCost": 567
+  },
+  {
+    "date": "2026-08-27",
+    "name": "Unisex barefoot tenisky Be Lenka Rebound - Black White",
+    "amount": 1,
+    "revenue_vat": 1511,
+    "revenue": 1248.76,
+    "purchaseCost": 956.2
   }
 ];

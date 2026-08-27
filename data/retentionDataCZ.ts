@@ -47407,20 +47407,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-08-18",
-      "2026-08-24"
-    ],
-    "revenues": [
-      2305.79,
-      2305.79
-    ],
-    "revsVat": [
-      2790,
-      2790
-    ]
-  },
-  {
-    "dates": [
       "2026-08-18"
     ],
     "revenues": [
@@ -47472,17 +47458,6 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       1040
-    ]
-  },
-  {
-    "dates": [
-      "2026-08-20"
-    ],
-    "revenues": [
-      1561.98
-    ],
-    "revsVat": [
-      1890
     ]
   },
   {
@@ -47582,6 +47557,17 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       1891
+    ]
+  },
+  {
+    "dates": [
+      "2026-08-24"
+    ],
+    "revenues": [
+      2305.79
+    ],
+    "revsVat": [
+      2790
     ]
   },
   {

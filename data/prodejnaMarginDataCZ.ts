@@ -1142,5 +1142,10 @@ export const prodejnaMarginDataCZ: MarginDailyRecord[] = [
     "date": "2026-08-26",
     "purchaseCost": 714.28,
     "revenue": 1231.4
+  },
+  {
+    "date": "2026-08-27",
+    "purchaseCost": 2798.54,
+    "revenue": 4108.27
   }
 ];

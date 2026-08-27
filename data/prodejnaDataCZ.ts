@@ -1370,5 +1370,11 @@ export const prodejnaDataCZ: ProdejnaRecord[] = [
     "orders": 1,
     "revenue_vat": 1490,
     "revenue": 1231.4
+  },
+  {
+    "date": "2026-08-27",
+    "orders": 2,
+    "revenue_vat": 4971,
+    "revenue": 4108.27
   }
 ];

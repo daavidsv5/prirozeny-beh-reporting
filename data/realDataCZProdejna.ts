@@ -19734,10 +19734,10 @@ export const realDataCZProdejna: RealDailyRecord[] = [
   {
     "date": "2026-08-27",
     "country": "cz",
-    "orders": 0,
+    "orders": 2,
     "orders_cancelled": 0,
-    "revenue_vat": 0,
-    "revenue": 0,
+    "revenue_vat": 4971,
+    "revenue": 4108.27,
     "cost": 19.27,
     "cost_facebook": 19.27,
     "cost_google": 0,

@@ -610,9 +610,9 @@ export const hourlyDataCZ: HourlyPoint[] = [
     "dayOfWeek": 2,
     "hour": 18,
     "dayCount": 155,
-    "totalRevenue": 83472.3,
-    "totalOrders": 47,
-    "avgRevenue": 538.53,
+    "totalRevenue": 81166.51,
+    "totalOrders": 46,
+    "avgRevenue": 523.65,
     "avgOrders": 0.3
   },
   {
@@ -1006,19 +1006,19 @@ export const hourlyDataCZ: HourlyPoint[] = [
     "dayOfWeek": 4,
     "hour": 14,
     "dayCount": 151,
-    "totalRevenue": 88801.28,
-    "totalOrders": 48,
-    "avgRevenue": 588.09,
+    "totalRevenue": 89619.46,
+    "totalOrders": 49,
+    "avgRevenue": 593.51,
     "avgOrders": 0.32
   },
   {
     "dayOfWeek": 4,
     "hour": 15,
     "dayCount": 151,
-    "totalRevenue": 88838.87,
-    "totalOrders": 44,
-    "avgRevenue": 588.34,
-    "avgOrders": 0.29
+    "totalRevenue": 92128.96,
+    "totalOrders": 45,
+    "avgRevenue": 610.13,
+    "avgOrders": 0.3
   },
   {
     "dayOfWeek": 4,
@@ -1033,10 +1033,10 @@ export const hourlyDataCZ: HourlyPoint[] = [
     "dayOfWeek": 4,
     "hour": 17,
     "dayCount": 151,
-    "totalRevenue": 52861.52,
-    "totalOrders": 30,
-    "avgRevenue": 350.08,
-    "avgOrders": 0.2
+    "totalRevenue": 51299.54,
+    "totalOrders": 29,
+    "avgRevenue": 339.73,
+    "avgOrders": 0.19
   },
   {
     "dayOfWeek": 4,

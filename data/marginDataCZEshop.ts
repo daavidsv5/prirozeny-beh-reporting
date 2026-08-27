@@ -5275,8 +5275,8 @@ export const marginDataCZEshop: MarginDailyRecord[] = [
   },
   {
     "date": "2026-08-18",
-    "purchaseCost": 7160.63,
-    "revenue": 10246.28
+    "purchaseCost": 5255.86,
+    "revenue": 7940.49
   },
   {
     "date": "2026-08-19",
@@ -5285,8 +5285,8 @@ export const marginDataCZEshop: MarginDailyRecord[] = [
   },
   {
     "date": "2026-08-20",
-    "purchaseCost": 4936.18,
-    "revenue": 7261.15
+    "purchaseCost": 3626.66,
+    "revenue": 5699.17
   },
   {
     "date": "2026-08-21",
