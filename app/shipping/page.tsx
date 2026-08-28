@@ -639,7 +639,7 @@ export default function ShippingPage() {
                   axisLine={false}
                   tickLine={false}
                 />
-                <Tooltip formatter={(v: number) => [`${Number(v).toFixed(1)} %`, 'Doprava zdarma %']} cursor={{ fill: '#f8fafc' }} />
+                <Tooltip formatter={(v: unknown) => [`${Number(v).toFixed(1)} %`, 'Doprava zdarma %']} cursor={{ fill: '#f8fafc' }} />
                 <ReferenceLine y={freeShipAvgPct} stroke="#94a3b8" strokeDasharray="4 3" strokeWidth={1.5}
                   label={{ value: `Ø ${freeShipAvgPct.toFixed(1)} %`, position: 'insideTopRight', fontSize: 10, fill: '#94a3b8' }} />
                 <Bar dataKey="pct" name="Doprava zdarma %" fill={C.primary} barSize={barSize} radius={[3, 3, 0, 0]} />
