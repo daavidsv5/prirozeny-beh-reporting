@@ -450,8 +450,12 @@ function aggregateCrossSell(orders) {
 
 // Osobní odběr / zpětná doprava / zaslání emailem se nepočítá jako "doprava zdarma"
 // (nemá cenu, ale není to výsledek slevy/prahu zdarma dopravy)
-function isPickupName(name) {
-  return ['odběr', 'odber', 'zpětná', 'zpetná', 'emailem', 'údržbu'].some(e => name.toLowerCase().includes(e));
+// Metody, které nejsou doručením zákazníkovi — nesmí se počítat jako doprava zdarma.
+// Kmen "osobn" pokrývá osobní / osobný / osobně; hledat "odběr" nelze, protože to chytá
+// i placená výdejní místa dopravců ("DPD doručenie do odberného miesta").
+// Seznam musí zůstat shodný s isNonDelivery() v app/shipping/page.tsx.
+function isNonDeliveryName(name) {
+  return ['osobn', 'zpětná', 'zpetná', 'emailem', 'údržbu'].some(e => name.toLowerCase().includes(e));
 }
 
 function aggregateShippingPayment(orders) {
@@ -470,7 +474,7 @@ function aggregateShippingPayment(orders) {
       if (!seenOrderMethod.has(omKey)) {
         seenOrderMethod.add(omKey);
         byKey[key].count++;
-        if ((o.shipment.price_with_vat || 0) === 0 && !isPickupName(name)) byKey[key].free_count++;
+        if ((o.shipment.price_with_vat || 0) === 0 && !isNonDeliveryName(name)) byKey[key].free_count++;
       }
       byKey[key].revenue_vat += o.shipment.price_with_vat || 0;
     }

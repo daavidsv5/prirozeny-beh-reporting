@@ -10,6 +10,18 @@ const client = new BetaAnalyticsDataClient({
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+function parseSessions(rows: any[]): number[] {
+  const sessions = Array(12).fill(0);
+  for (const row of rows) {
+    const ym    = row.dimensionValues?.[0]?.value ?? '';
+    const month = parseInt(ym.slice(4, 6), 10) - 1;
+    if (month < 0 || month > 11) continue;
+    sessions[month] = Number(row.metricValues?.[0]?.value ?? 0);
+  }
+  return sessions;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function parseCvr(rows: any[]): number[] {
   const cvr = Array(12).fill(0);
   for (const row of rows) {
@@ -54,6 +66,8 @@ export async function GET(req: NextRequest) {
       yearB,
       cvrA: parseCvr(resA.rows ?? []),
       cvrB: parseCvr(resB.rows ?? []),
+      sessionsA: parseSessions(resA.rows ?? []),
+      sessionsB: parseSessions(resB.rows ?? []),
     });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : 'GA4 error';
