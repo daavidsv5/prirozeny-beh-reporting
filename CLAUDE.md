@@ -563,3 +563,24 @@ KPI box a Ø badge nyní všude vychází ze stejného čitatele i jmenovatele.
 `scripts/updateData.js` (2026-04-14), CZ soubor pole má (2026-08-27). 835 slovenských objednávek
 proto do podílu nevstupuje; podtitul grafu na to žlutě upozorňuje (`unmeasuredCount`).
 Trvalá oprava = přegenerovat SK export.
+
+## `/analytics` — Filtr zařízení pro celý přehled (2026-09-07)
+
+Segmentovaný přepínač **Vše / Desktop / Mobil / Tablet** v hlavičce stránky filtruje celou
+Návštěvnost (GA4), ne jen jednu kartu. Hodnota jde do `/api/analytics` jako `&device=`
+a v route se překlopí na `dimensionFilter` nad dimenzí `deviceCategory` (`matchType: 'EXACT'`).
+Při `all` se parametr neposílá vůbec, takže výchozí čísla zůstávají beze změny.
+
+Filtr se aplikuje na: `dailyRes`, agregované totals (současnost i loňsko), `sourceRes`,
+`dailyPrevRes`, `sourcePrevRes` a `landingRes`.
+
+**Záměrně se NEaplikuje na:**
+- `deviceRes` / `devicePrevRes` — rozpad podle zařízení musí zůstat úplný, jinak by karta
+  „Zařízení" ukazovala jediný 100% řádek a ztratila smysl. Zůstává kontextem k přepínači.
+- `funnelRes` / `funnelTrendRes` — ty si zařízení rozpadají samy přes dimenzi `deviceCategory`
+  a mají vlastní `dimensionFilter` na `eventName`. Trychtýř se místo toho řídí stavem
+  `funnelDevice`, který `handleDeviceFilter()` drží v synchronizaci s globálním přepínačem,
+  aby přehled a trychtýř nemohly ukazovat různá zařízení.
+
+Implementačně převzato z Celtic-supply reportingu, kde filtr existoval dřív; nyní shodné
+ve všech 6 projektech.
