@@ -55,13 +55,13 @@ function log(msg) {
 }
 
 // ── HTTP fetch (pro Google Sheets) ────────────────────────────────────────────
-function fetchUrl(url, redirects = 0) {
+function fetchUrlOnce(url, redirects = 0) {
   return new Promise((resolve, reject) => {
     if (redirects > 5) return reject(new Error('Too many redirects'));
     const lib = url.startsWith('https') ? https : require('http');
-    lib.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
+    const req = lib.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 60000 }, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return resolve(fetchUrl(res.headers.location, redirects + 1));
+        return resolve(fetchUrlOnce(res.headers.location, redirects + 1));
       }
       if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode} for ${url}`));
       const chunks = [];
@@ -69,7 +69,47 @@ function fetchUrl(url, redirects = 0) {
       res.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
       res.on('error', reject);
     }).on('error', reject);
+    req.on('timeout', () => {
+      req.destroy();
+      reject(new Error(`Request timeout (60s) for ${url}`));
+    });
   });
+}
+
+// Google publikuje sheety přes dočasná podepsaná URL, která občas vrátí HTTP 400
+// nebo se zaseknou. Všechny zdroje se stahují přes Promise.all, takže bez opakování
+// shodí jediná přechodná chyba celý denní běh (viz Actions #155 a #160, 09/2026).
+// Opakují se jen přechodné chyby — 401/403/404 znamenají špatné nastavení
+// a opakování by jen prodloužilo běh, než stejně spadne.
+const FETCH_ATTEMPTS  = 4;
+const FETCH_BACKOFF_MS = [2000, 6000, 15000];
+
+function isRetriableFetchError(err) {
+  const msg = String((err && err.message) || err);
+  if (/HTTP (400|408|425|429|5\d\d)\b/.test(msg)) return true;
+  return /timeout|socket hang up|ECONNRESET|ETIMEDOUT|ECONNREFUSED|EAI_AGAIN|ENOTFOUND|EPIPE/i.test(msg);
+}
+
+function sleep(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
+
+// Každý pokus začíná od původní docs.google.com adresy, takže se znovu vyžádá
+// i čerstvý podepsaný redirect — opakovat vypršené URL by nemělo smysl.
+async function fetchUrl(url) {
+  let lastErr;
+  for (let attempt = 1; attempt <= FETCH_ATTEMPTS; attempt++) {
+    try {
+      return await fetchUrlOnce(url);
+    } catch (err) {
+      lastErr = err;
+      if (attempt === FETCH_ATTEMPTS || !isRetriableFetchError(err)) break;
+      const wait = FETCH_BACKOFF_MS[attempt - 1];
+      log(`WARN: pokus ${attempt}/${FETCH_ATTEMPTS} selhal (${err.message}) — opakuji za ${wait / 1000} s`);
+      await sleep(wait);
+    }
+  }
+  throw lastErr;
 }
 
 // ── CSV helpers (pouze pro cost Sheets) ──────────────────────────────────────
