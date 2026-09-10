@@ -40997,11 +40997,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-09-04",
-    "name": "Pánské voděodolné turistické barefoot boty Xero Shoes Scrambler Trail Low WP - Black Asphalt",
+    "name": "Pánské trailové barefoot boty Xero Shoes Scrambler Low EV - Dark Irish Cream",
     "amount": 1,
-    "revenue_vat": 3231,
-    "revenue": 2670.25,
-    "purchaseCost": 1785.72
+    "revenue_vat": 2490,
+    "revenue": 2057.85,
+    "purchaseCost": 1375.21
   },
   {
     "date": "2026-09-04",

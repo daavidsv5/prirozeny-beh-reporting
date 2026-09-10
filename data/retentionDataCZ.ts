@@ -47895,11 +47895,11 @@ export const retentionDataCZ: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revenues": [
       1405.79,
-      2670.25
+      2057.85
     ],
     "revsVat": [
       1701,
-      3231
+      2490
     ]
   },
   {

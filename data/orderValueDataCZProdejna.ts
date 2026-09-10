@@ -1873,7 +1873,7 @@ export const orderValueDataCZProdejna: OrderValueRecord[] = [
   },
   {
     "date": "2026-09-04",
-    "value": 2670.25
+    "value": 2057.85
   },
   {
     "date": "2026-09-07",

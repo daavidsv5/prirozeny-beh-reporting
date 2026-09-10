@@ -1240,9 +1240,9 @@ export const hourlyDataCZ: HourlyPoint[] = [
     "dayOfWeek": 5,
     "hour": 16,
     "dayCount": 147,
-    "totalRevenue": 78946.53,
+    "totalRevenue": 78334.13,
     "totalOrders": 43,
-    "avgRevenue": 537.05,
+    "avgRevenue": 532.89,
     "avgOrders": 0.29
   },
   {

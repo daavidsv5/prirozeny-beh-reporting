@@ -1392,8 +1392,8 @@ export const prodejnaDataCZ: ProdejnaRecord[] = [
   {
     "date": "2026-09-04",
     "orders": 5,
-    "revenue_vat": 11101,
-    "revenue": 9174.39
+    "revenue_vat": 10360,
+    "revenue": 8561.99
   },
   {
     "date": "2026-09-07",

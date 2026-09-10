@@ -5370,8 +5370,8 @@ export const marginDataCZ: MarginDailyRecord[] = [
   },
   {
     "date": "2026-09-04",
-    "purchaseCost": 11033.98,
-    "revenue": 14985.14
+    "purchaseCost": 10623.47,
+    "revenue": 14372.74
   },
   {
     "date": "2026-09-05",
