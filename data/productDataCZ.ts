@@ -11453,19 +11453,19 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2024-12-18",
-    "name": "GRIZLY Arašídový krém slaný karamel v tubě 75 g",
-    "amount": 1,
-    "revenue_vat": 39,
-    "revenue": 34.82,
-    "purchaseCost": 17.86
-  },
-  {
-    "date": "2024-12-18",
     "name": "Chia 1000g",
     "amount": 1,
     "revenue_vat": 139,
     "revenue": 124.11,
     "purchaseCost": 89.15
+  },
+  {
+    "date": "2024-12-18",
+    "name": "GRIZLY Arašídový krém slaný karamel v tubě 75 g",
+    "amount": 1,
+    "revenue_vat": 39,
+    "revenue": 34.82,
+    "purchaseCost": 17.86
   },
   {
     "date": "2024-12-18",
@@ -14621,19 +14621,19 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-27",
-    "name": "Čisticí kartáčky na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 99,
-    "revenue": 81.82,
-    "purchaseCost": 53
-  },
-  {
-    "date": "2025-04-27",
     "name": "Čističe na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 219,
     "revenue": 180.99,
     "purchaseCost": 118
+  },
+  {
+    "date": "2025-04-27",
+    "name": "Čisticí kartáčky na barefoot a sportovní obuv | Nikwax",
+    "amount": 1,
+    "revenue_vat": 99,
+    "revenue": 81.82,
+    "purchaseCost": 53
   },
   {
     "date": "2025-04-27",
@@ -19109,19 +19109,19 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-18",
-    "name": "COMPRESSPORT kompresní návleky R2 3.0",
-    "amount": 2,
-    "revenue_vat": 1920,
-    "revenue": 1586.78,
-    "purchaseCost": 1100
-  },
-  {
-    "date": "2025-07-18",
     "name": "Čisticí kartáčky na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 99,
     "revenue": 81.82,
     "purchaseCost": 53
+  },
+  {
+    "date": "2025-07-18",
+    "name": "COMPRESSPORT kompresní návleky R2 3.0",
+    "amount": 2,
+    "revenue_vat": 1920,
+    "revenue": 1586.78,
+    "purchaseCost": 1100
   },
   {
     "date": "2025-07-18",
@@ -26197,19 +26197,19 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-18",
-    "name": "Čisticí kartáčky na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 99,
-    "revenue": 81.82,
-    "purchaseCost": 53
-  },
-  {
-    "date": "2025-11-18",
     "name": "Čističe na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 139,
     "revenue": 114.88,
     "purchaseCost": 75
+  },
+  {
+    "date": "2025-11-18",
+    "name": "Čisticí kartáčky na barefoot a sportovní obuv | Nikwax",
+    "amount": 1,
+    "revenue_vat": 99,
+    "revenue": 81.82,
+    "purchaseCost": 53
   },
   {
     "date": "2025-11-18",
@@ -31501,19 +31501,19 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-24",
-    "name": "Čisticí kartáčky na barefoot a sportovní obuv | Nikwax",
-    "amount": 1,
-    "revenue_vat": 99,
-    "revenue": 81.82,
-    "purchaseCost": 53
-  },
-  {
-    "date": "2026-03-24",
     "name": "Čističe na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 219,
     "revenue": 180.99,
     "purchaseCost": 118
+  },
+  {
+    "date": "2026-03-24",
+    "name": "Čisticí kartáčky na barefoot a sportovní obuv | Nikwax",
+    "amount": 1,
+    "revenue_vat": 99,
+    "revenue": 81.82,
+    "purchaseCost": 53
   },
   {
     "date": "2026-03-24",
@@ -37645,6 +37645,14 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-19",
+    "name": "Chladivé běžecké ponožky Pondy KS CoolMax",
+    "amount": 1,
+    "revenue_vat": 107,
+    "revenue": 88.43,
+    "purchaseCost": 42.6
+  },
+  {
+    "date": "2026-06-19",
     "name": "Dámské barefoot tenisky Xero Shoes Nexus Knit",
     "amount": 1,
     "revenue_vat": 2511,
@@ -37674,14 +37682,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2000,
     "revenue": 1652.89,
     "purchaseCost": 16.53
-  },
-  {
-    "date": "2026-06-19",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax",
-    "amount": 1,
-    "revenue_vat": 107,
-    "revenue": 88.43,
-    "purchaseCost": 42.6
   },
   {
     "date": "2026-06-19",
@@ -37933,6 +37933,14 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-25",
+    "name": "Chladivé běžecké ponožky Pondy KS CoolMax",
+    "amount": 1,
+    "revenue_vat": 107,
+    "revenue": 88.43,
+    "purchaseCost": 42.6
+  },
+  {
+    "date": "2026-06-25",
     "name": "COMPRESSPORT kompresní návleky R2 3.0",
     "amount": 1,
     "revenue_vat": 960,
@@ -37962,14 +37970,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1321,
     "revenue": 1091.74,
     "purchaseCost": 666.67
-  },
-  {
-    "date": "2026-06-25",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax",
-    "amount": 1,
-    "revenue_vat": 107,
-    "revenue": 88.43,
-    "purchaseCost": 42.6
   },
   {
     "date": "2026-06-25",
@@ -38157,6 +38157,14 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-06-30",
+    "name": "Chladivé běžecké ponožky Pondy KS CoolMax",
+    "amount": 2,
+    "revenue_vat": 214,
+    "revenue": 176.86,
+    "purchaseCost": 85.21
+  },
+  {
+    "date": "2026-06-30",
     "name": "Dámské barefoot sandály Xero Shoes Z-Trek - Black",
     "amount": 1,
     "revenue_vat": 1390,
@@ -38170,14 +38178,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 2698,
     "revenue": 2229.76,
     "purchaseCost": 1428.6
-  },
-  {
-    "date": "2026-06-30",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax",
-    "amount": 2,
-    "revenue_vat": 214,
-    "revenue": 176.86,
-    "purchaseCost": 85.21
   },
   {
     "date": "2026-06-30",
@@ -38245,6 +38245,14 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-07-02",
+    "name": "Chladivé běžecké ponožky Pondy KS CoolMax",
+    "amount": 2,
+    "revenue_vat": 238,
+    "revenue": 196.69,
+    "purchaseCost": 85.2
+  },
+  {
+    "date": "2026-07-02",
     "name": "Čističe na barefoot a sportovní obuv | Nikwax",
     "amount": 1,
     "revenue_vat": 139,
@@ -38282,14 +38290,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 3590,
     "revenue": 2966.94,
     "purchaseCost": 1785.71
-  },
-  {
-    "date": "2026-07-02",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax",
-    "amount": 2,
-    "revenue_vat": 238,
-    "revenue": 196.69,
-    "purchaseCost": 85.2
   },
   {
     "date": "2026-07-02",
@@ -39685,6 +39685,14 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-08-08",
+    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Černá",
+    "amount": 1,
+    "revenue_vat": 119,
+    "revenue": 98.35,
+    "purchaseCost": 42.6
+  },
+  {
+    "date": "2026-08-08",
     "name": "Dámské barefoot halové boty Xero Shoes X1 Low - Sunny Lime",
     "amount": 1,
     "revenue_vat": 2490,
@@ -39698,14 +39706,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 1349,
     "revenue": 1114.88,
     "purchaseCost": 714.3
-  },
-  {
-    "date": "2026-08-08",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Černá",
-    "amount": 1,
-    "revenue_vat": 119,
-    "revenue": 98.35,
-    "purchaseCost": 42.6
   },
   {
     "date": "2026-08-08",
@@ -39757,6 +39757,14 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-08-10",
+    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Šedá",
+    "amount": 2,
+    "revenue_vat": 238,
+    "revenue": 196.69,
+    "purchaseCost": 85.2
+  },
+  {
+    "date": "2026-08-10",
     "name": "Dámské turistické barefoot sandály Xero Shoes Z-Trail EV - Dusty Rose",
     "amount": 1,
     "revenue_vat": 1979,
@@ -39770,14 +39778,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 990,
     "revenue": 818.18,
     "purchaseCost": 567
-  },
-  {
-    "date": "2026-08-10",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Šedá",
-    "amount": 2,
-    "revenue_vat": 238,
-    "revenue": 196.69,
-    "purchaseCost": 85.2
   },
   {
     "date": "2026-08-10",
@@ -39861,6 +39861,14 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-08-12",
+    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Šedá",
+    "amount": 2,
+    "revenue_vat": 226,
+    "revenue": 186.78,
+    "purchaseCost": 85.21
+  },
+  {
+    "date": "2026-08-12",
     "name": "Dámské barefoot halové boty Xero Shoes X1 Low - Sunny Lime",
     "amount": 1,
     "revenue_vat": 2490,
@@ -39906,14 +39914,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 790,
     "revenue": 652.89,
     "purchaseCost": 489.25
-  },
-  {
-    "date": "2026-08-12",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Šedá",
-    "amount": 2,
-    "revenue_vat": 226,
-    "revenue": 186.78,
-    "purchaseCost": 85.21
   },
   {
     "date": "2026-08-12",
@@ -39973,19 +39973,19 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-08-13",
-    "name": "DOPRODEJ Dětské barefoot ponožkoboty Skinners Kids 2.0 - Poppy",
-    "amount": 1,
-    "revenue_vat": 790,
-    "revenue": 652.89,
-    "purchaseCost": 489.25
-  },
-  {
-    "date": "2026-08-13",
     "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Černá",
     "amount": 1,
     "revenue_vat": 119,
     "revenue": 98.35,
     "purchaseCost": 42.6
+  },
+  {
+    "date": "2026-08-13",
+    "name": "DOPRODEJ Dětské barefoot ponožkoboty Skinners Kids 2.0 - Poppy",
+    "amount": 1,
+    "revenue_vat": 790,
+    "revenue": 652.89,
+    "purchaseCost": 489.25
   },
   {
     "date": "2026-08-13",
@@ -40333,14 +40333,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-08-20",
-    "name": "Dětské barefoot sandály Be Lenka Zest - Blue",
-    "amount": 1,
-    "revenue_vat": 990,
-    "revenue": 818.18,
-    "purchaseCost": 567
-  },
-  {
-    "date": "2026-08-20",
     "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Bílá",
     "amount": 1,
     "revenue_vat": 107,
@@ -40354,6 +40346,14 @@ export const productDataCZ: ProductSaleRecord[] = [
     "revenue_vat": 214,
     "revenue": 176.86,
     "purchaseCost": 85.21
+  },
+  {
+    "date": "2026-08-20",
+    "name": "Dětské barefoot sandály Be Lenka Zest - Blue",
+    "amount": 1,
+    "revenue_vat": 990,
+    "revenue": 818.18,
+    "purchaseCost": 567
   },
   {
     "date": "2026-08-20",
@@ -41341,19 +41341,19 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-09-12",
-    "name": "Dámské běžecké barefoot boty Xero Shoes HFS II - Raspberry Sunset Coral Gradient",
-    "amount": 1,
-    "revenue_vat": 1891,
-    "revenue": 1562.81,
-    "purchaseCost": 1547.62
-  },
-  {
-    "date": "2026-09-12",
     "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Bílá",
     "amount": 1,
     "revenue_vat": 107,
     "revenue": 88.43,
     "purchaseCost": 42.6
+  },
+  {
+    "date": "2026-09-12",
+    "name": "Dámské běžecké barefoot boty Xero Shoes HFS II - Raspberry Sunset Coral Gradient",
+    "amount": 1,
+    "revenue_vat": 1891,
+    "revenue": 1562.81,
+    "purchaseCost": 1547.62
   },
   {
     "date": "2026-09-12",
@@ -41405,6 +41405,22 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-09-13",
+    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Bílá",
+    "amount": 2,
+    "revenue_vat": 238,
+    "revenue": 196.69,
+    "purchaseCost": 85.2
+  },
+  {
+    "date": "2026-09-13",
+    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Šedá",
+    "amount": 1,
+    "revenue_vat": 119,
+    "revenue": 98.35,
+    "purchaseCost": 42.6
+  },
+  {
+    "date": "2026-09-13",
     "name": "Dámské barefoot baleríny Xero Shoes Phoenix Knit - Black",
     "amount": 1,
     "revenue_vat": 1606,
@@ -41437,14 +41453,6 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-09-13",
-    "name": "DOPRODEJ Dámské sportovní barefoot boty Merrell Vapor Glove 6 - Granite/Fuchsia",
-    "amount": 1,
-    "revenue_vat": 1990,
-    "revenue": 1644.63,
-    "purchaseCost": 1239
-  },
-  {
-    "date": "2026-09-13",
     "name": "DOPRODEJ Dámské sportovní barefoot boty Merrell Vapor Glove 6 - Chambray/Steel Blue",
     "amount": 1,
     "revenue_vat": 1990,
@@ -41453,19 +41461,11 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-09-13",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Bílá",
-    "amount": 2,
-    "revenue_vat": 238,
-    "revenue": 196.69,
-    "purchaseCost": 85.2
-  },
-  {
-    "date": "2026-09-13",
-    "name": "Chladivé běžecké ponožky Pondy KS CoolMax - Šedá",
+    "name": "DOPRODEJ Dámské sportovní barefoot boty Merrell Vapor Glove 6 - Granite/Fuchsia",
     "amount": 1,
-    "revenue_vat": 119,
-    "revenue": 98.35,
-    "purchaseCost": 42.6
+    "revenue_vat": 1990,
+    "revenue": 1644.63,
+    "purchaseCost": 1239
   },
   {
     "date": "2026-09-13",
