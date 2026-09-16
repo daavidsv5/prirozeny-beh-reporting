@@ -107,15 +107,19 @@ Náklady se stahují z publikovaného Google Sheets CSV. Obsahuje 5 kanálů:
 
 | Kanál | Pole v datech |
 |-------|--------------|
-| Facebook Ads | `cost_facebook`, `clicks_facebook` |
-| Google Ads | `cost_google`, `clicks_google` |
-| Seznam Ads | `cost_seznam`, `clicks_seznam` |
-| Zboží.cz | `cost_zbozi` |
-| Heureka.cz | `cost_heureka` |
+| Facebook Ads | `cost_facebook`, `clicks_facebook`, `conv_facebook`, `convValue_facebook` |
+| Google Ads | `cost_google`, `clicks_google`, `conv_google`, `convValue_google` |
+| Seznam Ads | `cost_seznam`, `clicks_seznam`, `conv_seznam`, `convValue_seznam` |
+| Zboží.cz | `cost_zbozi`, `clicks_zbozi`, `conv_zbozi`, `convValue_zbozi` |
+| Heureka.cz | `cost_heureka`, `clicks_heureka`, `conv_heureka`, `convValue_heureka` |
+
+Sloupce CSV: `web, date, source, medium, cost, clicks, impressions, campaign_name, campaign_id,
+conversions, conversions_value` — `conv_*` je index 9, `convValue_*` index 10. Jde o konverze
+reportované samotnou reklamní platformou, ne o objednávky z Upgates.
 
 **Tanganica (affiliate síť)** — samostatný zdroj, pole `cost_tanganica`. Dva díly:
 - **Archiv** `data/tanganicaCosts.json` (`{ "YYYY-MM-DD": expense }`) — historická data do `2026-05-09`, needitovat ručně (statický export z minulosti).
-- **Živý denní feed** od `2026-05-10` — publikovaný Google Sheets CSV export (`SHEETS.tanganica_cz` v `updateData.js`), sloupce: Datum, Vygenerovaný obrat, Reklamní výdaje, PNO, Uživatelé, Objednávky, Konverzní poměr. Používá se pouze sloupec **Reklamní výdaje** (index 2). Stahuje se a slučuje s archivem v `loadTanganicaCosts()` (async) při každém běhu `updateData.js` — žádná ruční údržba není potřeba.
+- **Živý denní feed** od `2026-05-10` — publikovaný Google Sheets CSV export (`SHEETS.tanganica_cz` v `updateData.js`), sloupce: Datum, Vygenerovaný obrat, Reklamní výdaje, PNO, Uživatelé, Objednávky, Konverzní poměr. Používají se sloupce **Vygenerovaný obrat** (index 1 → `convValue_tanganica`), **Reklamní výdaje** (index 2 → `cost_tanganica`) a **Objednávky** (index 5 → `conv_tanganica`); PNO se dopočítává, ať je definice stejná jako u ostatních kanálů. Archiv nákladů má konverze nulové — Tanganica je reportuje až v živém exportu od `2026-05-10`. Stahuje se a slučuje s archivem v `loadTanganicaCosts()` (async) při každém běhu `updateData.js` — žádná ruční údržba není potřeba.
 
 Normalizace zdrojů v `updateData.js`:
 ```js
@@ -584,3 +588,26 @@ Filtr se aplikuje na: `dailyRes`, agregované totals (současnost i loňsko), `s
 
 Implementačně převzato z Celtic-supply reportingu, kde filtr existoval dřív; nyní shodné
 ve všech 6 projektech.
+
+
+## `/marketing` — Konverze a PNO v kartách „Výkon per channel" (2026-09-10)
+
+Karty per channel dřív ukazovaly jen náklady + kliky + CPC (FB/Google/Seznam), resp. náklady + PNO
+(Zboží/Heureka/Tanganica), a to PNO bylo **podíl nákladů kanálu na celkových tržbách e-shopu** — číslo,
+které s výkonem kanálu nesouviselo. `getMarketingSourceData()` navíc `orders`/`revenue` jen rozpočítávalo
+podílem nákladů, takže to byla fikce.
+
+Nově má všech 6 karet stejnou šestici metrik: **Náklady, Kliky, CPC, Konverze, Hodnota konverze, PNO**,
+každou s YoY badge. Zdroj je reálný:
+- cost import CSV — sloupce `conversions` a `conversions_value` (dosud se ignorovaly),
+- export z Tanganiky — sloupce `Objednávky` a `Vygenerovaný obrat`.
+
+`PNO = cost / convValue * 100`, `CPA = cost / conv`. Kliky u Zboží/Heureky byly v CSV taky celou dobu,
+jen se nepřepisovaly do dat — nyní se ukládají do `clicks_zbozi` / `clicks_heureka`. Tanganica kliky
+nereportuje, karta u nich zobrazí `—`.
+
+Karty se renderují smyčkou přes `CHANNELS` v `app/marketing/page.tsx` — dřív šlo o 6 ručně
+duplikovaných bloků JSX.
+
+**Rozsah dat:** Google Ads má konverze až od `2026-02-19` (dřív v CSV vůbec nebyl), Tanganica
+od `2026-05-10`. YoY badge u nich za starší období nic neukáže.

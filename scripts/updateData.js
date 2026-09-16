@@ -163,14 +163,18 @@ function aggregateCost(csv, storeFilter) {
     const cost   = parseNum(cols[4]);
     const clicks = parseNum(cols[5]);
     const campaignName = cols[7] || '';
+    const conv      = parseNum(cols[9]);
+    const convValue = parseNum(cols[10]);
 
     if (!date) continue;
     if (storeFilter && campaignStore(campaignName) !== storeFilter) continue;
     byDay[date] = (byDay[date] || 0) + cost;
     if (!byDaySource[date]) byDaySource[date] = {};
-    if (!byDaySource[date][source]) byDaySource[date][source] = { cost: 0, clicks: 0 };
-    byDaySource[date][source].cost   += cost;
-    byDaySource[date][source].clicks += clicks;
+    if (!byDaySource[date][source]) byDaySource[date][source] = { cost: 0, clicks: 0, conv: 0, convValue: 0 };
+    byDaySource[date][source].cost      += cost;
+    byDaySource[date][source].clicks    += clicks;
+    byDaySource[date][source].conv      += conv;
+    byDaySource[date][source].convValue += convValue;
   }
   return { byDay, byDaySource };
 }
@@ -189,7 +193,9 @@ function loadTanganicaArchive(storeFilter) {
   const byDaySource = {};
   for (const [date, cost] of Object.entries(raw)) {
     byDay[date] = (byDay[date] || 0) + cost;
-    byDaySource[date] = { tanganica: { cost, clicks: 0 } };
+    // Archiv obsahuje jen náklady — konverze a jejich hodnotu Tanganica reportuje
+    // až v živém exportu od 2026-05-10.
+    byDaySource[date] = { tanganica: { cost, clicks: 0, conv: 0, convValue: 0 } };
   }
   return { byDay, byDaySource };
 }
@@ -201,11 +207,13 @@ function aggregateTanganicaCsv(csv, storeFilter) {
   const rows = parseCSV(csv);
   for (const cols of rows) {
     if (cols.length < 3) continue;
-    const date = cols[0].trim();
-    const cost = parseNum(cols[2]);
+    const date      = cols[0].trim();
+    const convValue = parseNum(cols[1]);
+    const cost      = parseNum(cols[2]);
+    const conv      = parseNum(cols[5]);
     if (!date) continue;
     byDay[date] = (byDay[date] || 0) + cost;
-    byDaySource[date] = { tanganica: { cost, clicks: 0 } };
+    byDaySource[date] = { tanganica: { cost, clicks: 0, conv, convValue } };
   }
   return { byDay, byDaySource };
 }
@@ -612,6 +620,20 @@ function mergeDailyRecords(ordersByDay, costByDay, costByDaySource) {
       clicks_facebook:   Math.round(sources.facebook?.clicks  || 0),
       clicks_google:     Math.round(sources.google?.clicks    || 0),
       clicks_seznam:     Math.round(sources.seznam?.clicks    || 0),
+      clicks_zbozi:      Math.round(sources.zbozi?.clicks     || 0),
+      clicks_heureka:    Math.round(sources.heureka?.clicks   || 0),
+      conv_facebook:     Math.round((sources.facebook?.conv  || 0) * 100) / 100,
+      conv_google:       Math.round((sources.google?.conv    || 0) * 100) / 100,
+      conv_seznam:       Math.round((sources.seznam?.conv    || 0) * 100) / 100,
+      conv_zbozi:        Math.round((sources.zbozi?.conv     || 0) * 100) / 100,
+      conv_heureka:      Math.round((sources.heureka?.conv   || 0) * 100) / 100,
+      conv_tanganica:    Math.round((sources.tanganica?.conv || 0) * 100) / 100,
+      convValue_facebook:  Math.round((sources.facebook?.convValue  || 0) * 100) / 100,
+      convValue_google:    Math.round((sources.google?.convValue    || 0) * 100) / 100,
+      convValue_seznam:    Math.round((sources.seznam?.convValue    || 0) * 100) / 100,
+      convValue_zbozi:     Math.round((sources.zbozi?.convValue     || 0) * 100) / 100,
+      convValue_heureka:   Math.round((sources.heureka?.convValue   || 0) * 100) / 100,
+      convValue_tanganica: Math.round((sources.tanganica?.convValue || 0) * 100) / 100,
     };
   });
 }
@@ -676,6 +698,20 @@ export interface ${interfaceName} {
   clicks_facebook: number;
   clicks_google: number;
   clicks_seznam: number;
+  clicks_zbozi: number;
+  clicks_heureka: number;
+  conv_facebook: number;
+  conv_google: number;
+  conv_seznam: number;
+  conv_zbozi: number;
+  conv_heureka: number;
+  conv_tanganica: number;
+  convValue_facebook: number;
+  convValue_google: number;
+  convValue_seznam: number;
+  convValue_zbozi: number;
+  convValue_heureka: number;
+  convValue_tanganica: number;
 }
 
 export const ${varName}: ${interfaceName}[] = ${JSON.stringify(records, null, 2)};

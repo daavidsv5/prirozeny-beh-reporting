@@ -77,7 +77,9 @@ export interface MarketingSource {
   cost: number;
   currency: 'CZK' | 'EUR';
   clicks: number;
+  /** Konverze reportované samotným kanálem (cost import / Tanganica export). */
   orders: number;
+  /** Hodnota konverzí reportovaná kanálem — ne podíl na tržbách e-shopu. */
   revenue: number;
   pno: number;
   cpa: number;
@@ -94,36 +96,30 @@ export function getMarketingSourceData(
 
   const sum = (key: string) => rows.reduce((s, d) => s + ((d as any)[key] || 0), 0);
 
-  const fbCost      = sum('cost_facebook');
-  const gCost       = sum('cost_google');
-  const szCost      = sum('cost_seznam');
-  const zbCost      = sum('cost_zbozi');
-  const hkCost      = sum('cost_heureka');
-  const tgCost      = sum('cost_tanganica');
-  const fbClicks    = sum('clicks_facebook');
-  const gClicks     = sum('clicks_google');
-  const szClicks    = sum('clicks_seznam');
-  const totalRevenue = sum('revenue');
-  const totalOrders  = sum('orders');
+  const safeDiv = (a: number, b: number) => b > 0 ? a / b : 0;
 
-  const totalCost = fbCost + gCost + szCost + zbCost + hkCost + tgCost;
-  const mkShare   = (c: number) => totalCost > 0 ? c / totalCost : 0;
-  const safeDiv   = (a: number, b: number) => b > 0 ? a / b : 0;
-
-  const makeSource = (source: string, cost: number, clicks: number): MarketingSource => ({
-    source, currency: 'CZK', cost, clicks,
-    orders:  Math.round(totalOrders  * mkShare(cost)),
-    revenue: Math.round(totalRevenue * mkShare(cost)),
-    pno:     safeDiv(cost, totalRevenue * mkShare(cost)) * 100,
-    cpa:     safeDiv(cost, totalOrders  * mkShare(cost)),
-  });
+  // Konverze i jejich hodnota jsou reportované přímo kanálem (cost import,
+  // resp. export z Tanganiky) — ne dopočtené podílem na tržbách e-shopu.
+  const makeSource = (source: string, key: string): MarketingSource => {
+    const cost    = sum(`cost_${key}`);
+    const clicks  = sum(`clicks_${key}`);
+    const orders  = sum(`conv_${key}`);
+    const revenue = sum(`convValue_${key}`);
+    return {
+      source, currency: 'CZK', cost, clicks,
+      orders:  Math.round(orders * 100) / 100,
+      revenue: Math.round(revenue),
+      pno:     safeDiv(cost, revenue) * 100,
+      cpa:     safeDiv(cost, orders),
+    };
+  };
 
   return [
-    makeSource('Facebook Ads', fbCost, fbClicks),
-    makeSource('Google Ads',   gCost,  gClicks),
-    makeSource('Seznam Ads',   szCost, szClicks),
-    makeSource('Zboží.cz',     zbCost, 0),
-    makeSource('Heureka.cz',   hkCost, 0),
-    makeSource('Tanganica',    tgCost, 0),
+    makeSource('Facebook Ads', 'facebook'),
+    makeSource('Google Ads',   'google'),
+    makeSource('Seznam Ads',   'seznam'),
+    makeSource('Zboží.cz',     'zbozi'),
+    makeSource('Heureka.cz',   'heureka'),
+    makeSource('Tanganica',    'tanganica'),
   ].filter(s => s.cost > 0 || s.clicks > 0);
 }

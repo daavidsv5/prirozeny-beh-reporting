@@ -99,15 +99,16 @@ export default function MarketingPage() {
   );
 
   // Per-channel summary metrics
-  const fb = sourceData.find(s => s.source === 'Facebook Ads') ?? { cost: 0, clicks: 0 };
-  const gg = sourceData.find(s => s.source === 'Google Ads')   ?? { cost: 0, clicks: 0 };
-  const sz = sourceData.find(s => s.source === 'Seznam Ads')   ?? { cost: 0, clicks: 0 };
-  const zb = sourceData.find(s => s.source === 'Zboží.cz')     ?? { cost: 0, clicks: 0 };
-  const hk = sourceData.find(s => s.source === 'Heureka.cz')   ?? { cost: 0, clicks: 0 };
-  const tg = sourceData.find(s => s.source === 'Tanganica')    ?? { cost: 0, clicks: 0 };
-  const fbCpc = fb.clicks > 0 ? fb.cost / fb.clicks : 0;
-  const gCpc  = gg.clicks > 0 ? gg.cost / gg.clicks : 0;
-  const szCpc = sz.clicks > 0 ? sz.cost / sz.clicks : 0;
+  const CHANNELS = [
+    { source: 'Facebook Ads', label: 'text-blue-700',   icon: <Share2 size={15} />,      iconBg: 'bg-blue-50 text-blue-600' },
+    { source: 'Google Ads',   label: 'text-green-700',  icon: <Search size={15} />,      iconBg: 'bg-green-50 text-green-600' },
+    { source: 'Seznam Ads',   label: 'text-orange-700', icon: <Search size={15} />,      iconBg: 'bg-orange-50 text-orange-600' },
+    { source: 'Zboží.cz',     label: 'text-teal-700',   icon: <ShoppingBag size={15} />, iconBg: 'bg-teal-50 text-teal-600' },
+    { source: 'Heureka.cz',   label: 'text-purple-700', icon: <ShoppingBag size={15} />, iconBg: 'bg-purple-50 text-purple-600' },
+    { source: 'Tanganica',    label: 'text-pink-700',   icon: <ShoppingBag size={15} />, iconBg: 'bg-pink-50 text-pink-600' },
+  ];
+
+  const emptySource = { cost: 0, clicks: 0, orders: 0, revenue: 0, pno: 0, cpa: 0 };
 
   // Previous year channel data for YoY
   const prevStart = new Date(sDaily); prevStart.setFullYear(prevStart.getFullYear() - 1);
@@ -119,15 +120,14 @@ export default function MarketingPage() {
     eurToCzk,
     storeRealDataCZ
   ) : [];
-  const fbPrev = prevSourceData.find(s => s.source === 'Facebook Ads') ?? { cost: 0, clicks: 0 };
-  const ggPrev = prevSourceData.find(s => s.source === 'Google Ads')   ?? { cost: 0, clicks: 0 };
-  const szPrev = prevSourceData.find(s => s.source === 'Seznam Ads')   ?? { cost: 0, clicks: 0 };
-  const zbPrev = prevSourceData.find(s => s.source === 'Zboží.cz')     ?? { cost: 0, clicks: 0 };
-  const hkPrev = prevSourceData.find(s => s.source === 'Heureka.cz')   ?? { cost: 0, clicks: 0 };
-  const tgPrev = prevSourceData.find(s => s.source === 'Tanganica')    ?? { cost: 0, clicks: 0 };
-  const fbCpcPrev = fbPrev.clicks > 0 ? fbPrev.cost / fbPrev.clicks : 0;
-  const gCpcPrev  = ggPrev.clicks > 0 ? ggPrev.cost / ggPrev.clicks : 0;
-  const szCpcPrev = szPrev.clicks > 0 ? szPrev.cost / szPrev.clicks : 0;
+
+  const channelCards = CHANNELS.map(ch => {
+    const curr = sourceData.find(s => s.source === ch.source)     ?? emptySource;
+    const prev = prevSourceData.find(s => s.source === ch.source) ?? emptySource;
+    const cpc     = curr.clicks > 0 ? curr.cost / curr.clicks : 0;
+    const cpcPrev = prev.clicks > 0 ? prev.cost / prev.clicks : 0;
+    return { ...ch, curr, prev, cpc, cpcPrev };
+  });
 
   return (
     <div className="space-y-6">
@@ -151,148 +151,47 @@ export default function MarketingPage() {
       <div className="space-y-4">
         <h2 className="text-base font-semibold text-gray-800">Výkon per channel</h2>
 
-        {/* Facebook + Google + Seznam — 3 karty s CPC */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {/* Facebook Ads */}
-          <div className="bg-white rounded-2xl border-2 border-blue-800 p-3 sm:p-4 space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-blue-700">Facebook Ads</span>
-              <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600"><Share2 size={15} /></div>
-            </div>
-            <div className="grid grid-cols-3 gap-2">
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">Náklady</p>
-                <p className="text-lg font-bold text-slate-900">{fc(fb.cost)}</p>
-                <YoyBadge pct={yoyPct(fb.cost, fbPrev.cost)} invert />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {channelCards.map(({ source, label, icon, iconBg, curr, prev, cpc, cpcPrev }) => (
+            <div key={source} className="bg-white rounded-2xl border-2 border-blue-800 p-3 sm:p-4 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className={`text-xs font-bold uppercase tracking-wider ${label}`}>{source}</span>
+                <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${iconBg}`}>{icon}</div>
               </div>
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">Kliky</p>
-                <p className="text-lg font-bold text-slate-900">{formatNumber(fb.clicks)}</p>
-                <YoyBadge pct={yoyPct(fb.clicks, fbPrev.clicks)} />
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">CPC</p>
-                <p className="text-lg font-bold text-slate-900">{fbCpc.toFixed(2)} {sym}</p>
-                <YoyBadge pct={yoyPct(fbCpc, fbCpcPrev)} invert />
-              </div>
-            </div>
-          </div>
-
-          {/* Google Ads */}
-          <div className="bg-white rounded-2xl border-2 border-blue-800 p-3 sm:p-4 space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-green-700">Google Ads</span>
-              <div className="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center text-green-600"><Search size={15} /></div>
-            </div>
-            <div className="grid grid-cols-3 gap-2">
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">Náklady</p>
-                <p className="text-lg font-bold text-slate-900">{fc(gg.cost)}</p>
-                <YoyBadge pct={yoyPct(gg.cost, ggPrev.cost)} invert />
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">Kliky</p>
-                <p className="text-lg font-bold text-slate-900">{formatNumber(gg.clicks)}</p>
-                <YoyBadge pct={yoyPct(gg.clicks, ggPrev.clicks)} />
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">CPC</p>
-                <p className="text-lg font-bold text-slate-900">{gCpc.toFixed(2)} {sym}</p>
-                <YoyBadge pct={yoyPct(gCpc, gCpcPrev)} invert />
+              <div className="grid grid-cols-3 gap-2">
+                <div>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">Náklady</p>
+                  <p className="text-lg font-bold text-slate-900">{fc(curr.cost)}</p>
+                  <YoyBadge pct={yoyPct(curr.cost, prev.cost)} invert />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">Kliky</p>
+                  <p className="text-lg font-bold text-slate-900">{curr.clicks > 0 ? formatNumber(curr.clicks) : '—'}</p>
+                  <YoyBadge pct={yoyPct(curr.clicks, prev.clicks)} />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">CPC</p>
+                  <p className="text-lg font-bold text-slate-900">{curr.clicks > 0 ? `${cpc.toFixed(2)} ${sym}` : '—'}</p>
+                  <YoyBadge pct={yoyPct(cpc, cpcPrev)} invert />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">Konverze</p>
+                  <p className="text-lg font-bold text-slate-900">{formatNumber(Math.round(curr.orders))}</p>
+                  <YoyBadge pct={yoyPct(curr.orders, prev.orders)} />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">Hodnota konv.</p>
+                  <p className="text-lg font-bold text-slate-900">{fc(curr.revenue)}</p>
+                  <YoyBadge pct={yoyPct(curr.revenue, prev.revenue)} />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">PNO</p>
+                  <p className="text-lg font-bold text-slate-900">{curr.revenue > 0 ? `${curr.pno.toFixed(1)} %` : '—'}</p>
+                  <YoyBadge pct={yoyPct(curr.pno, prev.pno)} invert />
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Seznam Ads */}
-          <div className="bg-white rounded-2xl border-2 border-blue-800 p-3 sm:p-4 space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-orange-700">Seznam Ads</span>
-              <div className="w-8 h-8 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600"><Search size={15} /></div>
-            </div>
-            <div className="grid grid-cols-3 gap-2">
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">Náklady</p>
-                <p className="text-lg font-bold text-slate-900">{fc(sz.cost)}</p>
-                <YoyBadge pct={yoyPct(sz.cost, szPrev.cost)} invert />
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">Kliky</p>
-                <p className="text-lg font-bold text-slate-900">{formatNumber(sz.clicks)}</p>
-                <YoyBadge pct={yoyPct(sz.clicks, szPrev.clicks)} />
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">CPC</p>
-                <p className="text-lg font-bold text-slate-900">{szCpc.toFixed(2)} {sym}</p>
-                <YoyBadge pct={yoyPct(szCpc, szCpcPrev)} invert />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Zboží + Heureka + Tanganica — menší karty (jen náklady) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          {/* Zboží.cz */}
-          <div className="bg-white rounded-2xl border-2 border-blue-800 p-3 sm:p-4 space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Zboží.cz</span>
-              <div className="w-8 h-8 bg-teal-50 rounded-lg flex items-center justify-center text-teal-600"><ShoppingBag size={15} /></div>
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">Náklady</p>
-                <p className="text-lg font-bold text-slate-900">{fc(zb.cost)}</p>
-                <YoyBadge pct={yoyPct(zb.cost, zbPrev.cost)} invert />
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">PNO</p>
-                <p className="text-lg font-bold text-slate-900">
-                  {kpi.revenue > 0 ? ((zb.cost / kpi.revenue) * 100).toFixed(1) : '0.0'} %
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Heureka.cz */}
-          <div className="bg-white rounded-2xl border-2 border-blue-800 p-3 sm:p-4 space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-purple-700">Heureka.cz</span>
-              <div className="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600"><ShoppingBag size={15} /></div>
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">Náklady</p>
-                <p className="text-lg font-bold text-slate-900">{fc(hk.cost)}</p>
-                <YoyBadge pct={yoyPct(hk.cost, hkPrev.cost)} invert />
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">PNO</p>
-                <p className="text-lg font-bold text-slate-900">
-                  {kpi.revenue > 0 ? ((hk.cost / kpi.revenue) * 100).toFixed(1) : '0.0'} %
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Tanganica */}
-          <div className="bg-white rounded-2xl border-2 border-blue-800 p-3 sm:p-4 space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-pink-700">Tanganica</span>
-              <div className="w-8 h-8 bg-pink-50 rounded-lg flex items-center justify-center text-pink-600"><ShoppingBag size={15} /></div>
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">Náklady</p>
-                <p className="text-lg font-bold text-slate-900">{fc(tg.cost)}</p>
-                <YoyBadge pct={yoyPct(tg.cost, tgPrev.cost)} invert />
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider">PNO</p>
-                <p className="text-lg font-bold text-slate-900">
-                  {kpi.revenue > 0 ? ((tg.cost / kpi.revenue) * 100).toFixed(1) : '0.0'} %
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* CPC + clicks trend — FB, Google, Seznam */}
