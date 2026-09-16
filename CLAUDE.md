@@ -611,3 +611,21 @@ duplikovaných bloků JSX.
 
 **Rozsah dat:** Google Ads má konverze až od `2026-02-19` (dřív v CSV vůbec nebyl), Tanganica
 od `2026-05-10`. YoY badge u nich za starší období nic neukáže.
+
+## `/dashboard` — Skupiny KPI boxů, POAS a LTV (2026-09-16)
+
+Převzato ze Sardinerie reportingu.
+
+KPI boxy jsou rozdělené do skupin s nadpisem (`KpiGroup` v `app/dashboard/page.tsx`), řazeno jako výsledovka:
+**Obrat** → **Ziskovost** → **Marketingová efektivita** → **Náklady a zisk na objednávku / zákazníka** + **Hodnota zákazníka** (štítek „celé období“).
+Hrubý zisk a Hrubý zisk % zůstávají zelené (`variant='green'`), samostatný řádek Hrubého zisku zrušen.
+
+**POAS** = `Marže / Marketingové investice` (marže z tržeb bez DPH), formát `2,40×`, s YoY. 1,0× = marketing spotřebuje celou marži.
+**Graf POAS (YoY)** na 5. pozici mezi grafy (`components/charts/PoasChart.tsx`) — denní marže / denní náklady, loňská řada posunutá o +1 rok, dny bez nákladů = `null`, referenční čára 1,0×.
+
+Doplněny boxy **LTV (bez DPH)**, **Ziskové LTV** a **Poměr LTV a CAC (dle marže)** (stejná definice jako v Sardinerii / Úlevě). POAS respektuje přepínač E-shop / Prodejna (`storeMarginDataCZ`); SK marže jen při `store === 'all'`.
+
+**Upozornění na starou SK marži:** `marginDataSK` má nákupní ceny až od `SK_PURCHASE_COST_FROM = '2025-05-01'`. Pokud je ve filtru SK (a store = vše) a období zasahuje před toto datum, boxy z marže a graf POAS zobrazí oranžovou poznámku. CZ (celek, E-shop i Prodejna) má nákupní ceny od začátku dat.
+
+**Hlavní Dashboard** — nové grouped bar grafy **POAS** (měsíc: `(marginRev − purchaseCost) / cost`) a **LTV (bez DPH)** (kumulativní tržby bez DPH / kumulativní počet zákazníků ke konci měsíce, měsíce po posledních datech = 0), zařazené za graf CPA.
+Hlavní Dashboard je jen CZ — upozornění se tu nezobrazuje. LTV počítá `monthlyLtv()` přímo v `app/hlavni-dashboard/page.tsx` z `retentionDataCZ` (bez ohledu na přepínač E-shop / Prodejna).

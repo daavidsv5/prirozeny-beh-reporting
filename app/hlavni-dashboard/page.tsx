@@ -11,6 +11,7 @@ import { mockData, mockDataEshop, mockDataProdejna } from '@/data/mockGenerator'
 import { marginDataCZ } from '@/data/marginDataCZ';
 import { marginDataCZEshop } from '@/data/marginDataCZEshop';
 import { prodejnaMarginDataCZ } from '@/data/prodejnaMarginDataCZ';
+import { retentionDataCZ } from '@/data/retentionDataCZ';
 import { useHlavniDashboard } from '@/hooks/useHlavniDashboard';
 import { useStoreFilter, pickByStore } from '@/hooks/useStoreFilter';
 
@@ -57,6 +58,33 @@ function aggregateMonthly(
   return months;
 }
 
+/** LTV (bez DPH) ke konci každého měsíce roku — kumulativní tržby bez DPH / kumulativní počet zákazníků
+ *  (stejná definice jako box „LTV (bez DPH)" na /dashboard). Měsíce po posledních datech = 0. */
+function monthlyLtv(year: number): number[] {
+  const customers = retentionDataCZ;
+  const byMonth: Record<string, { revenue: number; newCustomers: number }> = {};
+  for (const c of customers) {
+    if (!c.dates[0]) continue;
+    const first = c.dates[0].slice(0, 7);
+    (byMonth[first] ??= { revenue: 0, newCustomers: 0 }).newCustomers++;
+    c.dates.forEach((d, i) => { (byMonth[d.slice(0, 7)] ??= { revenue: 0, newCustomers: 0 }).revenue += c.revenues[i]; });
+  }
+  const months = Object.keys(byMonth).sort();
+  if (months.length === 0) return Array(12).fill(0);
+  const lastMonth = months[months.length - 1];
+  let cumRevenue = 0, cumCustomers = 0, k = 0;
+  return Array.from({ length: 12 }, (_, i) => {
+    const month = `${year}-${String(i + 1).padStart(2, '0')}`;
+    if (month > lastMonth) return 0;
+    while (k < months.length && months[k] <= month) {
+      cumRevenue   += byMonth[months[k]].revenue;
+      cumCustomers += byMonth[months[k]].newCustomers;
+      k++;
+    }
+    return cumCustomers > 0 ? cumRevenue / cumCustomers : 0;
+  });
+}
+
 // ─── Formatters ──────────────────────────────────────────────────────────────
 
 function fmtCZK(v: number): string {
@@ -72,6 +100,10 @@ function fmtAxisCZK(v: number): string {
 
 function fmtAxisPct(v: number): string {
   return `${v.toFixed(1).replace('.', ',')} %`;
+}
+
+function fmtAxisRatio(v: number): string {
+  return `${v.toFixed(1).replace('.', ',')}×`;
 }
 
 function fmtAxisCount(v: number): string {
@@ -118,9 +150,11 @@ interface ChartCardProps {
   axisFormatter: (v: number) => string;
   tooltipFormatter: (v: number) => string;
   headerRight?: ReactNode;
+  /** Zvýrazní podnadpis jako upozornění */
+  subtitleWarning?: boolean;
 }
 
-function ChartCard({ title, subtitle, data, colorA, colorB, yearA, yearB, axisFormatter, tooltipFormatter, headerRight }: ChartCardProps) {
+function ChartCard({ title, subtitle, data, colorA, colorB, yearA, yearB, axisFormatter, tooltipFormatter, headerRight, subtitleWarning }: ChartCardProps) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (!active || !payload?.length) return null;
@@ -141,7 +175,7 @@ function ChartCard({ title, subtitle, data, colorA, colorB, yearA, yearB, axisFo
       <div className="mb-3 flex items-start justify-between gap-2">
         <div>
           <h3 className="text-sm font-semibold text-slate-700">{title}</h3>
-          {subtitle && <p className="text-xs text-slate-400 mt-0.5">{subtitle}</p>}
+          {subtitle && <p className={`text-xs mt-0.5 ${subtitleWarning ? 'text-amber-600 font-medium' : 'text-slate-400'}`}>{subtitle}</p>}
         </div>
         {headerRight}
       </div>
@@ -170,6 +204,8 @@ export default function HlavniDashboardPage() {
 
   const monthsA = useMemo(() => aggregateMonthly(yearA, storeMockData, storeMarginDataCZ), [yearA, storeMockData, storeMarginDataCZ]);
   const monthsB = useMemo(() => aggregateMonthly(yearB, storeMockData, storeMarginDataCZ), [yearB, storeMockData, storeMarginDataCZ]);
+  const ltvA = useMemo(() => monthlyLtv(yearA), [yearA]);
+  const ltvB = useMemo(() => monthlyLtv(yearB), [yearB]);
 
   const [cvrData, setCvrData] = useState<{ month: string; a: number; b: number }[] | null>(null);
   const [sessionsData, setSessionsData] = useState<{ month: string; a: number; b: number }[] | null>(null);
@@ -205,14 +241,20 @@ export default function HlavniDashboardPage() {
       marginPct:   { a: a.marginRev > 0 ? ((a.marginRev - a.purchaseCost) / a.marginRev) * 100 : 0,
                      b: b.marginRev > 0 ? ((b.marginRev - b.purchaseCost) / b.marginRev) * 100 : 0 },
       cpa:         { a: a.orders > 0 ? a.cost / a.orders : 0,                               b: b.orders > 0 ? b.cost / b.orders : 0 },
+      poas:        { a: a.cost > 0 ? (a.marginRev - a.purchaseCost) / a.cost : 0,             b: b.cost > 0 ? (b.marginRev - b.purchaseCost) / b.cost : 0 },
+      ltv:         { a: ltvA[i],                                                              b: ltvB[i] },
     };
-  }), [monthsA, monthsB]);
+  }), [monthsA, monthsB, ltvA, ltvB]);
+
+  // Nákupní ceny chybí u starších dat → POAS za taková období je nadhodnocený
+  const poasNote = undefined as string | undefined;
 
   function makeData(key: keyof typeof chartData[0]): { month: string; a: number; b: number }[] {
     return chartData.map(d => ({ month: d.month, ...(d[key] as { a: number; b: number }) }));
   }
 
   const pctFmt = (v: number) => `${v.toFixed(1).replace('.', ',')} %`;
+  const ratioFmt = (v: number) => `${v.toFixed(2).replace('.', ',')}×`;
   const countFmt = (v: number) => Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 
   return (
@@ -272,6 +314,21 @@ export default function HlavniDashboardPage() {
         <ChartCard title="Cena za objednávku (CPA)"
           data={makeData('cpa')}
           colorA="#7c3aed" colorB="#c4b5fd"
+          yearA={yearA} yearB={yearB}
+          axisFormatter={fmtAxisCZK} tooltipFormatter={fmtCZK}
+        />
+        <ChartCard title="POAS"
+          subtitle={poasNote ?? 'Marže / marketingové investice'}
+          subtitleWarning={!!poasNote}
+          data={makeData('poas')}
+          colorA="#059669" colorB="#6ee7b7"
+          yearA={yearA} yearB={yearB}
+          axisFormatter={fmtAxisRatio} tooltipFormatter={ratioFmt}
+        />
+        <ChartCard title="LTV (bez DPH)"
+          subtitle="Kumulativně ke konci měsíce: tržby bez DPH / počet zákazníků"
+          data={makeData('ltv')}
+          colorA="#0284c7" colorB="#7dd3fc"
           yearA={yearA} yearB={yearB}
           axisFormatter={fmtAxisCZK} tooltipFormatter={fmtCZK}
         />

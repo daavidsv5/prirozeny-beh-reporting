@@ -18,6 +18,9 @@ export const EUR_TO_CZK = 25;
 /** SK e-shop launch date — data before this date are test orders and should be excluded */
 export const SK_LAUNCH_DATE = '2024-06-01';
 
+/** Od tohoto data obsahuje marginDataSK nákupní ceny; dřív purchaseCost = 0 (marže 100 %). */
+export const SK_PURCHASE_COST_FROM = '2025-05-01';
+
 export interface KpiData {
   revenuevat: number;
   revenue: number;

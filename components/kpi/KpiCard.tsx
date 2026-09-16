@@ -12,6 +12,8 @@ interface KpiCardProps {
   invertColors?: boolean;
   hasPrevData?: boolean;
   variant?: 'default' | 'green' | 'red';
+  /** Upozornění místo patičky (např. neúplná zdrojová data) */
+  note?: string;
 }
 
 export default function KpiCard({
@@ -22,6 +24,7 @@ export default function KpiCard({
   invertColors = false,
   hasPrevData = true,
   variant = 'default',
+  note,
 }: KpiCardProps) {
   const isPositive = invertColors ? (yoy ?? 0) < 0 : (yoy ?? 0) > 0;
   const isNeutral  = yoy === 0 || yoy === null;
@@ -61,9 +64,13 @@ export default function KpiCard({
       <p className={`text-2xl md:text-3xl font-bold leading-none ${variant === 'green' ? 'text-emerald-700' : variant === 'red' ? 'text-rose-600' : 'text-slate-800'}`}>{value}</p>
 
       {/* Footer label */}
-      <p className="text-[11px] text-slate-400">
-        {!hasPrevData ? 'bez YoY srovnání' : 'vs. loňský rok'}
-      </p>
+      {note ? (
+        <p className="text-[11px] font-medium text-amber-600">⚠ {note}</p>
+      ) : (
+        <p className="text-[11px] text-slate-400">
+          {!hasPrevData ? 'bez YoY srovnání' : 'vs. loňský rok'}
+        </p>
+      )}
     </div>
   );
 }
