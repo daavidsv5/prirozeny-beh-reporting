@@ -629,3 +629,15 @@ Doplněny boxy **LTV (bez DPH)**, **Ziskové LTV** a **Poměr LTV a CAC (dle mar
 
 **Hlavní Dashboard** — nové grouped bar grafy **POAS** (měsíc: `(marginRev − purchaseCost) / cost`) a **LTV (bez DPH)** (kumulativní tržby bez DPH / kumulativní počet zákazníků ke konci měsíce, měsíce po posledních datech = 0), zařazené za graf CPA.
 Hlavní Dashboard je jen CZ — upozornění se tu nezobrazuje. LTV počítá `monthlyLtv()` přímo v `app/hlavni-dashboard/page.tsx` z `retentionDataCZ` (bez ohledu na přepínač E-shop / Prodejna).
+
+## `/slovnik` — Slovník klíčových metrik (2026-09-16)
+
+Převzato ze Sardinerie reportingu. Stránka pro management: u každé metriky **co vyjadřuje**, **jak se počítá** (vzorec odpovídá kódu), **kde se v aplikaci zobrazuje**, **orientační benchmark** segmentu, případné **upozornění** a **aktuální hodnota** e-shopu za posledních 12 měsíců se štítkem „v pořádku“ / „ke sledování“.
+
+- **`lib/metricsGlossary.ts`** — obsah (segment, `METRICS`, `CATEGORY_LABELS`, `VALUE_LABEL`, `VALUE_SCOPE`). Při změně výpočtu metriky v aplikaci aktualizovat i vzorec zde.
+- **`lib/glossaryValues.ts`** — hook `useCurrentValues()` + společné `computeValues()` (stejné vzorce jako `/dashboard`). Jen CZ e-shop bez prodejny (`mockDataEshop` + `marginDataCZEshop`), protože marketing cílí na e-shop a prodejna by PNO/CPA zkreslila; retence z `retentionDataCZ`.
+- **`app/slovnik/page.tsx`** — jen vykreslení: vyhledávání, filtr kategorií, ohraničené boxy (`border-2 border-blue-800`) s vnitřními rámečky Co vyjadřuje / Výpočet / Benchmark.
+- **Sidebar:** skupina „Nápověda“ → Slovník klíčových metrik. **TopBar** na `/slovnik` skrývá selektor trhu i období.
+- **Benchmarky jsou orientační** rozpětí z praxe e-shopů v segmentu (barefoot obuv), ne oficiální statistika. Štítek: `better` higher/lower/range + `min`/`max`; u AOV se hodnotí jen spodní hranice (vyšší AOV není problém).
+- **Texty bez pomlček:** rozpětí „10 až 20 %“, vsuvky čárkou nebo dvojtečkou, zkratky jako „PNO (podíl nákladů na obratu)“. Matematické minus (−) ve vzorcích zůstává.
+- 30 metrik vč. „Prodejna (kamenný obchod)“, bez Meta Ads (stránka není v sidebaru).

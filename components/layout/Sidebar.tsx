@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart2, LayoutDashboard, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Home, Store, Warehouse, Award } from 'lucide-react';
+import { BarChart2, LayoutDashboard, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Home, Store, Warehouse, Award, BookOpen } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 import { useSidebar } from './ConditionalLayout';
 
@@ -44,6 +44,12 @@ const NAV_SECTIONS = [
     label: 'Akvizice a kanály',
     items: [
       { icon: Activity,        label: 'Webová návštěvnost (GA4)', href: '/analytics' },
+    ],
+  },
+  {
+    label: 'Nápověda',
+    items: [
+      { icon: BookOpen, label: 'Slovník klíčových metrik', href: '/slovnik' },
     ],
   },
 ];

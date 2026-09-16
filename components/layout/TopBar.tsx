@@ -38,6 +38,7 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
   const { data: session } = useSession();
   const isAdmin = (session?.user as { role?: string })?.role === 'admin';
   const isHlavniDashboard = pathname === '/hlavni-dashboard';
+  const isGlossary = pathname === '/slovnik';
   const dash = useHlavniDashboard();
   const { store, setStore } = useStoreFilter();
   const showStoreFilter = STORE_FILTER_ROUTES.includes(pathname ?? '');
@@ -139,7 +140,7 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
               <span className="text-xs text-slate-400 hidden sm:inline">vs. {dash.yearB}</span>
             </div>
           </>
-        ) : (
+        ) : isGlossary ? null : (
           <>
 
             {/* Time period */}
