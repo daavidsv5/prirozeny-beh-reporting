@@ -29,6 +29,7 @@ export function useStoreFilter(): StoreFilterCtx {
 
 /** Routes where the Vše / E-shop / Prodejna selector appears in the TopBar. */
 export const STORE_FILTER_ROUTES = [
+  '/rocni-prehled',
   '/hlavni-dashboard',
   '/dashboard',
   '/marketing',

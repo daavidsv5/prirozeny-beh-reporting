@@ -10,6 +10,7 @@ import { RefreshCw, Menu } from 'lucide-react';
 import { useSidebar } from './ConditionalLayout';
 import { lastUpdate } from '@/data/lastUpdate';
 import { useHlavniDashboard } from '@/hooks/useHlavniDashboard';
+import { useRocniPrehled } from '@/hooks/useRocniPrehled';
 import { useStoreFilter, STORE_FILTER_ROUTES, StoreScope } from '@/hooks/useStoreFilter';
 
 interface TopBarProps {
@@ -38,8 +39,10 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
   const { data: session } = useSession();
   const isAdmin = (session?.user as { role?: string })?.role === 'admin';
   const isHlavniDashboard = pathname === '/hlavni-dashboard';
+  const isRocniPrehled = pathname === '/rocni-prehled';
   const isGlossary = pathname === '/slovnik';
   const dash = useHlavniDashboard();
+  const rocni = useRocniPrehled();
   const { store, setStore } = useStoreFilter();
   const showStoreFilter = STORE_FILTER_ROUTES.includes(pathname ?? '');
 
@@ -114,7 +117,7 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
           </div>
         )}
 
-        {/* ── Hlavní Dashboard selectors ── */}
+        {/* ── Měsíční přehled (/hlavni-dashboard) selectors ── */}
         {isHlavniDashboard ? (
           <>
             {/* Year selector */}
@@ -138,6 +141,35 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
                 ))}
               </div>
               <span className="text-xs text-slate-400 hidden sm:inline">vs. {dash.yearB}</span>
+            </div>
+          </>
+        ) : isRocniPrehled ? (
+          <>
+            {/* Roční přehled: výběr roků (více voleb) */}
+            <div className="flex items-center gap-1.5 flex-shrink-0">
+              <span className="text-xs text-slate-400 font-medium hidden sm:inline">Roky:</span>
+              <div className="flex rounded-lg border border-slate-200 overflow-hidden bg-white">
+                {rocni.yearInfos.map(({ year, partial }, idx) => {
+                  const active = rocni.selectedYears.includes(year);
+                  return (
+                    <button
+                      key={year}
+                      onClick={() => rocni.toggleYear(year)}
+                      aria-pressed={active}
+                      title={partial ? 'Neúplný rok, objednávky nejsou od 1. 1.' : undefined}
+                      className={`px-2.5 md:px-4 py-1.5 text-sm font-medium transition-colors focus:outline-none ${
+                        idx > 0 ? 'border-l border-slate-200' : ''
+                      } ${
+                        active
+                          ? 'bg-blue-600 text-white'
+                          : 'text-slate-600 hover:bg-slate-50'
+                      }`}
+                    >
+                      {year}{partial ? '*' : ''}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </>
         ) : isGlossary ? null : (

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import Sidebar from './Sidebar';
 import TopBarWrapper from './TopBarWrapper';
 import { HlavniDashboardProvider } from '@/hooks/useHlavniDashboard';
+import { RocniPrehledProvider } from '@/hooks/useRocniPrehled';
 import { StoreFilterProvider } from '@/hooks/useStoreFilter';
 
 interface SidebarCtx {
@@ -37,6 +38,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
   return (
     <StoreFilterProvider>
     <HlavniDashboardProvider>
+    <RocniPrehledProvider>
     <SidebarContext.Provider value={{ isOpen, toggle, close }}>
       <div className="flex h-screen">
         {/* Mobile overlay */}
@@ -58,6 +60,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
         </div>
       </div>
     </SidebarContext.Provider>
+    </RocniPrehledProvider>
     </HlavniDashboardProvider>
     </StoreFilterProvider>
   );

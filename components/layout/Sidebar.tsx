@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart2, LayoutDashboard, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Home, Store, Warehouse, Award, BookOpen } from 'lucide-react';
+import { BarChart2, LayoutDashboard, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Home, Store, Warehouse, Award, BookOpen, CalendarRange } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 import { useSidebar } from './ConditionalLayout';
 
@@ -10,7 +10,8 @@ const NAV_SECTIONS = [
   {
     label: 'Strategický přehled',
     items: [
-      { icon: Home,            label: 'Hlavní Dashboard',        href: '/hlavni-dashboard' },
+      { icon: CalendarRange,   label: 'Roční přehled',           href: '/rocni-prehled' },
+      { icon: Home,            label: 'Měsíční přehled',         href: '/hlavni-dashboard' },
       { icon: LayoutDashboard, label: 'Hlavní KPI',              href: '/dashboard' },
       { icon: TrendingUp,      label: 'Marketingový Mix & PNO',  href: '/marketing' },
     ],

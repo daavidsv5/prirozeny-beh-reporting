@@ -639,5 +639,18 @@ Převzato ze Sardinerie reportingu. Stránka pro management: u každé metriky *
 - **`app/slovnik/page.tsx`** — jen vykreslení: vyhledávání, filtr kategorií, ohraničené boxy (`border-2 border-blue-800`) s vnitřními rámečky Co vyjadřuje / Výpočet / Benchmark.
 - **Sidebar:** skupina „Nápověda“ → Slovník klíčových metrik. **TopBar** na `/slovnik` skrývá selektor trhu i období.
 - **Benchmarky jsou orientační** rozpětí z praxe e-shopů v segmentu (barefoot obuv), ne oficiální statistika. Štítek: `better` higher/lower/range + `min`/`max`; u AOV se hodnotí jen spodní hranice (vyšší AOV není problém).
-- **Texty bez pomlček:** rozpětí „10 až 20 %“, vsuvky čárkou nebo dvojtečkou, zkratky jako „PNO (podíl nákladů na obratu)“. Matematické minus (−) ve vzorcích zůstává.
+- **Texty bez pomlček a bez dvojteček:** rozpětí „10 až 20 %“, vsuvky čárkou, zkratky jako „PNO (podíl nákladů na obratu)“. Ve vzorcích se místo dvojtečky používá „=“ nebo závorka, matematické minus (−) zůstává.
 - 30 metrik vč. „Prodejna (kamenný obchod)“, bez Meta Ads (stránka není v sidebaru).
+
+## `/rocni-prehled` — Roční přehled (2026-09-24)
+
+Převzato z Úlevy pro nohy (pilot). Stejné metriky jako **Měsíční přehled** (/hlavni-dashboard, dřív „Hlavní Dashboard“), ale osa X = roky: jeden sloupec na rok, poslední vybraný rok tmavší, nad sloupcem změna proti předchozímu roku.
+
+- **Období:** minulé roky celé, aktuální rok od 1. 1. do cutoffu. Cutoff = den před `lastUpdate` (`CUTOFF_DATE` v `lib/rocniPrehled.ts`), při denní aktualizaci = včerejšek.
+- **Změna:** minulé roky celý rok proti celému předchozímu roku; **aktuální rok proti loňsku za 1. 1. až cutoff** (režim `ytd`, u GA4 samostatný dotaz `period=ytd`). PNO, Marže %, CVR v p. b., ostatní v %. U PNO, CPA a nákladů je pokles zelený. Tooltip uvádí srovnávané období.
+- **Roky:** jen roky s objednávkami (`getYearInfos()`). Rok bez objednávek od 1. 1. je `partial` — ve výchozím výběru není, v TopBaru s hvězdičkou, změna se u něj ani u následujícího roku nepočítá. Neúplnost se počítá pro aktuálně vybraný obchod (Vše / E-shop / Prodejna).
+- **TopBar:** vícenásobný výběr roků + přepínač Obchod (Vše / E-shop / Prodejna), `/rocni-prehled` je v `STORE_FILTER_ROUTES`. Stav v `hooks/useRocniPrehled.tsx` (provider v `ConditionalLayout`).
+- **Výpočty:** `aggregateMonthly()` a `monthlyLtv()` byly přesunuty z `app/hlavni-dashboard/page.tsx` do `lib/hlavniDashboardData.ts` (parametr `dateFilter`), Roční přehled sčítá měsíce přes `sumKpiRows()`. Poměrové metriky se počítají ze součtů za rok přes `deriveKpi()` v `lib/kpiMetrics.ts`, nikdy průměrem měsíců. LTV = stav ke konci období (měsíční granularita, `ltvAtPeriodEnd()`).
+- **Graf:** `components/charts/YearChartCard.tsx` (`YearChartCard`, `buildYearPoints`, formátování, `DeviceSelect`).
+- **GA4:** `app/api/analytics/yearly/route.ts?years=&cutoff=&period=&device=&country=` — jeden `runReport` na rok a property, metrika `conversions` (stejně jako `monthly-cvr`), CVR = konverze / návštěvy. GA4 je jen pro web, filtr Obchod se na něj nevztahuje.
+- **Sidebar:** Roční přehled je první ve skupině „Strategický přehled“, pod ním Měsíční přehled (URL `/hlavni-dashboard` beze změny).
